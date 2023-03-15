@@ -5,6 +5,8 @@ import 'package:logger/logger.dart';
 import '../config/config.index.dart';
 
 class LogUtils {
+  LogUtils._();
+
   static Logger getLogger(String className) {
     return Logger(
       printer: _LogPrinter(className),

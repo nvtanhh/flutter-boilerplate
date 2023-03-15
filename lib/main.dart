@@ -1,10 +1,8 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
 import 'core/config/config.index.dart';
-import 'data/datasources/gateway/preference/app_preferences.dart';
 import 'core/mixin/log_mixin.dart';
+import 'data/datasources/gateway/preference/app_preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -58,17 +56,6 @@ class _MyHomePageState extends State<MyHomePage> with LogMixin {
     } on Exception catch (e, stackTrace) {
       logError('', e, stackTrace);
     }
-  }
-
-  static String prettyJson(Map<String, dynamic> json) {
-    if (!LogConfig.isPrettyJson) {
-      return json.toString();
-    }
-
-    final indent = '  ' * 2;
-    final encoder = JsonEncoder.withIndent(indent);
-
-    return encoder.convert(json);
   }
 
   @override
