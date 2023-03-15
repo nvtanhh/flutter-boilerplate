@@ -1,8 +1,8 @@
-import '../config/config.index.dart';
+import '../utils/log_utils.dart';
 
 mixin LogMixin on Object {
   void logError(Object? message, [dynamic error, StackTrace? stackTrace]) {
-    final logger = getLogger(runtimeType.toString());
+    final logger = LogUtils.getLogger(runtimeType.toString());
 
     logger.e(
       message,
@@ -12,7 +12,7 @@ mixin LogMixin on Object {
   }
 
   void logDebug(Object? message, [dynamic error, StackTrace? stackTrace]) {
-    final logger = getLogger(runtimeType.toString());
+    final logger = LogUtils.getLogger(runtimeType.toString());
 
     logger.d(
       message,

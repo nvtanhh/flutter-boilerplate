@@ -1,12 +1,27 @@
+import 'dart:convert';
+
 import 'package:logger/logger.dart';
 
-import 'logging_config.dart';
+import '../config/config.index.dart';
 
-Logger getLogger(String className) {
-  return Logger(
-    printer: _LogPrinter(className),
-    filter: _LogFilter(),
-  );
+class LogUtils {
+  static Logger getLogger(String className) {
+    return Logger(
+      printer: _LogPrinter(className),
+      filter: _LogFilter(),
+    );
+  }
+
+  static String prettyJson(Map<String, dynamic> json) {
+    if (!LogConfig.isPrettyJson) {
+      return json.toString();
+    }
+
+    final indent = '  ' * 2;
+    final encoder = JsonEncoder.withIndent(indent);
+
+    return encoder.convert(json);
+  }
 }
 
 class _LogPrinter extends PrettyPrinter {
