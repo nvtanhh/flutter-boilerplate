@@ -4,7 +4,7 @@ import 'package:rxdart/rxdart.dart';
 import '../config/logging_config.dart';
 import '../utils/utils.index.dart';
 
-extension StreamExt<T> on Stream<T> {
+extension StreamExtension<T> on Stream<T> {
   Stream<T> log(
     String name, {
     bool logOnListen = false,

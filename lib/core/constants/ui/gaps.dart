@@ -1,4 +1,4 @@
-part of 'ui_constants.index.dart';
+import 'package:flutter/widgets.dart';
 
 class Sizes {
   static const p4 = 4.0;

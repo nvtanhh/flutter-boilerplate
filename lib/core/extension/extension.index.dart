@@ -1,1 +1,1 @@
-export 'stream_logger_extension.dart';
+export 'stream_extension.dart';
