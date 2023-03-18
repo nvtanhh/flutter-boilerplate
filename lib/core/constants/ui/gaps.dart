@@ -94,16 +94,11 @@ class AppSpacing {
   static const edgeInsetsAll12 = EdgeInsets.all(Sizes.p12);
   static const edgeInsetsAll16 = EdgeInsets.all(Sizes.p16);
 
-  static const edgeInsetsV4H8 =
-      EdgeInsets.symmetric(vertical: Sizes.p4, horizontal: Sizes.p8);
-  static const edgeInsetsV8H12 =
-      EdgeInsets.symmetric(vertical: Sizes.p8, horizontal: Sizes.p12);
-  static const edgeInsetsV8H16 =
-      EdgeInsets.symmetric(vertical: Sizes.p8, horizontal: Sizes.p16);
-  static const edgeInsetsV12H16 =
-      EdgeInsets.symmetric(vertical: Sizes.p12, horizontal: Sizes.p16);
-  static const edgeInsetsV16H20 =
-      EdgeInsets.symmetric(vertical: Sizes.p16, horizontal: Sizes.p20);
+  static const edgeInsetsV4H8 = EdgeInsets.symmetric(vertical: Sizes.p4, horizontal: Sizes.p8);
+  static const edgeInsetsV8H12 = EdgeInsets.symmetric(vertical: Sizes.p8, horizontal: Sizes.p12);
+  static const edgeInsetsV8H16 = EdgeInsets.symmetric(vertical: Sizes.p8, horizontal: Sizes.p16);
+  static const edgeInsetsV12H16 = EdgeInsets.symmetric(vertical: Sizes.p12, horizontal: Sizes.p16);
+  static const edgeInsetsV16H20 = EdgeInsets.symmetric(vertical: Sizes.p16, horizontal: Sizes.p20);
 
   static const edgeInsetsOnlyTop4 = EdgeInsets.only(top: Sizes.p4);
   static const edgeInsetsOnlyTop8 = EdgeInsets.only(top: Sizes.p8);

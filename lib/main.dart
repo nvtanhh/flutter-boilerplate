@@ -45,10 +45,7 @@ class _MyHomePageState extends State<MyHomePage> with LogMixin {
         'counter',
         appPreferences.get('counter', defaultValue: 0) + 1,
       );
-      logDebug(getIt
-          .get<AppPreferences>()
-          .get('counter', defaultValue: 0)
-          .toString());
+      logDebug(getIt.get<AppPreferences>().get('counter', defaultValue: 0).toString());
 
       setState(() {
         _counter++;

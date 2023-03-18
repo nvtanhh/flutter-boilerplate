@@ -12,4 +12,4 @@ fix_linst:
 
 format_code:
 	# format the code
-	flutter format .
+	dart format . -l 120

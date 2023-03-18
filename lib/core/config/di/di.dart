@@ -11,6 +11,5 @@ Future<void> configureInjection() async => getIt.init();
 @module
 abstract class RegisterModule {
   @singleton
-  Future<AppPreferences> get appPreferences async =>
-      AppPreferences().getInstance();
+  Future<AppPreferences> get appPreferences async => AppPreferences().getInstance();
 }

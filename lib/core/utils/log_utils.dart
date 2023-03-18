@@ -33,9 +33,7 @@ class _LogPrinter extends PrettyPrinter {
 
   @override
   List<String> log(LogEvent event) {
-    final color = LogConfig.isColorLog
-        ? PrettyPrinter.levelColors[event.level]
-        : AnsiColor.none();
+    final color = LogConfig.isColorLog ? PrettyPrinter.levelColors[event.level] : AnsiColor.none();
     final emoji = PrettyPrinter.levelEmojis[event.level];
     final time = getTime();
 
@@ -49,8 +47,7 @@ class _LogPrinter extends PrettyPrinter {
     return [
       color!(msg),
       if (event.error != null) color(event.error.toString()),
-      if (stackTraceStr != null)
-        stackTraceStr.split('\n').map(color).join('\n'),
+      if (stackTraceStr != null) stackTraceStr.split('\n').map(color).join('\n'),
     ];
   }
 
