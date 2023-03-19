@@ -1,3 +1,4 @@
+export 'connectivity_utils.dart';
 export 'date_time_utils.dart';
 export 'device_utils.dart';
 export 'file_utils.dart';

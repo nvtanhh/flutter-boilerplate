@@ -39,8 +39,10 @@ dependencies:
   flutter_cache_manager: ^3.3.0
   path_provider: ^2.0.13
   mime: ^1.0.4
-
+  # intent launcher
   url_launcher: ^6.1.10
+  # Check connection
+  connectivity_plus: ^3.0.3
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,7 @@
-enum AppFlavor { dev }
+enum Flavor { dev }
 
-class EnvironmentConstants {
-  const EnvironmentConstants._();
+class EnvConstants {
+  const EnvConstants._();
 
   static const String envFileDev = '.env';
 

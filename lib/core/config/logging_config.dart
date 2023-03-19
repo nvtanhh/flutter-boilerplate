@@ -30,9 +30,12 @@ class LogConfig {
 
   /// log interceptor
   static const enableLogInterceptor = kDebugMode;
-  static const enableLogRequestInfo = kDebugMode;
-  static const enableLogSuccessResponse = kDebugMode;
-  static const enableLogErrorResponse = kDebugMode;
+  static const enableLogRequestInfo = true;
+  static const enableLogSuccessResponse = true;
+  static const enableLogErrorResponse = true;
+  static const enableLogHeader = true;
+  static const enableLogRequestBody = true;
+  static const enableLogResponseData = true;
 
   /// enable log usecase
   static const enableLogUseCaseInput = kDebugMode;
