@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
 import '../base/app_exception.dart';
 import '../base/exception_mapper.dart';
 import 'api_exception.dart';
 
+@lazySingleton
 class DioExceptionMapper implements ExceptionMapper {
   @override
   AppException map(Object? exception) {

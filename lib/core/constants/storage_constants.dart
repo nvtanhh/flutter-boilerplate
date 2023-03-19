@@ -1,5 +1,7 @@
 class StorageConstants {
   StorageConstants._();
 
-  static const appPreferencesBox = 'app_preferences';
+  static const encryptionKey = 'encryptionKey';
+  static const appPreferencesBox = 'app_preferences_box';
+  static const accessTokenKey = 'access_token';
 }

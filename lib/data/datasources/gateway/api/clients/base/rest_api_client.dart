@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
 
+import '../../../../../../core/config/config.index.dart';
 import '../../../../../../core/constants/constants.index.dart';
-import '../../../../../core/exception/api/dio_exception_mapper.dart';
-import '../../shared/shared.index.dart';
-import '../mapper/response_mapper/base_response_mapper.dart';
+import '../../../../../../core/exception/api/dio_exception_mapper.dart';
+import '../../../shared/shared.index.dart';
+import '../../mapper/response_mapper/base_response_mapper.dart';
 import 'rest_client_default_settings.dart';
 
 enum RestMethod { get, post, put, patch, delete }
@@ -13,7 +14,7 @@ class RestApiClient {
     required this.baseUrl,
     this.connectTimeoutInMs,
     this.interceptors = const [],
-    this.successResponseMapperType = SuccessResponseMapperType.jsonObject,
+    this.successResponseMapperType = ApiConstants.defaultSuccessResponseMapperType,
   }) : _dio = Dio(
           BaseOptions(
             baseUrl: baseUrl,
@@ -21,7 +22,7 @@ class RestApiClient {
           ),
         ) {
     final List<Interceptor> interceptors = [
-      ...ApiClientSettings.customInterceptors(_dio),
+      ...ApiClientSettings.requiredInterceptors(_dio),
       ...this.interceptors,
     ];
 
@@ -49,17 +50,88 @@ class RestApiClient {
         path: path.startsWith(baseUrl) ? path.substring(baseUrl.length) : path,
         queryParameters: queryParameters,
         body: body,
-        options: Options(
-          headers: headers,
-        ),
+        options: Options(headers: headers),
       );
 
       return BaseSuccessResponseMapper<D, T>.fromType(
         successResponseMapperType ?? this.successResponseMapperType,
       ).map(response.data, decoder);
     } catch (error) {
-      throw DioExceptionMapper().map(error);
+      throw getIt<DioExceptionMapper>().map(error);
     }
+  }
+
+  Future<T> get<T, D>({
+    required String path,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+  }) async {
+    return request<T, D>(
+      method: RestMethod.get,
+      path: path,
+      queryParameters: queryParameters,
+      headers: headers,
+    );
+  }
+
+  Future<T> post<T, D>({
+    required String path,
+    Map<String, dynamic>? queryParameters,
+    dynamic body,
+    Map<String, dynamic>? headers,
+  }) async {
+    return request<T, D>(
+      method: RestMethod.post,
+      path: path,
+      queryParameters: queryParameters,
+      body: body,
+      headers: headers,
+    );
+  }
+
+  Future<T> put<T, D>({
+    required String path,
+    Map<String, dynamic>? queryParameters,
+    dynamic body,
+    Map<String, dynamic>? headers,
+  }) async {
+    return request<T, D>(
+      method: RestMethod.put,
+      path: path,
+      queryParameters: queryParameters,
+      body: body,
+      headers: headers,
+    );
+  }
+
+  Future<T> patch<T, D>({
+    required String path,
+    Map<String, dynamic>? queryParameters,
+    dynamic body,
+    Map<String, dynamic>? headers,
+  }) async {
+    return request<T, D>(
+      method: RestMethod.patch,
+      path: path,
+      queryParameters: queryParameters,
+      body: body,
+      headers: headers,
+    );
+  }
+
+  Future<T> delete<T, D>({
+    required String path,
+    Map<String, dynamic>? queryParameters,
+    dynamic body,
+    Map<String, dynamic>? headers,
+  }) async {
+    return request<T, D>(
+      method: RestMethod.delete,
+      path: path,
+      queryParameters: queryParameters,
+      body: body,
+      headers: headers,
+    );
   }
 
   Future<Response<T>> _requestByMethod<T>({

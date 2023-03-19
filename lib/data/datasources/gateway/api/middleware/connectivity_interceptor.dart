@@ -5,7 +5,7 @@ import '../../../../../core/exception/api/api_exception.dart';
 import '../../../../../core/utils/utils.index.dart';
 import 'base_interceptor.dart';
 
-@Injectable()
+@injectable
 class ConnectivityInterceptor extends BaseInterceptor {
   @override
   Future<void> onRequest(RequestOptions options, RequestInterceptorHandler handler) async {

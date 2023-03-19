@@ -28,8 +28,8 @@ dependencies:
   # rest api client
   dio: ^5.0.1
   # preferences
-  hive: ^2.2.3
   hive_flutter: ^1.1.0
+  flutter_secure_storage: ^8.0.0
   # logging
   logger: ^1.2.2
   # device information

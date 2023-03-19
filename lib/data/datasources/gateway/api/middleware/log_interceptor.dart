@@ -1,10 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../../core/config/logging_config.dart';
 import '../../../../../core/mixin/log_mixin.dart';
 import '../../../../../core/utils/log_utils.dart';
 import 'base_interceptor.dart';
 
+@injectable
 class CustomLogInterceptor extends BaseInterceptor with LogMixin {
   CustomLogInterceptor({
     this.enableLogRequestInfo = LogConfig.enableLogRequestInfo,

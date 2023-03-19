@@ -1,2 +1,2 @@
-export 'enum.dart';
-export 'typedef.dart';
+export 'enums.dart';
+export 'typedefs.dart';
