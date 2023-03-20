@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../../core/exception/api/api_exception.dart';
+import '../../../../../core/exception/api_exception.dart';
 import '../../../../../core/utils/utils.index.dart';
 import 'base_interceptor.dart';
 

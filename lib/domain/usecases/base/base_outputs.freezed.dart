@@ -24,15 +24,23 @@ mixin _$LoadMoreOutput<T> {
   bool get hasNext => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LoadMoreOutputCopyWith<T, LoadMoreOutput<T>> get copyWith => throw _privateConstructorUsedError;
+  $LoadMoreOutputCopyWith<T, LoadMoreOutput<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoadMoreOutputCopyWith<T, $Res> {
-  factory $LoadMoreOutputCopyWith(LoadMoreOutput<T> value, $Res Function(LoadMoreOutput<T>) then) =
+  factory $LoadMoreOutputCopyWith(
+          LoadMoreOutput<T> value, $Res Function(LoadMoreOutput<T>) then) =
       _$LoadMoreOutputCopyWithImpl<T, $Res, LoadMoreOutput<T>>;
   @useResult
-  $Res call({List<T> items, int total, int page, int pageSize, bool isRefreshSuccess, bool hasNext});
+  $Res call(
+      {List<T> items,
+      int total,
+      int page,
+      int pageSize,
+      bool isRefreshSuccess,
+      bool hasNext});
 }
 
 /// @nodoc
@@ -85,18 +93,28 @@ class _$LoadMoreOutputCopyWithImpl<T, $Res, $Val extends LoadMoreOutput<T>>
 }
 
 /// @nodoc
-abstract class _$$_LoadMoreOutputCopyWith<T, $Res> implements $LoadMoreOutputCopyWith<T, $Res> {
-  factory _$$_LoadMoreOutputCopyWith(_$_LoadMoreOutput<T> value, $Res Function(_$_LoadMoreOutput<T>) then) =
+abstract class _$$_LoadMoreOutputCopyWith<T, $Res>
+    implements $LoadMoreOutputCopyWith<T, $Res> {
+  factory _$$_LoadMoreOutputCopyWith(_$_LoadMoreOutput<T> value,
+          $Res Function(_$_LoadMoreOutput<T>) then) =
       __$$_LoadMoreOutputCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({List<T> items, int total, int page, int pageSize, bool isRefreshSuccess, bool hasNext});
+  $Res call(
+      {List<T> items,
+      int total,
+      int page,
+      int pageSize,
+      bool isRefreshSuccess,
+      bool hasNext});
 }
 
 /// @nodoc
-class __$$_LoadMoreOutputCopyWithImpl<T, $Res> extends _$LoadMoreOutputCopyWithImpl<T, $Res, _$_LoadMoreOutput<T>>
+class __$$_LoadMoreOutputCopyWithImpl<T, $Res>
+    extends _$LoadMoreOutputCopyWithImpl<T, $Res, _$_LoadMoreOutput<T>>
     implements _$$_LoadMoreOutputCopyWith<T, $Res> {
-  __$$_LoadMoreOutputCopyWithImpl(_$_LoadMoreOutput<T> _value, $Res Function(_$_LoadMoreOutput<T>) _then)
+  __$$_LoadMoreOutputCopyWithImpl(
+      _$_LoadMoreOutput<T> _value, $Res Function(_$_LoadMoreOutput<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -188,20 +206,29 @@ class _$_LoadMoreOutput<T> extends _LoadMoreOutput<T> {
             const DeepCollectionEquality().equals(other._items, _items) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.page, page) || other.page == page) &&
-            (identical(other.pageSize, pageSize) || other.pageSize == pageSize) &&
-            (identical(other.isRefreshSuccess, isRefreshSuccess) || other.isRefreshSuccess == isRefreshSuccess) &&
+            (identical(other.pageSize, pageSize) ||
+                other.pageSize == pageSize) &&
+            (identical(other.isRefreshSuccess, isRefreshSuccess) ||
+                other.isRefreshSuccess == isRefreshSuccess) &&
             (identical(other.hasNext, hasNext) || other.hasNext == hasNext));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_items), total, page, pageSize, isRefreshSuccess, hasNext);
+      runtimeType,
+      const DeepCollectionEquality().hash(_items),
+      total,
+      page,
+      pageSize,
+      isRefreshSuccess,
+      hasNext);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_LoadMoreOutputCopyWith<T, _$_LoadMoreOutput<T>> get copyWith =>
-      __$$_LoadMoreOutputCopyWithImpl<T, _$_LoadMoreOutput<T>>(this, _$identity);
+      __$$_LoadMoreOutputCopyWithImpl<T, _$_LoadMoreOutput<T>>(
+          this, _$identity);
 }
 
 abstract class _LoadMoreOutput<T> extends LoadMoreOutput<T> {
@@ -228,5 +255,6 @@ abstract class _LoadMoreOutput<T> extends LoadMoreOutput<T> {
   bool get hasNext;
   @override
   @JsonKey(ignore: true)
-  _$$_LoadMoreOutputCopyWith<T, _$_LoadMoreOutput<T>> get copyWith => throw _privateConstructorUsedError;
+  _$$_LoadMoreOutputCopyWith<T, _$_LoadMoreOutput<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

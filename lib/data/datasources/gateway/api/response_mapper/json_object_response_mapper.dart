@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 
-import '../../../shared/shared.index.dart';
+import '../../shared/shared.dart';
 import 'base_response_mapper.dart';
 
 @Injectable()

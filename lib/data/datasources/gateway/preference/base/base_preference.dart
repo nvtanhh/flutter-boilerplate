@@ -40,6 +40,7 @@ abstract class BasePreference<T> {
 
       return;
     }
+
     await _box.put(key, value);
   }
 

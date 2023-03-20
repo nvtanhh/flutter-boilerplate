@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 
-import '../../../../../models/base/paged_list_response.dart';
-import '../../../shared/shared.index.dart';
+import '../../../../models/base/paged_list_response.dart';
+import '../../shared/shared.dart';
 import 'base_response_mapper.dart';
 
 @Injectable()

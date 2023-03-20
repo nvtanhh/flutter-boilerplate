@@ -6,6 +6,6 @@ import 'env_config.dart';
 
 Future<void> configApp({Flavor flavor = Flavor.dev}) async {
   await Hive.initFlutter();
-  await configureInjection();
+  configureInjection();
   await getIt<EnvConfig>().init(flavor: flavor);
 }

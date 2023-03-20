@@ -1,6 +1,6 @@
-import '../../../shared/shared.index.dart';
+import '../../shared/shared.dart';
 import 'json_array_response_mapper.dart';
-import 'json_object_reponse_mapper.dart';
+import 'json_object_response_mapper.dart';
 import 'paged_json_array_response_mapper.dart';
 
 abstract class BaseSuccessResponseMapper<I, O> {

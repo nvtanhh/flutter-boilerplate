@@ -15,7 +15,7 @@ class AccessTokenInterceptor extends BaseInterceptor {
     RequestInterceptorHandler handler,
   ) async {
     final accessToken = await getIt<AppPreferences>().accessToken;
-    if (accessToken != null && accessToken.isNotEmpty) {
+    if (accessToken.isNotEmpty) {
       options.headers['Authorization'] = 'Bearer $accessToken';
     }
   }

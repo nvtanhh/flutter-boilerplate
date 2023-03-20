@@ -11,11 +11,19 @@ class AppPreferences extends BasePreference<dynamic> {
     return this;
   }
 
-  Future<String?> get accessToken async {
-    return get(StorageConstants.accessTokenKey, encrypted: true) as Future<String?>;
+  Future<void> saveAccessToken(String value) async {
+    return put(StorageConstants.accessTokenKey, value, encrypted: true);
   }
 
-  Future<void> setAccessToken(String value) async {
-    return put(StorageConstants.accessTokenKey, value, encrypted: true);
+  Future<String> get accessToken async {
+    return get(StorageConstants.accessTokenKey, defaultValue: '', encrypted: true) as Future<String>;
+  }
+
+  Future<void> saveRefreshToken(String value) async {
+    return put(StorageConstants.refreshTokenKey, value, encrypted: true);
+  }
+
+  Future<String> get refreshToken async {
+    return get(StorageConstants.refreshTokenKey, defaultValue: '', encrypted: true) as Future<String>;
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'core/config/config.index.dart';
 import 'core/mixin/log_mixin.dart';
-import 'data/datasources/gateway/preference/app_preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,13 +39,6 @@ class _MyHomePageState extends State<MyHomePage> with LogMixin {
 
   void _incrementCounter() {
     try {
-      final appPreferences = getIt.get<AppPreferences>();
-      appPreferences.put(
-        'counter',
-        appPreferences.get('counter', defaultValue: 0) + 1,
-      );
-      logDebug(getIt.get<AppPreferences>().get('counter', defaultValue: 0).toString());
-
       setState(() {
         _counter++;
       });

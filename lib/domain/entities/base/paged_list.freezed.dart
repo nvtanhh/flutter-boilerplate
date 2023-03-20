@@ -22,19 +22,22 @@ mixin _$PagedList<T> {
   int get pageSize => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $PagedListCopyWith<T, PagedList<T>> get copyWith => throw _privateConstructorUsedError;
+  $PagedListCopyWith<T, PagedList<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PagedListCopyWith<T, $Res> {
-  factory $PagedListCopyWith(PagedList<T> value, $Res Function(PagedList<T>) then) =
+  factory $PagedListCopyWith(
+          PagedList<T> value, $Res Function(PagedList<T>) then) =
       _$PagedListCopyWithImpl<T, $Res, PagedList<T>>;
   @useResult
   $Res call({List<T> items, int total, int page, int pageSize});
 }
 
 /// @nodoc
-class _$PagedListCopyWithImpl<T, $Res, $Val extends PagedList<T>> implements $PagedListCopyWith<T, $Res> {
+class _$PagedListCopyWithImpl<T, $Res, $Val extends PagedList<T>>
+    implements $PagedListCopyWith<T, $Res> {
   _$PagedListCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -72,8 +75,10 @@ class _$PagedListCopyWithImpl<T, $Res, $Val extends PagedList<T>> implements $Pa
 }
 
 /// @nodoc
-abstract class _$$_PagedListCopyWith<T, $Res> implements $PagedListCopyWith<T, $Res> {
-  factory _$$_PagedListCopyWith(_$_PagedList<T> value, $Res Function(_$_PagedList<T>) then) =
+abstract class _$$_PagedListCopyWith<T, $Res>
+    implements $PagedListCopyWith<T, $Res> {
+  factory _$$_PagedListCopyWith(
+          _$_PagedList<T> value, $Res Function(_$_PagedList<T>) then) =
       __$$_PagedListCopyWithImpl<T, $Res>;
   @override
   @useResult
@@ -81,9 +86,12 @@ abstract class _$$_PagedListCopyWith<T, $Res> implements $PagedListCopyWith<T, $
 }
 
 /// @nodoc
-class __$$_PagedListCopyWithImpl<T, $Res> extends _$PagedListCopyWithImpl<T, $Res, _$_PagedList<T>>
+class __$$_PagedListCopyWithImpl<T, $Res>
+    extends _$PagedListCopyWithImpl<T, $Res, _$_PagedList<T>>
     implements _$$_PagedListCopyWith<T, $Res> {
-  __$$_PagedListCopyWithImpl(_$_PagedList<T> _value, $Res Function(_$_PagedList<T>) _then) : super(_value, _then);
+  __$$_PagedListCopyWithImpl(
+      _$_PagedList<T> _value, $Res Function(_$_PagedList<T>) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -117,7 +125,11 @@ class __$$_PagedListCopyWithImpl<T, $Res> extends _$PagedListCopyWithImpl<T, $Re
 /// @nodoc
 
 class _$_PagedList<T> extends _PagedList<T> {
-  const _$_PagedList({required final List<T> items, required this.total, required this.page, required this.pageSize})
+  const _$_PagedList(
+      {required final List<T> items,
+      required this.total,
+      required this.page,
+      required this.pageSize})
       : _items = items,
         super._();
 
@@ -149,11 +161,13 @@ class _$_PagedList<T> extends _PagedList<T> {
             const DeepCollectionEquality().equals(other._items, _items) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.page, page) || other.page == page) &&
-            (identical(other.pageSize, pageSize) || other.pageSize == pageSize));
+            (identical(other.pageSize, pageSize) ||
+                other.pageSize == pageSize));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_items), total, page, pageSize);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_items), total, page, pageSize);
 
   @JsonKey(ignore: true)
   @override
@@ -180,5 +194,6 @@ abstract class _PagedList<T> extends PagedList<T> {
   int get pageSize;
   @override
   @JsonKey(ignore: true)
-  _$$_PagedListCopyWith<T, _$_PagedList<T>> get copyWith => throw _privateConstructorUsedError;
+  _$$_PagedListCopyWith<T, _$_PagedList<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

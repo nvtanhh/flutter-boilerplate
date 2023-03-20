@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
-import '../../middleware/middleware.index.dart';
+import '../../interceptor/interceptor.dart';
 
 class ApiClientSettings {
   const ApiClientSettings._();

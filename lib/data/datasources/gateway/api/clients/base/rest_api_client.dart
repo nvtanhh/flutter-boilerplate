@@ -1,10 +1,9 @@
 import 'package:dio/dio.dart';
 
-import '../../../../../../core/config/config.index.dart';
 import '../../../../../../core/constants/constants.index.dart';
-import '../../../../../../core/exception/api/dio_exception_mapper.dart';
-import '../../../shared/shared.index.dart';
-import '../../mapper/response_mapper/base_response_mapper.dart';
+import '../../../../../../core/exception/api_exception.dart';
+import '../../../shared/shared.dart';
+import '../../response_mapper/base_response_mapper.dart';
 import 'rest_client_default_settings.dart';
 
 enum RestMethod { get, post, put, patch, delete }
@@ -35,6 +34,10 @@ class RestApiClient {
   final Dio _dio;
   final SuccessResponseMapperType successResponseMapperType;
 
+  Future<Response<T>> fetch<T>(RequestOptions requestOptions) {
+    return _dio.fetch(requestOptions);
+  }
+
   Future<T> request<T, D>({
     required RestMethod method,
     required String path,
@@ -56,29 +59,34 @@ class RestApiClient {
       return BaseSuccessResponseMapper<D, T>.fromType(
         successResponseMapperType ?? this.successResponseMapperType,
       ).map(response.data, decoder);
+    } on DioError catch (error) {
+      throw ApiException.fromDioError(error);
     } catch (error) {
-      throw getIt<DioExceptionMapper>().map(error);
+      rethrow;
     }
   }
 
-  Future<T> get<T, D>({
-    required String path,
+  Future<T> get<T, D>(
+    String path, {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
+    Decoder<D>? decoder,
   }) async {
     return request<T, D>(
       method: RestMethod.get,
       path: path,
       queryParameters: queryParameters,
       headers: headers,
+      decoder: decoder,
     );
   }
 
-  Future<T> post<T, D>({
-    required String path,
+  Future<T> post<T, D>(
+    String path, {
     Map<String, dynamic>? queryParameters,
     dynamic body,
     Map<String, dynamic>? headers,
+    Decoder<D>? decoder,
   }) async {
     return request<T, D>(
       method: RestMethod.post,
@@ -86,14 +94,16 @@ class RestApiClient {
       queryParameters: queryParameters,
       body: body,
       headers: headers,
+      decoder: decoder,
     );
   }
 
-  Future<T> put<T, D>({
-    required String path,
+  Future<T> put<T, D>(
+    String path, {
     Map<String, dynamic>? queryParameters,
     dynamic body,
     Map<String, dynamic>? headers,
+    Decoder<D>? decoder,
   }) async {
     return request<T, D>(
       method: RestMethod.put,
@@ -101,6 +111,7 @@ class RestApiClient {
       queryParameters: queryParameters,
       body: body,
       headers: headers,
+      decoder: decoder,
     );
   }
 
@@ -109,6 +120,7 @@ class RestApiClient {
     Map<String, dynamic>? queryParameters,
     dynamic body,
     Map<String, dynamic>? headers,
+    Decoder<D>? decoder,
   }) async {
     return request<T, D>(
       method: RestMethod.patch,
@@ -116,14 +128,16 @@ class RestApiClient {
       queryParameters: queryParameters,
       body: body,
       headers: headers,
+      decoder: decoder,
     );
   }
 
-  Future<T> delete<T, D>({
-    required String path,
+  Future<T> delete<T, D>(
+    String path, {
     Map<String, dynamic>? queryParameters,
     dynamic body,
     Map<String, dynamic>? headers,
+    Decoder<D>? decoder,
   }) async {
     return request<T, D>(
       method: RestMethod.delete,
@@ -131,6 +145,7 @@ class RestApiClient {
       queryParameters: queryParameters,
       body: body,
       headers: headers,
+      decoder: decoder,
     );
   }
 
