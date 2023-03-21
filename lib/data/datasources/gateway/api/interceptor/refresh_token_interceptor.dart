@@ -13,7 +13,7 @@ class RefreshTokenInterceptor extends BaseInterceptor {
   RefreshTokenInterceptor(this._repository, this._client);
 
   final RefreshTokenRepository _repository;
-  final AuthenticatedRestApiClient _client;
+  final UnAuthenticatedRestApiClient _client;
 
   bool _isRefreshing = false;
   final Queue _pendingRequests = Queue<PendingRequest>();
