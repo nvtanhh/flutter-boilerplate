@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:injectable/injectable.dart';
 
 import '../../../../../core/constants/constants.index.dart';
 import 'base_interceptor.dart';

@@ -1,18 +1,18 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'paged_list_response.g.dart';
+part 'paged_list_model.g.dart';
 
 @JsonSerializable(genericArgumentFactories: true)
-class PagedListResponse<T> {
-  PagedListResponse({
+class PagedListModel<T> {
+  PagedListModel({
     required this.items,
     this.total,
     this.page,
     this.pageSize,
   });
 
-  factory PagedListResponse.fromJson(Map<String, dynamic> json, T Function(dynamic) fromJsonT) =>
-      _$PagedListResponseFromJson(json, fromJsonT);
+  factory PagedListModel.fromJson(Map<String, dynamic> json, T Function(Object? json) fromJsonT) =>
+      _$PagedListModelFromJson(json, fromJsonT);
 
   final List<T> items;
   final int? total;

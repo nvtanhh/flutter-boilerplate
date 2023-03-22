@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'refresh_token_data.dart';
+part of 'refresh_token_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-RefreshTokenData _$RefreshTokenDataFromJson(Map<String, dynamic> json) =>
-    RefreshTokenData(
+RefreshTokenModel _$RefreshTokenModelFromJson(Map<String, dynamic> json) =>
+    RefreshTokenModel(
       json['access_token'] as String,
     );
 
-Map<String, dynamic> _$RefreshTokenDataToJson(RefreshTokenData instance) =>
+Map<String, dynamic> _$RefreshTokenModelToJson(RefreshTokenModel instance) =>
     <String, dynamic>{
       'access_token': instance.accessToken,
     };

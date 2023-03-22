@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
 import 'base/app_exception.dart';
 
@@ -22,6 +23,10 @@ class ApiException extends AppException {
     }
 
     return ApiException(ApiExceptionType.unknown, exception: error);
+  }
+
+  factory ApiException.fromGraphql(OperationException exception) {
+    return ApiException(ApiExceptionType.unknown, exception: exception);
   }
 
   final ApiExceptionType type;

@@ -1,7 +1,6 @@
 import 'package:injectable/injectable.dart';
 
 import '../../../../../core/config/config.index.dart';
-import '../../../../../core/config/env_config.dart';
 import '../interceptor/interceptor.dart';
 import 'base/rest_api_client.dart';
 

@@ -4,20 +4,20 @@ import '../../../../../../core/constants/constants.index.dart';
 import '../../../../../../core/exception/api_exception.dart';
 import '../../../shared/shared.dart';
 import '../../response_mapper/base_response_mapper.dart';
-import 'rest_client_default_settings.dart';
+import 'api_client_default_settings.dart';
 
 enum RestMethod { get, post, put, patch, delete }
 
 class RestApiClient {
   RestApiClient({
     required this.baseUrl,
-    this.connectTimeoutInMs,
     this.interceptors = const [],
+    this.connectTimeoutInMs = const Duration(microseconds: ApiConstants.connectTimeoutInMs),
     this.successResponseMapperType = ApiConstants.defaultSuccessResponseMapperType,
   }) : _dio = Dio(
           BaseOptions(
             baseUrl: baseUrl,
-            connectTimeout: connectTimeoutInMs ?? const Duration(microseconds: ApiConstants.connectTimeoutInMs),
+            connectTimeout: connectTimeoutInMs,
           ),
         ) {
     final List<Interceptor> interceptors = [
