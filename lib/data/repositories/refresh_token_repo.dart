@@ -21,7 +21,7 @@ class RefreshTokenRepository {
         await _appPreferences.saveAccessToken(data.accessToken);
       }
     } on ApiException catch (e) {
-      throw ApiException(ApiExceptionType.refreshTokenFailed, exception: e);
+      throw ApiException(ApiExceptionKind.refreshTokenFailed, e);
     }
   }
 }

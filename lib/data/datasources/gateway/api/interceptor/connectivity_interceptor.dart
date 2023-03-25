@@ -15,7 +15,7 @@ class ConnectivityInterceptor extends BaseInterceptor {
       return handler.reject(
         DioError(
           requestOptions: options,
-          error: ApiException(ApiExceptionType.noInternet),
+          error: const ApiException(ApiExceptionKind.noInternet),
         ),
       );
     }

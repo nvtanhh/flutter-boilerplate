@@ -5,13 +5,15 @@ import 'package:flutter/material.dart';
 
 class AppLoading extends StatelessWidget {
   const AppLoading({
-    super.key,
     required this.size,
     required this.color,
+    required this.strokeWidth,
+    super.key,
   });
 
   final double size;
   final Color color;
+  final double strokeWidth;
 
   @override
   Widget build(BuildContext context) {

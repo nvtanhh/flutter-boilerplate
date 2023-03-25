@@ -1,1 +1,3 @@
-abstract class AppException implements Exception {}
+abstract class AppException implements Exception {
+  const AppException();
+}
