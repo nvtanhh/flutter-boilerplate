@@ -1,77 +1,25 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import 'core/config/config.index.dart';
-import 'core/mixin/log_mixin.dart';
+import 'core/utils/utils.index.dart';
+import 'presentation/app.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configApp();
+  await runZonedGuarded(_runMyApp, _reportError);
+}
+
+Future<void> _runMyApp() async {
+  // Load initial resources here if needed
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+void _reportError(Object error, StackTrace stackTrace) {
+  final logger = LogUtils.getLogger('Uncaught exception');
+  logger.e('', error, stackTrace);
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> with LogMixin {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    try {
-      setState(() {
-        _counter++;
-      });
-    } on Exception catch (e, stackTrace) {
-      logError('', e, stackTrace);
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
+  // report by Firebase Crashlytics here
 }

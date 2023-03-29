@@ -2,6 +2,10 @@ gen_code:
 	# generate the generated code
 	flutter pub run build_runner build --delete-conflicting-outputs
 
+gen_locale:
+	# generate the locale
+	flutter gen-l10n
+
 gen_splash:
 	# generate splash screen
 	flutter pub run flutter_native_splash:create --path=/yaml/splash.yaml

@@ -48,6 +48,8 @@ dependencies:
   flutter_bloc: ^8.1.2
   # navigation
   auto_route: ^6.0.1
+  # UI
+  flutter_screenutil: ^5.7.0
 
 dev_dependencies:
   flutter_test:
@@ -85,10 +87,10 @@ flutter_gen:
 
 flutter:
   uses-material-design: true
-  generate: false
+  generate: true
 
   assets:
-    - .env
+    - assets/env/
     - assets/images/
 
   # fonts:
