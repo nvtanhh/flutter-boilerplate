@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 class LocaleConstants {
   LocaleConstants._();
 
-  static const supportedLocales = ['en', 'vi'];
+  static final supportedLocales = _supportedLocalesCode.map((e) => Locale(e)).toList();
+  static const _supportedLocalesCode = ['en', 'vi'];
 
   static const String defaultLocale = 'en';
 }

@@ -10,9 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   cupertino_icons: ^1.0.2
-  intl: ^0.18.0
+  intl: ^0.17.0
   # load env
   flutter_dotenv: ^5.0.2
   # code generator
@@ -46,6 +48,7 @@ dependencies:
   ## ==== UI ==== ##
   # state management
   flutter_bloc: ^8.1.2
+  hydrated_bloc: ^9.1.0
   # navigation
   auto_route: ^6.0.1
   # UI

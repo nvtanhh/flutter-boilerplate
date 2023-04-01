@@ -2,9 +2,11 @@ part of 'app_bloc.dart';
 
 @freezed
 class AppState with _$AppState {
-  const factory AppState.initial({
+  const factory AppState({
     @Default(LocaleConstants.defaultLocale) String locale,
     @Default(false) bool isLoggedIn,
     @Default(false) bool isDarkTheme,
-  }) = _Initial;
+  }) = _AppState;
+
+  factory AppState.fromJson(Map<String, dynamic> json) => _$AppStateFromJson(json);
 }

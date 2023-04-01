@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-import '../../../../../core/constants/constants.index.dart';
+import '../../../../../core/constants/constants.dart';
 import 'base_interceptor.dart';
 
 class RetryInterceptor extends BaseInterceptor {

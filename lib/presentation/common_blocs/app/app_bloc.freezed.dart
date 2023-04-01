@@ -435,46 +435,17 @@ abstract class _AppInitiated implements AppInitiated {
   const factory _AppInitiated() = _$_AppInitiated;
 }
 
+AppState _$AppStateFromJson(Map<String, dynamic> json) {
+  return _AppState.fromJson(json);
+}
+
 /// @nodoc
 mixin _$AppState {
   String get locale => throw _privateConstructorUsedError;
   bool get isLoggedIn => throw _privateConstructorUsedError;
   bool get isDarkTheme => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String locale, bool isLoggedIn, bool isDarkTheme)
-        initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String locale, bool isLoggedIn, bool isDarkTheme)?
-        initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String locale, bool isLoggedIn, bool isDarkTheme)? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AppStateCopyWith<AppState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -523,20 +494,21 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory _$$_AppStateCopyWith(
+          _$_AppState value, $Res Function(_$_AppState) then) =
+      __$$_AppStateCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String locale, bool isLoggedIn, bool isDarkTheme});
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$AppStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$_AppStateCopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$_AppState>
+    implements _$$_AppStateCopyWith<$Res> {
+  __$$_AppStateCopyWithImpl(
+      _$_AppState _value, $Res Function(_$_AppState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -546,7 +518,7 @@ class __$$_InitialCopyWithImpl<$Res>
     Object? isLoggedIn = null,
     Object? isDarkTheme = null,
   }) {
-    return _then(_$_Initial(
+    return _then(_$_AppState(
       locale: null == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
@@ -564,12 +536,15 @@ class __$$_InitialCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-class _$_Initial implements _Initial {
-  const _$_Initial(
+@JsonSerializable()
+class _$_AppState implements _AppState {
+  const _$_AppState(
       {this.locale = LocaleConstants.defaultLocale,
       this.isLoggedIn = false,
       this.isDarkTheme = false});
+
+  factory _$_AppState.fromJson(Map<String, dynamic> json) =>
+      _$$_AppStateFromJson(json);
 
   @override
   @JsonKey()
@@ -583,14 +558,14 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'AppState.initial(locale: $locale, isLoggedIn: $isLoggedIn, isDarkTheme: $isDarkTheme)';
+    return 'AppState(locale: $locale, isLoggedIn: $isLoggedIn, isDarkTheme: $isDarkTheme)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Initial &&
+            other is _$_AppState &&
             (identical(other.locale, locale) || other.locale == locale) &&
             (identical(other.isLoggedIn, isLoggedIn) ||
                 other.isLoggedIn == isLoggedIn) &&
@@ -598,79 +573,31 @@ class _$_Initial implements _Initial {
                 other.isDarkTheme == isDarkTheme));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, locale, isLoggedIn, isDarkTheme);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InitialCopyWith<_$_Initial> get copyWith =>
-      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
+  _$$_AppStateCopyWith<_$_AppState> get copyWith =>
+      __$$_AppStateCopyWithImpl<_$_AppState>(this, _$identity);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String locale, bool isLoggedIn, bool isDarkTheme)
-        initial,
-  }) {
-    return initial(locale, isLoggedIn, isDarkTheme);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String locale, bool isLoggedIn, bool isDarkTheme)?
-        initial,
-  }) {
-    return initial?.call(locale, isLoggedIn, isDarkTheme);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String locale, bool isLoggedIn, bool isDarkTheme)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(locale, isLoggedIn, isDarkTheme);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
+  Map<String, dynamic> toJson() {
+    return _$$_AppStateToJson(
+      this,
+    );
   }
 }
 
-abstract class _Initial implements AppState {
-  const factory _Initial(
+abstract class _AppState implements AppState {
+  const factory _AppState(
       {final String locale,
       final bool isLoggedIn,
-      final bool isDarkTheme}) = _$_Initial;
+      final bool isDarkTheme}) = _$_AppState;
+
+  factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
 
   @override
   String get locale;
@@ -680,6 +607,6 @@ abstract class _Initial implements AppState {
   bool get isDarkTheme;
   @override
   @JsonKey(ignore: true)
-  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+  _$$_AppStateCopyWith<_$_AppState> get copyWith =>
       throw _privateConstructorUsedError;
 }

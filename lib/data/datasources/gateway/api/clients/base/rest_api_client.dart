@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../../../../../../core/constants/constants.index.dart';
+import '../../../../../../core/constants/constants.dart';
 import '../../../../../../core/exception/api_exception.dart';
 import '../../../shared/shared.dart';
 import '../../response_mapper/base_response_mapper.dart';

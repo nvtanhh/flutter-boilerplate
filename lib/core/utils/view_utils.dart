@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../constants/constants.index.dart';
+import '../constants/constants.dart';
 
 class ViewUtils {
   const ViewUtils._();

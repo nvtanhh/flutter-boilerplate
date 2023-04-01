@@ -1,15 +1,16 @@
 import 'dart:async';
 
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 import '../../../core/constants/locale_constants.dart';
 
 part 'app_event.dart';
 part 'app_state.dart';
 part 'app_bloc.freezed.dart';
+part 'app_bloc.g.dart';
 
-class AppBloc extends Bloc<AppEvent, AppState> {
-  AppBloc() : super(const _Initial()) {
+class AppBloc extends Bloc<AppEvent, AppState> with HydratedMixin {
+  AppBloc() : super(const AppState()) {
     on<IsLoggedInStatusChanged>(_onIsLoggedInStatusChanged);
 
     on<AppThemeChanged>(_onAppThemeChanged);
@@ -32,4 +33,14 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   }
 
   FutureOr<void> _onAppInitiated(AppInitiated event, Emitter<AppState> emit) {}
+
+  @override
+  AppState? fromJson(Map<String, dynamic> json) {
+    return AppState.fromJson(json);
+  }
+
+  @override
+  Map<String, dynamic>? toJson(AppState state) {
+    return state.toJson();
+  }
 }

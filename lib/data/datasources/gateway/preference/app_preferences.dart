@@ -1,5 +1,5 @@
 // ignore_for_file: member-ordering
-import '../../../../core/constants/constants.index.dart';
+import '../../../../core/constants/constants.dart';
 import 'base/base_preference.dart';
 
 class AppPreferences extends BasePreference<dynamic> {

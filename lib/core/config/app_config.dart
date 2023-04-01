@@ -1,5 +1,7 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:path_provider/path_provider.dart';
 
 import '../../presentation/base/app_bloc_observer.dart';
 import '../constants/env_constants.dart';
@@ -15,4 +17,7 @@ Future<void> configApp({Flavor flavor = Flavor.dev}) async {
 
 Future<void> _configBloc() async {
   Bloc.observer = AppBlocObserver();
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: kIsWeb ? HydratedStorage.webStorageDirectory : await getTemporaryDirectory(),
+  );
 }

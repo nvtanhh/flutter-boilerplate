@@ -4,7 +4,7 @@ import 'package:gql_dio_link/gql_dio_link.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 import '../../../../../../core/config/config.index.dart';
-import '../../../../../../core/constants/constants.index.dart';
+import '../../../../../../core/constants/constants.dart';
 import '../../../../../../core/exception/api_exception.dart';
 import '../../../shared/shared.dart';
 import '../../response_mapper/base_response_mapper.dart';
