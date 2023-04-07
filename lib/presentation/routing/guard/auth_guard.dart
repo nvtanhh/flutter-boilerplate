@@ -1,14 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../domain/usecases/auth/auth_usecases.dart';
 import '../router/router.dart';
 
 @Injectable()
 class AuthGuard extends AutoRouteGuard {
-  const AuthGuard();
+  const AuthGuard(this._isLoggedInUsecase);
 
-  // TODO(me): implement _isLoggedIn
-  bool get _isLoggedIn => false;
+  final IsLoggedInUsecase _isLoggedInUsecase;
+
+  bool get _isLoggedIn {
+    return _isLoggedInUsecase.execute();
+  }
 
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {

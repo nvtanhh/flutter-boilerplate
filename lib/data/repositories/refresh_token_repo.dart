@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 
 import '../../core/exception/api_exception.dart';
-import '../datasources/gateway/gateway.dart';
+import '../datasources/app_preferences.dart';
 import '../datasources/refresh_token_datasource.dart';
 
 @lazySingleton
@@ -14,7 +14,7 @@ class RefreshTokenRepository {
   // Refresh the access and save it to the preferences
   Future<void> refreshToken() async {
     try {
-      final refreshToken = await _appPreferences.refreshToken;
+      final refreshToken = await _appPreferences.getRefreshToken();
 
       if (refreshToken.isNotEmpty) {
         final data = await _datasource.refreshToken(refreshToken);

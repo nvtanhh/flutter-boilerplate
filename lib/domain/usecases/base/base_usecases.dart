@@ -14,10 +14,33 @@ abstract class BaseUseCase<Params extends BaseUsecaseParams, Output> with LogMix
   Output buildUseCase(Params params);
 }
 
+abstract class BaseSyncUseCase<Params extends BaseUsecaseParams, Output> extends BaseUseCase<Params, Output> {
+  const BaseSyncUseCase();
+
+  Output execute([Params params = const NoParam() as Params]) {
+    try {
+      if (LogConfig.enableLogUseCaseInput) {
+        logDebug('SyncUseCase params: $params');
+      }
+      final output = buildUseCase(params);
+      if (LogConfig.enableLogUseCaseOutput) {
+        logDebug('SyncUseCase Output: $output');
+      }
+
+      return output;
+    } catch (e) {
+      if (LogConfig.enableLogUseCaseError) {
+        logError('SyncUseCase Error: $e');
+      }
+      rethrow;
+    }
+  }
+}
+
 abstract class BaseFutureUseCase<Params extends BaseUsecaseParams, Output> extends BaseUseCase<Params, Future<Output>> {
   const BaseFutureUseCase();
 
-  Future<Output> execute(Params params) async {
+  Future<Output> execute([Params params = const NoParam() as Params]) async {
     try {
       if (LogConfig.enableLogUseCaseInput) {
         logDebug('FutureUseCase params: $params');

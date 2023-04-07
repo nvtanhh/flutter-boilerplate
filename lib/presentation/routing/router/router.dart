@@ -17,7 +17,7 @@ class AppRouter extends _$AppRouter {
     AutoRoute(
       page: HomeRoute.page,
       path: RouteConstants.home,
-      guards: const [AuthGuard()],
+      guards: const [AuthGuard],
     ),
   ];
 }

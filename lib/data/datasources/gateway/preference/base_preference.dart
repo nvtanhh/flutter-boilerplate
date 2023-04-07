@@ -4,14 +4,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import '../../../../../core/constants/storage_constants.dart';
+import '../../../../core/constants/storage_constants.dart';
 
 // A HIVE facade for the app preferences
 abstract class BasePreference<T> {
   late final Box<T> _box;
   late final String _boxName;
-
-  Box get box => _box;
 
   @protected
   Future<void> setup(String boxName) async {
@@ -31,6 +29,12 @@ abstract class BasePreference<T> {
     }
   }
 
+  Future<void> _ensureBoxIsOpen() async {
+    if (!_box.isOpen) {
+      _box = await Hive.openBox<T>(_boxName);
+    }
+  }
+
   @protected
   Future<void> put(String key, T value, {bool encrypted = false}) async {
     if (encrypted) {
@@ -45,17 +49,18 @@ abstract class BasePreference<T> {
   }
 
   @protected
-  Future<T?> get(String key, {T? defaultValue, bool encrypted = false}) async {
-    if (encrypted) {
-      final encryptedBox = await _getEncryptedBox();
+  T? get(String key, {T? defaultValue}) {
+    return _box.get(key, defaultValue: defaultValue);
+  }
 
-      final result = encryptedBox.get(key, defaultValue: defaultValue);
-      await encryptedBox.close();
+  @protected
+  Future<T?> getEncrypted(String key, {T? defaultValue}) async {
+    final encryptedBox = await _getEncryptedBox();
 
-      return result;
-    } else {
-      return _box.get(key, defaultValue: defaultValue);
-    }
+    final result = encryptedBox.get(key, defaultValue: defaultValue);
+    await encryptedBox.close();
+
+    return result;
   }
 
   @protected

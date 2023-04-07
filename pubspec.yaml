@@ -60,7 +60,7 @@ dev_dependencies:
 
   # code generator
   build_runner: ^2.3.3
-  injectable_generator: ^2.1.4
+  injectable_generator: ^2.1.5
   freezed: ^2.3.2
   json_serializable: ^6.6.0
   auto_route_generator: ^6.0.0
