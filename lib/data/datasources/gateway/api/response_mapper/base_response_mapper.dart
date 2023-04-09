@@ -3,17 +3,17 @@ import 'json_array_response_mapper.dart';
 import 'json_object_response_mapper.dart';
 import 'paged_json_array_response_mapper.dart';
 
-abstract class BaseSuccessResponseMapper<I, O> {
-  const BaseSuccessResponseMapper();
+abstract class SuccessResponseMapper<I, O> {
+  const SuccessResponseMapper();
 
-  factory BaseSuccessResponseMapper.fromType(SuccessResponseMapperType type) {
+  factory SuccessResponseMapper.fromType(SuccessResponseMapperType type) {
     switch (type) {
       case SuccessResponseMapperType.jsonObject:
-        return JsonObjectResponseMapper<I>() as BaseSuccessResponseMapper<I, O>;
+        return JsonObjectResponseMapper<I>() as SuccessResponseMapper<I, O>;
       case SuccessResponseMapperType.jsonArray:
-        return JsonArrayResponseMapper<I>() as BaseSuccessResponseMapper<I, O>;
+        return JsonArrayResponseMapper<I>() as SuccessResponseMapper<I, O>;
       case SuccessResponseMapperType.pagedListJsonArray:
-        return RecordsJsonArrayResponseMapper<I>() as BaseSuccessResponseMapper<I, O>;
+        return RecordsJsonArrayResponseMapper<I>() as SuccessResponseMapper<I, O>;
     }
   }
 

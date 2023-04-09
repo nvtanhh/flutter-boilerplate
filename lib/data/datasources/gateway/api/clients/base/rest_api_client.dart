@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 
+import '../../../../../../core/config/config.index.dart';
 import '../../../../../../core/constants/constants.dart';
-import '../../../../../../core/exception/api_exception.dart';
+import '../../../../../../core/exception/exception.dart';
 import '../../../shared/shared.dart';
 import '../../response_mapper/base_response_mapper.dart';
 import 'api_client_default_settings.dart';
@@ -56,11 +57,11 @@ class RestApiClient {
         options: Options(headers: headers),
       );
 
-      return BaseSuccessResponseMapper<D, T>.fromType(
+      return SuccessResponseMapper<D, T>.fromType(
         successResponseMapperType ?? this.successResponseMapperType,
       ).map(response.data, decoder);
     } on DioError catch (error) {
-      throw ApiException.fromDioError(error);
+      throw getIt<ApiExceptionMapper>().map(error);
     } catch (error) {
       rethrow;
     }

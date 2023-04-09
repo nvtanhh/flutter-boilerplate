@@ -4,8 +4,8 @@ import '../../../../models/base/paged_list_model.dart';
 import '../../shared/shared.dart';
 import 'base_response_mapper.dart';
 
-@Injectable()
-class RecordsJsonArrayResponseMapper<T> extends BaseSuccessResponseMapper<T, PagedListModel<T>> {
+@injectable
+class RecordsJsonArrayResponseMapper<T> extends SuccessResponseMapper<T, PagedListModel<T>> {
   @override
   PagedListModel<T> map(dynamic response, Decoder<T>? decoder) {
     return decoder != null && response is Map<String, dynamic>

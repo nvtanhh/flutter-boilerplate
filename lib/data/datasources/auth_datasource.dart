@@ -31,7 +31,6 @@ class AuthDataSourceImpl implements AuthDataSource {
 
   @override
   Future<void> register({required String username, required String email, required String password}) {
-    // TODO: implement register
     throw UnimplementedError();
   }
 
@@ -42,19 +41,16 @@ class AuthDataSourceImpl implements AuthDataSource {
 
   @override
   Future<void> logout() {
-    // TODO: implement logout
     throw UnimplementedError();
   }
 
   @override
   Future<void> forgotPassword(String email) {
-    // TODO: implement forgotPassword
     throw UnimplementedError();
   }
 
   @override
   Future<void> resetPassword({required String token, required String email, required String password}) {
-    // TODO: implement resetPassword
     throw UnimplementedError();
   }
 }

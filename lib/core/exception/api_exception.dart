@@ -1,33 +1,11 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 
 import 'base/app_exception.dart';
 
 class ApiException extends AppException {
   const ApiException(this.kind, [this.exception]);
-
-  factory ApiException.fromDioError(DioError error) {
-    switch (error.type) {
-      case DioErrorType.connectionTimeout:
-      case DioErrorType.sendTimeout:
-      case DioErrorType.receiveTimeout:
-        return ApiException(ApiExceptionKind.timeout, error);
-      case DioErrorType.connectionError:
-        return ApiException(ApiExceptionKind.network, error);
-      case DioErrorType.cancel:
-        return ApiException(ApiExceptionKind.cancellation, error);
-      default:
-        break;
-    }
-
-    return ApiException(ApiExceptionKind.unknown, error);
-  }
-
-  factory ApiException.fromGraphql(OperationException exception) {
-    return ApiException(ApiExceptionKind.unknown, exception);
-  }
 
   final ApiExceptionKind kind;
   final Object? exception;
