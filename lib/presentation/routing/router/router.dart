@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../core/config/config.index.dart';
 import '../../../core/constants/route_constants.dart';
 import '../../features/features.dart';
 import '../guard/auth_guard.dart';
@@ -17,7 +18,7 @@ class AppRouter extends _$AppRouter {
     AutoRoute(
       page: HomeRoute.page,
       path: RouteConstants.home,
-      guards: const [AuthGuard],
+      guards: [getIt.get<AuthGuard>()],
     ),
   ];
 }

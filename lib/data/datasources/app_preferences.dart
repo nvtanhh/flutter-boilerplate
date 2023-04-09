@@ -1,9 +1,6 @@
-import 'package:injectable/injectable.dart';
-
 import '../../core/constants/constants.dart';
 import 'gateway/preference/base_preference.dart';
 
-@lazySingleton
 class AppPreferences extends BasePreference<dynamic> {
   final boxName = StorageConstants.appPreferencesBox;
 

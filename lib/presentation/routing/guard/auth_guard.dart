@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 import '../../../domain/usecases/auth/auth_usecases.dart';
 import '../router/router.dart';
 
-@Injectable()
+@injectable
 class AuthGuard extends AutoRouteGuard {
   const AuthGuard(this._isLoggedInUsecase);
 
