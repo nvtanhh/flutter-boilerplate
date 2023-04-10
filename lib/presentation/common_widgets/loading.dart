@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AppLoading extends StatelessWidget {
-  const AppLoading({
+class AppDefaultLoading extends StatelessWidget {
+  const AppDefaultLoading({
     required this.size,
     required this.color,
     required this.strokeWidth,

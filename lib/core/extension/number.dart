@@ -1,4 +1,4 @@
-extension NumExtensions on num {
+extension NumberExtensions on num {
   num plus(num other) {
     return this + other;
   }

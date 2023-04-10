@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../core/config/logging_config.dart';
-import '../../core/mixin/log_mixin.dart';
+import '../../../core/config/logging_config.dart';
+import '../../../core/mixin/log_mixin.dart';
 
 class AppBlocObserver extends BlocObserver with LogMixin {
   AppBlocObserver({

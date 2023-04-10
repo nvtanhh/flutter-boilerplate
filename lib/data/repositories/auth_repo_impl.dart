@@ -26,11 +26,6 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<void> logout() {
-    throw UnimplementedError();
-  }
-
-  @override
   Future<void> forgotPassword(String email) {
     throw UnimplementedError();
   }
@@ -41,6 +36,21 @@ class AuthRepositoryImpl implements AuthRepository {
     required String email,
     required String password,
   }) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> clearCurrentUserData() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> clearTokens() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> logout() {
     throw UnimplementedError();
   }
 }

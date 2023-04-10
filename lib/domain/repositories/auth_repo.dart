@@ -9,8 +9,6 @@ abstract class AuthRepository {
 
   Future<void> login(String email, String password);
 
-  Future<void> logout();
-
   Future<void> resetPassword({
     required String token,
     required String email,
@@ -18,4 +16,10 @@ abstract class AuthRepository {
   });
 
   Future<void> forgotPassword(String email);
+
+  Future<void> clearCurrentUserData();
+
+  Future<void> clearTokens();
+
+  Future<void> logout();
 }
