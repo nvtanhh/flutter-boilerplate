@@ -6,7 +6,6 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import '../../../../../../core/config/config.index.dart';
 import '../../../../../../core/constants/constants.dart';
 import '../../../../../../core/exception/exception.dart';
-import '../../../shared/shared.dart';
 import '../../response_mapper/base_response_mapper.dart';
 import 'api_client_default_settings.dart';
 

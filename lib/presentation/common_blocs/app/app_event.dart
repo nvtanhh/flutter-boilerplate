@@ -1,6 +1,6 @@
 part of 'app_bloc.dart';
 
-abstract class AppEvent {
+abstract class AppEvent extends BaseEvent {
   const AppEvent();
 }
 

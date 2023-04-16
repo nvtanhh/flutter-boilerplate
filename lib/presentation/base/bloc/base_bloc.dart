@@ -18,7 +18,7 @@ abstract class BaseBloc<E extends BaseEvent, S extends BaseState> extends Bloc<E
     _commonBloc = commonBloc;
   }
 
-  CommonBloc get commonBloc => this is CommonBloc ? this as CommonBloc : _commonBloc;
+  CommonBloc get commonBloc => _commonBloc;
 
   @override
   void add(E event) {

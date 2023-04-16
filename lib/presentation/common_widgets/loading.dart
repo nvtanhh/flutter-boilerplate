@@ -17,29 +17,24 @@ class AppDefaultLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Platform.isAndroid ? _buildAndroid() : _buildIOS();
-  }
-
-  Widget _buildAndroid() {
     return Center(
       child: SizedBox.square(
         dimension: size,
-        child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(color),
-        ),
+        child: Platform.isAndroid ? _buildAndroidLoading() : _buildIOSLoading(),
       ),
     );
   }
 
-  Widget _buildIOS() {
-    return Center(
-      child: SizedBox.square(
-        dimension: size,
-        child: CupertinoActivityIndicator(
-          color: color,
-          radius: size / 2,
-        ),
-      ),
+  Widget _buildAndroidLoading() {
+    return CircularProgressIndicator(
+      valueColor: AlwaysStoppedAnimation<Color>(color),
+    );
+  }
+
+  Widget _buildIOSLoading() {
+    return CupertinoActivityIndicator(
+      color: color,
+      radius: size / 2,
     );
   }
 }

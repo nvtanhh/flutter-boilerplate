@@ -1,7 +1,14 @@
-import '../../shared/shared.dart';
 import 'json_array_response_mapper.dart';
 import 'json_object_response_mapper.dart';
 import 'paged_json_array_response_mapper.dart';
+
+typedef Decoder<T> = T Function(Map<String, dynamic> data);
+
+enum SuccessResponseMapperType {
+  jsonObject,
+  jsonArray,
+  pagedListJsonArray,
+}
 
 abstract class SuccessResponseMapper<I, O> {
   const SuccessResponseMapper();

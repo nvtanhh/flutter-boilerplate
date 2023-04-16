@@ -1,4 +1,4 @@
-import '../../data/datasources/gateway/shared/enums.dart';
+import '../../data/datasources/gateway/api/api.dart';
 
 class ApiConstants {
   const ApiConstants._();

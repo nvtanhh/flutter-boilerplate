@@ -1,7 +1,7 @@
 part of 'app_bloc.dart';
 
 @freezed
-class AppState with _$AppState {
+class AppState extends BaseState with _$AppState {
   const factory AppState({
     @Default(LocaleConstants.defaultLocale) String locale,
     @Default(false) bool isLoggedIn,

@@ -3,13 +3,14 @@ import 'dart:async';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import '../../../core/constants/locale_constants.dart';
+import '../../base/bloc/base_bloc.dart';
 
 part 'app_event.dart';
 part 'app_state.dart';
 part 'app_bloc.freezed.dart';
 part 'app_bloc.g.dart';
 
-class AppBloc extends Bloc<AppEvent, AppState> with HydratedMixin {
+class AppBloc extends BaseBloc<AppEvent, AppState> with HydratedMixin {
   AppBloc() : super(const AppState()) {
     on<IsLoggedInStatusChanged>(_onIsLoggedInStatusChanged);
 

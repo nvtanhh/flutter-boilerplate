@@ -3,12 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/config/config.index.dart';
 import '../../core/mixin/log_mixin.dart';
+import '../common_blocs/app/app_bloc.dart';
 import 'bloc/base_bloc.dart';
 import 'bloc/common/common_bloc.dart';
 
 abstract class BasePageState<P extends StatefulWidget, B extends BaseBloc> extends State<P> with LogMixin {
-  final B _bloc = getIt<B>();
+  final AppBloc appBloc = getIt.get<AppBloc>();
   final CommonBloc commonBloc = getIt<CommonBloc>();
+
+  late final B _bloc = getIt<B>()..commonBloc = commonBloc;
 
   B get bloc => _bloc;
 
