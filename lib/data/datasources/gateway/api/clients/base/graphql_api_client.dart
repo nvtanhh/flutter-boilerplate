@@ -93,7 +93,7 @@ class GraphQLApiClient {
       throw getIt<ApiExceptionMapper>().map(response.exception!);
     }
 
-    return SuccessResponseMapper<T, T>.fromType(SuccessResponseMapperType.jsonObject).map(response.data, decoder);
+    return SuccessResponseMapper<T, T>(SuccessResponseMapperType.jsonObject).map(response.data, decoder);
   }
 
   Future<QueryResult> _requestByMethod({

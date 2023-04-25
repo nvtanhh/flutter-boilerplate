@@ -56,7 +56,7 @@ class RestApiClient {
         options: Options(headers: headers),
       );
 
-      return SuccessResponseMapper<D, T>.fromType(
+      return SuccessResponseMapper<D, T>(
         successResponseMapperType ?? this.successResponseMapperType,
       ).map(response.data, decoder);
     } on DioError catch (error) {

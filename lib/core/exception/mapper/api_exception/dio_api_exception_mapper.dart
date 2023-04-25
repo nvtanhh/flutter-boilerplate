@@ -24,9 +24,7 @@ class DioApiExceptionMapper implements ApiExceptionMapper {
       case DioErrorType.cancel:
         return ApiException(ApiExceptionKind.cancellation, exception);
       default:
-        break;
+        return ApiException(ApiExceptionKind.unknown, exception);
     }
-
-    return ApiException(ApiExceptionKind.unknown, exception);
   }
 }

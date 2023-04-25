@@ -11,9 +11,7 @@ enum SuccessResponseMapperType {
 }
 
 abstract class SuccessResponseMapper<I, O> {
-  const SuccessResponseMapper();
-
-  factory SuccessResponseMapper.fromType(SuccessResponseMapperType type) {
+  factory SuccessResponseMapper(SuccessResponseMapperType type) {
     switch (type) {
       case SuccessResponseMapperType.jsonObject:
         return JsonObjectResponseMapper<I>() as SuccessResponseMapper<I, O>;
