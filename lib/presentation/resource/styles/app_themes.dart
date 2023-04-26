@@ -3,37 +3,16 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 /// define custom themes here
-final lightTheme = ThemeData(
-  brightness: Brightness.light,
+final lightTheme = ThemeData.light().copyWith(
   splashColor: Colors.transparent,
-)..addAppColor(
-    AppThemeType.light,
-    AppColors.defaultAppColor,
-  );
+  extensions: <ThemeExtension<dynamic>>[AppColors.lightThemeColors()],
+);
 
-final darkTheme = ThemeData(
-  brightness: Brightness.dark,
+final darkTheme = ThemeData.dark().copyWith(
   splashColor: Colors.transparent,
-)..addAppColor(
-    AppThemeType.dark,
-    AppColors.darkThemeColor,
-  );
-
-enum AppThemeType { light, dark }
+  extensions: <ThemeExtension<dynamic>>[AppColors.darkThemeColors()],
+);
 
 extension ThemeDataExtensions on ThemeData {
-  static final Map<AppThemeType, AppColors> _appColorMap = {};
-
-  void addAppColor(AppThemeType type, AppColors appColor) {
-    _appColorMap[type] = appColor;
-  }
-
-  AppColors get appColor {
-    return _appColorMap[AppThemeSetting.currentAppThemeType] ?? AppColors.defaultAppColor;
-  }
-}
-
-class AppThemeSetting {
-  const AppThemeSetting._();
-  static AppThemeType currentAppThemeType = AppThemeType.light;
+  AppColors get appColors => extension<AppColors>()!;
 }
