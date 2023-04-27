@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../core/extension/number.dart';
+import '../../../../core/extensions/number_extensions.dart';
 import '../../../../domain/usecases/auth/logout_usecase.dart';
 import '../../../routing/routing.dart';
 
