@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/exception/exception.dart';
+import '../../../core/helpers/helpers.dart';
 import '../../../core/mixin/log_mixin.dart';
 import 'common/common_bloc.dart';
 
@@ -14,11 +16,13 @@ abstract class BaseBloc<E extends BaseEvent, S extends BaseState> extends Bloc<E
 
   late final CommonBloc _commonBloc;
 
+  DisposeBag? _disposeBag;
+
   set commonBloc(CommonBloc commonBloc) {
     _commonBloc = commonBloc;
   }
 
-  CommonBloc get commonBloc => _commonBloc;
+  CommonBloc get commonBloc => this is CommonBloc ? this as CommonBloc : _commonBloc;
 
   @override
   void add(E event) {
@@ -27,6 +31,12 @@ abstract class BaseBloc<E extends BaseEvent, S extends BaseState> extends Bloc<E
     } else {
       logError('Cannot add new event $event because $runtimeType was closed');
     }
+  }
+
+  @protected
+  void addAutoDisposeItem(Object item) {
+    _disposeBag ??= DisposeBag();
+    _disposeBag!.addDisposable(item);
   }
 
   void showLoading() {
@@ -82,5 +92,13 @@ abstract class BaseBloc<E extends BaseEvent, S extends BaseState> extends Bloc<E
 
   void _onRefreshTokenFailed() {
     commonBloc.add(const ForceLogoutButtonPressed());
+  }
+
+  @mustCallSuper
+  @override
+  Future<void> close() {
+    _disposeBag?.dispose();
+
+    return super.close();
   }
 }

@@ -29,12 +29,6 @@ abstract class BasePreference<T> {
     }
   }
 
-  Future<void> _ensureBoxIsOpen() async {
-    if (!_box.isOpen) {
-      _box = await Hive.openBox<T>(_boxName);
-    }
-  }
-
   @protected
   Future<void> put(String key, T value, {bool encrypted = false}) async {
     if (encrypted) {

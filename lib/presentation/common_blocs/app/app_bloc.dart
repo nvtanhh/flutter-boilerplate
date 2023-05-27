@@ -21,6 +21,16 @@ class AppBloc extends BaseBloc<AppEvent, AppState> with HydratedMixin {
     on<AppInitiated>(_onAppInitiated);
   }
 
+  @override
+  AppState? fromJson(Map<String, dynamic> json) {
+    return AppState.fromJson(json);
+  }
+
+  @override
+  Map<String, dynamic>? toJson(AppState state) {
+    return state.toJson();
+  }
+
   void _onIsLoggedInStatusChanged(IsLoggedInStatusChanged event, Emitter<AppState> emit) {
     emit(state.copyWith(isLoggedIn: event.isLoggedIn));
   }
@@ -34,14 +44,4 @@ class AppBloc extends BaseBloc<AppEvent, AppState> with HydratedMixin {
   }
 
   FutureOr<void> _onAppInitiated(AppInitiated event, Emitter<AppState> emit) {}
-
-  @override
-  AppState? fromJson(Map<String, dynamic> json) {
-    return AppState.fromJson(json);
-  }
-
-  @override
-  Map<String, dynamic>? toJson(AppState state) {
-    return state.toJson();
-  }
 }

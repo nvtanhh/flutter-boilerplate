@@ -3,57 +3,86 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/config/config.index.dart';
 import '../../core/mixin/log_mixin.dart';
-import '../common_blocs/app/app_bloc.dart';
+import '../common_widgets/loading.dart';
 import 'bloc/base_bloc.dart';
 import 'bloc/common/common_bloc.dart';
 
 abstract class BasePageState<P extends StatefulWidget, B extends BaseBloc> extends State<P> with LogMixin {
-  final AppBloc appBloc = getIt.get<AppBloc>();
-  final CommonBloc commonBloc = getIt<CommonBloc>();
+  late final CommonBloc commonBloc;
+  late final B bloc;
 
-  late final B _bloc = getIt<B>()..commonBloc = commonBloc;
+  late Future<dynamic> _initBLocsFeature;
 
-  B get bloc => _bloc;
+  bool get useLoadingIndicator => false;
 
-  bool get isAppWidget => false;
+  @mustCallSuper
+  @override
+  void initState() {
+    super.initState();
+    _initBLocsFeature = _initBlocs();
+  }
+
+  void addFirstEvent() {}
+
+  Future _initBlocs() async {
+    commonBloc = await getIt.getAsync<CommonBloc>();
+
+    try {
+      bloc = getIt.get<B>();
+    } catch (e) {
+      bloc = await getIt.getAsync<B>();
+    }
+    bloc.commonBloc = commonBloc;
+
+    addFirstEvent();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (_) => bloc),
-        BlocProvider(create: (_) => commonBloc),
-      ],
-      child: buildPageListeners(
-        child: isAppWidget
-            ? buildPage(context)
-            : Stack(
-                children: [
-                  buildPage(context),
-                  BlocBuilder<CommonBloc, CommonState>(
-                    buildWhen: (previous, current) => previous.isLoading != current.isLoading,
-                    builder: (context, state) => Visibility(
-                      visible: state.isLoading,
-                      child: buildPageLoading(),
-                    ),
+    return FutureBuilder<dynamic>(
+      future: _initBLocsFeature,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child: AppDefaultLoading(),
+          );
+        }
+
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => bloc),
+            BlocProvider(create: (_) => commonBloc),
+          ],
+          child: buildPageListeners(
+            child: useLoadingIndicator
+                ? buildPage(context)
+                : Stack(
+                    children: [
+                      buildPage(context),
+                      BlocBuilder<CommonBloc, CommonState>(
+                        buildWhen: (previous, current) => previous.isLoading != current.isLoading,
+                        builder: (context, state) => Visibility(
+                          visible: state.isLoading,
+                          child: buildPageLoading(),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-      ),
+          ),
+        );
+      },
     );
   }
 
   Widget buildPageListeners({required Widget child}) => child;
 
-  Widget buildPageLoading() => const Center(
-        child: CircularProgressIndicator(),
-      );
+  Widget buildPageLoading() => const Center(child: AppDefaultLoading());
 
   Widget buildPage(BuildContext context);
 
   @override
   void dispose() {
-    _bloc.close();
+    bloc.close();
     super.dispose();
   }
 }

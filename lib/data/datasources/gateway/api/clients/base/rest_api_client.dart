@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 
 import '../../../../../../core/config/config.index.dart';
@@ -46,6 +48,7 @@ class RestApiClient {
     Decoder<D>? decoder,
     Map<String, dynamic>? headers,
     SuccessResponseMapperType? successResponseMapperType,
+    bool? returnRawResponse,
   }) async {
     try {
       final response = await _requestByMethod<T>(
@@ -56,9 +59,12 @@ class RestApiClient {
         options: Options(headers: headers),
       );
 
-      return SuccessResponseMapper<D, T>(
-        successResponseMapperType ?? this.successResponseMapperType,
-      ).map(response.data, decoder);
+      if (returnRawResponse ?? false) {
+        return response as T;
+      }
+
+      return SuccessResponseMapper<D, T>(successResponseMapperType ?? this.successResponseMapperType)
+          .map(response.data, decoder);
     } on DioError catch (error) {
       throw getIt<ApiExceptionMapper>().map(error);
     } catch (error) {
@@ -71,6 +77,8 @@ class RestApiClient {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
     Decoder<D>? decoder,
+    SuccessResponseMapperType? successResponseMapperType,
+    bool? returnRawResponse,
   }) async {
     return request<T, D>(
       method: RestMethod.get,
@@ -78,6 +86,7 @@ class RestApiClient {
       queryParameters: queryParameters,
       headers: headers,
       decoder: decoder,
+      returnRawResponse: returnRawResponse,
     );
   }
 
@@ -87,6 +96,8 @@ class RestApiClient {
     dynamic body,
     Map<String, dynamic>? headers,
     Decoder<D>? decoder,
+    SuccessResponseMapperType? successResponseMapperType,
+    bool? returnRawResponse,
   }) async {
     return request<T, D>(
       method: RestMethod.post,
@@ -95,6 +106,8 @@ class RestApiClient {
       body: body,
       headers: headers,
       decoder: decoder,
+      successResponseMapperType: successResponseMapperType,
+      returnRawResponse: returnRawResponse,
     );
   }
 
@@ -104,6 +117,8 @@ class RestApiClient {
     dynamic body,
     Map<String, dynamic>? headers,
     Decoder<D>? decoder,
+    SuccessResponseMapperType? successResponseMapperType,
+    bool? returnRawResponse,
   }) async {
     return request<T, D>(
       method: RestMethod.put,
@@ -112,6 +127,8 @@ class RestApiClient {
       body: body,
       headers: headers,
       decoder: decoder,
+      successResponseMapperType: successResponseMapperType,
+      returnRawResponse: returnRawResponse,
     );
   }
 
@@ -121,6 +138,8 @@ class RestApiClient {
     dynamic body,
     Map<String, dynamic>? headers,
     Decoder<D>? decoder,
+    SuccessResponseMapperType? successResponseMapperType,
+    bool? returnRawResponse,
   }) async {
     return request<T, D>(
       method: RestMethod.patch,
@@ -129,6 +148,8 @@ class RestApiClient {
       body: body,
       headers: headers,
       decoder: decoder,
+      successResponseMapperType: successResponseMapperType,
+      returnRawResponse: returnRawResponse,
     );
   }
 
@@ -138,6 +159,8 @@ class RestApiClient {
     dynamic body,
     Map<String, dynamic>? headers,
     Decoder<D>? decoder,
+    SuccessResponseMapperType? successResponseMapperType,
+    bool? returnRawResponse,
   }) async {
     return request<T, D>(
       method: RestMethod.delete,
@@ -146,6 +169,8 @@ class RestApiClient {
       body: body,
       headers: headers,
       decoder: decoder,
+      successResponseMapperType: successResponseMapperType,
+      returnRawResponse: returnRawResponse,
     );
   }
 
@@ -193,5 +218,51 @@ class RestApiClient {
           options: options,
         );
     }
+  }
+
+  Future<T> postMultiForm<T, D>(
+    String path, {
+    required Map<String, dynamic> body,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+    Decoder<D>? decoder,
+    SuccessResponseMapperType? successResponseMapperType,
+    bool? returnRawResponse,
+  }) async {
+    final form = await _parseMultiPartForm(body);
+
+    return request<T, D>(
+      method: RestMethod.post,
+      path: path,
+      queryParameters: queryParameters,
+      body: FormData.fromMap(form),
+      headers: headers,
+      decoder: decoder,
+      successResponseMapperType: successResponseMapperType,
+      returnRawResponse: returnRawResponse,
+    );
+  }
+
+  Future<Map<String, dynamic>> _parseMultiPartForm(Map<String, dynamic> body) async {
+    final form = <String, dynamic>{};
+
+    final bodyKeys = body.keys.toList();
+
+    for (final String key in bodyKeys) {
+      final dynamic value = body[key];
+
+      if (value is String || value is bool) {
+        form[key] = value.toString();
+      } else if (value is List) {
+        form[key] = value.map((dynamic item) => item.toString()).toList().join(',');
+      } else if (value is File) {
+        final fileName = value.path.split('/').last;
+        form[key] = await MultipartFile.fromFile(value.path, filename: fileName);
+      } else {
+        throw Exception('Unsupported multiform value type');
+      }
+    }
+
+    return form;
   }
 }

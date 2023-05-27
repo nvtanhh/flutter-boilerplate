@@ -7,16 +7,14 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../core/extensions/number_extensions.dart';
 import '../../../../domain/usecases/auth/logout_usecase.dart';
-import '../../../routing/routing.dart';
 
+part 'common_bloc.freezed.dart';
 part 'common_event.dart';
 part 'common_state.dart';
-part 'common_bloc.freezed.dart';
 
 @injectable
 class CommonBloc extends Bloc<CommonEvent, CommonState> {
   CommonBloc(
-    this._appNavigator,
     this._logoutUseCase,
   ) : super(const CommonState()) {
     on<LoadingVisibilityEmitted>(_onLoadingVisibilityEmitted);
@@ -24,7 +22,6 @@ class CommonBloc extends Bloc<CommonEvent, CommonState> {
     on<ForceLogoutButtonPressed>(_onForceLogoutButtonPressed);
   }
 
-  final AppNavigator _appNavigator;
   final LogoutUseCase _logoutUseCase;
 
   FutureOr<void> _onLoadingVisibilityEmitted(LoadingVisibilityEmitted event, Emitter<CommonState> emit) {

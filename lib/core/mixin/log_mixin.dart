@@ -1,6 +1,12 @@
 import '../utils/log_utils.dart';
 
 mixin LogMixin on Object {
+  void logInfo(Object? message) {
+    final logger = LogUtils.getLogger(runtimeType.toString());
+
+    logger.i(message);
+  }
+
   void logDebug(Object? message, {String? name}) {
     final logger = LogUtils.getLogger(name ?? runtimeType.toString());
 

@@ -202,7 +202,7 @@ packages:
     source: hosted
     version: "4.4.0"
   collection:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: collection
       sha256: cfc915e6923fe5ce6e153b0723c753045de46de1b4d63771530504004a45fae0
@@ -257,14 +257,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.17.2"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      sha256: e35129dc44c9118cee2a5603506d823bab99c68393879edb440e0090d07586be
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.5"
   dart_code_metrics:
     dependency: "direct dev"
     description:
@@ -329,6 +321,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.1"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -1006,7 +1006,7 @@ packages:
     source: hosted
     version: "4.1.0"
   rxdart:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: rxdart
       sha256: "0c7c0cedd93788d996e33041ffecda924cc54389199cde4e6a34b440f50044cb"
@@ -1029,6 +1029,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.3"
+  signalr_core:
+    dependency: "direct main"
+    description:
+      name: signalr_core
+      sha256: dca676372a00c051511591ed0e24521ff7aa4e9320a7fa778a1007f7f522c8c0
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -1074,6 +1082,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.3"
+  sse_client:
+    dependency: transitive
+    description:
+      name: sse_client
+      sha256: "71bd826430b41ab20a69d85bf2dfe9f11cfe222938e681ada1aea71fc8adf348"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0"
   stack_trace:
     dependency: transitive
     description:
@@ -1146,6 +1162,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
+  tuple:
+    dependency: transitive
+    description:
+      name: tuple
+      sha256: "0ea99cd2f9352b2586583ab2ce6489d1f95a5f6de6fb9492faaf97ae2060f0aa"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
   typed_data:
     dependency: transitive
     description:
