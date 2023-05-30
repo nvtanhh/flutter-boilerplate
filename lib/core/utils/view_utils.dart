@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../presentation/common_widgets/button.dart';
+import '../../presentation/resource/resource.dart';
 import '../constants/constants.dart';
+import '../extensions/context_extensions.dart';
 
 class ViewUtils {
   const ViewUtils._();
@@ -62,5 +65,86 @@ class ViewUtils {
     final renderBox = globalKey.currentContext?.findRenderObject() as RenderBox?;
 
     return renderBox?.size.height;
+  }
+
+  static Future<T?> showBottomSheet<T>(
+    BuildContext context, {
+    required Widget child,
+    Color? backgroundColor,
+    double? elevation,
+    ShapeBorder? shape,
+    Clip? clipBehavior,
+    Color? barrierColor,
+    bool enableDrag = true,
+    bool isDismissible = true,
+    bool useRootNavigator = true,
+    bool isScrollControlled = false,
+  }) {
+    return showModalBottomSheet<T>(
+      context: context,
+      builder: (_) => Padding(
+        padding: AppSpacing.edgeInsetsOnlyBottom16,
+        child: child,
+      ),
+      backgroundColor: backgroundColor,
+      elevation: elevation,
+      shape: shape ??
+          const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(Sizes.s20)),
+          ),
+      clipBehavior: clipBehavior,
+      barrierColor: barrierColor,
+      enableDrag: enableDrag,
+      isDismissible: isDismissible,
+      useRootNavigator: useRootNavigator,
+      isScrollControlled: isScrollControlled,
+    );
+  }
+
+  static void copyToClipboard(String text) {
+    Clipboard.setData(ClipboardData(text: text));
+  }
+
+  static void showToast(String message) {
+    throw UnimplementedError();
+    // Fluttertoast.showToast(
+    //   msg: message,
+    //   toastLength: Toast.LENGTH_SHORT,
+    //   gravity: ToastGravity.BOTTOM,
+    //   timeInSecForIosWeb: 1,
+    //   backgroundColor: AppColors.black,
+    //   textColor: AppColors.white,
+    //   fontSize: Sizes.s14,
+    // );
+  }
+
+  static Future<T?> showAlertDialog<T>(
+    BuildContext context, {
+    required String title,
+    required String message,
+    String? positiveText,
+    String? negativeText,
+    VoidCallback? onPositivePressed,
+    VoidCallback? onNegativePressed,
+  }) {
+    return showDialog<T>(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: [
+          if (negativeText != null)
+            TextButton(
+              onPressed: onNegativePressed ?? () => Navigator.pop(context),
+              child: Text(negativeText, style: AppTextStyles.labelLarge),
+            ),
+          if (positiveText != null)
+            AppButton.primary(
+              label: positiveText,
+              onPressed: onPositivePressed ?? context.pop,
+            ),
+        ],
+      ),
+    );
   }
 }

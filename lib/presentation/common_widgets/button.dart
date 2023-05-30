@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../core/extensions/extensions.dart';
 import '../resource/resource.dart';
 
-class MyButton extends StatelessWidget {
-  const MyButton.primary({
+class AppButton extends StatelessWidget {
+  const AppButton.primary({
     super.key,
     this.label,
     this.icon,
@@ -16,7 +16,7 @@ class MyButton extends StatelessWidget {
           'Label or icon must be provided.',
         );
 
-  const MyButton.secondary({
+  const AppButton.secondary({
     super.key,
     this.label,
     this.icon,

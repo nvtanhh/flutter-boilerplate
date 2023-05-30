@@ -22,6 +22,8 @@ class Sizes {
 
 // EdgeInsets
 class AppSpacing {
+  static const emptyBox = SizedBox.shrink();
+
   static const gapW4 = SizedBox(width: Sizes.s4);
   static const gapW8 = SizedBox(width: Sizes.s8);
   static const gapW12 = SizedBox(width: Sizes.s12);

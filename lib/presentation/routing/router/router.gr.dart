@@ -26,6 +26,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const LoginPage(),
       );
     },
+    WebviewRoute.name: (routeData) {
+      final args = routeData.argsAs<WebviewRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WebviewPage(
+          url: args.url,
+          key: args.key,
+        ),
+      );
+    },
   };
 }
 
@@ -55,4 +65,42 @@ class LoginRoute extends PageRouteInfo<void> {
   static const String name = 'LoginRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [WebviewPage]
+class WebviewRoute extends PageRouteInfo<WebviewRouteArgs> {
+  WebviewRoute({
+    required String url,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          WebviewRoute.name,
+          args: WebviewRouteArgs(
+            url: url,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'WebviewRoute';
+
+  static const PageInfo<WebviewRouteArgs> page =
+      PageInfo<WebviewRouteArgs>(name);
+}
+
+class WebviewRouteArgs {
+  const WebviewRouteArgs({
+    required this.url,
+    this.key,
+  });
+
+  final String url;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'WebviewRouteArgs{url: $url, key: $key}';
+  }
 }

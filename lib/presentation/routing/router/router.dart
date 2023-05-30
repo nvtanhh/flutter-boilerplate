@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../core/config/config.index.dart';
 import '../../../core/constants/route_constants.dart';
+import '../../common_widgets/web_view.dart';
 import '../../features/features.dart';
 import '../guard/auth_guard.dart';
 

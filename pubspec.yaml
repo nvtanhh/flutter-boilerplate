@@ -57,6 +57,11 @@ dependencies:
   go_router: ^6.5.7
   # UI
   flutter_screenutil: ^5.7.0
+  cached_network_image: ^3.2.3
+  flutter_inappwebview: ^5.7.2+3
+  flutter_svg: ^2.0.5
+  video_player: ^2.6.1
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   flutter_test:
@@ -99,6 +104,7 @@ flutter:
   assets:
     - assets/env/
     - assets/images/
+    - assets/icons/
 
   fonts:
     - family: Montserrat
