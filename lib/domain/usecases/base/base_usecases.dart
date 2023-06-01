@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../../../core/config/logging_config.dart';
 import '../../../core/constants/ui/paging_constants.dart';
+import '../../../core/extensions/extensions.dart';
 import '../../../core/mixin/log_mixin.dart';
 import '../../entities/base/paged_list.dart';
 import 'base_outputs.dart';
@@ -115,5 +116,13 @@ abstract class BaseLoadMoreUseCase<Params extends BaseUsecaseParams, Output>
 
       rethrow;
     }
+  }
+}
+
+abstract class BaseStreamUseCase<Input extends BaseUsecaseParams, Output> extends BaseUseCase<Input, Stream<Output>> {
+  const BaseStreamUseCase();
+
+  Stream<Output> execute(Input input) {
+    return buildUseCase(input).log(runtimeType.toString());
   }
 }
