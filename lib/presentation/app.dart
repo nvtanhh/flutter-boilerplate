@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                   );
                 },
                 routerConfig: _appRouter.config(
-                  initialRoutes: state.isLoggedIn ? [const HomeRoute()] : [const LoginRoute()],
+                  initialRoutes: state.isLoggedIn ? [const HomeRoute()] : [const SignInRoute()],
                   navigatorObservers: () => [AppNavigatorObserver()],
                 ),
                 themeMode: state.isDarkTheme ? ThemeMode.dark : ThemeMode.light,

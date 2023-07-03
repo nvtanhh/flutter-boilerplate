@@ -19,7 +19,7 @@ class AuthGuard extends AutoRouteGuard {
     if (_isLoggedIn) {
       resolver.next(true);
     } else {
-      router.push(const LoginRoute());
+      router.push(const SignInRoute());
       resolver.next(false);
     }
   }

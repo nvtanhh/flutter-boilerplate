@@ -15,7 +15,7 @@ part 'router.gr.dart';
 class AppRouter extends _$AppRouter {
   @override
   final List<AutoRoute> routes = [
-    AutoRoute(page: LoginRoute.page, path: RouteConstants.login),
+    AutoRoute(page: SignInRoute.page, path: RouteConstants.login),
     AutoRoute(
       page: HomeRoute.page,
       path: RouteConstants.home,

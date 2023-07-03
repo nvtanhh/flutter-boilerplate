@@ -16,12 +16,12 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<void> register({required String username, required String email, required String password}) {
+  Future<void> signUp({required String username, required String email, required String password}) {
     throw UnimplementedError();
   }
 
   @override
-  Future<void> login(String email, String password) {
+  Future<void> signIn(String email, String password) {
     throw UnimplementedError();
   }
 

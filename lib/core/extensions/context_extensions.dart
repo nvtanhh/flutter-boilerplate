@@ -31,7 +31,10 @@ extension ContextExtensions on BuildContext {
 
   // navigator
   StackRouter get router => AutoRouter.of(this);
-  Future<T?> push<T extends Object?>(PageRouteInfo route) => router.push(route);
+
+  Future<T?> push<T extends Object?>(Widget child) =>
+      Navigator.of(this).push<T>(MaterialPageRoute(builder: (_) => child));
+  Future<T?> pushRoute<T extends Object?>(PageRouteInfo route) => router.push(route);
   Future<T?> pushNamed<T extends Object?>(String routeName) => router.pushNamed(routeName);
   Future<T?> replace<T extends Object?>(PageRouteInfo route) => router.replace(route);
   void pop<T extends Object?>([T? result]) => router.pop(result);

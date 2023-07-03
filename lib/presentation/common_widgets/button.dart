@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/extensions/extensions.dart';
+import '../../core/extensions/context_extensions.dart';
 import '../resource/resource.dart';
 
 class AppButton extends StatelessWidget {
@@ -10,18 +10,22 @@ class AppButton extends StatelessWidget {
     this.icon,
     this.color,
     this.onPressed,
+    this.width,
+    this.height,
   })  : _primary = true,
         assert(
           label != null || icon != null,
           'Label or icon must be provided.',
         );
 
-  const AppButton.secondary({
+  const AppButton.outline({
     super.key,
     this.label,
     this.icon,
     this.color,
     this.onPressed,
+    this.width,
+    this.height,
   })  : _primary = false,
         assert(
           label != null || icon != null,
@@ -33,6 +37,8 @@ class AppButton extends StatelessWidget {
   final Color? color;
   final VoidCallback? onPressed;
   final bool _primary;
+  final double? width;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
@@ -48,16 +54,25 @@ class AppButton extends StatelessWidget {
 
     final finalColor = color ?? context.appColors.primaryColor;
 
-    return _primary
+    final button = _primary
         ? ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: finalColor),
             onPressed: onPressed,
             child: child,
           )
         : OutlinedButton(
-            style: OutlinedButton.styleFrom(backgroundColor: finalColor),
+            style: OutlinedButton.styleFrom(
+              side: BorderSide(color: finalColor),
+              foregroundColor: finalColor,
+            ),
             onPressed: onPressed,
             child: child,
           );
+
+    return SizedBox(
+      width: width,
+      height: height,
+      child: button,
+    );
   }
 }
