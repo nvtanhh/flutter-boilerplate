@@ -91,7 +91,7 @@ class CustomLogInterceptor extends BaseInterceptor with LogMixin {
   }
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     if (!_enableLogInterceptor || !enableLogErrorResponse) {
       handler.next(err);
 

@@ -29,7 +29,7 @@ class RetryInterceptor extends BaseInterceptor {
   }
 
   @override
-  Future<void> onError(DioError err, ErrorInterceptorHandler handler) async {
+  Future<void> onError(DioException err, ErrorInterceptorHandler handler) async {
     if (_maxRetries > 0 && shouldRetry(err)) {
       await Future<void>.delayed(_retryInterval);
       _maxRetries--;
@@ -45,7 +45,7 @@ class RetryInterceptor extends BaseInterceptor {
     return super.onError(err, handler);
   }
 
-  bool shouldRetry(DioError error) {
-    return error.type != DioErrorType.cancel && error.error != null && error.error is SocketException;
+  bool shouldRetry(DioException error) {
+    return error.type != DioExceptionType.cancel && error.error != null && error.error is SocketException;
   }
 }

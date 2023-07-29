@@ -1,3 +1,2 @@
-export 'guard/auth_guard.dart';
 export 'observer/navigator_observer.dart';
-export 'router/router.dart';
+export 'router/app_router.dart';

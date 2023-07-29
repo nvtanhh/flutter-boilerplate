@@ -13,7 +13,7 @@ class ConnectivityInterceptor extends BaseInterceptor {
 
     if (!isConnected) {
       return handler.reject(
-        DioError(
+        DioException(
           requestOptions: options,
           error: const ApiException(ApiExceptionKind.noInternet),
         ),

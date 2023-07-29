@@ -10,18 +10,18 @@ class DioApiExceptionMapper implements ApiExceptionMapper {
 
   @override
   ApiException map(Exception exception) {
-    if (exception is! DioError) {
+    if (exception is! DioException) {
       return ApiException(ApiExceptionKind.unknown, exception);
     }
 
     switch (exception.type) {
-      case DioErrorType.connectionTimeout:
-      case DioErrorType.sendTimeout:
-      case DioErrorType.receiveTimeout:
+      case DioExceptionType.connectionTimeout:
+      case DioExceptionType.sendTimeout:
+      case DioExceptionType.receiveTimeout:
         return ApiException(ApiExceptionKind.timeout, exception);
-      case DioErrorType.connectionError:
+      case DioExceptionType.connectionError:
         return ApiException(ApiExceptionKind.network, exception);
-      case DioErrorType.cancel:
+      case DioExceptionType.cancel:
         return ApiException(ApiExceptionKind.cancellation, exception);
       default:
         return ApiException(ApiExceptionKind.unknown, exception);

@@ -83,6 +83,7 @@ class AppIcons {
   static SvgGenImage menuRegular = Assets.icons.barsRegular;
   static SvgGenImage send = Assets.icons.paperPlaneTopSolid;
   static SvgGenImage emoji = Assets.icons.faceSmileLight;
+
   static const IconData close = Icons.close;
   static const IconData play = Icons.play_arrow;
 }

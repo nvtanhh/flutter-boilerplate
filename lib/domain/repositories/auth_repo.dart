@@ -1,6 +1,4 @@
 abstract class AuthRepository {
-  bool get isLoggedIn;
-
   Future<void> signUp({
     required String username,
     required String email,

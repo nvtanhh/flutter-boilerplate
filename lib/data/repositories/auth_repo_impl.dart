@@ -11,11 +11,6 @@ class AuthRepositoryImpl implements AuthRepository {
   final AuthDataSource _dataSource;
 
   @override
-  bool get isLoggedIn {
-    return true;
-  }
-
-  @override
   Future<void> signUp({required String username, required String email, required String password}) {
     throw UnimplementedError();
   }

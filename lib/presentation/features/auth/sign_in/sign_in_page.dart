@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +12,6 @@ import 'bloc/sign_in_bloc.dart';
 
 part 'sign_in_widgets.dart';
 
-@RoutePage()
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
 
@@ -31,7 +29,7 @@ class _SignInPageState extends BasePageState<SignInPage, SignInBloc> {
       listenWhen: (previous, current) => previous.isSignInSuccess != current.isSignInSuccess,
       listener: (context, state) {
         if (state.isSignInSuccess) {
-          context.popUntilRoot();
+          context.popUntilFirst();
         }
       },
       child: CommonScaffold(

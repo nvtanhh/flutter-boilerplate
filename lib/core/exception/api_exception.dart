@@ -13,8 +13,8 @@ class ApiException extends AppException {
   /// Returns the status code of the exception
   /// -1 is considered as unknown status code
   int get statusCode {
-    if (exception is DioError) {
-      return (exception as DioError).response?.statusCode ?? -1;
+    if (exception is DioException) {
+      return (exception as DioException).response?.statusCode ?? -1;
     }
 
     return -1;

@@ -19,7 +19,7 @@ class ApiExceptionMapperImpl implements ApiExceptionMapper {
 
   @override
   ApiException map(Exception exception) {
-    if (exception is DioError) {
+    if (exception is DioException) {
       return _dioApiExceptionMapper.map(exception);
     }
 

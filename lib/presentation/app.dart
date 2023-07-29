@@ -4,7 +4,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../core/config/config.index.dart';
 import '../core/constants/constants.dart';
 import 'common_blocs/app/app_bloc.dart';
 import 'resource/styles/styles.dart';
@@ -18,19 +17,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _appRouter = getIt.get<AppRouter>();
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(DeviceConstants.designDeviceWidth, DeviceConstants.designDeviceHeight),
       builder: (context, _) {
         return BlocProvider(
-          create: (_) => AppBloc(),
+          create: (_) => AppBloc()..add(const AppInitiated()),
           child: BlocBuilder<AppBloc, AppState>(
             builder: (context, state) {
               return MaterialApp.router(
-                useInheritedMediaQuery: true,
                 builder: (context, child) {
                   final MediaQueryData data = MediaQuery.of(context);
 
@@ -39,10 +35,7 @@ class _MyAppState extends State<MyApp> {
                     child: child ?? const SizedBox.shrink(),
                   );
                 },
-                routerConfig: _appRouter.config(
-                  initialRoutes: state.isLoggedIn ? [const HomeRoute()] : [const SignInRoute()],
-                  navigatorObservers: () => [AppNavigatorObserver()],
-                ),
+                routerConfig: state.isLoggedIn ? AppRouter.authenticatedRoute : AppRouter.unAuthRouter,
                 themeMode: state.isDarkTheme ? ThemeMode.dark : ThemeMode.light,
                 theme: lightTheme,
                 darkTheme: darkTheme,

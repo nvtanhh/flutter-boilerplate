@@ -19,7 +19,7 @@ class RefreshTokenInterceptor extends BaseInterceptor {
   final Queue _pendingRequests = Queue<PendingRequest>();
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     if (err.response?.statusCode == HttpStatus.unauthorized) {
       final options = err.response!.requestOptions;
       _onTokenExpired(options, handler);
@@ -55,8 +55,8 @@ class RefreshTokenInterceptor extends BaseInterceptor {
       try {
         final response = await _client.fetch<dynamic>(options);
         handler.resolve(response);
-      } on DioError catch (error) {
-        handler.next(DioError(requestOptions: options, error: error));
+      } on DioException catch (error) {
+        handler.next(DioException(requestOptions: options, error: error));
       }
     }
   }
@@ -67,7 +67,7 @@ class RefreshTokenInterceptor extends BaseInterceptor {
       final options = pendingRequest.options;
       final handler = pendingRequest.handler;
 
-      handler.next(DioError(requestOptions: options, error: error));
+      handler.next(DioException(requestOptions: options, error: error));
     }
   }
 }
