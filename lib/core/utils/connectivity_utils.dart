@@ -8,4 +8,8 @@ class ConnectivityUtils {
 
     return connectivityResult != ConnectivityResult.none;
   }
+
+  static Future<bool> isDisconnected() async {
+    return !(await isConnected());
+  }
 }
