@@ -6,3 +6,4 @@ export 'intent_utils.dart';
 export 'log_utils.dart';
 export 'validation_utils.dart';
 export 'view_utils.dart';
+export 'color_utils.dart';
