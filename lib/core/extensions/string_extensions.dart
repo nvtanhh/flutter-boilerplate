@@ -22,4 +22,19 @@ extension StringExtensions on String {
   String toLowerCase() => this.toLowerCase();
 
   String toUpperCase() => this.toUpperCase();
+
+  bool isLink() {
+    return contains(RegExp(r'^(https?:\/\/)?([\w\d_-]+)\.([\w\d_\.-]+)\/?\??([^#\n\r]*)?#?([^\n\r]*)'));
+  }
+
+  String supplant(Map<String, String> supplants) {
+    return replaceAllMapped(RegExp(r'\{\w+\}'), (match) {
+      final placeholder = match.group(0) ?? '';
+      if (supplants.containsKey(placeholder)) {
+        return supplants[placeholder]!;
+      }
+
+      return placeholder;
+    });
+  }
 }
