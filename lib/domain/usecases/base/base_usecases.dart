@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 
-import '../../../core/config/logging_config.dart';
+import '../../../core/configs/logging_config.dart';
 import '../../../core/constants/ui/paging_constants.dart';
 import '../../../core/extensions/extensions.dart';
-import '../../../core/mixin/log_mixin.dart';
+import '../../../core/mixins/log_mixin.dart';
 import '../../entities/base/paged_list.dart';
 import 'base_outputs.dart';
 import 'base_params.dart';
@@ -66,8 +66,18 @@ abstract class BaseLoadMoreUseCase<Params extends BaseUsecaseParams, Output>
   BaseLoadMoreUseCase({
     this.initialPageSize = PagingConstants.defaultPageSize,
     this.initialPage = PagingConstants.initialPage,
-  })  : _output = LoadMoreOutput<Output>(items: [], total: 0, page: initialPage, pageSize: initialPageSize),
-        _oldOutput = LoadMoreOutput<Output>(items: [], total: 0, page: initialPage, pageSize: initialPageSize);
+  })  : _output = LoadMoreOutput<Output>(
+          items: [],
+          total: 0,
+          page: initialPage,
+          pageSize: initialPageSize,
+        ),
+        _oldOutput = LoadMoreOutput<Output>(
+          items: [],
+          total: 0,
+          page: initialPage,
+          pageSize: initialPageSize,
+        );
 
   final int initialPageSize;
   final int initialPage;
@@ -78,13 +88,22 @@ abstract class BaseLoadMoreUseCase<Params extends BaseUsecaseParams, Output>
   int get page => _output.page;
   int get pageSize => _output.pageSize;
 
-  Future<LoadMoreOutput<Output>> execute(Params params, bool isInitialLoad) async {
+  Future<LoadMoreOutput<Output>> execute(
+    Params params,
+    bool isInitialLoad,
+  ) async {
     try {
       if (isInitialLoad) {
-        _output = LoadMoreOutput<Output>(items: <Output>[], page: initialPage, pageSize: initialPageSize);
+        _output = LoadMoreOutput<Output>(
+          items: <Output>[],
+          page: initialPage,
+          pageSize: initialPageSize,
+        );
       }
       if (LogConfig.enableLogUseCaseInput) {
-        logDebug('LoadMoreUseCase Input: $params, page: $page, pageSize: $pageSize');
+        logDebug(
+          'LoadMoreUseCase Input: $params, page: $page, pageSize: $pageSize',
+        );
       }
       final pagedList = await buildUseCase(params);
 

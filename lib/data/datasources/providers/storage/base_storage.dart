@@ -29,6 +29,7 @@ abstract class BaseStorage<T> {
       return box.get(key, defaultValue: defaultValue);
     } catch (e) {
       debugPrint(e.toString());
+
       return defaultValue;
     } finally {
       await box.close();
@@ -53,6 +54,7 @@ abstract class BaseStorage<T> {
       return box.values.toList();
     } catch (e) {
       debugPrint(e.toString());
+
       return [];
     } finally {
       await box.close();

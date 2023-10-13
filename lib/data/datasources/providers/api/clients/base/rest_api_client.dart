@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-import '../../../../../../core/config/configs.dart';
+import '../../../../../../core/configs/configs.dart';
 import '../../../../../../core/constants/constants.dart';
 import '../../../../../../core/exceptions/exceptions.dart';
 import '../../response_mapper/base_response_mapper.dart';
@@ -66,8 +66,8 @@ class RestApiClient {
       }
 
       return SuccessResponseMapper<D, T>(
-              successResponseMapperType ?? this.successResponseMapperType)
-          .map(response.data, decoder);
+        successResponseMapperType ?? this.successResponseMapperType,
+      ).map(response.data, decoder);
     } on DioException catch (error) {
       throw getIt<ApiExceptionMapper>().map(error);
     } catch (error) {
@@ -247,7 +247,8 @@ class RestApiClient {
   }
 
   Future<Map<String, dynamic>> _parseMultiPartForm(
-      Map<String, dynamic> body) async {
+    Map<String, dynamic> body,
+  ) async {
     final form = <String, dynamic>{};
 
     final bodyKeys = body.keys.toList();

@@ -9,7 +9,9 @@ import 'base_interceptor.dart';
 class ConnectivityInterceptor extends BaseInterceptor {
   @override
   Future<void> onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
     final isConnected = await ConnectivityUtils.isConnected();
 
     if (!isConnected) {

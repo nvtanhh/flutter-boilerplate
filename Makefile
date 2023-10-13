@@ -14,15 +14,12 @@ gen_icon_launcher:
 	# generate app launcher icon
 	flutter pub run flutter_launcher_icons -f /yaml/icon_launcher.yaml
 
-preview_fix_linst:
+preview_fix:
 	# preview proposed changes
 	dart fix --dry-run
 
-fix_linst:
-	# apply proposed changes
-	 dart fix --apply
+fix_lints:
+	dart fix --apply
 
 format_code:
-	# format the code
 	dart format . -l 120
-

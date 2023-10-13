@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/config/configs.dart';
-import '../../../core/mixin/log_mixin.dart';
+import '../../../core/configs/configs.dart';
+import '../../../core/mixins/log_mixin.dart';
 
 class AppNavigatorObserver extends NavigatorObserver with LogMixin {
   AppNavigatorObserver();
@@ -12,7 +12,9 @@ class AppNavigatorObserver extends NavigatorObserver with LogMixin {
   void didPush(Route route, Route? previousRoute) {
     super.didPush(route, previousRoute);
     if (_enableLog) {
-      logDebug('didPush from ${previousRoute?.settings.name} to ${route.settings.name}');
+      logDebug(
+        'didPush from ${previousRoute?.settings.name} to ${route.settings.name}',
+      );
     }
   }
 
@@ -20,7 +22,9 @@ class AppNavigatorObserver extends NavigatorObserver with LogMixin {
   void didPop(Route route, Route? previousRoute) {
     super.didPop(route, previousRoute);
     if (_enableLog) {
-      logDebug('didPop ${route.settings.name}, back to ${previousRoute?.settings.name}');
+      logDebug(
+        'didPop ${route.settings.name}, back to ${previousRoute?.settings.name}',
+      );
     }
   }
 
@@ -28,7 +32,9 @@ class AppNavigatorObserver extends NavigatorObserver with LogMixin {
   void didRemove(Route route, Route? previousRoute) {
     super.didRemove(route, previousRoute);
     if (_enableLog) {
-      logDebug('didRemove ${route.settings.name}, back to ${previousRoute?.settings.name}');
+      logDebug(
+        'didRemove ${route.settings.name}, back to ${previousRoute?.settings.name}',
+      );
     }
   }
 
@@ -36,7 +42,9 @@ class AppNavigatorObserver extends NavigatorObserver with LogMixin {
   void didReplace({Route? newRoute, Route? oldRoute}) {
     super.didReplace(newRoute: newRoute, oldRoute: oldRoute);
     if (_enableLog) {
-      logDebug('didReplace ${oldRoute?.settings.name} by ${newRoute?.settings.name}');
+      logDebug(
+        'didReplace ${oldRoute?.settings.name} by ${newRoute?.settings.name}',
+      );
     }
   }
 }

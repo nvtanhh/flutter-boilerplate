@@ -19,22 +19,19 @@ mixin _$IsLoggedInStatusChanged {
   bool get isLoggedIn => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $IsLoggedInStatusChangedCopyWith<IsLoggedInStatusChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  $IsLoggedInStatusChangedCopyWith<IsLoggedInStatusChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $IsLoggedInStatusChangedCopyWith<$Res> {
-  factory $IsLoggedInStatusChangedCopyWith(IsLoggedInStatusChanged value,
-          $Res Function(IsLoggedInStatusChanged) then) =
+  factory $IsLoggedInStatusChangedCopyWith(IsLoggedInStatusChanged value, $Res Function(IsLoggedInStatusChanged) then) =
       _$IsLoggedInStatusChangedCopyWithImpl<$Res, IsLoggedInStatusChanged>;
   @useResult
   $Res call({bool isLoggedIn});
 }
 
 /// @nodoc
-class _$IsLoggedInStatusChangedCopyWithImpl<$Res,
-        $Val extends IsLoggedInStatusChanged>
+class _$IsLoggedInStatusChangedCopyWithImpl<$Res, $Val extends IsLoggedInStatusChanged>
     implements $IsLoggedInStatusChangedCopyWith<$Res> {
   _$IsLoggedInStatusChangedCopyWithImpl(this._value, this._then);
 
@@ -58,11 +55,9 @@ class _$IsLoggedInStatusChangedCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$IsLoggedInStatusChangedImplCopyWith<$Res>
-    implements $IsLoggedInStatusChangedCopyWith<$Res> {
+abstract class _$$IsLoggedInStatusChangedImplCopyWith<$Res> implements $IsLoggedInStatusChangedCopyWith<$Res> {
   factory _$$IsLoggedInStatusChangedImplCopyWith(
-          _$IsLoggedInStatusChangedImpl value,
-          $Res Function(_$IsLoggedInStatusChangedImpl) then) =
+          _$IsLoggedInStatusChangedImpl value, $Res Function(_$IsLoggedInStatusChangedImpl) then) =
       __$$IsLoggedInStatusChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -71,12 +66,10 @@ abstract class _$$IsLoggedInStatusChangedImplCopyWith<$Res>
 
 /// @nodoc
 class __$$IsLoggedInStatusChangedImplCopyWithImpl<$Res>
-    extends _$IsLoggedInStatusChangedCopyWithImpl<$Res,
-        _$IsLoggedInStatusChangedImpl>
+    extends _$IsLoggedInStatusChangedCopyWithImpl<$Res, _$IsLoggedInStatusChangedImpl>
     implements _$$IsLoggedInStatusChangedImplCopyWith<$Res> {
   __$$IsLoggedInStatusChangedImplCopyWithImpl(
-      _$IsLoggedInStatusChangedImpl _value,
-      $Res Function(_$IsLoggedInStatusChangedImpl) _then)
+      _$IsLoggedInStatusChangedImpl _value, $Res Function(_$IsLoggedInStatusChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -111,8 +104,7 @@ class _$IsLoggedInStatusChangedImpl implements _IsLoggedInStatusChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$IsLoggedInStatusChangedImpl &&
-            (identical(other.isLoggedIn, isLoggedIn) ||
-                other.isLoggedIn == isLoggedIn));
+            (identical(other.isLoggedIn, isLoggedIn) || other.isLoggedIn == isLoggedIn));
   }
 
   @override
@@ -121,21 +113,19 @@ class _$IsLoggedInStatusChangedImpl implements _IsLoggedInStatusChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$IsLoggedInStatusChangedImplCopyWith<_$IsLoggedInStatusChangedImpl>
-      get copyWith => __$$IsLoggedInStatusChangedImplCopyWithImpl<
-          _$IsLoggedInStatusChangedImpl>(this, _$identity);
+  _$$IsLoggedInStatusChangedImplCopyWith<_$IsLoggedInStatusChangedImpl> get copyWith =>
+      __$$IsLoggedInStatusChangedImplCopyWithImpl<_$IsLoggedInStatusChangedImpl>(this, _$identity);
 }
 
 abstract class _IsLoggedInStatusChanged implements IsLoggedInStatusChanged {
-  const factory _IsLoggedInStatusChanged(final bool isLoggedIn) =
-      _$IsLoggedInStatusChangedImpl;
+  const factory _IsLoggedInStatusChanged(final bool isLoggedIn) = _$IsLoggedInStatusChangedImpl;
 
   @override
   bool get isLoggedIn;
   @override
   @JsonKey(ignore: true)
-  _$$IsLoggedInStatusChangedImplCopyWith<_$IsLoggedInStatusChangedImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$IsLoggedInStatusChangedImplCopyWith<_$IsLoggedInStatusChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -143,22 +133,19 @@ mixin _$AppThemeChanged {
   bool get isDarkTheme => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AppThemeChangedCopyWith<AppThemeChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AppThemeChangedCopyWith<AppThemeChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppThemeChangedCopyWith<$Res> {
-  factory $AppThemeChangedCopyWith(
-          AppThemeChanged value, $Res Function(AppThemeChanged) then) =
+  factory $AppThemeChangedCopyWith(AppThemeChanged value, $Res Function(AppThemeChanged) then) =
       _$AppThemeChangedCopyWithImpl<$Res, AppThemeChanged>;
   @useResult
   $Res call({bool isDarkTheme});
 }
 
 /// @nodoc
-class _$AppThemeChangedCopyWithImpl<$Res, $Val extends AppThemeChanged>
-    implements $AppThemeChangedCopyWith<$Res> {
+class _$AppThemeChangedCopyWithImpl<$Res, $Val extends AppThemeChanged> implements $AppThemeChangedCopyWith<$Res> {
   _$AppThemeChangedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -181,10 +168,8 @@ class _$AppThemeChangedCopyWithImpl<$Res, $Val extends AppThemeChanged>
 }
 
 /// @nodoc
-abstract class _$$AppThemeChangedImplCopyWith<$Res>
-    implements $AppThemeChangedCopyWith<$Res> {
-  factory _$$AppThemeChangedImplCopyWith(_$AppThemeChangedImpl value,
-          $Res Function(_$AppThemeChangedImpl) then) =
+abstract class _$$AppThemeChangedImplCopyWith<$Res> implements $AppThemeChangedCopyWith<$Res> {
+  factory _$$AppThemeChangedImplCopyWith(_$AppThemeChangedImpl value, $Res Function(_$AppThemeChangedImpl) then) =
       __$$AppThemeChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -192,11 +177,9 @@ abstract class _$$AppThemeChangedImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AppThemeChangedImplCopyWithImpl<$Res>
-    extends _$AppThemeChangedCopyWithImpl<$Res, _$AppThemeChangedImpl>
+class __$$AppThemeChangedImplCopyWithImpl<$Res> extends _$AppThemeChangedCopyWithImpl<$Res, _$AppThemeChangedImpl>
     implements _$$AppThemeChangedImplCopyWith<$Res> {
-  __$$AppThemeChangedImplCopyWithImpl(
-      _$AppThemeChangedImpl _value, $Res Function(_$AppThemeChangedImpl) _then)
+  __$$AppThemeChangedImplCopyWithImpl(_$AppThemeChangedImpl _value, $Res Function(_$AppThemeChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -231,8 +214,7 @@ class _$AppThemeChangedImpl implements _AppThemeChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppThemeChangedImpl &&
-            (identical(other.isDarkTheme, isDarkTheme) ||
-                other.isDarkTheme == isDarkTheme));
+            (identical(other.isDarkTheme, isDarkTheme) || other.isDarkTheme == isDarkTheme));
   }
 
   @override
@@ -242,20 +224,17 @@ class _$AppThemeChangedImpl implements _AppThemeChanged {
   @override
   @pragma('vm:prefer-inline')
   _$$AppThemeChangedImplCopyWith<_$AppThemeChangedImpl> get copyWith =>
-      __$$AppThemeChangedImplCopyWithImpl<_$AppThemeChangedImpl>(
-          this, _$identity);
+      __$$AppThemeChangedImplCopyWithImpl<_$AppThemeChangedImpl>(this, _$identity);
 }
 
 abstract class _AppThemeChanged implements AppThemeChanged {
-  const factory _AppThemeChanged(final bool isDarkTheme) =
-      _$AppThemeChangedImpl;
+  const factory _AppThemeChanged(final bool isDarkTheme) = _$AppThemeChangedImpl;
 
   @override
   bool get isDarkTheme;
   @override
   @JsonKey(ignore: true)
-  _$$AppThemeChangedImplCopyWith<_$AppThemeChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AppThemeChangedImplCopyWith<_$AppThemeChangedImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -263,14 +242,12 @@ mixin _$AppLanguageChanged {
   String get locale => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AppLanguageChangedCopyWith<AppLanguageChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AppLanguageChangedCopyWith<AppLanguageChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppLanguageChangedCopyWith<$Res> {
-  factory $AppLanguageChangedCopyWith(
-          AppLanguageChanged value, $Res Function(AppLanguageChanged) then) =
+  factory $AppLanguageChangedCopyWith(AppLanguageChanged value, $Res Function(AppLanguageChanged) then) =
       _$AppLanguageChangedCopyWithImpl<$Res, AppLanguageChanged>;
   @useResult
   $Res call({String locale});
@@ -301,10 +278,9 @@ class _$AppLanguageChangedCopyWithImpl<$Res, $Val extends AppLanguageChanged>
 }
 
 /// @nodoc
-abstract class _$$AppLanguageChangedImplCopyWith<$Res>
-    implements $AppLanguageChangedCopyWith<$Res> {
-  factory _$$AppLanguageChangedImplCopyWith(_$AppLanguageChangedImpl value,
-          $Res Function(_$AppLanguageChangedImpl) then) =
+abstract class _$$AppLanguageChangedImplCopyWith<$Res> implements $AppLanguageChangedCopyWith<$Res> {
+  factory _$$AppLanguageChangedImplCopyWith(
+          _$AppLanguageChangedImpl value, $Res Function(_$AppLanguageChangedImpl) then) =
       __$$AppLanguageChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -315,8 +291,7 @@ abstract class _$$AppLanguageChangedImplCopyWith<$Res>
 class __$$AppLanguageChangedImplCopyWithImpl<$Res>
     extends _$AppLanguageChangedCopyWithImpl<$Res, _$AppLanguageChangedImpl>
     implements _$$AppLanguageChangedImplCopyWith<$Res> {
-  __$$AppLanguageChangedImplCopyWithImpl(_$AppLanguageChangedImpl _value,
-      $Res Function(_$AppLanguageChangedImpl) _then)
+  __$$AppLanguageChangedImplCopyWithImpl(_$AppLanguageChangedImpl _value, $Res Function(_$AppLanguageChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -361,20 +336,17 @@ class _$AppLanguageChangedImpl implements _AppLanguageChanged {
   @override
   @pragma('vm:prefer-inline')
   _$$AppLanguageChangedImplCopyWith<_$AppLanguageChangedImpl> get copyWith =>
-      __$$AppLanguageChangedImplCopyWithImpl<_$AppLanguageChangedImpl>(
-          this, _$identity);
+      __$$AppLanguageChangedImplCopyWithImpl<_$AppLanguageChangedImpl>(this, _$identity);
 }
 
 abstract class _AppLanguageChanged implements AppLanguageChanged {
-  const factory _AppLanguageChanged(final String locale) =
-      _$AppLanguageChangedImpl;
+  const factory _AppLanguageChanged(final String locale) = _$AppLanguageChangedImpl;
 
   @override
   String get locale;
   @override
   @JsonKey(ignore: true)
-  _$$AppLanguageChangedImplCopyWith<_$AppLanguageChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AppLanguageChangedImplCopyWith<_$AppLanguageChangedImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -382,14 +354,12 @@ mixin _$AppInitiated {}
 
 /// @nodoc
 abstract class $AppInitiatedCopyWith<$Res> {
-  factory $AppInitiatedCopyWith(
-          AppInitiated value, $Res Function(AppInitiated) then) =
+  factory $AppInitiatedCopyWith(AppInitiated value, $Res Function(AppInitiated) then) =
       _$AppInitiatedCopyWithImpl<$Res, AppInitiated>;
 }
 
 /// @nodoc
-class _$AppInitiatedCopyWithImpl<$Res, $Val extends AppInitiated>
-    implements $AppInitiatedCopyWith<$Res> {
+class _$AppInitiatedCopyWithImpl<$Res, $Val extends AppInitiated> implements $AppInitiatedCopyWith<$Res> {
   _$AppInitiatedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -400,17 +370,14 @@ class _$AppInitiatedCopyWithImpl<$Res, $Val extends AppInitiated>
 
 /// @nodoc
 abstract class _$$AppInitiatedImplCopyWith<$Res> {
-  factory _$$AppInitiatedImplCopyWith(
-          _$AppInitiatedImpl value, $Res Function(_$AppInitiatedImpl) then) =
+  factory _$$AppInitiatedImplCopyWith(_$AppInitiatedImpl value, $Res Function(_$AppInitiatedImpl) then) =
       __$$AppInitiatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AppInitiatedImplCopyWithImpl<$Res>
-    extends _$AppInitiatedCopyWithImpl<$Res, _$AppInitiatedImpl>
+class __$$AppInitiatedImplCopyWithImpl<$Res> extends _$AppInitiatedCopyWithImpl<$Res, _$AppInitiatedImpl>
     implements _$$AppInitiatedImplCopyWith<$Res> {
-  __$$AppInitiatedImplCopyWithImpl(
-      _$AppInitiatedImpl _value, $Res Function(_$AppInitiatedImpl) _then)
+  __$$AppInitiatedImplCopyWithImpl(_$AppInitiatedImpl _value, $Res Function(_$AppInitiatedImpl) _then)
       : super(_value, _then);
 }
 
@@ -426,8 +393,7 @@ class _$AppInitiatedImpl implements _AppInitiated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppInitiatedImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$AppInitiatedImpl);
   }
 
   @override
@@ -450,21 +416,18 @@ mixin _$AppState {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AppStateCopyWith<AppState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AppStateCopyWith<AppState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res, AppState>;
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
   $Res call({String locale, bool isLoggedIn, bool isDarkTheme});
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
-    implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -497,10 +460,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 }
 
 /// @nodoc
-abstract class _$$AppStateImplCopyWith<$Res>
-    implements $AppStateCopyWith<$Res> {
-  factory _$$AppStateImplCopyWith(
-          _$AppStateImpl value, $Res Function(_$AppStateImpl) then) =
+abstract class _$$AppStateImplCopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory _$$AppStateImplCopyWith(_$AppStateImpl value, $Res Function(_$AppStateImpl) then) =
       __$$AppStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -508,12 +469,9 @@ abstract class _$$AppStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AppStateImplCopyWithImpl<$Res>
-    extends _$AppStateCopyWithImpl<$Res, _$AppStateImpl>
+class __$$AppStateImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$AppStateImpl>
     implements _$$AppStateImplCopyWith<$Res> {
-  __$$AppStateImplCopyWithImpl(
-      _$AppStateImpl _value, $Res Function(_$AppStateImpl) _then)
-      : super(_value, _then);
+  __$$AppStateImplCopyWithImpl(_$AppStateImpl _value, $Res Function(_$AppStateImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -542,13 +500,9 @@ class __$$AppStateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AppStateImpl implements _AppState {
-  const _$AppStateImpl(
-      {this.locale = LocaleConfig.defaultLocale,
-      this.isLoggedIn = false,
-      this.isDarkTheme = false});
+  const _$AppStateImpl({this.locale = LocaleConfig.defaultLocale, this.isLoggedIn = false, this.isDarkTheme = false});
 
-  factory _$AppStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AppStateImplFromJson(json);
+  factory _$AppStateImpl.fromJson(Map<String, dynamic> json) => _$$AppStateImplFromJson(json);
 
   @override
   @JsonKey()
@@ -571,10 +525,8 @@ class _$AppStateImpl implements _AppState {
         (other.runtimeType == runtimeType &&
             other is _$AppStateImpl &&
             (identical(other.locale, locale) || other.locale == locale) &&
-            (identical(other.isLoggedIn, isLoggedIn) ||
-                other.isLoggedIn == isLoggedIn) &&
-            (identical(other.isDarkTheme, isDarkTheme) ||
-                other.isDarkTheme == isDarkTheme));
+            (identical(other.isLoggedIn, isLoggedIn) || other.isLoggedIn == isLoggedIn) &&
+            (identical(other.isDarkTheme, isDarkTheme) || other.isDarkTheme == isDarkTheme));
   }
 
   @JsonKey(ignore: true)
@@ -596,13 +548,9 @@ class _$AppStateImpl implements _AppState {
 }
 
 abstract class _AppState implements AppState {
-  const factory _AppState(
-      {final String locale,
-      final bool isLoggedIn,
-      final bool isDarkTheme}) = _$AppStateImpl;
+  const factory _AppState({final String locale, final bool isLoggedIn, final bool isDarkTheme}) = _$AppStateImpl;
 
-  factory _AppState.fromJson(Map<String, dynamic> json) =
-      _$AppStateImpl.fromJson;
+  factory _AppState.fromJson(Map<String, dynamic> json) = _$AppStateImpl.fromJson;
 
   @override
   String get locale;
@@ -612,6 +560,5 @@ abstract class _AppState implements AppState {
   bool get isDarkTheme;
   @override
   @JsonKey(ignore: true)
-  _$$AppStateImplCopyWith<_$AppStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AppStateImplCopyWith<_$AppStateImpl> get copyWith => throw _privateConstructorUsedError;
 }

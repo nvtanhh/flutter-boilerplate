@@ -21,7 +21,9 @@ class RetryInterceptor extends BaseInterceptor {
 
   @override
   Future<void> onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
     if (!options.headers.containsKey(_retryHeaderKey)) {
       _maxRetries = ApiConstants.maxRetries;
     }
@@ -31,7 +33,9 @@ class RetryInterceptor extends BaseInterceptor {
 
   @override
   Future<void> onError(
-      DioException err, ErrorInterceptorHandler handler) async {
+    DioException err,
+    ErrorInterceptorHandler handler,
+  ) async {
     if (_maxRetries > 0 && shouldRetry(err)) {
       await Future<void>.delayed(_retryInterval);
       _maxRetries--;
@@ -48,8 +52,6 @@ class RetryInterceptor extends BaseInterceptor {
   }
 
   bool shouldRetry(DioException error) {
-    return error.type != DioExceptionType.cancel &&
-        error.error != null &&
-        error.error is SocketException;
+    return error.type != DioExceptionType.cancel && error.error != null && error.error is SocketException;
   }
 }

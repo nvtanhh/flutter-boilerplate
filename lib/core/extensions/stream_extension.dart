@@ -1,7 +1,7 @@
 // ignore: depend_on_referenced_packages
 import 'package:rxdart/rxdart.dart';
 
-import '../config/logging_config.dart';
+import '../configs/logging_config.dart';
 import '../utils/utils.index.dart';
 
 extension StreamExtension<T> on Stream<T> {

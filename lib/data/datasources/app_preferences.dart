@@ -39,7 +39,9 @@ class AppPreferences extends BaseStorage<dynamic> {
     if (!isSaved) {
       final key = Hive.generateSecureKey();
       await _secureStorage.write(
-          key: _encryptionKey, value: base64UrlEncode(key));
+        key: _encryptionKey,
+        value: base64UrlEncode(key),
+      );
     }
   }
 

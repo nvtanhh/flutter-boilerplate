@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../../core/config/logging_config.dart';
-import '../../../../../core/mixin/log_mixin.dart';
+import '../../../../../core/configs/logging_config.dart';
+import '../../../../../core/mixins/log_mixin.dart';
 import '../../../../../core/utils/log_utils.dart';
 import 'base_interceptor.dart';
 
@@ -80,7 +80,8 @@ class CustomLogInterceptor extends BaseInterceptor with LogMixin {
 
     if (enableLogRequestBody) {
       log.add(
-          '🎉 Request Body: ${_prettyResponse(response.requestOptions.data)}');
+        '🎉 Request Body: ${_prettyResponse(response.requestOptions.data)}',
+      );
     }
     log.add('🎉 Success Code: ${response.statusCode}');
     if (enableLogResponseData) {
@@ -104,7 +105,8 @@ class CustomLogInterceptor extends BaseInterceptor with LogMixin {
     log.add('************ Request Error ************');
     log.add('⛔️ ${err.requestOptions.method} ${err.requestOptions.uri}');
     log.add(
-        '⛔️ Error Code: ${err.response?.statusCode ?? 'unknown status code'}');
+      '⛔️ Error Code: ${err.response?.statusCode ?? 'unknown status code'}',
+    );
     log.add('⛔️ Json: ${err.response}');
 
     logError(log.join('\n'));

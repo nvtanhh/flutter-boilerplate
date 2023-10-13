@@ -3,17 +3,13 @@ extension StringExtensions on String {
     return this + other;
   }
 
-  bool equalsIgnoreCase(String secondString) =>
-      toLowerCase().contains(secondString.toLowerCase());
+  bool equalsIgnoreCase(String secondString) => toLowerCase().contains(secondString.toLowerCase());
 
-  bool containsIgnoreCase(String secondString) =>
-      toLowerCase().contains(secondString.toLowerCase());
+  bool containsIgnoreCase(String secondString) => toLowerCase().contains(secondString.toLowerCase());
 
-  bool startsWithIgnoreCase(String secondString) =>
-      toLowerCase().startsWith(secondString.toLowerCase());
+  bool startsWithIgnoreCase(String secondString) => toLowerCase().startsWith(secondString.toLowerCase());
 
-  bool endsWithIgnoreCase(String secondString) =>
-      toLowerCase().endsWith(secondString.toLowerCase());
+  bool endsWithIgnoreCase(String secondString) => toLowerCase().endsWith(secondString.toLowerCase());
 
   String capitalize() {
     if (length <= 1) {
@@ -29,7 +25,8 @@ extension StringExtensions on String {
 
   bool isLink() {
     return contains(RegExp(
-        r'^(https?:\/\/)?([\w\d_-]+)\.([\w\d_\.-]+)\/?\??([^#\n\r]*)?#?([^\n\r]*)'));
+      r'^(https?:\/\/)?([\w\d_-]+)\.([\w\d_\.-]+)\/?\??([^#\n\r]*)?#?([^\n\r]*)',
+    ));
   }
 
   String supplant(Map<String, String> supplants) {

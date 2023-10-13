@@ -5,14 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/exceptions/exceptions.dart';
 import '../../../core/helpers/helpers.dart';
-import '../../../core/mixin/log_mixin.dart';
+import '../../../core/mixins/log_mixin.dart';
 import 'common/common_bloc.dart';
 
 part 'base_event.dart';
 part 'base_state.dart';
 
-abstract class BaseBloc<E extends BaseEvent, S extends BaseState>
-    extends Bloc<E, S> with LogMixin {
+abstract class BaseBloc<E extends BaseEvent, S extends BaseState> extends Bloc<E, S> with LogMixin {
   BaseBloc(S initialState) : super(initialState);
 
   late final CommonBloc _commonBloc;
@@ -23,8 +22,7 @@ abstract class BaseBloc<E extends BaseEvent, S extends BaseState>
     _commonBloc = commonBloc;
   }
 
-  CommonBloc get commonBloc =>
-      this is CommonBloc ? this as CommonBloc : _commonBloc;
+  CommonBloc get commonBloc => this is CommonBloc ? this as CommonBloc : _commonBloc;
 
   @override
   void add(E event) {

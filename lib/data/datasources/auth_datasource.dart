@@ -30,10 +30,11 @@ class AuthDataSourceImpl implements AuthDataSource {
   final AuthenticatedRestApiClient _authenticatedClient;
 
   @override
-  Future<void> register(
-      {required String username,
-      required String email,
-      required String password}) {
+  Future<void> register({
+    required String username,
+    required String email,
+    required String password,
+  }) {
     throw UnimplementedError();
   }
 
@@ -53,10 +54,11 @@ class AuthDataSourceImpl implements AuthDataSource {
   }
 
   @override
-  Future<void> resetPassword(
-      {required String token,
-      required String email,
-      required String password}) {
+  Future<void> resetPassword({
+    required String token,
+    required String email,
+    required String password,
+  }) {
     throw UnimplementedError();
   }
 }

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import '../../../core/config/configs.dart';
+import '../../../core/configs/configs.dart';
 import '../../base/bloc/base_bloc.dart';
 
 part 'app_event.dart';
@@ -31,7 +31,10 @@ class AppBloc extends BaseBloc<AppEvent, AppState> with HydratedMixin {
     return state.toJson();
   }
 
-  void _onIsLoggedInStatusChanged(IsLoggedInStatusChanged event, Emitter<AppState> emit) {
+  void _onIsLoggedInStatusChanged(
+    IsLoggedInStatusChanged event,
+    Emitter<AppState> emit,
+  ) {
     emit(state.copyWith(isLoggedIn: event.isLoggedIn));
   }
 

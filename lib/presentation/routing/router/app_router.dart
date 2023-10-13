@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/config/di/di.dart';
+import '../../../core/configs/di/di.dart';
 import '../../../core/constants/constants.dart';
 import '../../common_blocs/app/app_bloc.dart';
 import '../../features/features.dart';
@@ -16,8 +16,11 @@ class AppRouter {
     builder: (BuildContext context, GoRouterState state) {
       return const SignInPage();
     },
-    pageBuilder: (context, state) =>
-        _buildPageWithDefaultTransition(context: context, state: state, child: const SignInPage()),
+    pageBuilder: (context, state) => _buildPageWithDefaultTransition(
+      context: context,
+      state: state,
+      child: const SignInPage(),
+    ),
   );
 
   static final unAuthRouter = GoRouter(
@@ -37,8 +40,11 @@ class AppRouter {
         builder: (BuildContext context, GoRouterState state) {
           return const ForgotPassPage();
         },
-        pageBuilder: (context, state) =>
-            _buildPageWithDefaultTransition(context: context, state: state, child: const ForgotPassPage()),
+        pageBuilder: (context, state) => _buildPageWithDefaultTransition(
+          context: context,
+          state: state,
+          child: const ForgotPassPage(),
+        ),
       ),
     ],
   );
@@ -54,8 +60,11 @@ class AppRouter {
         builder: (BuildContext context, GoRouterState state) {
           return const HomePage();
         },
-        pageBuilder: (context, state) =>
-            _buildPageWithDefaultTransition(context: context, state: state, child: const HomePage()),
+        pageBuilder: (context, state) => _buildPageWithDefaultTransition(
+          context: context,
+          state: state,
+          child: const HomePage(),
+        ),
       ),
     ],
     redirect: (context, state) async {

@@ -8,8 +8,8 @@ import 'dart:async';
 import 'package:injectable/injectable.dart';
 import 'package:signalr_core/signalr_core.dart';
 
-import '../../../../../../core/config/di/di.dart';
-import '../../../../../../core/mixin/log_mixin.dart';
+import '../../../../../../core/configs/di/di.dart';
+import '../../../../../../core/mixins/log_mixin.dart';
 import '../../../../app_preferences.dart';
 
 @lazySingleton
@@ -62,7 +62,8 @@ class SignalRClient with LogMixin {
         _clearState();
       });
       _hubConnection!.onreconnecting(
-          (exception) => logInfo('Connecting to $url: $exception'));
+        (exception) => logInfo('Connecting to $url: $exception'),
+      );
       _hubConnection!.onreconnected((connectionId) {
         logInfo('Connection reconnected: $connectionId');
         _isConnected = true;

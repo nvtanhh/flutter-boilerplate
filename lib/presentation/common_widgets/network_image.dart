@@ -64,5 +64,5 @@ class AppNetworkImage extends StatelessWidget {
 }
 
 class AvnonCachedNetworkImageProvider extends CachedNetworkImageProvider {
-  AvnonCachedNetworkImageProvider(super.url);
+  const AvnonCachedNetworkImageProvider(super.url);
 }

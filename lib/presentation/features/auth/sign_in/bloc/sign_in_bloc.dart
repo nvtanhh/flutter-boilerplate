@@ -32,7 +32,9 @@ class SignInBloc extends BaseBloc<SignInEvent, SignInState> {
   }
 
   Future<void> _onSignInSubmitted(
-      SignInSubmitted event, Emitter<SignInState> emit) async {
+    SignInSubmitted event,
+    Emitter<SignInState> emit,
+  ) async {
     emit(state.copyWith(submitCount: state.submitCount + 1));
     if (!state.isFormValid || state.isSubmitting) {
       return;

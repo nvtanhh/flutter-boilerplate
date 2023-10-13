@@ -1,6 +1,6 @@
 import 'package:rxdart/rxdart.dart';
 
-import '../../config/logging_config.dart';
+import '../../configs/logging_config.dart';
 import '../../utils/log_utils.dart';
 
 extension StreamExt<T> on Stream<T> {

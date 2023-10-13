@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-import '../config/locale_config.dart';
+import '../configs/locale_config.dart';
 
 class DateTimeUtils {
   DateTimeUtils._();

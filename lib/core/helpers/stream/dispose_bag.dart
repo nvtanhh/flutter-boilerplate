@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../config/logging_config.dart';
-import '../../mixin/log_mixin.dart';
+import '../../configs/logging_config.dart';
+import '../../mixins/log_mixin.dart';
 import 'disposable.dart';
 
 class DisposeBag with LogMixin {

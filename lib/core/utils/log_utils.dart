@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:logger/logger.dart';
 
-import '../config/configs.dart';
+import '../configs/configs.dart';
 
 class LogUtils {
   LogUtils._();
@@ -51,8 +51,7 @@ class _LogPrinter extends PrettyPrinter {
     return [
       color!(msg),
       if (event.error != null) color(event.error.toString()),
-      if (stackTraceStr != null)
-        stackTraceStr.split('\n').map(color).join('\n'),
+      if (stackTraceStr != null) stackTraceStr.split('\n').map(color).join('\n'),
     ];
   }
 
