@@ -58,24 +58,25 @@ class _$LoadingVisibilityEmittedCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_LoadingVisibilityEmittedCopyWith<$Res>
+abstract class _$$LoadingVisibilityEmittedImplCopyWith<$Res>
     implements $LoadingVisibilityEmittedCopyWith<$Res> {
-  factory _$$_LoadingVisibilityEmittedCopyWith(
-          _$_LoadingVisibilityEmitted value,
-          $Res Function(_$_LoadingVisibilityEmitted) then) =
-      __$$_LoadingVisibilityEmittedCopyWithImpl<$Res>;
+  factory _$$LoadingVisibilityEmittedImplCopyWith(
+          _$LoadingVisibilityEmittedImpl value,
+          $Res Function(_$LoadingVisibilityEmittedImpl) then) =
+      __$$LoadingVisibilityEmittedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool isLoading});
 }
 
 /// @nodoc
-class __$$_LoadingVisibilityEmittedCopyWithImpl<$Res>
+class __$$LoadingVisibilityEmittedImplCopyWithImpl<$Res>
     extends _$LoadingVisibilityEmittedCopyWithImpl<$Res,
-        _$_LoadingVisibilityEmitted>
-    implements _$$_LoadingVisibilityEmittedCopyWith<$Res> {
-  __$$_LoadingVisibilityEmittedCopyWithImpl(_$_LoadingVisibilityEmitted _value,
-      $Res Function(_$_LoadingVisibilityEmitted) _then)
+        _$LoadingVisibilityEmittedImpl>
+    implements _$$LoadingVisibilityEmittedImplCopyWith<$Res> {
+  __$$LoadingVisibilityEmittedImplCopyWithImpl(
+      _$LoadingVisibilityEmittedImpl _value,
+      $Res Function(_$LoadingVisibilityEmittedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -83,7 +84,7 @@ class __$$_LoadingVisibilityEmittedCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
   }) {
-    return _then(_$_LoadingVisibilityEmitted(
+    return _then(_$LoadingVisibilityEmittedImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -94,10 +95,10 @@ class __$$_LoadingVisibilityEmittedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoadingVisibilityEmitted
+class _$LoadingVisibilityEmittedImpl
     with DiagnosticableTreeMixin
     implements _LoadingVisibilityEmitted {
-  const _$_LoadingVisibilityEmitted({required this.isLoading});
+  const _$LoadingVisibilityEmittedImpl({required this.isLoading});
 
   @override
   final bool isLoading;
@@ -119,7 +120,7 @@ class _$_LoadingVisibilityEmitted
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoadingVisibilityEmitted &&
+            other is _$LoadingVisibilityEmittedImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading));
   }
@@ -130,20 +131,20 @@ class _$_LoadingVisibilityEmitted
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadingVisibilityEmittedCopyWith<_$_LoadingVisibilityEmitted>
-      get copyWith => __$$_LoadingVisibilityEmittedCopyWithImpl<
-          _$_LoadingVisibilityEmitted>(this, _$identity);
+  _$$LoadingVisibilityEmittedImplCopyWith<_$LoadingVisibilityEmittedImpl>
+      get copyWith => __$$LoadingVisibilityEmittedImplCopyWithImpl<
+          _$LoadingVisibilityEmittedImpl>(this, _$identity);
 }
 
 abstract class _LoadingVisibilityEmitted implements LoadingVisibilityEmitted {
   const factory _LoadingVisibilityEmitted({required final bool isLoading}) =
-      _$_LoadingVisibilityEmitted;
+      _$LoadingVisibilityEmittedImpl;
 
   @override
   bool get isLoading;
   @override
   @JsonKey(ignore: true)
-  _$$_LoadingVisibilityEmittedCopyWith<_$_LoadingVisibilityEmitted>
+  _$$LoadingVisibilityEmittedImplCopyWith<_$LoadingVisibilityEmittedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -170,29 +171,30 @@ class _$ForceLogoutButtonPressedCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ForceLogoutButtonPressedCopyWith<$Res> {
-  factory _$$_ForceLogoutButtonPressedCopyWith(
-          _$_ForceLogoutButtonPressed value,
-          $Res Function(_$_ForceLogoutButtonPressed) then) =
-      __$$_ForceLogoutButtonPressedCopyWithImpl<$Res>;
+abstract class _$$ForceLogoutButtonPressedImplCopyWith<$Res> {
+  factory _$$ForceLogoutButtonPressedImplCopyWith(
+          _$ForceLogoutButtonPressedImpl value,
+          $Res Function(_$ForceLogoutButtonPressedImpl) then) =
+      __$$ForceLogoutButtonPressedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ForceLogoutButtonPressedCopyWithImpl<$Res>
+class __$$ForceLogoutButtonPressedImplCopyWithImpl<$Res>
     extends _$ForceLogoutButtonPressedCopyWithImpl<$Res,
-        _$_ForceLogoutButtonPressed>
-    implements _$$_ForceLogoutButtonPressedCopyWith<$Res> {
-  __$$_ForceLogoutButtonPressedCopyWithImpl(_$_ForceLogoutButtonPressed _value,
-      $Res Function(_$_ForceLogoutButtonPressed) _then)
+        _$ForceLogoutButtonPressedImpl>
+    implements _$$ForceLogoutButtonPressedImplCopyWith<$Res> {
+  __$$ForceLogoutButtonPressedImplCopyWithImpl(
+      _$ForceLogoutButtonPressedImpl _value,
+      $Res Function(_$ForceLogoutButtonPressedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ForceLogoutButtonPressed
+class _$ForceLogoutButtonPressedImpl
     with DiagnosticableTreeMixin
     implements _ForceLogoutButtonPressed {
-  const _$_ForceLogoutButtonPressed();
+  const _$ForceLogoutButtonPressedImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -209,7 +211,7 @@ class _$_ForceLogoutButtonPressed
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ForceLogoutButtonPressed);
+            other is _$ForceLogoutButtonPressedImpl);
   }
 
   @override
@@ -217,7 +219,7 @@ class _$_ForceLogoutButtonPressed
 }
 
 abstract class _ForceLogoutButtonPressed implements ForceLogoutButtonPressed {
-  const factory _ForceLogoutButtonPressed() = _$_ForceLogoutButtonPressed;
+  const factory _ForceLogoutButtonPressed() = _$ForceLogoutButtonPressedImpl;
 }
 
 /// @nodoc
@@ -269,22 +271,22 @@ class _$CommonStateCopyWithImpl<$Res, $Val extends CommonState>
 }
 
 /// @nodoc
-abstract class _$$_CommonStateCopyWith<$Res>
+abstract class _$$CommonStateImplCopyWith<$Res>
     implements $CommonStateCopyWith<$Res> {
-  factory _$$_CommonStateCopyWith(
-          _$_CommonState value, $Res Function(_$_CommonState) then) =
-      __$$_CommonStateCopyWithImpl<$Res>;
+  factory _$$CommonStateImplCopyWith(
+          _$CommonStateImpl value, $Res Function(_$CommonStateImpl) then) =
+      __$$CommonStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool isLoading, int loadingCount});
 }
 
 /// @nodoc
-class __$$_CommonStateCopyWithImpl<$Res>
-    extends _$CommonStateCopyWithImpl<$Res, _$_CommonState>
-    implements _$$_CommonStateCopyWith<$Res> {
-  __$$_CommonStateCopyWithImpl(
-      _$_CommonState _value, $Res Function(_$_CommonState) _then)
+class __$$CommonStateImplCopyWithImpl<$Res>
+    extends _$CommonStateCopyWithImpl<$Res, _$CommonStateImpl>
+    implements _$$CommonStateImplCopyWith<$Res> {
+  __$$CommonStateImplCopyWithImpl(
+      _$CommonStateImpl _value, $Res Function(_$CommonStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -293,7 +295,7 @@ class __$$_CommonStateCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? loadingCount = null,
   }) {
-    return _then(_$_CommonState(
+    return _then(_$CommonStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -308,8 +310,8 @@ class __$$_CommonStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CommonState with DiagnosticableTreeMixin implements _CommonState {
-  const _$_CommonState({this.isLoading = false, this.loadingCount = 0});
+class _$CommonStateImpl with DiagnosticableTreeMixin implements _CommonState {
+  const _$CommonStateImpl({this.isLoading = false, this.loadingCount = 0});
 
   @override
   @JsonKey()
@@ -336,7 +338,7 @@ class _$_CommonState with DiagnosticableTreeMixin implements _CommonState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CommonState &&
+            other is _$CommonStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.loadingCount, loadingCount) ||
@@ -349,13 +351,13 @@ class _$_CommonState with DiagnosticableTreeMixin implements _CommonState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CommonStateCopyWith<_$_CommonState> get copyWith =>
-      __$$_CommonStateCopyWithImpl<_$_CommonState>(this, _$identity);
+  _$$CommonStateImplCopyWith<_$CommonStateImpl> get copyWith =>
+      __$$CommonStateImplCopyWithImpl<_$CommonStateImpl>(this, _$identity);
 }
 
 abstract class _CommonState implements CommonState {
   const factory _CommonState({final bool isLoading, final int loadingCount}) =
-      _$_CommonState;
+      _$CommonStateImpl;
 
   @override
   bool get isLoading;
@@ -363,6 +365,6 @@ abstract class _CommonState implements CommonState {
   int get loadingCount;
   @override
   @JsonKey(ignore: true)
-  _$$_CommonStateCopyWith<_$_CommonState> get copyWith =>
+  _$$CommonStateImplCopyWith<_$CommonStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

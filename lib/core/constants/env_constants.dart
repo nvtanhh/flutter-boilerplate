@@ -1,5 +1,3 @@
-enum Flavor { dev }
-
 class EnvConstants {
   const EnvConstants._();
 

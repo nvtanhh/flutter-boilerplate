@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-import '../../../../../../core/config/config.index.dart';
+import '../../../../../../core/config/configs.dart';
 import '../../../../../../core/constants/constants.dart';
-import '../../../../../../core/exception/exception.dart';
+import '../../../../../../core/exceptions/exceptions.dart';
 import '../../response_mapper/base_response_mapper.dart';
 import 'api_client_default_settings.dart';
 
@@ -14,8 +14,10 @@ class RestApiClient {
   RestApiClient({
     required this.baseUrl,
     this.interceptors = const [],
-    this.connectTimeoutInMs = const Duration(microseconds: ApiConstants.connectTimeoutInMs),
-    this.successResponseMapperType = ApiConstants.defaultSuccessResponseMapperType,
+    this.connectTimeoutInMs =
+        const Duration(microseconds: ApiConstants.connectTimeoutInMs),
+    this.successResponseMapperType =
+        ApiConstants.defaultSuccessResponseMapperType,
   }) : _dio = Dio(
           BaseOptions(
             baseUrl: baseUrl,
@@ -63,7 +65,8 @@ class RestApiClient {
         return response as T;
       }
 
-      return SuccessResponseMapper<D, T>(successResponseMapperType ?? this.successResponseMapperType)
+      return SuccessResponseMapper<D, T>(
+              successResponseMapperType ?? this.successResponseMapperType)
           .map(response.data, decoder);
     } on DioException catch (error) {
       throw getIt<ApiExceptionMapper>().map(error);
@@ -243,7 +246,8 @@ class RestApiClient {
     );
   }
 
-  Future<Map<String, dynamic>> _parseMultiPartForm(Map<String, dynamic> body) async {
+  Future<Map<String, dynamic>> _parseMultiPartForm(
+      Map<String, dynamic> body) async {
     final form = <String, dynamic>{};
 
     final bodyKeys = body.keys.toList();
@@ -254,10 +258,12 @@ class RestApiClient {
       if (value is String || value is bool) {
         form[key] = value.toString();
       } else if (value is List) {
-        form[key] = value.map((dynamic item) => item.toString()).toList().join(',');
+        form[key] =
+            value.map((dynamic item) => item.toString()).toList().join(',');
       } else if (value is File) {
         final fileName = value.path.split('/').last;
-        form[key] = await MultipartFile.fromFile(value.path, filename: fileName);
+        form[key] =
+            await MultipartFile.fromFile(value.path, filename: fileName);
       } else {
         throw Exception('Unsupported multiform value type');
       }

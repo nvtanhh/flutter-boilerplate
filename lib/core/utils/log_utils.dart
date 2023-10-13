@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:logger/logger.dart';
 
-import '../config/config.index.dart';
+import '../config/configs.dart';
 
 class LogUtils {
   LogUtils._();
@@ -29,13 +29,17 @@ class LogUtils {
 class _LogPrinter extends PrettyPrinter {
   _LogPrinter(this.className);
 
+  final _prettyPrinter = PrettyPrinter();
+
   final String className;
 
   @override
   List<String> log(LogEvent event) {
-    final color = LogConfig.isColorLog ? PrettyPrinter.levelColors[event.level] : AnsiColor.none();
-    final emoji = PrettyPrinter.levelEmojis[event.level];
-    final time = getTime();
+    final color = LogConfig.isColorLog && _prettyPrinter.levelColors != null
+        ? _prettyPrinter.levelColors![event.level]
+        : const AnsiColor.none();
+    final emoji = _prettyPrinter.levelEmojis?[event.level];
+    final time = getTime(event.time);
 
     final msg = '($time) $emoji [$className] ${event.message}';
 
@@ -47,12 +51,13 @@ class _LogPrinter extends PrettyPrinter {
     return [
       color!(msg),
       if (event.error != null) color(event.error.toString()),
-      if (stackTraceStr != null) stackTraceStr.split('\n').map(color).join('\n'),
+      if (stackTraceStr != null)
+        stackTraceStr.split('\n').map(color).join('\n'),
     ];
   }
 
   @override
-  String getTime() {
+  String getTime(DateTime time) {
     String threeDigits(int n) {
       if (n >= 100) {
         return '$n';

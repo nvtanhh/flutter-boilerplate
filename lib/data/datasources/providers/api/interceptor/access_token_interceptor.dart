@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../../core/config/config.index.dart';
+import '../../../../../core/config/configs.dart';
+import '../../../../../core/extensions/extensions.dart';
 import '../../../app_preferences.dart';
 import 'base_interceptor.dart';
 
@@ -15,7 +16,7 @@ class AccessTokenInterceptor extends BaseInterceptor {
     RequestInterceptorHandler handler,
   ) async {
     final accessToken = await getIt<AppPreferences>().getAccessToken();
-    if (accessToken.isNotEmpty) {
+    if (!accessToken.isBlank) {
       options.headers['Authorization'] = 'Bearer $accessToken';
     }
   }

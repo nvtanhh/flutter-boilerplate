@@ -1,4 +1,4 @@
-import '../exception/parse_exception.dart';
+import '../exceptions/parse_exception.dart';
 
 class ParseUtils {
   const ParseUtils._();

@@ -1,8 +1,8 @@
 import 'package:injectable/injectable.dart';
 
-import '../../core/exception/api_exception.dart';
+import '../../core/exceptions/api_exception.dart';
 import '../models/refresh_token_model.dart';
-import 'gateway/api/clients/clients.dart';
+import 'providers/api/clients/clients.dart';
 
 abstract class RefreshTokenDatasource {
   // Refresh the access token with refresh token

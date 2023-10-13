@@ -1,6 +1,8 @@
 import 'package:injectable/injectable.dart';
 
-import '../../core/exception/api_exception.dart';
+import '../../core/exceptions/exceptions.dart';
+import '../../core/extensions/extensions.dart';
+
 import '../datasources/app_preferences.dart';
 import '../datasources/refresh_token_datasource.dart';
 
@@ -16,8 +18,8 @@ class RefreshTokenRepository {
     try {
       final refreshToken = await _appPreferences.getRefreshToken();
 
-      if (refreshToken.isNotEmpty) {
-        final data = await _datasource.refreshToken(refreshToken);
+      if (!refreshToken.isBlank) {
+        final data = await _datasource.refreshToken(refreshToken!);
         await _appPreferences.saveAccessToken(data.accessToken);
       }
     } on ApiException catch (e) {

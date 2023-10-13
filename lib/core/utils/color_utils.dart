@@ -4,7 +4,7 @@ class ColorUtils {
   ColorUtils._();
 
   static Color shiftHsl(Color c, [double amt = 0]) {
-    var hsla = HSLColor.fromColor(c);
+    final hsla = HSLColor.fromColor(c);
 
     return hsla.withLightness((hsla.lightness + amt).clamp(0.0, 1.0)).toColor();
   }

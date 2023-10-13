@@ -57,22 +57,22 @@ class _$EmailChangedCopyWithImpl<$Res, $Val extends EmailChanged>
 }
 
 /// @nodoc
-abstract class _$$_EmailChangedCopyWith<$Res>
+abstract class _$$EmailChangedImplCopyWith<$Res>
     implements $EmailChangedCopyWith<$Res> {
-  factory _$$_EmailChangedCopyWith(
-          _$_EmailChanged value, $Res Function(_$_EmailChanged) then) =
-      __$$_EmailChangedCopyWithImpl<$Res>;
+  factory _$$EmailChangedImplCopyWith(
+          _$EmailChangedImpl value, $Res Function(_$EmailChangedImpl) then) =
+      __$$EmailChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_EmailChangedCopyWithImpl<$Res>
-    extends _$EmailChangedCopyWithImpl<$Res, _$_EmailChanged>
-    implements _$$_EmailChangedCopyWith<$Res> {
-  __$$_EmailChangedCopyWithImpl(
-      _$_EmailChanged _value, $Res Function(_$_EmailChanged) _then)
+class __$$EmailChangedImplCopyWithImpl<$Res>
+    extends _$EmailChangedCopyWithImpl<$Res, _$EmailChangedImpl>
+    implements _$$EmailChangedImplCopyWith<$Res> {
+  __$$EmailChangedImplCopyWithImpl(
+      _$EmailChangedImpl _value, $Res Function(_$EmailChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +80,7 @@ class __$$_EmailChangedCopyWithImpl<$Res>
   $Res call({
     Object? email = null,
   }) {
-    return _then(_$_EmailChanged(
+    return _then(_$EmailChangedImpl(
       null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -91,8 +91,8 @@ class __$$_EmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailChanged implements _EmailChanged {
-  const _$_EmailChanged(this.email);
+class _$EmailChangedImpl implements _EmailChanged {
+  const _$EmailChangedImpl(this.email);
 
   @override
   final String email;
@@ -106,7 +106,7 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmailChanged &&
+            other is _$EmailChangedImpl &&
             (identical(other.email, email) || other.email == email));
   }
 
@@ -116,18 +116,18 @@ class _$_EmailChanged implements _EmailChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
-      __$$_EmailChangedCopyWithImpl<_$_EmailChanged>(this, _$identity);
+  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
+      __$$EmailChangedImplCopyWithImpl<_$EmailChangedImpl>(this, _$identity);
 }
 
 abstract class _EmailChanged implements EmailChanged {
-  const factory _EmailChanged(final String email) = _$_EmailChanged;
+  const factory _EmailChanged(final String email) = _$EmailChangedImpl;
 
   @override
   String get email;
   @override
   @JsonKey(ignore: true)
-  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
+  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -153,25 +153,25 @@ class _$RequestSubmittedCopyWithImpl<$Res, $Val extends RequestSubmitted>
 }
 
 /// @nodoc
-abstract class _$$_RequestSubmittedCopyWith<$Res> {
-  factory _$$_RequestSubmittedCopyWith(
-          _$_RequestSubmitted value, $Res Function(_$_RequestSubmitted) then) =
-      __$$_RequestSubmittedCopyWithImpl<$Res>;
+abstract class _$$RequestSubmittedImplCopyWith<$Res> {
+  factory _$$RequestSubmittedImplCopyWith(_$RequestSubmittedImpl value,
+          $Res Function(_$RequestSubmittedImpl) then) =
+      __$$RequestSubmittedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_RequestSubmittedCopyWithImpl<$Res>
-    extends _$RequestSubmittedCopyWithImpl<$Res, _$_RequestSubmitted>
-    implements _$$_RequestSubmittedCopyWith<$Res> {
-  __$$_RequestSubmittedCopyWithImpl(
-      _$_RequestSubmitted _value, $Res Function(_$_RequestSubmitted) _then)
+class __$$RequestSubmittedImplCopyWithImpl<$Res>
+    extends _$RequestSubmittedCopyWithImpl<$Res, _$RequestSubmittedImpl>
+    implements _$$RequestSubmittedImplCopyWith<$Res> {
+  __$$RequestSubmittedImplCopyWithImpl(_$RequestSubmittedImpl _value,
+      $Res Function(_$RequestSubmittedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_RequestSubmitted implements _RequestSubmitted {
-  const _$_RequestSubmitted();
+class _$RequestSubmittedImpl implements _RequestSubmitted {
+  const _$RequestSubmittedImpl();
 
   @override
   String toString() {
@@ -181,7 +181,7 @@ class _$_RequestSubmitted implements _RequestSubmitted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_RequestSubmitted);
+        (other.runtimeType == runtimeType && other is _$RequestSubmittedImpl);
   }
 
   @override
@@ -189,7 +189,7 @@ class _$_RequestSubmitted implements _RequestSubmitted {
 }
 
 abstract class _RequestSubmitted implements RequestSubmitted {
-  const factory _RequestSubmitted() = _$_RequestSubmitted;
+  const factory _RequestSubmitted() = _$RequestSubmittedImpl;
 }
 
 /// @nodoc
@@ -265,11 +265,11 @@ class _$ForgotPassStateCopyWithImpl<$Res, $Val extends ForgotPassState>
 }
 
 /// @nodoc
-abstract class _$$_ForgotPassStateCopyWith<$Res>
+abstract class _$$ForgotPassStateImplCopyWith<$Res>
     implements $ForgotPassStateCopyWith<$Res> {
-  factory _$$_ForgotPassStateCopyWith(
-          _$_ForgotPassState value, $Res Function(_$_ForgotPassState) then) =
-      __$$_ForgotPassStateCopyWithImpl<$Res>;
+  factory _$$ForgotPassStateImplCopyWith(_$ForgotPassStateImpl value,
+          $Res Function(_$ForgotPassStateImpl) then) =
+      __$$ForgotPassStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -281,11 +281,11 @@ abstract class _$$_ForgotPassStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ForgotPassStateCopyWithImpl<$Res>
-    extends _$ForgotPassStateCopyWithImpl<$Res, _$_ForgotPassState>
-    implements _$$_ForgotPassStateCopyWith<$Res> {
-  __$$_ForgotPassStateCopyWithImpl(
-      _$_ForgotPassState _value, $Res Function(_$_ForgotPassState) _then)
+class __$$ForgotPassStateImplCopyWithImpl<$Res>
+    extends _$ForgotPassStateCopyWithImpl<$Res, _$ForgotPassStateImpl>
+    implements _$$ForgotPassStateImplCopyWith<$Res> {
+  __$$ForgotPassStateImplCopyWithImpl(
+      _$ForgotPassStateImpl _value, $Res Function(_$ForgotPassStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -297,7 +297,7 @@ class __$$_ForgotPassStateCopyWithImpl<$Res>
     Object? requestSuccess = null,
     Object? failureReason = freezed,
   }) {
-    return _then(_$_ForgotPassState(
+    return _then(_$ForgotPassStateImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -324,8 +324,8 @@ class __$$_ForgotPassStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ForgotPassState extends _ForgotPassState {
-  const _$_ForgotPassState(
+class _$ForgotPassStateImpl extends _ForgotPassState {
+  const _$ForgotPassStateImpl(
       {this.email = '',
       this.submitCount = 0,
       this.isSubmitting = false,
@@ -357,7 +357,7 @@ class _$_ForgotPassState extends _ForgotPassState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ForgotPassState &&
+            other is _$ForgotPassStateImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.submitCount, submitCount) ||
                 other.submitCount == submitCount) &&
@@ -376,8 +376,9 @@ class _$_ForgotPassState extends _ForgotPassState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ForgotPassStateCopyWith<_$_ForgotPassState> get copyWith =>
-      __$$_ForgotPassStateCopyWithImpl<_$_ForgotPassState>(this, _$identity);
+  _$$ForgotPassStateImplCopyWith<_$ForgotPassStateImpl> get copyWith =>
+      __$$ForgotPassStateImplCopyWithImpl<_$ForgotPassStateImpl>(
+          this, _$identity);
 }
 
 abstract class _ForgotPassState extends ForgotPassState {
@@ -386,7 +387,7 @@ abstract class _ForgotPassState extends ForgotPassState {
       final int submitCount,
       final bool isSubmitting,
       final bool requestSuccess,
-      final ForgotPassFailureReason? failureReason}) = _$_ForgotPassState;
+      final ForgotPassFailureReason? failureReason}) = _$ForgotPassStateImpl;
   const _ForgotPassState._() : super._();
 
   @override
@@ -401,6 +402,6 @@ abstract class _ForgotPassState extends ForgotPassState {
   ForgotPassFailureReason? get failureReason;
   @override
   @JsonKey(ignore: true)
-  _$$_ForgotPassStateCopyWith<_$_ForgotPassState> get copyWith =>
+  _$$ForgotPassStateImplCopyWith<_$ForgotPassStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

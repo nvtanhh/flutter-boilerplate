@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../../core/exception/exception.dart';
+import '../../../../../core/exceptions/exceptions.dart';
 import '../../../../../core/utils/validation_utils.dart';
 import '../../../../../domain/usecases/auth/auth_usecases.dart';
 import '../../../../base/bloc/base_bloc.dart';

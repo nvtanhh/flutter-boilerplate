@@ -2,24 +2,23 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'core/config/config.index.dart';
+import 'core/config/configs.dart';
 import 'core/utils/utils.index.dart';
 import 'presentation/app.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await configApp();
   await runZonedGuarded(_runMyApp, _reportError);
 }
 
 Future<void> _runMyApp() async {
-  // Load initial resources here if needed
+  WidgetsFlutterBinding.ensureInitialized();
+  await configApp();
   runApp(const MyApp());
 }
 
 void _reportError(Object error, StackTrace stackTrace) {
   final logger = LogUtils.getLogger('Uncaught exception');
-  logger.e('', error, stackTrace);
+  logger.e('', error: error, stackTrace: stackTrace);
 
   // report by Firebase Crashlytics here
 }

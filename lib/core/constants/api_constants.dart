@@ -1,4 +1,4 @@
-import '../../data/datasources/gateway/api/api.dart';
+import '../../data/datasources/providers/api/api.dart';
 
 class ApiConstants {
   const ApiConstants._();
@@ -8,5 +8,6 @@ class ApiConstants {
   static const maxRetries = 3;
   static const retryInterval = Duration(seconds: 3);
 
-  static const defaultSuccessResponseMapperType = SuccessResponseMapperType.jsonObject;
+  static const defaultSuccessResponseMapperType =
+      SuccessResponseMapperType.jsonObject;
 }

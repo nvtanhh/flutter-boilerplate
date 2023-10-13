@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gql_dio_link/gql_dio_link.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-import '../../../../../../core/config/config.index.dart';
+import '../../../../../../core/config/configs.dart';
 import '../../../../../../core/constants/constants.dart';
-import '../../../../../../core/exception/exception.dart';
+import '../../../../../../core/exceptions/exceptions.dart';
 import '../../response_mapper/base_response_mapper.dart';
 import 'api_client_default_settings.dart';
 
@@ -15,7 +15,8 @@ class GraphQLApiClient {
   GraphQLApiClient({
     this.baseUrl = '',
     this.interceptors = const [],
-    this.connectTimeoutInMs = const Duration(microseconds: ApiConstants.connectTimeoutInMs),
+    this.connectTimeoutInMs =
+        const Duration(microseconds: ApiConstants.connectTimeoutInMs),
   }) : _graphQLClient = ValueNotifier<GraphQLClient>(
           GraphQLClient(
             cache: GraphQLCache(store: HiveStore()),
@@ -93,7 +94,8 @@ class GraphQLApiClient {
       throw getIt<ApiExceptionMapper>().map(response.exception!);
     }
 
-    return SuccessResponseMapper<T, T>(SuccessResponseMapperType.jsonObject).map(response.data, decoder);
+    return SuccessResponseMapper<T, T>(SuccessResponseMapperType.jsonObject)
+        .map(response.data, decoder);
   }
 
   Future<QueryResult> _requestByMethod({

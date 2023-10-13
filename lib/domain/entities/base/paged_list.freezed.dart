@@ -75,22 +75,22 @@ class _$PagedListCopyWithImpl<T, $Res, $Val extends PagedList<T>>
 }
 
 /// @nodoc
-abstract class _$$_PagedListCopyWith<T, $Res>
+abstract class _$$PagedListImplCopyWith<T, $Res>
     implements $PagedListCopyWith<T, $Res> {
-  factory _$$_PagedListCopyWith(
-          _$_PagedList<T> value, $Res Function(_$_PagedList<T>) then) =
-      __$$_PagedListCopyWithImpl<T, $Res>;
+  factory _$$PagedListImplCopyWith(
+          _$PagedListImpl<T> value, $Res Function(_$PagedListImpl<T>) then) =
+      __$$PagedListImplCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call({List<T> items, int total, int page, int pageSize});
 }
 
 /// @nodoc
-class __$$_PagedListCopyWithImpl<T, $Res>
-    extends _$PagedListCopyWithImpl<T, $Res, _$_PagedList<T>>
-    implements _$$_PagedListCopyWith<T, $Res> {
-  __$$_PagedListCopyWithImpl(
-      _$_PagedList<T> _value, $Res Function(_$_PagedList<T>) _then)
+class __$$PagedListImplCopyWithImpl<T, $Res>
+    extends _$PagedListCopyWithImpl<T, $Res, _$PagedListImpl<T>>
+    implements _$$PagedListImplCopyWith<T, $Res> {
+  __$$PagedListImplCopyWithImpl(
+      _$PagedListImpl<T> _value, $Res Function(_$PagedListImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +101,7 @@ class __$$_PagedListCopyWithImpl<T, $Res>
     Object? page = null,
     Object? pageSize = null,
   }) {
-    return _then(_$_PagedList<T>(
+    return _then(_$PagedListImpl<T>(
       items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
@@ -124,8 +124,8 @@ class __$$_PagedListCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_PagedList<T> extends _PagedList<T> {
-  const _$_PagedList(
+class _$PagedListImpl<T> extends _PagedList<T> {
+  const _$PagedListImpl(
       {required final List<T> items,
       required this.total,
       required this.page,
@@ -157,7 +157,7 @@ class _$_PagedList<T> extends _PagedList<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PagedList<T> &&
+            other is _$PagedListImpl<T> &&
             const DeepCollectionEquality().equals(other._items, _items) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.page, page) || other.page == page) &&
@@ -172,8 +172,8 @@ class _$_PagedList<T> extends _PagedList<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PagedListCopyWith<T, _$_PagedList<T>> get copyWith =>
-      __$$_PagedListCopyWithImpl<T, _$_PagedList<T>>(this, _$identity);
+  _$$PagedListImplCopyWith<T, _$PagedListImpl<T>> get copyWith =>
+      __$$PagedListImplCopyWithImpl<T, _$PagedListImpl<T>>(this, _$identity);
 }
 
 abstract class _PagedList<T> extends PagedList<T> {
@@ -181,7 +181,7 @@ abstract class _PagedList<T> extends PagedList<T> {
       {required final List<T> items,
       required final int total,
       required final int page,
-      required final int pageSize}) = _$_PagedList<T>;
+      required final int pageSize}) = _$PagedListImpl<T>;
   const _PagedList._() : super._();
 
   @override
@@ -194,6 +194,6 @@ abstract class _PagedList<T> extends PagedList<T> {
   int get pageSize;
   @override
   @JsonKey(ignore: true)
-  _$$_PagedListCopyWith<T, _$_PagedList<T>> get copyWith =>
+  _$$PagedListImplCopyWith<T, _$PagedListImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

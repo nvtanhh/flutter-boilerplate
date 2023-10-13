@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-import '../constants/locale_constants.dart';
+import '../config/locale_config.dart';
 
 class DateTimeUtils {
   DateTimeUtils._();
@@ -87,7 +87,7 @@ class DateTimeUtils {
   static DateTime? tryParse({
     String? date,
     String? format,
-    String locale = LocaleConstants.defaultLocale,
+    String locale = LocaleConfig.defaultLocale,
   }) {
     if (date == null) {
       return null;

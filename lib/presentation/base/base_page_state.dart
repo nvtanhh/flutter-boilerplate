@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../core/config/config.index.dart';
+import '../../core/config/configs.dart';
 import '../../core/mixin/log_mixin.dart';
 import '../common_widgets/loading.dart';
 import 'bloc/base_bloc.dart';
 import 'bloc/common/common_bloc.dart';
 
-abstract class BasePageState<P extends StatefulWidget, B extends BaseBloc> extends State<P> with LogMixin {
+abstract class BasePageState<P extends StatefulWidget, B extends BaseBloc>
+    extends State<P> with LogMixin {
   late final CommonBloc commonBloc;
   late final B bloc;
 
@@ -25,7 +26,7 @@ abstract class BasePageState<P extends StatefulWidget, B extends BaseBloc> exten
   void addFirstEvent() {}
 
   Future _initBlocs() async {
-    commonBloc = await getIt.getAsync<CommonBloc>();
+    commonBloc = getIt.get<CommonBloc>();
 
     try {
       bloc = getIt.get<B>();
@@ -60,7 +61,8 @@ abstract class BasePageState<P extends StatefulWidget, B extends BaseBloc> exten
                     children: [
                       buildPage(context),
                       BlocBuilder<CommonBloc, CommonState>(
-                        buildWhen: (previous, current) => previous.isLoading != current.isLoading,
+                        buildWhen: (previous, current) =>
+                            previous.isLoading != current.isLoading,
                         builder: (context, state) => Visibility(
                           visible: state.isLoading,
                           child: buildPageLoading(),

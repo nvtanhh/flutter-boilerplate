@@ -16,12 +16,13 @@ mixin LogMixin on Object {
   void logError(Object? message, [dynamic error, StackTrace? stackTrace]) {
     final logger = LogUtils.getLogger(runtimeType.toString());
 
-    logger.e(message, error, stackTrace);
+    logger.e(message, error: error, stackTrace: stackTrace);
   }
 
-  void logErrorWithName(Object? message, {dynamic error, StackTrace? stackTrace, String? name}) {
+  void logErrorWithName(Object? message,
+      {dynamic error, StackTrace? stackTrace, String? name}) {
     final logger = LogUtils.getLogger(name ?? runtimeType.toString());
 
-    logger.e(message, error, stackTrace);
+    logger.e(message, error: error, stackTrace: stackTrace);
   }
 }

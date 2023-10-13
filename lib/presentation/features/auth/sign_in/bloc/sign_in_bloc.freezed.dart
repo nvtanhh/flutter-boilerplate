@@ -57,22 +57,22 @@ class _$EmailChangedCopyWithImpl<$Res, $Val extends EmailChanged>
 }
 
 /// @nodoc
-abstract class _$$_EmailChangedCopyWith<$Res>
+abstract class _$$EmailChangedImplCopyWith<$Res>
     implements $EmailChangedCopyWith<$Res> {
-  factory _$$_EmailChangedCopyWith(
-          _$_EmailChanged value, $Res Function(_$_EmailChanged) then) =
-      __$$_EmailChangedCopyWithImpl<$Res>;
+  factory _$$EmailChangedImplCopyWith(
+          _$EmailChangedImpl value, $Res Function(_$EmailChangedImpl) then) =
+      __$$EmailChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_EmailChangedCopyWithImpl<$Res>
-    extends _$EmailChangedCopyWithImpl<$Res, _$_EmailChanged>
-    implements _$$_EmailChangedCopyWith<$Res> {
-  __$$_EmailChangedCopyWithImpl(
-      _$_EmailChanged _value, $Res Function(_$_EmailChanged) _then)
+class __$$EmailChangedImplCopyWithImpl<$Res>
+    extends _$EmailChangedCopyWithImpl<$Res, _$EmailChangedImpl>
+    implements _$$EmailChangedImplCopyWith<$Res> {
+  __$$EmailChangedImplCopyWithImpl(
+      _$EmailChangedImpl _value, $Res Function(_$EmailChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +80,7 @@ class __$$_EmailChangedCopyWithImpl<$Res>
   $Res call({
     Object? email = null,
   }) {
-    return _then(_$_EmailChanged(
+    return _then(_$EmailChangedImpl(
       null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -91,8 +91,8 @@ class __$$_EmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailChanged implements _EmailChanged {
-  const _$_EmailChanged(this.email);
+class _$EmailChangedImpl implements _EmailChanged {
+  const _$EmailChangedImpl(this.email);
 
   @override
   final String email;
@@ -106,7 +106,7 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmailChanged &&
+            other is _$EmailChangedImpl &&
             (identical(other.email, email) || other.email == email));
   }
 
@@ -116,18 +116,18 @@ class _$_EmailChanged implements _EmailChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
-      __$$_EmailChangedCopyWithImpl<_$_EmailChanged>(this, _$identity);
+  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
+      __$$EmailChangedImplCopyWithImpl<_$EmailChangedImpl>(this, _$identity);
 }
 
 abstract class _EmailChanged implements EmailChanged {
-  const factory _EmailChanged(final String email) = _$_EmailChanged;
+  const factory _EmailChanged(final String email) = _$EmailChangedImpl;
 
   @override
   String get email;
   @override
   @JsonKey(ignore: true)
-  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
+  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -174,22 +174,22 @@ class _$PasswordChangedCopyWithImpl<$Res, $Val extends PasswordChanged>
 }
 
 /// @nodoc
-abstract class _$$_PasswordChangedCopyWith<$Res>
+abstract class _$$PasswordChangedImplCopyWith<$Res>
     implements $PasswordChangedCopyWith<$Res> {
-  factory _$$_PasswordChangedCopyWith(
-          _$_PasswordChanged value, $Res Function(_$_PasswordChanged) then) =
-      __$$_PasswordChangedCopyWithImpl<$Res>;
+  factory _$$PasswordChangedImplCopyWith(_$PasswordChangedImpl value,
+          $Res Function(_$PasswordChangedImpl) then) =
+      __$$PasswordChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String password});
 }
 
 /// @nodoc
-class __$$_PasswordChangedCopyWithImpl<$Res>
-    extends _$PasswordChangedCopyWithImpl<$Res, _$_PasswordChanged>
-    implements _$$_PasswordChangedCopyWith<$Res> {
-  __$$_PasswordChangedCopyWithImpl(
-      _$_PasswordChanged _value, $Res Function(_$_PasswordChanged) _then)
+class __$$PasswordChangedImplCopyWithImpl<$Res>
+    extends _$PasswordChangedCopyWithImpl<$Res, _$PasswordChangedImpl>
+    implements _$$PasswordChangedImplCopyWith<$Res> {
+  __$$PasswordChangedImplCopyWithImpl(
+      _$PasswordChangedImpl _value, $Res Function(_$PasswordChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -197,7 +197,7 @@ class __$$_PasswordChangedCopyWithImpl<$Res>
   $Res call({
     Object? password = null,
   }) {
-    return _then(_$_PasswordChanged(
+    return _then(_$PasswordChangedImpl(
       null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -208,8 +208,8 @@ class __$$_PasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PasswordChanged implements _PasswordChanged {
-  const _$_PasswordChanged(this.password);
+class _$PasswordChangedImpl implements _PasswordChanged {
+  const _$PasswordChangedImpl(this.password);
 
   @override
   final String password;
@@ -223,7 +223,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PasswordChanged &&
+            other is _$PasswordChangedImpl &&
             (identical(other.password, password) ||
                 other.password == password));
   }
@@ -234,18 +234,19 @@ class _$_PasswordChanged implements _PasswordChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PasswordChangedCopyWith<_$_PasswordChanged> get copyWith =>
-      __$$_PasswordChangedCopyWithImpl<_$_PasswordChanged>(this, _$identity);
+  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
+      __$$PasswordChangedImplCopyWithImpl<_$PasswordChangedImpl>(
+          this, _$identity);
 }
 
 abstract class _PasswordChanged implements PasswordChanged {
-  const factory _PasswordChanged(final String password) = _$_PasswordChanged;
+  const factory _PasswordChanged(final String password) = _$PasswordChangedImpl;
 
   @override
   String get password;
   @override
   @JsonKey(ignore: true)
-  _$$_PasswordChangedCopyWith<_$_PasswordChanged> get copyWith =>
+  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -271,25 +272,25 @@ class _$SignInSubmittedCopyWithImpl<$Res, $Val extends SignInSubmitted>
 }
 
 /// @nodoc
-abstract class _$$_SignInSubmittedCopyWith<$Res> {
-  factory _$$_SignInSubmittedCopyWith(
-          _$_SignInSubmitted value, $Res Function(_$_SignInSubmitted) then) =
-      __$$_SignInSubmittedCopyWithImpl<$Res>;
+abstract class _$$SignInSubmittedImplCopyWith<$Res> {
+  factory _$$SignInSubmittedImplCopyWith(_$SignInSubmittedImpl value,
+          $Res Function(_$SignInSubmittedImpl) then) =
+      __$$SignInSubmittedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignInSubmittedCopyWithImpl<$Res>
-    extends _$SignInSubmittedCopyWithImpl<$Res, _$_SignInSubmitted>
-    implements _$$_SignInSubmittedCopyWith<$Res> {
-  __$$_SignInSubmittedCopyWithImpl(
-      _$_SignInSubmitted _value, $Res Function(_$_SignInSubmitted) _then)
+class __$$SignInSubmittedImplCopyWithImpl<$Res>
+    extends _$SignInSubmittedCopyWithImpl<$Res, _$SignInSubmittedImpl>
+    implements _$$SignInSubmittedImplCopyWith<$Res> {
+  __$$SignInSubmittedImplCopyWithImpl(
+      _$SignInSubmittedImpl _value, $Res Function(_$SignInSubmittedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignInSubmitted implements _SignInSubmitted {
-  const _$_SignInSubmitted();
+class _$SignInSubmittedImpl implements _SignInSubmitted {
+  const _$SignInSubmittedImpl();
 
   @override
   String toString() {
@@ -299,7 +300,7 @@ class _$_SignInSubmitted implements _SignInSubmitted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInSubmitted);
+        (other.runtimeType == runtimeType && other is _$SignInSubmittedImpl);
   }
 
   @override
@@ -307,7 +308,7 @@ class _$_SignInSubmitted implements _SignInSubmitted {
 }
 
 abstract class _SignInSubmitted implements SignInSubmitted {
-  const factory _SignInSubmitted() = _$_SignInSubmitted;
+  const factory _SignInSubmitted() = _$SignInSubmittedImpl;
 }
 
 /// @nodoc
@@ -389,11 +390,11 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
 }
 
 /// @nodoc
-abstract class _$$_SignInStateCopyWith<$Res>
+abstract class _$$SignInStateImplCopyWith<$Res>
     implements $SignInStateCopyWith<$Res> {
-  factory _$$_SignInStateCopyWith(
-          _$_SignInState value, $Res Function(_$_SignInState) then) =
-      __$$_SignInStateCopyWithImpl<$Res>;
+  factory _$$SignInStateImplCopyWith(
+          _$SignInStateImpl value, $Res Function(_$SignInStateImpl) then) =
+      __$$SignInStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -406,11 +407,11 @@ abstract class _$$_SignInStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SignInStateCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res, _$_SignInState>
-    implements _$$_SignInStateCopyWith<$Res> {
-  __$$_SignInStateCopyWithImpl(
-      _$_SignInState _value, $Res Function(_$_SignInState) _then)
+class __$$SignInStateImplCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$SignInStateImpl>
+    implements _$$SignInStateImplCopyWith<$Res> {
+  __$$SignInStateImplCopyWithImpl(
+      _$SignInStateImpl _value, $Res Function(_$SignInStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -423,7 +424,7 @@ class __$$_SignInStateCopyWithImpl<$Res>
     Object? isSignInSuccess = null,
     Object? failureReason = freezed,
   }) {
-    return _then(_$_SignInState(
+    return _then(_$SignInStateImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -454,8 +455,8 @@ class __$$_SignInStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInState extends _SignInState {
-  const _$_SignInState(
+class _$SignInStateImpl extends _SignInState {
+  const _$SignInStateImpl(
       {this.email = '',
       this.password = '',
       this.submitCount = 0,
@@ -491,7 +492,7 @@ class _$_SignInState extends _SignInState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInState &&
+            other is _$SignInStateImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
@@ -512,8 +513,8 @@ class _$_SignInState extends _SignInState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SignInStateCopyWith<_$_SignInState> get copyWith =>
-      __$$_SignInStateCopyWithImpl<_$_SignInState>(this, _$identity);
+  _$$SignInStateImplCopyWith<_$SignInStateImpl> get copyWith =>
+      __$$SignInStateImplCopyWithImpl<_$SignInStateImpl>(this, _$identity);
 }
 
 abstract class _SignInState extends SignInState {
@@ -523,7 +524,7 @@ abstract class _SignInState extends SignInState {
       final int submitCount,
       final bool isSubmitting,
       final bool isSignInSuccess,
-      final SignInFailureReason? failureReason}) = _$_SignInState;
+      final SignInFailureReason? failureReason}) = _$SignInStateImpl;
   const _SignInState._() : super._();
 
   @override
@@ -540,6 +541,6 @@ abstract class _SignInState extends SignInState {
   SignInFailureReason? get failureReason;
   @override
   @JsonKey(ignore: true)
-  _$$_SignInStateCopyWith<_$_SignInState> get copyWith =>
+  _$$SignInStateImplCopyWith<_$SignInStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

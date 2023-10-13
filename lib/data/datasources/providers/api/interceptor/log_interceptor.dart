@@ -79,7 +79,8 @@ class CustomLogInterceptor extends BaseInterceptor with LogMixin {
     );
 
     if (enableLogRequestBody) {
-      log.add('🎉 Request Body: ${_prettyResponse(response.requestOptions.data)}');
+      log.add(
+          '🎉 Request Body: ${_prettyResponse(response.requestOptions.data)}');
     }
     log.add('🎉 Success Code: ${response.statusCode}');
     if (enableLogResponseData) {
@@ -102,7 +103,8 @@ class CustomLogInterceptor extends BaseInterceptor with LogMixin {
 
     log.add('************ Request Error ************');
     log.add('⛔️ ${err.requestOptions.method} ${err.requestOptions.uri}');
-    log.add('⛔️ Error Code: ${err.response?.statusCode ?? 'unknown status code'}');
+    log.add(
+        '⛔️ Error Code: ${err.response?.statusCode ?? 'unknown status code'}');
     log.add('⛔️ Json: ${err.response}');
 
     logError(log.join('\n'));

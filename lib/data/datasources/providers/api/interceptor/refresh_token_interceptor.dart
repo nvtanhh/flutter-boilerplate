@@ -28,7 +28,8 @@ class RefreshTokenInterceptor extends BaseInterceptor {
     }
   }
 
-  Future<void> _onTokenExpired(RequestOptions options, ErrorInterceptorHandler handler) async {
+  Future<void> _onTokenExpired(
+      RequestOptions options, ErrorInterceptorHandler handler) async {
     _pendingRequests.add(PendingRequest(options, handler));
 
     if (_isRefreshing) {

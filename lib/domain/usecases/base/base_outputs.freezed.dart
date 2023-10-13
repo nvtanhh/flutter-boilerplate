@@ -93,11 +93,11 @@ class _$LoadMoreOutputCopyWithImpl<T, $Res, $Val extends LoadMoreOutput<T>>
 }
 
 /// @nodoc
-abstract class _$$_LoadMoreOutputCopyWith<T, $Res>
+abstract class _$$LoadMoreOutputImplCopyWith<T, $Res>
     implements $LoadMoreOutputCopyWith<T, $Res> {
-  factory _$$_LoadMoreOutputCopyWith(_$_LoadMoreOutput<T> value,
-          $Res Function(_$_LoadMoreOutput<T>) then) =
-      __$$_LoadMoreOutputCopyWithImpl<T, $Res>;
+  factory _$$LoadMoreOutputImplCopyWith(_$LoadMoreOutputImpl<T> value,
+          $Res Function(_$LoadMoreOutputImpl<T>) then) =
+      __$$LoadMoreOutputImplCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call(
@@ -110,11 +110,11 @@ abstract class _$$_LoadMoreOutputCopyWith<T, $Res>
 }
 
 /// @nodoc
-class __$$_LoadMoreOutputCopyWithImpl<T, $Res>
-    extends _$LoadMoreOutputCopyWithImpl<T, $Res, _$_LoadMoreOutput<T>>
-    implements _$$_LoadMoreOutputCopyWith<T, $Res> {
-  __$$_LoadMoreOutputCopyWithImpl(
-      _$_LoadMoreOutput<T> _value, $Res Function(_$_LoadMoreOutput<T>) _then)
+class __$$LoadMoreOutputImplCopyWithImpl<T, $Res>
+    extends _$LoadMoreOutputCopyWithImpl<T, $Res, _$LoadMoreOutputImpl<T>>
+    implements _$$LoadMoreOutputImplCopyWith<T, $Res> {
+  __$$LoadMoreOutputImplCopyWithImpl(_$LoadMoreOutputImpl<T> _value,
+      $Res Function(_$LoadMoreOutputImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -127,7 +127,7 @@ class __$$_LoadMoreOutputCopyWithImpl<T, $Res>
     Object? isRefreshSuccess = null,
     Object? hasNext = null,
   }) {
-    return _then(_$_LoadMoreOutput<T>(
+    return _then(_$LoadMoreOutputImpl<T>(
       items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
@@ -158,8 +158,8 @@ class __$$_LoadMoreOutputCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_LoadMoreOutput<T> extends _LoadMoreOutput<T> {
-  const _$_LoadMoreOutput(
+class _$LoadMoreOutputImpl<T> extends _LoadMoreOutput<T> {
+  const _$LoadMoreOutputImpl(
       {required final List<T> items,
       this.total = 0,
       this.page = PagingConstants.initialPage,
@@ -202,7 +202,7 @@ class _$_LoadMoreOutput<T> extends _LoadMoreOutput<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoadMoreOutput<T> &&
+            other is _$LoadMoreOutputImpl<T> &&
             const DeepCollectionEquality().equals(other._items, _items) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.page, page) || other.page == page) &&
@@ -226,8 +226,8 @@ class _$_LoadMoreOutput<T> extends _LoadMoreOutput<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadMoreOutputCopyWith<T, _$_LoadMoreOutput<T>> get copyWith =>
-      __$$_LoadMoreOutputCopyWithImpl<T, _$_LoadMoreOutput<T>>(
+  _$$LoadMoreOutputImplCopyWith<T, _$LoadMoreOutputImpl<T>> get copyWith =>
+      __$$LoadMoreOutputImplCopyWithImpl<T, _$LoadMoreOutputImpl<T>>(
           this, _$identity);
 }
 
@@ -238,7 +238,7 @@ abstract class _LoadMoreOutput<T> extends LoadMoreOutput<T> {
       final int page,
       final int pageSize,
       final bool isRefreshSuccess,
-      final bool hasNext}) = _$_LoadMoreOutput<T>;
+      final bool hasNext}) = _$LoadMoreOutputImpl<T>;
   const _LoadMoreOutput._() : super._();
 
   @override
@@ -255,6 +255,6 @@ abstract class _LoadMoreOutput<T> extends LoadMoreOutput<T> {
   bool get hasNext;
   @override
   @JsonKey(ignore: true)
-  _$$_LoadMoreOutputCopyWith<T, _$_LoadMoreOutput<T>> get copyWith =>
+  _$$LoadMoreOutputImplCopyWith<T, _$LoadMoreOutputImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

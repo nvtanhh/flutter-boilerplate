@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import '../../../core/constants/locale_constants.dart';
+import '../../../core/config/configs.dart';
 import '../../base/bloc/base_bloc.dart';
 
 part 'app_event.dart';

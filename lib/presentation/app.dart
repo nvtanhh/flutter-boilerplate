@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../core/config/configs.dart';
 import '../core/constants/constants.dart';
 import 'common_blocs/app/app_bloc.dart';
 import 'resource/styles/styles.dart';
@@ -20,7 +21,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(DeviceConstants.designDeviceWidth, DeviceConstants.designDeviceHeight),
+      designSize: const Size(DeviceConstants.designDeviceWidth,
+          DeviceConstants.designDeviceHeight),
       builder: (context, _) {
         return BlocProvider(
           create: (_) => AppBloc()..add(const AppInitiated()),
@@ -35,15 +37,20 @@ class _MyAppState extends State<MyApp> {
                     child: child ?? const SizedBox.shrink(),
                   );
                 },
-                routerConfig: state.isLoggedIn ? AppRouter.authenticatedRoute : AppRouter.unAuthRouter,
+                routerConfig: state.isLoggedIn
+                    ? AppRouter.authenticatedRoute
+                    : AppRouter.unAuthRouter,
                 themeMode: state.isDarkTheme ? ThemeMode.dark : ThemeMode.light,
                 theme: lightTheme,
                 darkTheme: darkTheme,
                 debugShowCheckedModeBanner: false,
                 locale: Locale(state.locale),
-                supportedLocales: LocaleConstants.supportedLocales,
-                localeResolutionCallback: (Locale? locale, Iterable<Locale> supportedLocales) =>
-                    supportedLocales.contains(locale) ? locale : const Locale(LocaleConstants.defaultLocale),
+                supportedLocales: LocaleConfig.supportedLocales,
+                localeResolutionCallback:
+                    (Locale? locale, Iterable<Locale> supportedLocales) =>
+                        supportedLocales.contains(locale)
+                            ? locale
+                            : const Locale(LocaleConfig.defaultLocale),
                 localizationsDelegates: const [
                   AppLocalizations.delegate,
                   GlobalMaterialLocalizations.delegate,

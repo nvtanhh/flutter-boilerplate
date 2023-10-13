@@ -37,7 +37,7 @@ dependencies:
   hive_flutter: ^1.1.0
   flutter_secure_storage: ^8.0.0
   # logging
-  logger: ^1.2.2
+  logger: ^2.0.2+1
   # device information
   device_info_plus: ^9.0.2
   android_id: ^0.3.3
@@ -54,6 +54,7 @@ dependencies:
   # state management
   flutter_bloc: ^8.1.2
   hydrated_bloc: ^9.1.0
+  equatable: ^2.0.5
   # navigation
   go_router: ^9.0.3
   # UI
@@ -104,7 +105,7 @@ flutter:
   generate: true
 
   assets:
-    - assets/env/
+    - env/
     - assets/images/
     - assets/icons/
 

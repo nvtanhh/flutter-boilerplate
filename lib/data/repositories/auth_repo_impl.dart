@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 import '../../domain/repositories/auth_repo.dart';
 import '../datasources/datasources.dart';
 
-@LazySingleton(as: AuthRepository)
+@Injectable(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl(this._appPreferences, this._dataSource);
 
@@ -11,7 +11,10 @@ class AuthRepositoryImpl implements AuthRepository {
   final AuthDataSource _dataSource;
 
   @override
-  Future<void> signUp({required String username, required String email, required String password}) {
+  Future<void> signUp(
+      {required String username,
+      required String email,
+      required String password}) {
     throw UnimplementedError();
   }
 

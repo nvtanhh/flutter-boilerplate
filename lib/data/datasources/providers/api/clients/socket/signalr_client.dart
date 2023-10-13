@@ -61,7 +61,8 @@ class SignalRClient with LogMixin {
         logError('Connection closed: $exception');
         _clearState();
       });
-      _hubConnection!.onreconnecting((exception) => logInfo('Connecting to $url: $exception'));
+      _hubConnection!.onreconnecting(
+          (exception) => logInfo('Connecting to $url: $exception'));
       _hubConnection!.onreconnected((connectionId) {
         logInfo('Connection reconnected: $connectionId');
         _isConnected = true;

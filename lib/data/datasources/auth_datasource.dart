@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 
-import 'gateway/api/api.dart';
+import 'providers/api/api.dart';
 
 abstract class AuthDataSource {
   Future<void> register({
@@ -22,7 +22,7 @@ abstract class AuthDataSource {
   Future<void> forgotPassword(String email);
 }
 
-@LazySingleton(as: AuthDataSource)
+@Injectable(as: AuthDataSource)
 class AuthDataSourceImpl implements AuthDataSource {
   AuthDataSourceImpl(this._apiClient, this._authenticatedClient);
 
@@ -30,7 +30,10 @@ class AuthDataSourceImpl implements AuthDataSource {
   final AuthenticatedRestApiClient _authenticatedClient;
 
   @override
-  Future<void> register({required String username, required String email, required String password}) {
+  Future<void> register(
+      {required String username,
+      required String email,
+      required String password}) {
     throw UnimplementedError();
   }
 
@@ -50,7 +53,10 @@ class AuthDataSourceImpl implements AuthDataSource {
   }
 
   @override
-  Future<void> resetPassword({required String token, required String email, required String password}) {
+  Future<void> resetPassword(
+      {required String token,
+      required String email,
+      required String password}) {
     throw UnimplementedError();
   }
 }

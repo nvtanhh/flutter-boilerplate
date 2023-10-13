@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 
-import '../../../../../core/config/config.index.dart';
+import '../../../../../core/config/configs.dart';
 import 'base/rest_api_client.dart';
 
 @lazySingleton

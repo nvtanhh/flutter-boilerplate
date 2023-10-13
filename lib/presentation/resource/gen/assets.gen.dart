@@ -11,14 +11,14 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
-class $AssetsEnvGen {
-  const $AssetsEnvGen();
+class $EnvGen {
+  const $EnvGen();
 
-  /// File path: assets/env/.env
-  String get env => 'assets/env/.env';
+  /// File path: env/.env
+  String get env => 'env/.env';
 
-  /// File path: assets/env/.env.example
-  String get envExample => 'assets/env/.env.example';
+  /// File path: env/.env.example
+  String get envExample => 'env/.env.example';
 
   /// List of all assets
   List<String> get values => [env, envExample];
@@ -86,9 +86,9 @@ class $AssetsImagesGen {
 class Assets {
   Assets._();
 
-  static const $AssetsEnvGen env = $AssetsEnvGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $EnvGen env = $EnvGen();
 }
 
 class AssetGenImage {
@@ -149,7 +149,16 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
 
   String get path => _assetName;
 
@@ -176,9 +185,9 @@ class SvgGenImage {
     bool excludeFromSemantics = false,
     SvgTheme theme = const SvgTheme(),
     ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
-    @deprecated Clip? clipBehavior,
     @deprecated bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(
