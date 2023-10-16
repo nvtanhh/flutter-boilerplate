@@ -36,8 +36,6 @@ dependencies:
   # preferences
   hive_flutter: ^1.1.0
   flutter_secure_storage: ^8.0.0
-  # logging
-  logger: ^2.0.2+1
   # device information
   device_info_plus: ^9.0.2
   android_id: ^0.3.3
