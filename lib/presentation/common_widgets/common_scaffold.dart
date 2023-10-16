@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/extensions/extensions.dart';
-import '../../core/utils/view_utils.dart';
+import '../../core/utils/view_util.dart';
 import '../resource/styles/styles.dart';
 
 class CommonScaffold extends StatelessWidget {
@@ -33,7 +33,7 @@ class CommonScaffold extends StatelessWidget {
 
     return hideKeyboardWhenTouchOutside
         ? GestureDetector(
-            onTap: () => ViewUtils.hideKeyboard(context),
+            onTap: () => ViewUtil.hideKeyboard(context),
             child: scaffold,
           )
         : scaffold;

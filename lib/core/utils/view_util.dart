@@ -6,8 +6,8 @@ import '../../presentation/resource/resource.dart';
 import '../constants/constants.dart';
 import '../extensions/context_extensions.dart';
 
-class ViewUtils {
-  const ViewUtils._();
+class ViewUtil {
+  const ViewUtil._();
 
   static void showAppSnackBar(
     BuildContext context,
@@ -50,19 +50,22 @@ class ViewUtils {
   }
 
   static Offset? getWidgetPosition(GlobalKey globalKey) {
-    final renderBox = globalKey.currentContext?.findRenderObject() as RenderBox?;
+    final renderBox =
+        globalKey.currentContext?.findRenderObject() as RenderBox?;
 
     return renderBox?.localToGlobal(Offset.zero);
   }
 
   static double? getWidgetWidth(GlobalKey globalKey) {
-    final renderBox = globalKey.currentContext?.findRenderObject() as RenderBox?;
+    final renderBox =
+        globalKey.currentContext?.findRenderObject() as RenderBox?;
 
     return renderBox?.size.width;
   }
 
   static double? getWidgetHeight(GlobalKey globalKey) {
-    final renderBox = globalKey.currentContext?.findRenderObject() as RenderBox?;
+    final renderBox =
+        globalKey.currentContext?.findRenderObject() as RenderBox?;
 
     return renderBox?.size.height;
   }
@@ -90,7 +93,8 @@ class ViewUtils {
       elevation: elevation,
       shape: shape ??
           const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(Sizes.s20)),
+            borderRadius:
+                BorderRadius.vertical(top: Radius.circular(Sizes.s20)),
           ),
       clipBehavior: clipBehavior,
       barrierColor: barrierColor,

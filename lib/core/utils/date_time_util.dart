@@ -2,8 +2,8 @@ import 'package:intl/intl.dart';
 
 import '../configs/locale_config.dart';
 
-class DateTimeUtils {
-  DateTimeUtils._();
+class DateTimeUtil {
+  DateTimeUtil._();
 
   static int daysBetween(DateTime from, DateTime to) {
     from = DateTime(from.year, from.month, from.day);
@@ -17,7 +17,8 @@ class DateTimeUtils {
   }
 
   static DateTime toLocalFromTimestamp({required int utcTimestampMillis}) {
-    return DateTime.fromMillisecondsSinceEpoch(utcTimestampMillis, isUtc: true).toLocal();
+    return DateTime.fromMillisecondsSinceEpoch(utcTimestampMillis, isUtc: true)
+        .toLocal();
   }
 
   static DateTime toUtcFromTimestamp(int localTimestampMillis) {

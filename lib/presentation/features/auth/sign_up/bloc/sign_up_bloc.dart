@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../../core/exceptions/exceptions.dart';
-import '../../../../../core/utils/validation_utils.dart';
+import '../../../../../core/utils/validation_util.dart';
 import '../../../../../domain/usecases/auth/auth_usecases.dart';
 import '../../../../base/bloc/base_bloc.dart';
 
@@ -38,19 +38,35 @@ class SignUpBloc extends BaseBloc<SignUpEvent, SignUpState> {
     emit(state.copyWith(password: event.password));
   }
 
-  void _onConfirmPasswordChanged(ConfirmPasswordChanged event, Emitter<SignUpState> emit) {
+  void _onConfirmPasswordChanged(
+    ConfirmPasswordChanged event,
+    Emitter<SignUpState> emit,
+  ) {
     emit(state.copyWith(confirmPassword: event.confirmPassword));
   }
 
-  void _onIsPasswordVisibleChanged(IsPasswordVisibleChanged event, Emitter<SignUpState> emit) {
+  void _onIsPasswordVisibleChanged(
+    IsPasswordVisibleChanged event,
+    Emitter<SignUpState> emit,
+  ) {
     emit(state.copyWith(isPasswordVisible: event.isPasswordVisible));
   }
 
-  void _onIsConfirmPasswordVisibleChanged(IsConfirmPasswordVisibleChanged event, Emitter<SignUpState> emit) {
-    emit(state.copyWith(isConfirmPasswordVisible: event.isConfirmPasswordVisible));
+  void _onIsConfirmPasswordVisibleChanged(
+    IsConfirmPasswordVisibleChanged event,
+    Emitter<SignUpState> emit,
+  ) {
+    emit(
+      state.copyWith(
+        isConfirmPasswordVisible: event.isConfirmPasswordVisible,
+      ),
+    );
   }
 
-  Future<void> _onSignUpSubmitted(SignUpSubmitted event, Emitter<SignUpState> emit) async {
+  Future<void> _onSignUpSubmitted(
+    SignUpSubmitted event,
+    Emitter<SignUpState> emit,
+  ) async {
     emit(state.copyWith(submitCount: state.submitCount + 1));
     if (!state.isFormValid || state.isSubmitting) {
       return;

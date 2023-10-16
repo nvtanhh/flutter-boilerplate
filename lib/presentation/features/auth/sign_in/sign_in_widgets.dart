@@ -38,7 +38,8 @@ class _SignInForm extends StatelessWidget {
   Widget _buildEmailField(BuildContext context) {
     return BlocBuilder<SignInBloc, SignInState>(
       buildWhen: (previous, current) =>
-          previous.email != current.email || previous.hadBeenSubmitted != current.hadBeenSubmitted,
+          previous.email != current.email ||
+          previous.hadBeenSubmitted != current.hadBeenSubmitted,
       builder: (context, state) {
         return AppTextField(
           hintText: context.l10n.field__email,
@@ -52,7 +53,8 @@ class _SignInForm extends StatelessWidget {
                   : !state.isEmailValid
                       ? context.l10n.field__email_invalid
                       : null,
-          onChanged: (value) => context.read<SignInBloc>().add(EmailChanged(value)),
+          onChanged: (value) =>
+              context.read<SignInBloc>().add(EmailChanged(value)),
         );
       },
     );
@@ -61,7 +63,8 @@ class _SignInForm extends StatelessWidget {
   Widget _buildPasswordField(BuildContext context) {
     return BlocBuilder<SignInBloc, SignInState>(
       buildWhen: (previous, current) =>
-          previous.password != current.password || previous.hadBeenSubmitted != current.hadBeenSubmitted,
+          previous.password != current.password ||
+          previous.hadBeenSubmitted != current.hadBeenSubmitted,
       builder: (context, state) {
         return AppTextField(
           hintText: context.l10n.field__password,
@@ -72,7 +75,8 @@ class _SignInForm extends StatelessWidget {
               : state.password.isEmpty
                   ? context.l10n.field__password_invalid
                   : null,
-          onChanged: (value) => context.read<SignInBloc>().add(PasswordChanged(value)),
+          onChanged: (value) =>
+              context.read<SignInBloc>().add(PasswordChanged(value)),
         );
       },
     );
@@ -137,11 +141,11 @@ class _PolicyTexts extends StatelessWidget {
   }
 
   void _onPolicyPressed(BuildContext context) {
-    IntentUtils.openWebviewURL(context, 'https://avnon.co');
+    IntentUtil.openWebviewURL(context, 'https://avnon.co');
   }
 
   void _onTermsPressed(BuildContext context) {
-    IntentUtils.openWebviewURL(context, 'https://avnon.co');
+    IntentUtil.openWebviewURL(context, 'https://avnon.co');
   }
 }
 
@@ -165,7 +169,8 @@ class _SignInErrorText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SignInBloc, SignInState>(
-      buildWhen: (previous, current) => previous.failureReason != current.failureReason,
+      buildWhen: (previous, current) =>
+          previous.failureReason != current.failureReason,
       builder: (context, state) {
         if (state.failureReason == null) {
           return AppSpacing.emptyBox;

@@ -2,7 +2,7 @@
 import 'package:rxdart/rxdart.dart';
 
 import '../configs/logging_config.dart';
-import '../utils/utils.index.dart';
+import '../utils/utils.dart';
 
 extension StreamExtension<T> on Stream<T> {
   Stream<T> log(
@@ -13,27 +13,25 @@ extension StreamExtension<T> on Stream<T> {
     bool logOnDone = false,
     bool logOnCancel = false,
   }) {
-    final logger = LogUtils.getLogger(name);
-
     return doOnListen(() {
       if (LogConfig.logOnStreamListen && logOnListen) {
-        logger.d('▶️ onSubscribed');
+        LogUtil.d('▶️ onSubscribed', name: name);
       }
     }).doOnData((event) {
       if (LogConfig.logOnStreamData && logOnData) {
-        logger.d('🟢 onEvent: $event');
+        LogUtil.d('🟢 onEvent: $event', name: name);
       }
     }).doOnCancel(() {
       if (LogConfig.logOnStreamCancel && logOnCancel) {
-        logger.d('🟡 onCanceled');
+        LogUtil.d('🟡 onCanceled', name: name);
       }
     }).doOnError((e, _) {
       if (LogConfig.logOnStreamError && logOnError) {
-        logger.e('🔴 onError $e');
+        LogUtil.e('🔴 onError $e', name: name);
       }
     }).doOnDone(() {
       if (LogConfig.logOnStreamDone && logOnDone) {
-        logger.d('☑️️ onCompleted');
+        LogUtil.d('✅ onCompleted', name: name);
       }
     });
   }

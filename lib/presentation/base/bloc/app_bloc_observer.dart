@@ -48,7 +48,7 @@ class AppBlocObserver extends BlocObserver with LogMixin {
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
     super.onError(bloc, error, stackTrace);
     if (logOnError) {
-      logErrorWithName('onError $error', name: bloc.runtimeType.toString());
+      logError('onError $error', name: bloc.runtimeType.toString());
     }
   }
 

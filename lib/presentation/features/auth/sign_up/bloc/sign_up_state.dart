@@ -19,9 +19,9 @@ class SignUpState extends BaseState with _$SignUpState {
     AuthExceptionKind? failureReason,
   }) = _SignUpState;
 
-  bool get isEmailValid => ValidationUtils.isValidEmail(email);
+  bool get isEmailValid => ValidationUtil.isValidEmail(email);
 
-  bool get isPasswordValid => ValidationUtils.isValidPassword(password);
+  bool get isPasswordValid => ValidationUtil.isValidPassword(password);
 
   bool get isPasswordMatch => password == confirmPassword;
 
@@ -29,7 +29,8 @@ class SignUpState extends BaseState with _$SignUpState {
 
   bool get hadBeenSubmitted => submitCount > 0;
 
-  bool get isEmailAlreadyInUse => failureReason == AuthExceptionKind.emailAlreadyInUse;
+  bool get isEmailAlreadyInUse =>
+      failureReason == AuthExceptionKind.emailAlreadyInUse;
 
   bool get isPasswordTooWeak => failureReason == AuthExceptionKind.weakPassword;
 }

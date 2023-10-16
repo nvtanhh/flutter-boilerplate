@@ -1,7 +1,7 @@
 import '../exceptions/parse_exception.dart';
 
-class ParseUtils {
-  const ParseUtils._();
+class ParseUtil {
+  const ParseUtil._();
 
   static int parseStringToInt(String value) {
     try {

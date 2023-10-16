@@ -19,7 +19,7 @@ class ForgotPassState extends BaseState with _$ForgotPassState {
     ForgotPassFailureReason? failureReason,
   }) = _ForgotPassState;
 
-  bool get isEmailValid => ValidationUtils.isValidEmail(email);
+  bool get isEmailValid => ValidationUtil.isValidEmail(email);
 
   bool get hadBeenSubmitted => submitCount > 0;
 }

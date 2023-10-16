@@ -20,7 +20,7 @@ class SignInState extends BaseState with _$SignInState {
     SignInFailureReason? failureReason,
   }) = _SignInState;
 
-  bool get isEmailValid => ValidationUtils.isValidEmail(email);
+  bool get isEmailValid => ValidationUtil.isValidEmail(email);
 
   bool get isFormValid => isEmailValid && password.isNotEmpty;
 

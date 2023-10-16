@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'core/configs/configs.dart';
-import 'core/utils/utils.index.dart';
+import 'core/utils/utils.dart';
 import 'presentation/app.dart';
 
 Future<void> main() async {
@@ -17,8 +17,11 @@ Future<void> _runMyApp() async {
 }
 
 void _reportError(Object error, StackTrace stackTrace) {
-  final logger = LogUtils.getLogger('Uncaught exception');
-  logger.e('', error: error, stackTrace: stackTrace);
+  LogUtil.e(
+    'Uncaught error in Flutter runtime: $error',
+    error: error,
+    stackTrace: stackTrace,
+  );
 
   // report by Firebase Crashlytics here
 }

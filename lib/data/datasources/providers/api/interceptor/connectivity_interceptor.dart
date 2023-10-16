@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../../core/exceptions/api_exception.dart';
-import '../../../../../core/utils/utils.index.dart';
+import '../../../../../core/utils/utils.dart';
 import 'base_interceptor.dart';
 
 @injectable
@@ -12,7 +12,7 @@ class ConnectivityInterceptor extends BaseInterceptor {
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) async {
-    final isConnected = await ConnectivityUtils.isConnected();
+    final isConnected = await ConnectivityUtil.isConnected();
 
     if (!isConnected) {
       return handler.reject(

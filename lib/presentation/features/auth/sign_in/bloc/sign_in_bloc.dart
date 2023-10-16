@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../../core/exceptions/exceptions.dart';
-import '../../../../../core/utils/validation_utils.dart';
+import '../../../../../core/utils/validation_util.dart';
 import '../../../../../domain/usecases/auth/sign_in_usecase.dart';
 import '../../../../base/bloc/base_bloc.dart';
 

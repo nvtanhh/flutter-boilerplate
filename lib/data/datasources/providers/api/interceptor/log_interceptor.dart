@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../../core/configs/logging_config.dart';
 import '../../../../../core/mixins/log_mixin.dart';
-import '../../../../../core/utils/log_utils.dart';
+import '../../../../../core/utils/log_util.dart';
 import 'base_interceptor.dart';
 
 @injectable
@@ -115,7 +115,7 @@ class CustomLogInterceptor extends BaseInterceptor with LogMixin {
 
   String _prettyResponse(dynamic data) {
     if (data is Map) {
-      return LogUtils.prettyJson(data as Map<String, dynamic>);
+      return LogUtil.prettyJson(data as Map<String, dynamic>);
     }
 
     return data.toString();
