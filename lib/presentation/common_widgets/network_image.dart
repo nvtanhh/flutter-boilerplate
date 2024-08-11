@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../resource/resource.dart';
+import '../resource/all.dart';
 
 const _kDefaultImageCacheWidth = 1000;
 const _kDefaultImageCacheHeight = 2000;
@@ -53,8 +53,10 @@ class AppNetworkImage extends StatelessWidget {
       fadeInDuration: Duration.zero,
       fadeOutCurve: fadeOutCurve,
       useOldImageOnUrlChange: useOldImageOnUrlChange,
-      memCacheWidth: (memCacheSize?.width ?? width ?? _kDefaultImageCacheWidth).round(),
-      memCacheHeight: (memCacheSize?.height ?? height ?? _kDefaultImageCacheHeight).round(),
+      memCacheWidth:
+          (memCacheSize?.width ?? width ?? _kDefaultImageCacheWidth).round(),
+      memCacheHeight:
+          (memCacheSize?.height ?? height ?? _kDefaultImageCacheHeight).round(),
     );
   }
 

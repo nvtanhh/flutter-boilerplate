@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 
 import '../../domain/repositories/auth_repo.dart';
-import '../datasources/datasources.dart';
+import '../datasources/all.dart';
 
 @Injectable(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {

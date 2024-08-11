@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gql_dio_link/gql_dio_link.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-import '../../../../../../core/configs/configs.dart';
+import '../../../../../../core/configs/all.dart';
 import '../../../../../../core/constants/api_constants.dart';
-import '../../../../../mappers/response_mapper/base/base.dart';
+import '../../../../../mappers/response_mapper/base/all.dart';
 import '../../exception_mapper/graphql_api_exception_mapper.dart';
 import '../../interceptor/base_interceptor.dart';
 import 'api_client_default_settings.dart';

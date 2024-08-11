@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../core/configs/configs.dart';
+import '../../core/configs/all.dart';
 import '../../core/exceptions/all.dart';
 import '../../core/helpers/stream/dispose_bag.dart';
 import '../../core/mixins/log_mixin.dart';

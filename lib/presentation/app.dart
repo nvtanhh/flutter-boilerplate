@@ -4,8 +4,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../core/configs/configs.dart';
-import '../core/constants/constants.dart';
+import '../core/configs/all.dart';
+import '../core/constants/all.dart';
 import '../core/extensions/all.dart';
 import 'common_blocs/app/app_bloc.dart';
 import 'overlay/overlay_wrapper.dart';

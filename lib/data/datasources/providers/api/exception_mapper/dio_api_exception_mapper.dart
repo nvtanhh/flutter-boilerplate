@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 import '../../../../../core/exceptions/all.dart';
-import '../../../../mappers/response_mapper/base/base.dart';
+import '../../../../mappers/response_mapper/base/all.dart';
 
 class DioApiExceptionMapper implements ApiExceptionMapper {
   const DioApiExceptionMapper({required this.serverErrorMapper});

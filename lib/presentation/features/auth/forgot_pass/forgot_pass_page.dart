@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/extensions/all.dart';
 import '../../../base/base_page_state.dart';
 import '../../../common_widgets/all.dart';
-import '../../../resource/resource.dart';
+import '../../../resource/all.dart';
 import 'bloc/forgot_pass_bloc.dart';
 
 class ForgotPassPage extends StatefulWidget {

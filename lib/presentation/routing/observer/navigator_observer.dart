@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/configs/configs.dart';
+import '../../../core/configs/all.dart';
 import '../../../core/mixins/log_mixin.dart';
 
 class AppNavigatorObserver extends NavigatorObserver with LogMixin {

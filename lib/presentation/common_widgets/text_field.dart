@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../resource/resource.dart';
+import '../resource/all.dart';
 
 class AppTextField extends StatelessWidget {
   const AppTextField({
@@ -60,9 +60,11 @@ class AppTextField extends StatelessWidget {
         errorText: errorText,
         errorStyle: AppTextStyles.bodySmall.copyWith(color: Colors.red),
         prefixIcon: prefixIcon,
-        prefixIconConstraints: const BoxConstraints(minWidth: Sizes.s20, minHeight: Sizes.s20),
+        prefixIconConstraints:
+            const BoxConstraints(minWidth: Sizes.s20, minHeight: Sizes.s20),
         suffixIcon: suffixIcon,
-        suffixIconConstraints: const BoxConstraints(minWidth: Sizes.s20, minHeight: Sizes.s20),
+        suffixIconConstraints:
+            const BoxConstraints(minWidth: Sizes.s20, minHeight: Sizes.s20),
         border: _defaultBorder(),
         enabledBorder: _defaultBorder(),
         focusedBorder: _defaultBorder(),

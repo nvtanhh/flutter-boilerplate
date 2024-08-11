@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../resource/resource.dart';
+import '../resource/all.dart';
 import 'network_image.dart';
 
 class UserAvatar extends StatelessWidget {

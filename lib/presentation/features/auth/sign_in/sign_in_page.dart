@@ -7,7 +7,7 @@ import '../../../../core/extensions/all.dart';
 import '../../../../core/utils/intent_util.dart';
 import '../../../base/base_page_state.dart';
 import '../../../common_widgets/all.dart';
-import '../../../resource/resource.dart';
+import '../../../resource/all.dart';
 import 'bloc/sign_in_bloc.dart';
 
 part 'sign_in_widgets.dart';

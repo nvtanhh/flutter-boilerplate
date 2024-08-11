@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/extensions/context_extensions.dart';
-import '../resource/resource.dart';
+import '../resource/all.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton.primary({

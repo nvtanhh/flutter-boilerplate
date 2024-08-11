@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../../core/configs/configs.dart';
+import '../../../../../core/configs/all.dart';
 import '../../../../../core/extensions/all.dart';
 import '../../../app_preferences.dart';
 import 'base_interceptor.dart';

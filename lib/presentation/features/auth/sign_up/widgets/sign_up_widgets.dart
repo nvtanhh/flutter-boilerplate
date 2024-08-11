@@ -6,7 +6,7 @@ import 'package:styled_text/styled_text.dart';
 import '../../../../../core/constants/route_constants.dart';
 import '../../../../../core/extensions/all.dart';
 import '../../../../common_widgets/all.dart';
-import '../../../../resource/resource.dart';
+import '../../../../resource/all.dart';
 import '../bloc/sign_up_bloc.dart';
 
 part 'button.dart';

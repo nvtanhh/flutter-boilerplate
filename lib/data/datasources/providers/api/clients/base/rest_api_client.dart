@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-import '../../../../../../core/constants/constants.dart';
-import '../../../../../mappers/response_mapper/base/base.dart';
+import '../../../../../../core/constants/all.dart';
+import '../../../../../mappers/response_mapper/base/all.dart';
 import '../../exception_mapper/dio_api_exception_mapper.dart';
 import '../../interceptor/base_interceptor.dart';
 import 'api_client_default_settings.dart';

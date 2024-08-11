@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/configs/di/di.dart';
-import '../../../core/constants/constants.dart';
+import '../../../core/constants/all.dart';
 import '../../common_blocs/app/app_bloc.dart';
-import '../../features/features.dart';
+import '../../features/all.dart';
 import '../observer/navigator_observer.dart';
 
 class AppRouter {
@@ -86,7 +86,8 @@ class AppRouter {
     return CustomTransitionPage<dynamic>(
       key: state.pageKey,
       child: child,
-      transitionsBuilder: (context, animation, secondaryAnimation, child) => child,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+          child,
     );
   }
 }

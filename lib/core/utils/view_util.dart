@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../presentation/common_widgets/button.dart';
-import '../../presentation/resource/resource.dart';
-import '../constants/constants.dart';
+import '../../presentation/resource/all.dart';
+import '../constants/all.dart';
 import '../extensions/context_extensions.dart';
 
 class ViewUtil {

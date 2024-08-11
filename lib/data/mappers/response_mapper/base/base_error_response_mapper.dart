@@ -1,6 +1,6 @@
 import '../../../../core/exceptions/all.dart';
 import '../../base/base_data_mapper.dart';
-import '../error_response/error_response_mapper.dart';
+import '../error_response/all.dart';
 
 enum ErrorResponseMapperType {
   jsonObject,

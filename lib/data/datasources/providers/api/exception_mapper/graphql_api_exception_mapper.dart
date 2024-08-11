@@ -2,8 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 import '../../../../../core/exceptions/all.dart';
-import '../../../../mappers/response_mapper/base/base.dart';
-import '../../../../mappers/response_mapper/error_response/error_response_mapper.dart';
+import '../../../../mappers/response_mapper/base/all.dart';
+import '../../../../mappers/response_mapper/error_response/all.dart';
 import 'dio_api_exception_mapper.dart';
 
 class GraphqlApiExceptionMapper implements ApiExceptionMapper {

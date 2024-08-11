@@ -1,4 +1,4 @@
-import '../../data/mappers/response_mapper/base/base.dart';
+import '../../data/mappers/response_mapper/base/all.dart';
 
 class ApiConstants {
   const ApiConstants._();

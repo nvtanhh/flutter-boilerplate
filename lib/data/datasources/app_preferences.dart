@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import '../../core/constants/constants.dart';
+import '../../core/constants/all.dart';
 import 'providers/storage/base_storage.dart';
 
 class AppPreferences extends BaseStorage<dynamic> {

@@ -1,4 +1,4 @@
-import '../success_response/success_response_mapper.dart';
+import '../success_response/all.dart';
 
 typedef Decoder<T> = T Function(Map<String, dynamic> data);
 

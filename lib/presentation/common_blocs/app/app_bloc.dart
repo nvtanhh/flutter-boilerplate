@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
-import '../../../core/configs/configs.dart';
+import '../../../core/configs/all.dart';
 import '../../../domain/entities/user.dart';
 import '../../base/bloc/base_bloc.dart';
 

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../base/base_page_state.dart';
 import '../../../common_widgets/all.dart';
-import '../../../resource/resource.dart';
+import '../../../resource/all.dart';
 import 'bloc/sign_up_bloc.dart';
 import 'widgets/sign_up_widgets.dart';
 

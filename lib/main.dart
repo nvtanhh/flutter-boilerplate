@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'core/configs/configs.dart';
-import 'core/utils/utils.dart';
+import 'core/configs/all.dart';
+import 'core/utils/all.dart';
 import 'presentation/app.dart';
 
 Future<void> main() async {

@@ -2,7 +2,7 @@
 import 'package:rxdart/rxdart.dart';
 
 import '../configs/logging_config.dart';
-import '../utils/utils.dart';
+import '../utils/all.dart';
 
 extension StreamExtension<T> on Stream<T> {
   Stream<T> log(

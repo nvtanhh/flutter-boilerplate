@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/extensions/all.dart';
-import '../resource/resource.dart';
+import '../resource/all.dart';
 
 class AppIcon extends StatelessWidget {
   const AppIcon({
