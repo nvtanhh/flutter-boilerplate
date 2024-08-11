@@ -1,15 +1,13 @@
 part of 'common_bloc.dart';
 
-abstract class CommonEvent {
-  const CommonEvent();
-}
-
 @freezed
-class LoadingVisibilityEmitted extends CommonEvent with _$LoadingVisibilityEmitted {
-  const factory LoadingVisibilityEmitted({required bool isLoading}) = _LoadingVisibilityEmitted;
-}
-
-@freezed
-class ForceLogoutButtonPressed extends CommonEvent with _$ForceLogoutButtonPressed {
-  const factory ForceLogoutButtonPressed() = _ForceLogoutButtonPressed;
+class CommonEvent with _$CommonEvent {
+  const factory CommonEvent.exceptionEmitted({
+    required AppExceptionWrapper appExceptionWrapper,
+  }) = _ExceptionEmitted;
+  const factory CommonEvent.loadingVisibilityEmitted({
+    required bool isLoading,
+  }) = _LoadingVisibilityEmitted;
+  const factory CommonEvent.forceLogoutButtonPressed() =
+      _ForceLogoutButtonPressed;
 }

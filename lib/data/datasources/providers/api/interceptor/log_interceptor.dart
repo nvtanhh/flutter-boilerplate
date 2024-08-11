@@ -27,6 +27,9 @@ class CustomLogInterceptor extends BaseInterceptor with LogMixin {
   static const _enableLogInterceptor = LogConfig.enableLogInterceptor;
 
   @override
+  int get priority => BaseInterceptor.customLogPriority;
+
+  @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     if (!_enableLogInterceptor || !enableLogRequestInfo) {
       handler.next(options);

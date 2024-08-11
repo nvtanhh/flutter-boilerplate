@@ -6,6 +6,9 @@ import 'base_interceptor.dart';
 @injectable
 class TrimInterceptor extends BaseInterceptor {
   @override
+  int get priority => BaseInterceptor.trimPriority;
+
+  @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     if (options.data is Map) {
       final data = options.data as Map;
@@ -15,6 +18,7 @@ class TrimInterceptor extends BaseInterceptor {
         }
       });
     }
+
     handler.next(options);
   }
 }

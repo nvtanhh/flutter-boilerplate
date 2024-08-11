@@ -12,26 +12,29 @@ part of 'forgot_pass_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$EmailChanged {
   String get email => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $EmailChangedCopyWith<EmailChanged> get copyWith => throw _privateConstructorUsedError;
+  $EmailChangedCopyWith<EmailChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmailChangedCopyWith<$Res> {
-  factory $EmailChangedCopyWith(EmailChanged value, $Res Function(EmailChanged) then) =
+  factory $EmailChangedCopyWith(
+          EmailChanged value, $Res Function(EmailChanged) then) =
       _$EmailChangedCopyWithImpl<$Res, EmailChanged>;
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class _$EmailChangedCopyWithImpl<$Res, $Val extends EmailChanged> implements $EmailChangedCopyWith<$Res> {
+class _$EmailChangedCopyWithImpl<$Res, $Val extends EmailChanged>
+    implements $EmailChangedCopyWith<$Res> {
   _$EmailChangedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -54,8 +57,10 @@ class _$EmailChangedCopyWithImpl<$Res, $Val extends EmailChanged> implements $Em
 }
 
 /// @nodoc
-abstract class _$$EmailChangedImplCopyWith<$Res> implements $EmailChangedCopyWith<$Res> {
-  factory _$$EmailChangedImplCopyWith(_$EmailChangedImpl value, $Res Function(_$EmailChangedImpl) then) =
+abstract class _$$EmailChangedImplCopyWith<$Res>
+    implements $EmailChangedCopyWith<$Res> {
+  factory _$$EmailChangedImplCopyWith(
+          _$EmailChangedImpl value, $Res Function(_$EmailChangedImpl) then) =
       __$$EmailChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -63,9 +68,11 @@ abstract class _$$EmailChangedImplCopyWith<$Res> implements $EmailChangedCopyWit
 }
 
 /// @nodoc
-class __$$EmailChangedImplCopyWithImpl<$Res> extends _$EmailChangedCopyWithImpl<$Res, _$EmailChangedImpl>
+class __$$EmailChangedImplCopyWithImpl<$Res>
+    extends _$EmailChangedCopyWithImpl<$Res, _$EmailChangedImpl>
     implements _$$EmailChangedImplCopyWith<$Res> {
-  __$$EmailChangedImplCopyWithImpl(_$EmailChangedImpl _value, $Res Function(_$EmailChangedImpl) _then)
+  __$$EmailChangedImplCopyWithImpl(
+      _$EmailChangedImpl _value, $Res Function(_$EmailChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -96,7 +103,7 @@ class _$EmailChangedImpl implements _EmailChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmailChangedImpl &&
@@ -120,7 +127,8 @@ abstract class _EmailChanged implements EmailChanged {
   String get email;
   @override
   @JsonKey(ignore: true)
-  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -128,12 +136,14 @@ mixin _$RequestSubmitted {}
 
 /// @nodoc
 abstract class $RequestSubmittedCopyWith<$Res> {
-  factory $RequestSubmittedCopyWith(RequestSubmitted value, $Res Function(RequestSubmitted) then) =
+  factory $RequestSubmittedCopyWith(
+          RequestSubmitted value, $Res Function(RequestSubmitted) then) =
       _$RequestSubmittedCopyWithImpl<$Res, RequestSubmitted>;
 }
 
 /// @nodoc
-class _$RequestSubmittedCopyWithImpl<$Res, $Val extends RequestSubmitted> implements $RequestSubmittedCopyWith<$Res> {
+class _$RequestSubmittedCopyWithImpl<$Res, $Val extends RequestSubmitted>
+    implements $RequestSubmittedCopyWith<$Res> {
   _$RequestSubmittedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -144,14 +154,17 @@ class _$RequestSubmittedCopyWithImpl<$Res, $Val extends RequestSubmitted> implem
 
 /// @nodoc
 abstract class _$$RequestSubmittedImplCopyWith<$Res> {
-  factory _$$RequestSubmittedImplCopyWith(_$RequestSubmittedImpl value, $Res Function(_$RequestSubmittedImpl) then) =
+  factory _$$RequestSubmittedImplCopyWith(_$RequestSubmittedImpl value,
+          $Res Function(_$RequestSubmittedImpl) then) =
       __$$RequestSubmittedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RequestSubmittedImplCopyWithImpl<$Res> extends _$RequestSubmittedCopyWithImpl<$Res, _$RequestSubmittedImpl>
+class __$$RequestSubmittedImplCopyWithImpl<$Res>
+    extends _$RequestSubmittedCopyWithImpl<$Res, _$RequestSubmittedImpl>
     implements _$$RequestSubmittedImplCopyWith<$Res> {
-  __$$RequestSubmittedImplCopyWithImpl(_$RequestSubmittedImpl _value, $Res Function(_$RequestSubmittedImpl) _then)
+  __$$RequestSubmittedImplCopyWithImpl(_$RequestSubmittedImpl _value,
+      $Res Function(_$RequestSubmittedImpl) _then)
       : super(_value, _then);
 }
 
@@ -166,8 +179,9 @@ class _$RequestSubmittedImpl implements _RequestSubmitted {
   }
 
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$RequestSubmittedImpl);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RequestSubmittedImpl);
   }
 
   @override
@@ -184,23 +198,31 @@ mixin _$ForgotPassState {
   int get submitCount => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   bool get requestSuccess => throw _privateConstructorUsedError;
-  ForgotPassFailureReason? get failureReason => throw _privateConstructorUsedError;
+  ForgotPassFailureReason? get failureReason =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ForgotPassStateCopyWith<ForgotPassState> get copyWith => throw _privateConstructorUsedError;
+  $ForgotPassStateCopyWith<ForgotPassState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ForgotPassStateCopyWith<$Res> {
-  factory $ForgotPassStateCopyWith(ForgotPassState value, $Res Function(ForgotPassState) then) =
+  factory $ForgotPassStateCopyWith(
+          ForgotPassState value, $Res Function(ForgotPassState) then) =
       _$ForgotPassStateCopyWithImpl<$Res, ForgotPassState>;
   @useResult
   $Res call(
-      {String email, int submitCount, bool isSubmitting, bool requestSuccess, ForgotPassFailureReason? failureReason});
+      {String email,
+      int submitCount,
+      bool isSubmitting,
+      bool requestSuccess,
+      ForgotPassFailureReason? failureReason});
 }
 
 /// @nodoc
-class _$ForgotPassStateCopyWithImpl<$Res, $Val extends ForgotPassState> implements $ForgotPassStateCopyWith<$Res> {
+class _$ForgotPassStateCopyWithImpl<$Res, $Val extends ForgotPassState>
+    implements $ForgotPassStateCopyWith<$Res> {
   _$ForgotPassStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -243,19 +265,27 @@ class _$ForgotPassStateCopyWithImpl<$Res, $Val extends ForgotPassState> implemen
 }
 
 /// @nodoc
-abstract class _$$ForgotPassStateImplCopyWith<$Res> implements $ForgotPassStateCopyWith<$Res> {
-  factory _$$ForgotPassStateImplCopyWith(_$ForgotPassStateImpl value, $Res Function(_$ForgotPassStateImpl) then) =
+abstract class _$$ForgotPassStateImplCopyWith<$Res>
+    implements $ForgotPassStateCopyWith<$Res> {
+  factory _$$ForgotPassStateImplCopyWith(_$ForgotPassStateImpl value,
+          $Res Function(_$ForgotPassStateImpl) then) =
       __$$ForgotPassStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {String email, int submitCount, bool isSubmitting, bool requestSuccess, ForgotPassFailureReason? failureReason});
+      {String email,
+      int submitCount,
+      bool isSubmitting,
+      bool requestSuccess,
+      ForgotPassFailureReason? failureReason});
 }
 
 /// @nodoc
-class __$$ForgotPassStateImplCopyWithImpl<$Res> extends _$ForgotPassStateCopyWithImpl<$Res, _$ForgotPassStateImpl>
+class __$$ForgotPassStateImplCopyWithImpl<$Res>
+    extends _$ForgotPassStateCopyWithImpl<$Res, _$ForgotPassStateImpl>
     implements _$$ForgotPassStateImplCopyWith<$Res> {
-  __$$ForgotPassStateImplCopyWithImpl(_$ForgotPassStateImpl _value, $Res Function(_$ForgotPassStateImpl) _then)
+  __$$ForgotPassStateImplCopyWithImpl(
+      _$ForgotPassStateImpl _value, $Res Function(_$ForgotPassStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -324,25 +354,31 @@ class _$ForgotPassStateImpl extends _ForgotPassState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ForgotPassStateImpl &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.submitCount, submitCount) || other.submitCount == submitCount) &&
-            (identical(other.isSubmitting, isSubmitting) || other.isSubmitting == isSubmitting) &&
-            (identical(other.requestSuccess, requestSuccess) || other.requestSuccess == requestSuccess) &&
-            (identical(other.failureReason, failureReason) || other.failureReason == failureReason));
+            (identical(other.submitCount, submitCount) ||
+                other.submitCount == submitCount) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.requestSuccess, requestSuccess) ||
+                other.requestSuccess == requestSuccess) &&
+            (identical(other.failureReason, failureReason) ||
+                other.failureReason == failureReason));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, submitCount, isSubmitting, requestSuccess, failureReason);
+  int get hashCode => Object.hash(runtimeType, email, submitCount, isSubmitting,
+      requestSuccess, failureReason);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ForgotPassStateImplCopyWith<_$ForgotPassStateImpl> get copyWith =>
-      __$$ForgotPassStateImplCopyWithImpl<_$ForgotPassStateImpl>(this, _$identity);
+      __$$ForgotPassStateImplCopyWithImpl<_$ForgotPassStateImpl>(
+          this, _$identity);
 }
 
 abstract class _ForgotPassState extends ForgotPassState {
@@ -366,5 +402,6 @@ abstract class _ForgotPassState extends ForgotPassState {
   ForgotPassFailureReason? get failureReason;
   @override
   @JsonKey(ignore: true)
-  _$$ForgotPassStateImplCopyWith<_$ForgotPassStateImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ForgotPassStateImplCopyWith<_$ForgotPassStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

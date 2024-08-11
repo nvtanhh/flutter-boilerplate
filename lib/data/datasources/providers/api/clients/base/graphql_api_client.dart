@@ -4,10 +4,12 @@ import 'package:gql_dio_link/gql_dio_link.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 import '../../../../../../core/configs/configs.dart';
-import '../../../../../../core/constants/constants.dart';
-import '../../../../../../core/exceptions/exceptions.dart';
-import '../../response_mapper/base_response_mapper.dart';
+import '../../../../../../core/constants/api_constants.dart';
+import '../../../../../mappers/response_mapper/base/base.dart';
+import '../../exception_mapper/graphql_api_exception_mapper.dart';
+import '../../interceptor/base_interceptor.dart';
 import 'api_client_default_settings.dart';
+import 'dio_builder.dart';
 
 enum GraphQLMethod { query, mutate }
 
@@ -15,16 +17,22 @@ class GraphQLApiClient {
   GraphQLApiClient({
     this.baseUrl = '',
     this.interceptors = const [],
-    this.connectTimeoutInMs = const Duration(microseconds: ApiConstants.connectTimeoutInMs),
+    Duration? connectTimeoutInMs,
+    Duration? sendTimeoutInMs,
+    Duration? receiveTimeoutInMs,
+    this.defaultErrorResponseMapperType =
+        ApiConstants.defaultErrorResponseMapperType,
   }) : _graphQLClient = ValueNotifier<GraphQLClient>(
           GraphQLClient(
             cache: GraphQLCache(store: HiveStore()),
             link: DioLink(
               getIt<EnvConfig>().apiUrl,
-              client: Dio(
-                BaseOptions(
+              client: DioBuilder.createDio(
+                options: BaseOptions(
                   baseUrl: baseUrl,
                   connectTimeout: connectTimeoutInMs,
+                  sendTimeout: sendTimeoutInMs,
+                  receiveTimeout: receiveTimeoutInMs,
                 ),
               ),
             ),
@@ -35,13 +43,18 @@ class GraphQLApiClient {
       ...this.interceptors,
     ];
 
+    interceptors.sort((a, b) => (b is BaseInterceptor ? b.priority : -1)
+        .compareTo(a is BaseInterceptor ? a.priority : -1));
+
     _dio.interceptors.addAll(interceptors);
   }
 
   final String baseUrl;
-  final Duration? connectTimeoutInMs;
+
   final List<Interceptor> interceptors;
   final ValueNotifier<GraphQLClient> _graphQLClient;
+
+  final ErrorResponseMapperType defaultErrorResponseMapperType;
 
   Dio get _dio => (_graphQLClient.value.link as DioLink).client;
 
@@ -50,6 +63,7 @@ class GraphQLApiClient {
     Map<String, dynamic> variables = const <String, dynamic>{},
     FetchPolicy? fetchPolicy = FetchPolicy.noCache,
     Decoder<T>? decoder,
+    ErrorResponseMapperType? errorResponseMapperType,
   }) async {
     return request<T>(
       method: GraphQLMethod.query,
@@ -57,6 +71,7 @@ class GraphQLApiClient {
       variables: variables,
       fetchPolicy: fetchPolicy,
       decoder: decoder,
+      errorResponseMapperType: errorResponseMapperType,
     );
   }
 
@@ -65,6 +80,7 @@ class GraphQLApiClient {
     Map<String, dynamic> variables = const <String, dynamic>{},
     FetchPolicy? fetchPolicy = FetchPolicy.noCache,
     Decoder<T>? decoder,
+    ErrorResponseMapperType? errorResponseMapperType,
   }) async {
     return request<T>(
       method: GraphQLMethod.mutate,
@@ -72,6 +88,7 @@ class GraphQLApiClient {
       variables: variables,
       fetchPolicy: fetchPolicy,
       decoder: decoder,
+      errorResponseMapperType: errorResponseMapperType,
     );
   }
 
@@ -81,6 +98,7 @@ class GraphQLApiClient {
     Map<String, dynamic> variables = const <String, dynamic>{},
     FetchPolicy? fetchPolicy = FetchPolicy.noCache,
     Decoder<T>? decoder,
+    ErrorResponseMapperType? errorResponseMapperType,
   }) async {
     final response = await _requestByMethod(
       method: method,
@@ -90,10 +108,16 @@ class GraphQLApiClient {
     );
 
     if (response.exception != null) {
-      throw getIt<ApiExceptionMapper>().map(response.exception!);
+      throw GraphqlApiExceptionMapper(
+        serverErrorMapper: BaseErrorResponseMapper.fromType(
+          errorResponseMapperType ?? defaultErrorResponseMapperType,
+        ),
+      ).map(response.exception!);
     }
 
-    return SuccessResponseMapper<T, T>(SuccessResponseMapperType.jsonObject).map(response.data, decoder);
+    return BaseSuccessResponseMapper<T, T>.fromType(
+      SuccessResponseMapperType.jsonObject,
+    ).map(response.data, decoder);
   }
 
   Future<QueryResult> _requestByMethod({

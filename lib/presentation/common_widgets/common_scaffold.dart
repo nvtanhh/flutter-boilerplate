@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../../core/extensions/extensions.dart';
+import '../../core/extensions/all.dart';
 import '../../core/utils/view_util.dart';
 import '../resource/styles/styles.dart';
 
 class CommonScaffold extends StatelessWidget {
   const CommonScaffold({
     required this.body,
-    Key? key,
+    super.key,
     this.appBar,
     this.backgroundColor = AppColorsConstants.white,
     this.hideKeyboardWhenTouchOutside = false,
     this.applyAutoPaddingBottom = false,
-  }) : super(key: key);
+  });
 
   final PreferredSizeWidget? appBar;
   final Widget body;

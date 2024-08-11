@@ -1,16 +1,13 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/extensions/extensions.dart';
-import '../resource/styles/styles.dart';
+import '../../core/extensions/all.dart';
+import '../resource/styles/gaps.dart';
 
 class AppDefaultLoading extends StatelessWidget {
   const AppDefaultLoading({
     super.key,
     this.color,
-    this.size = Sizes.s32,
+    this.size = Sizes.s24,
     this.strokeWidth = Sizes.s2,
   });
 
@@ -20,25 +17,18 @@ class AppDefaultLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final finalColor = color ?? context.appColors.primaryTextColor;
+
     return Center(
+      heightFactor: 1,
+      widthFactor: 1,
       child: SizedBox.square(
         dimension: size,
-        child: Platform.isAndroid ? _buildAndroidLoading(context) : _buildIOSLoading(context),
+        child: CircularProgressIndicator.adaptive(
+          backgroundColor: finalColor,
+          strokeWidth: strokeWidth,
+        ),
       ),
-    );
-  }
-
-  Widget _buildAndroidLoading(BuildContext context) {
-    return CircularProgressIndicator(
-      valueColor: AlwaysStoppedAnimation<Color>(color ?? context.appColors.primaryColor),
-      strokeWidth: strokeWidth,
-    );
-  }
-
-  Widget _buildIOSLoading(BuildContext context) {
-    return CupertinoActivityIndicator(
-      color: color ?? context.appColors.primaryColor,
-      radius: size / 2,
     );
   }
 }

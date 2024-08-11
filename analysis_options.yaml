@@ -28,18 +28,18 @@ dart_code_metrics:
     #    number-of-parameters: 4
     # source-lines-of-code: 50
   rules:
-    - member-ordering:
-        #        alphabetize: true
-        order:
-          - constructors
-          - fields
-          - getters-setters
-          - methods
-        widgets-order:
-          - constructors
-          - fields
-          - getters-setters
-          - methods
+    # - member-ordering:
+    #     #        alphabetize: true
+    #     order:
+    #       - constructors
+    #       - fields
+    #       - getters-setters
+    #       - methods
+    #     widgets-order:
+    #       - constructors
+    #       - fields
+    #       - getters-setters
+    #       - methods
     - always-remove-listener
     - no-boolean-literal-compare
     - newline-before-return
@@ -64,6 +64,24 @@ dart_code_metrics:
     - prefer-correct-identifier-length:
         max-identifier-length: 70
         min-identifier-length: 2
+        exceptions:
+          # counters
+          - i
+          - j
+          # coordinates
+          - x
+          - y
+          # various
+          - id
+          - db
+          # Theme spacings
+          - xs
+          - xl
+          - s
+          - m
+          - sm
+          - l
+          - lm
     - prefer-correct-type-name:
         min-length: 3
         max-length: 70
@@ -85,7 +103,6 @@ linter:
     - always_declare_return_types
     - always_put_control_body_on_new_line
     - always_put_required_named_parameters_first
-    - always_require_non_null_named_parameters
     - annotate_overrides
     #    - avoid_dynamic_calls
     - avoid_empty_else

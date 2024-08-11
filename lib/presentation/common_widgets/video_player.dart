@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-import '../../core/extensions/extensions.dart';
+import '../../core/extensions/all.dart';
 import '../resource/styles/styles.dart';
-import 'common_widgets.dart';
+import 'all.dart';
 
 class AppVideoPlayer extends StatefulWidget {
   const AppVideoPlayer(
@@ -40,7 +40,8 @@ class AppVideoPlayer extends StatefulWidget {
   State<AppVideoPlayer> createState() => AppVideoPlayerState();
 }
 
-class AppVideoPlayerState extends State<AppVideoPlayer> with AutomaticKeepAliveClientMixin {
+class AppVideoPlayerState extends State<AppVideoPlayer>
+    with AutomaticKeepAliveClientMixin {
   late VideoPlayerController _controller;
   final ValueNotifier<bool> _isPlayingNotifier = ValueNotifier(false);
 
@@ -50,8 +51,9 @@ class AppVideoPlayerState extends State<AppVideoPlayer> with AutomaticKeepAliveC
   @override
   void initState() {
     super.initState();
-    _controller =
-        widget.isFile ? VideoPlayerController.file(File(widget.url)) : VideoPlayerController.network(widget.url);
+    _controller = widget.isFile
+        ? VideoPlayerController.file(File(widget.url))
+        : VideoPlayerController.networkUrl(Uri.parse(widget.url));
     _controller.initialize().then((_) {
       if (widget.autoPlay) {
         play();
@@ -95,7 +97,8 @@ class AppVideoPlayerState extends State<AppVideoPlayer> with AutomaticKeepAliveC
   Widget build(BuildContext context) {
     super.build(context);
 
-    final child = _controller.value.isInitialized ? _buildBody() : _buildLoading();
+    final child =
+        _controller.value.isInitialized ? _buildBody() : _buildLoading();
 
     if (widget.isThumbnailMode) {
       return child;

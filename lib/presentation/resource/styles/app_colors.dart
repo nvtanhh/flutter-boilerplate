@@ -6,6 +6,10 @@ class AppColors extends ThemeExtension<AppColors> {
     required this.secondaryColor,
     required this.primaryTextColor,
     required this.secondaryTextColor,
+    required this.success,
+    required this.error,
+    required this.warning,
+    required this.inverseTextColor,
   });
 
   factory AppColors.lightThemeColors() {
@@ -13,7 +17,11 @@ class AppColors extends ThemeExtension<AppColors> {
       primaryColor: AppColorsConstants.dark,
       secondaryColor: AppColorsConstants.blue,
       primaryTextColor: AppColorsConstants.white,
-      secondaryTextColor: AppColorsConstants.white,
+      secondaryTextColor: AppColorsConstants.gray,
+      success: AppColorsConstants.green,
+      error: AppColorsConstants.red,
+      warning: AppColorsConstants.warning,
+      inverseTextColor: AppColorsConstants.black,
     );
   }
 
@@ -22,7 +30,11 @@ class AppColors extends ThemeExtension<AppColors> {
       primaryColor: AppColorsConstants.white,
       secondaryColor: AppColorsConstants.blue,
       primaryTextColor: AppColorsConstants.dark,
-      secondaryTextColor: AppColorsConstants.dark,
+      secondaryTextColor: AppColorsConstants.gray,
+      success: AppColorsConstants.green,
+      error: AppColorsConstants.red,
+      warning: AppColorsConstants.warning,
+      inverseTextColor: AppColorsConstants.white,
     );
   }
 
@@ -30,6 +42,10 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color secondaryColor;
   final Color primaryTextColor;
   final Color secondaryTextColor;
+  final Color success;
+  final Color error;
+  final Color warning;
+  final Color inverseTextColor;
 
   @override
   ThemeExtension<AppColors> copyWith({
@@ -37,13 +53,20 @@ class AppColors extends ThemeExtension<AppColors> {
     Color? secondaryColor,
     Color? primaryTextColor,
     Color? secondaryTextColor,
-    LinearGradient? primaryGradient,
+    Color? success,
+    Color? error,
+    Color? warning,
+    Color? inverseTextColor,
   }) {
     return AppColors(
       primaryColor: primaryColor ?? this.primaryColor,
       secondaryColor: secondaryColor ?? this.secondaryColor,
       primaryTextColor: primaryTextColor ?? this.primaryTextColor,
       secondaryTextColor: secondaryTextColor ?? this.secondaryTextColor,
+      success: success ?? this.success,
+      error: error ?? this.error,
+      warning: warning ?? this.warning,
+      inverseTextColor: inverseTextColor ?? this.inverseTextColor,
     );
   }
 
@@ -56,8 +79,15 @@ class AppColors extends ThemeExtension<AppColors> {
     return AppColors(
       primaryColor: Color.lerp(primaryColor, other.primaryColor, t)!,
       secondaryColor: Color.lerp(secondaryColor, other.secondaryColor, t)!,
-      primaryTextColor: Color.lerp(primaryTextColor, other.primaryTextColor, t)!,
-      secondaryTextColor: Color.lerp(secondaryTextColor, other.secondaryTextColor, t)!,
+      primaryTextColor:
+          Color.lerp(primaryTextColor, other.primaryTextColor, t)!,
+      secondaryTextColor:
+          Color.lerp(secondaryTextColor, other.secondaryTextColor, t)!,
+      success: Color.lerp(success, other.success, t)!,
+      error: Color.lerp(error, other.error, t)!,
+      warning: Color.lerp(warning, other.warning, t)!,
+      inverseTextColor:
+          Color.lerp(inverseTextColor, other.inverseTextColor, t)!,
     );
   }
 }
@@ -82,4 +112,6 @@ class AppColorsConstants {
   static const Color lightGray = Color(0xffF2F2F2);
   static const Color lightGray2 = Color(0xffF5F5F5);
   static const Color lightGray3 = Color(0xffECECEC);
+
+  static const Color warning = Color(0xffFFC107);
 }

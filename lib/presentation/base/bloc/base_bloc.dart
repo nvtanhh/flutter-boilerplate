@@ -3,26 +3,21 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/exceptions/exceptions.dart';
+import '../../../core/configs/di/di.dart';
+import '../../../core/exceptions/all.dart';
 import '../../../core/helpers/helpers.dart';
 import '../../../core/mixins/log_mixin.dart';
+import '../../../core/utils/log_util.dart';
+import '../../../domain/entities/user.dart';
+import '../../common_blocs/app/app_bloc.dart';
 import 'common/common_bloc.dart';
 
 part 'base_event.dart';
 part 'base_state.dart';
 
-abstract class BaseBloc<E extends BaseEvent, S extends BaseState> extends Bloc<E, S> with LogMixin {
-  BaseBloc(S initialState) : super(initialState);
-
-  late final CommonBloc _commonBloc;
-
-  DisposeBag? _disposeBag;
-
-  set commonBloc(CommonBloc commonBloc) {
-    _commonBloc = commonBloc;
-  }
-
-  CommonBloc get commonBloc => this is CommonBloc ? this as CommonBloc : _commonBloc;
+abstract class BaseBloc<E extends BaseEvent, S extends BaseState>
+    extends Bloc<E, S> with LogMixin, BaseBlocDelegateMixin<S> {
+  BaseBloc(super.initialState);
 
   @override
   void add(E event) {
@@ -33,27 +28,82 @@ abstract class BaseBloc<E extends BaseEvent, S extends BaseState> extends Bloc<E
     }
   }
 
+  @mustCallSuper
+  @override
+  Future<void> close() {
+    return super.close();
+  }
+}
+
+abstract class BaseCubit<S extends BaseState> extends Cubit<S>
+    with LogMixin, BaseBlocDelegateMixin<S> {
+  BaseCubit(super.initialState);
+
+  @override
+  void emit(S state) {
+    if (!isClosed) {
+      super.emit(state);
+    } else {
+      logError('Cannot emit new state $state because $runtimeType was closed');
+    }
+  }
+
+  @mustCallSuper
+  @override
+  Future<void> close() {
+    return super.close();
+  }
+}
+
+mixin BaseBlocDelegateMixin<S extends BaseState> on BlocBase<S> {
+  CommonBloc? _commonBloc;
+
+  DisposeBag? _disposeBag;
+  DisposeBag get disposeBag => _disposeBag ??= DisposeBag();
+
+  set commonBloc(CommonBloc commonBloc) {
+    _commonBloc = commonBloc;
+  }
+
+  // Call this getter only when the commonBloc is set
+  CommonBloc get commonBloc =>
+      this is CommonBloc ? this as CommonBloc : _commonBloc!;
+
+  // Only use this getter when you are sure that the current user is logged in
+  User get currentUser => getIt.get<AppBloc>().state.currentUser!;
+
+  bool get isUserLoggedIn => getIt.get<AppBloc>().state.currentUser != null;
+
+  /// If expected to be used (Renderings) in multiple places else it should be
+  /// provided in the widget tree where it is expected to be used.
+  ///
+  /// If isSingletonBloc is true, [BasePageState] will not dispose the bloc
+  bool get isSingletonBloc => false;
+
   @protected
   void addAutoDisposeItem(Object item) {
-    _disposeBag ??= DisposeBag();
-    _disposeBag!.addDisposable(item);
+    disposeBag.addDisposable(item);
   }
 
-  void showLoading() {
-    commonBloc.add(const LoadingVisibilityEmitted(isLoading: true));
-  }
+  void showLoading() => _addVisibilityEvent(true);
 
-  void hideLoading() {
-    commonBloc.add(const LoadingVisibilityEmitted(isLoading: false));
+  void hideLoading() => _addVisibilityEvent(false);
+
+  void _addVisibilityEvent(bool isLoading) {
+    commonBloc.add(
+      CommonEvent.loadingVisibilityEmitted(isLoading: isLoading),
+    );
   }
 
   Future<void> runBlocCatching({
-    required Future<void> Function() action,
-    Future<void> Function(AppException)? doOnError,
-    Future<void> Function()? doOnSubscribe,
-    Future<void> Function()? doOnSuccessOrError,
-    Future<void> Function()? doOnEventCompleted,
+    required FutureOr<void> Function() action,
+    FutureOr<void> Function(AppException)? doOnError,
+    FutureOr<void> Function()? doOnSubscribe,
+    FutureOr<void> Function()? doOnSuccessOrError,
+    FutureOr<void> Function()? doOnEventCompleted,
     bool handleLoading = true,
+    bool handleError = false,
+    String? overrideErrorMessage,
   }) async {
     try {
       await doOnSubscribe?.call();
@@ -68,18 +118,33 @@ abstract class BaseBloc<E extends BaseEvent, S extends BaseState> extends Bloc<E
       }
       await doOnSuccessOrError?.call();
     } on AppException catch (e) {
-      logError(e);
+      LogUtil.e(e, name: runtimeType.toString());
 
       if (handleLoading) {
         hideLoading();
       }
+
+      if (!handleError && _isRefreshTokenFailed(e)) {
+        _onRefreshTokenFailed();
+      }
+
       await doOnSuccessOrError?.call();
       await doOnError?.call(e);
 
-      if (_isRefreshTokenFailed(e)) {
-        _onRefreshTokenFailed();
+      if (handleError) {
+        await addException(
+          AppExceptionWrapper(
+            appException: e,
+            exceptionCompleter: Completer<void>(),
+            overrideMessage: overrideErrorMessage,
+          ),
+        );
       }
     } finally {
+      if (handleLoading && commonBloc.state.isLoading) {
+        hideLoading();
+      }
+
       await doOnEventCompleted?.call();
     }
   }
@@ -92,8 +157,16 @@ abstract class BaseBloc<E extends BaseEvent, S extends BaseState> extends Bloc<E
     return exception.kind == ApiExceptionKind.refreshTokenFailed;
   }
 
+  Future<void> addException(AppExceptionWrapper appExceptionWrapper) async {
+    commonBloc.add(
+      CommonEvent.exceptionEmitted(appExceptionWrapper: appExceptionWrapper),
+    );
+
+    return appExceptionWrapper.exceptionCompleter?.future;
+  }
+
   void _onRefreshTokenFailed() {
-    commonBloc.add(const ForceLogoutButtonPressed());
+    commonBloc.add(const CommonEvent.forceLogoutButtonPressed());
   }
 
   @mustCallSuper

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:styled_text/styled_text.dart';
 
-import '../../../../core/extensions/extensions.dart';
+import '../../../../core/extensions/all.dart';
 import '../../../../core/utils/intent_util.dart';
 import '../../../base/base_page_state.dart';
-import '../../../common_widgets/common_widgets.dart';
+import '../../../common_widgets/all.dart';
 import '../../../resource/resource.dart';
 import 'bloc/sign_in_bloc.dart';
 

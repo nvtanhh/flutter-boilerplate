@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../base/base_page_state.dart';
-import '../../../common_widgets/common_widgets.dart';
+import '../../../common_widgets/all.dart';
 import '../../../resource/resource.dart';
 import 'bloc/sign_up_bloc.dart';
 import 'widgets/sign_up_widgets.dart';
@@ -24,7 +24,8 @@ class _SignUpPageState extends BasePageState<SignUpPage, SignUpBloc> {
       hideKeyboardWhenTouchOutside: true,
       appBar: CommonAppBar(),
       body: BlocBuilder<SignUpBloc, SignUpState>(
-        buildWhen: (previous, current) => previous.isSignUpSuccess != current.isSignUpSuccess,
+        buildWhen: (previous, current) =>
+            previous.isSignUpSuccess != current.isSignUpSuccess,
         builder: (context, state) {
           if (state.isSignUpSuccess) {
             return const SignUpSuccessWidget();

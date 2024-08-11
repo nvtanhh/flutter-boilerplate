@@ -7,7 +7,6 @@ extension ContextExtensions on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
   double get height => mediaQuery.size.height;
   double get width => mediaQuery.size.width;
-  double get textScaleFactor => mediaQuery.textScaleFactor;
   double get pixelRatio => mediaQuery.devicePixelRatio;
   bool get isLandscape => mediaQuery.orientation == Orientation.landscape;
   bool get isPortrait => mediaQuery.orientation == Orientation.portrait;
@@ -31,10 +30,11 @@ extension ContextExtensions on BuildContext {
   // navigator
   Future<T?> pushPage<T extends Object?>(Widget child) =>
       Navigator.of(this).push<T>(MaterialPageRoute(builder: (_) => child));
-  Future<void> pushReplacement(Widget child) =>
-      Navigator.of(this).pushReplacement(MaterialPageRoute(builder: (_) => child));
+  Future<void> pushReplacement(Widget child) => Navigator.of(this)
+      .pushReplacement(MaterialPageRoute(builder: (_) => child));
 
   void pop<T extends Object?>([T? result]) => Navigator.of(this).pop<T>(result);
-  void popUntil(String routeName) => Navigator.of(this).popUntil(ModalRoute.withName(routeName));
+  void popUntil(String routeName) =>
+      Navigator.of(this).popUntil(ModalRoute.withName(routeName));
   void popUntilFirst() => Navigator.of(this).popUntil((route) => route.isFirst);
 }

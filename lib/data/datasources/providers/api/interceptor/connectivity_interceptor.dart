@@ -1,12 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../../core/exceptions/api_exception.dart';
+import '../../../../../core/exceptions/api/api_exception.dart';
 import '../../../../../core/utils/utils.dart';
 import 'base_interceptor.dart';
 
 @injectable
 class ConnectivityInterceptor extends BaseInterceptor {
+  @override
+  int get priority => BaseInterceptor.connectivityPriority;
+
   @override
   Future<void> onRequest(
     RequestOptions options,
@@ -18,7 +21,7 @@ class ConnectivityInterceptor extends BaseInterceptor {
       return handler.reject(
         DioException(
           requestOptions: options,
-          error: const ApiException(ApiExceptionKind.noInternet),
+          error: const ApiException(kind: ApiExceptionKind.noInternet),
         ),
       );
     }

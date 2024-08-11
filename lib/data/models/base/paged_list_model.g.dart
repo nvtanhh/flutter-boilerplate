@@ -12,9 +12,9 @@ PagedListModel<T> _$PagedListModelFromJson<T>(
 ) =>
     PagedListModel<T>(
       items: (json['items'] as List<dynamic>).map(fromJsonT).toList(),
-      total: json['total'] as int?,
-      page: json['page'] as int?,
-      pageSize: json['pageSize'] as int?,
+      total: (json['total'] as num?)?.toInt(),
+      page: (json['page'] as num?)?.toInt(),
+      pageSize: (json['pageSize'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$PagedListModelToJson<T>(

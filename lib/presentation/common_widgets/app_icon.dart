@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/extensions/extensions.dart';
+import '../../core/extensions/all.dart';
 import '../resource/resource.dart';
 
 class AppIcon extends StatelessWidget {
@@ -84,6 +84,8 @@ class AppIcons {
   static SvgGenImage send = Assets.icons.paperPlaneTopSolid;
   static SvgGenImage emoji = Assets.icons.faceSmileLight;
 
+  static const IconData checkCircle = Icons.check_circle;
+  static const IconData warning = Icons.warning;
   static const IconData close = Icons.close;
   static const IconData play = Icons.play_arrow;
 }

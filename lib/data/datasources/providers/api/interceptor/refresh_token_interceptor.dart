@@ -19,6 +19,9 @@ class RefreshTokenInterceptor extends BaseInterceptor {
   final Queue _pendingRequests = Queue<PendingRequest>();
 
   @override
+  int get priority => BaseInterceptor.refreshTokenPriority;
+
+  @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
     if (err.response?.statusCode == HttpStatus.unauthorized) {
       final options = err.response!.requestOptions;

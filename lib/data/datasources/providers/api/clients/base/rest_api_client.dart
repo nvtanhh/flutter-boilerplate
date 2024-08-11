@@ -2,11 +2,12 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-import '../../../../../../core/configs/configs.dart';
 import '../../../../../../core/constants/constants.dart';
-import '../../../../../../core/exceptions/exceptions.dart';
-import '../../response_mapper/base_response_mapper.dart';
+import '../../../../../mappers/response_mapper/base/base.dart';
+import '../../exception_mapper/dio_api_exception_mapper.dart';
+import '../../interceptor/base_interceptor.dart';
 import 'api_client_default_settings.dart';
+import 'dio_builder.dart';
 
 enum RestMethod { get, post, put, patch, delete }
 
@@ -14,14 +15,19 @@ class RestApiClient {
   RestApiClient({
     required this.baseUrl,
     this.interceptors = const [],
-    this.connectTimeoutInMs =
-        const Duration(microseconds: ApiConstants.connectTimeoutInMs),
-    this.successResponseMapperType =
+    Duration? connectTimeout,
+    Duration? receiveTimeoutInMs,
+    Duration? sendTimeoutInMs,
+    this.defaultSuccessResponseMapperType =
         ApiConstants.defaultSuccessResponseMapperType,
-  }) : _dio = Dio(
-          BaseOptions(
+    this.defaultErrorResponseMapperType =
+        ApiConstants.defaultErrorResponseMapperType,
+  }) : _dio = DioBuilder.createDio(
+          options: BaseOptions(
             baseUrl: baseUrl,
-            connectTimeout: connectTimeoutInMs,
+            connectTimeout: connectTimeout,
+            receiveTimeout: receiveTimeoutInMs,
+            sendTimeout: sendTimeoutInMs,
           ),
         ) {
     final List<Interceptor> interceptors = [
@@ -29,14 +35,17 @@ class RestApiClient {
       ...this.interceptors,
     ];
 
+    interceptors.sort((a, b) => (b is BaseInterceptor ? b.priority : -1)
+        .compareTo(a is BaseInterceptor ? a.priority : -1));
+
     _dio.interceptors.addAll(interceptors);
   }
 
   final String baseUrl;
-  final Duration? connectTimeoutInMs;
   final List<Interceptor> interceptors;
   final Dio _dio;
-  final SuccessResponseMapperType successResponseMapperType;
+  final SuccessResponseMapperType defaultSuccessResponseMapperType;
+  final ErrorResponseMapperType defaultErrorResponseMapperType;
 
   Future<Response<T>> fetch<T>(RequestOptions requestOptions) {
     return _dio.fetch(requestOptions);
@@ -50,6 +59,7 @@ class RestApiClient {
     Decoder<D>? decoder,
     Map<String, dynamic>? headers,
     SuccessResponseMapperType? successResponseMapperType,
+    ErrorResponseMapperType? errorResponseMapperType,
     bool? returnRawResponse,
   }) async {
     try {
@@ -65,11 +75,15 @@ class RestApiClient {
         return response as T;
       }
 
-      return SuccessResponseMapper<D, T>(
-        successResponseMapperType ?? this.successResponseMapperType,
+      return BaseSuccessResponseMapper<D, T>.fromType(
+        successResponseMapperType ?? defaultSuccessResponseMapperType,
       ).map(response.data, decoder);
     } on DioException catch (error) {
-      throw getIt<ApiExceptionMapper>().map(error);
+      throw DioApiExceptionMapper(
+        serverErrorMapper: BaseErrorResponseMapper.fromType(
+          errorResponseMapperType ?? defaultErrorResponseMapperType,
+        ),
+      ).map(error);
     } catch (error) {
       rethrow;
     }
@@ -81,6 +95,7 @@ class RestApiClient {
     Map<String, dynamic>? headers,
     Decoder<D>? decoder,
     SuccessResponseMapperType? successResponseMapperType,
+    ErrorResponseMapperType? errorResponseMapperType,
     bool? returnRawResponse,
   }) async {
     return request<T, D>(
@@ -89,6 +104,8 @@ class RestApiClient {
       queryParameters: queryParameters,
       headers: headers,
       decoder: decoder,
+      successResponseMapperType: successResponseMapperType,
+      errorResponseMapperType: errorResponseMapperType,
       returnRawResponse: returnRawResponse,
     );
   }
@@ -100,6 +117,7 @@ class RestApiClient {
     Map<String, dynamic>? headers,
     Decoder<D>? decoder,
     SuccessResponseMapperType? successResponseMapperType,
+    ErrorResponseMapperType? errorResponseMapperType,
     bool? returnRawResponse,
   }) async {
     return request<T, D>(
@@ -110,6 +128,7 @@ class RestApiClient {
       headers: headers,
       decoder: decoder,
       successResponseMapperType: successResponseMapperType,
+      errorResponseMapperType: errorResponseMapperType,
       returnRawResponse: returnRawResponse,
     );
   }
@@ -121,6 +140,7 @@ class RestApiClient {
     Map<String, dynamic>? headers,
     Decoder<D>? decoder,
     SuccessResponseMapperType? successResponseMapperType,
+    ErrorResponseMapperType? errorResponseMapperType,
     bool? returnRawResponse,
   }) async {
     return request<T, D>(
@@ -131,6 +151,7 @@ class RestApiClient {
       headers: headers,
       decoder: decoder,
       successResponseMapperType: successResponseMapperType,
+      errorResponseMapperType: errorResponseMapperType,
       returnRawResponse: returnRawResponse,
     );
   }
@@ -142,6 +163,7 @@ class RestApiClient {
     Map<String, dynamic>? headers,
     Decoder<D>? decoder,
     SuccessResponseMapperType? successResponseMapperType,
+    ErrorResponseMapperType? errorResponseMapperType,
     bool? returnRawResponse,
   }) async {
     return request<T, D>(
@@ -152,6 +174,7 @@ class RestApiClient {
       headers: headers,
       decoder: decoder,
       successResponseMapperType: successResponseMapperType,
+      errorResponseMapperType: errorResponseMapperType,
       returnRawResponse: returnRawResponse,
     );
   }
@@ -163,6 +186,7 @@ class RestApiClient {
     Map<String, dynamic>? headers,
     Decoder<D>? decoder,
     SuccessResponseMapperType? successResponseMapperType,
+    ErrorResponseMapperType? errorResponseMapperType,
     bool? returnRawResponse,
   }) async {
     return request<T, D>(
@@ -173,6 +197,7 @@ class RestApiClient {
       headers: headers,
       decoder: decoder,
       successResponseMapperType: successResponseMapperType,
+      errorResponseMapperType: errorResponseMapperType,
       returnRawResponse: returnRawResponse,
     );
   }

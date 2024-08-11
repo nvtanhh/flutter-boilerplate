@@ -20,6 +20,9 @@ class RetryInterceptor extends BaseInterceptor {
   static const _retryHeaderKey = 'x-retry';
 
   @override
+  int get priority => BaseInterceptor.retryPriority;
+
+  @override
   Future<void> onRequest(
     RequestOptions options,
     RequestInterceptorHandler handler,
@@ -52,6 +55,8 @@ class RetryInterceptor extends BaseInterceptor {
   }
 
   bool shouldRetry(DioException error) {
-    return error.type != DioExceptionType.cancel && error.error != null && error.error is SocketException;
+    return error.type != DioExceptionType.cancel &&
+        error.error != null &&
+        error.error is SocketException;
   }
 }

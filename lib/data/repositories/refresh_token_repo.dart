@@ -1,8 +1,7 @@
 import 'package:injectable/injectable.dart';
 
-import '../../core/exceptions/exceptions.dart';
-import '../../core/extensions/extensions.dart';
-
+import '../../core/exceptions/all.dart';
+import '../../core/extensions/all.dart';
 import '../datasources/app_preferences.dart';
 import '../datasources/refresh_token_datasource.dart';
 
@@ -23,7 +22,10 @@ class RefreshTokenRepository {
         await _appPreferences.saveAccessToken(data.accessToken);
       }
     } on ApiException catch (e) {
-      throw ApiException(ApiExceptionKind.refreshTokenFailed, e);
+      throw ApiException(
+        kind: ApiExceptionKind.refreshTokenFailed,
+        rootException: e,
+      );
     }
   }
 }

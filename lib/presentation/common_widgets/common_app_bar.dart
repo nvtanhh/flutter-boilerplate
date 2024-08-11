@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../core/extensions/extensions.dart';
+import '../../core/extensions/all.dart';
 import '../resource/styles/styles.dart';
-import 'common_widgets.dart';
+import 'all.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   CommonAppBar({
-    Key? key,
+    super.key,
     this.text,
     this.onLeadingPressed,
     this.onTitlePressed,
@@ -35,8 +35,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.titleTextStyle,
     this.systemOverlayStyle,
     this.leadingIconColor,
-  })  : preferredSize = Size.fromHeight(height ?? Sizes.s56),
-        super(key: key);
+  }) : preferredSize = Size.fromHeight(height ?? Sizes.s56);
 
   final String? text;
   final VoidCallback? onLeadingPressed;
@@ -89,12 +88,16 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       bottomOpacity: bottomOpacity,
       leadingWidth: leadingWidth,
       systemOverlayStyle: systemOverlayStyle,
-      leading: leadingIcon == LeadingIcon.none ? null : _buildLeadingIcon().clickable(onLeadingPressed ?? context.pop),
+      leading: leadingIcon == LeadingIcon.none
+          ? null
+          : _buildLeadingIcon().clickable(onLeadingPressed ?? context.pop),
       centerTitle: centerTitle,
       title: GestureDetector(
         onTap: onTitlePressed,
         behavior: HitTestBehavior.translucent,
-        child: titleType == AppBarTitle.text ? Text(text ?? '', style: _getAppBarTextStyle()) : null,
+        child: titleType == AppBarTitle.text
+            ? Text(text ?? '', style: _getAppBarTextStyle())
+            : null,
       ),
       actions: actions,
       elevation: elevation,

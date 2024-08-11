@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 
-import '../../core/exceptions/api_exception.dart';
+import '../../core/exceptions/api/api_exception.dart';
 import '../models/refresh_token_model.dart';
 import 'providers/api/clients/clients.dart';
 
@@ -25,7 +25,7 @@ class RefreshTokDatasourceImp implements RefreshTokenDatasource {
       );
     } catch (e) {
       if (e is ApiException && (e.kind == ApiExceptionKind.unknown)) {
-        throw const ApiException(ApiExceptionKind.refreshTokenFailed);
+        throw const ApiException(kind: ApiExceptionKind.refreshTokenFailed);
       }
 
       rethrow;

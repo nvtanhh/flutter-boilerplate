@@ -12,7 +12,7 @@ part of 'paged_list.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PagedList<T> {
@@ -22,19 +22,22 @@ mixin _$PagedList<T> {
   int get pageSize => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $PagedListCopyWith<T, PagedList<T>> get copyWith => throw _privateConstructorUsedError;
+  $PagedListCopyWith<T, PagedList<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PagedListCopyWith<T, $Res> {
-  factory $PagedListCopyWith(PagedList<T> value, $Res Function(PagedList<T>) then) =
+  factory $PagedListCopyWith(
+          PagedList<T> value, $Res Function(PagedList<T>) then) =
       _$PagedListCopyWithImpl<T, $Res, PagedList<T>>;
   @useResult
   $Res call({List<T> items, int total, int page, int pageSize});
 }
 
 /// @nodoc
-class _$PagedListCopyWithImpl<T, $Res, $Val extends PagedList<T>> implements $PagedListCopyWith<T, $Res> {
+class _$PagedListCopyWithImpl<T, $Res, $Val extends PagedList<T>>
+    implements $PagedListCopyWith<T, $Res> {
   _$PagedListCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -72,8 +75,10 @@ class _$PagedListCopyWithImpl<T, $Res, $Val extends PagedList<T>> implements $Pa
 }
 
 /// @nodoc
-abstract class _$$PagedListImplCopyWith<T, $Res> implements $PagedListCopyWith<T, $Res> {
-  factory _$$PagedListImplCopyWith(_$PagedListImpl<T> value, $Res Function(_$PagedListImpl<T>) then) =
+abstract class _$$PagedListImplCopyWith<T, $Res>
+    implements $PagedListCopyWith<T, $Res> {
+  factory _$$PagedListImplCopyWith(
+          _$PagedListImpl<T> value, $Res Function(_$PagedListImpl<T>) then) =
       __$$PagedListImplCopyWithImpl<T, $Res>;
   @override
   @useResult
@@ -81,9 +86,11 @@ abstract class _$$PagedListImplCopyWith<T, $Res> implements $PagedListCopyWith<T
 }
 
 /// @nodoc
-class __$$PagedListImplCopyWithImpl<T, $Res> extends _$PagedListCopyWithImpl<T, $Res, _$PagedListImpl<T>>
+class __$$PagedListImplCopyWithImpl<T, $Res>
+    extends _$PagedListCopyWithImpl<T, $Res, _$PagedListImpl<T>>
     implements _$$PagedListImplCopyWith<T, $Res> {
-  __$$PagedListImplCopyWithImpl(_$PagedListImpl<T> _value, $Res Function(_$PagedListImpl<T>) _then)
+  __$$PagedListImplCopyWithImpl(
+      _$PagedListImpl<T> _value, $Res Function(_$PagedListImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +125,11 @@ class __$$PagedListImplCopyWithImpl<T, $Res> extends _$PagedListCopyWithImpl<T, 
 /// @nodoc
 
 class _$PagedListImpl<T> extends _PagedList<T> {
-  const _$PagedListImpl({required final List<T> items, required this.total, required this.page, required this.pageSize})
+  const _$PagedListImpl(
+      {required final List<T> items,
+      required this.total,
+      required this.page,
+      required this.pageSize})
       : _items = items,
         super._();
 
@@ -143,18 +154,20 @@ class _$PagedListImpl<T> extends _PagedList<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PagedListImpl<T> &&
             const DeepCollectionEquality().equals(other._items, _items) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.page, page) || other.page == page) &&
-            (identical(other.pageSize, pageSize) || other.pageSize == pageSize));
+            (identical(other.pageSize, pageSize) ||
+                other.pageSize == pageSize));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_items), total, page, pageSize);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_items), total, page, pageSize);
 
   @JsonKey(ignore: true)
   @override
@@ -181,5 +194,6 @@ abstract class _PagedList<T> extends PagedList<T> {
   int get pageSize;
   @override
   @JsonKey(ignore: true)
-  _$$PagedListImplCopyWith<T, _$PagedListImpl<T>> get copyWith => throw _privateConstructorUsedError;
+  _$$PagedListImplCopyWith<T, _$PagedListImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

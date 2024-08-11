@@ -1,9 +1,13 @@
 import 'package:flutter/widgets.dart';
 
 class Sizes {
+  const Sizes._();
+
   static const s2 = 2.0;
   static const s4 = 4.0;
+  static const s6 = 6.0;
   static const s8 = 8.0;
+  static const s10 = 10.0;
   static const s12 = 12.0;
   static const s16 = 16.0;
   static const s20 = 20.0;
@@ -22,10 +26,14 @@ class Sizes {
 
 // EdgeInsets
 class AppSpacing {
+  const AppSpacing._();
   static const emptyBox = SizedBox.shrink();
 
+  static const gapW2 = SizedBox(width: Sizes.s2);
   static const gapW4 = SizedBox(width: Sizes.s4);
+  static const gapW6 = SizedBox(width: Sizes.s6);
   static const gapW8 = SizedBox(width: Sizes.s8);
+  static const gapW10 = SizedBox(width: Sizes.s10);
   static const gapW12 = SizedBox(width: Sizes.s12);
   static const gapW16 = SizedBox(width: Sizes.s16);
   static const gapW20 = SizedBox(width: Sizes.s20);
@@ -41,8 +49,11 @@ class AppSpacing {
   static const gapW60 = SizedBox(width: Sizes.s60);
   static const gapW64 = SizedBox(width: Sizes.s64);
 
+  static const gapH2 = SizedBox(height: Sizes.s2);
   static const gapH4 = SizedBox(height: Sizes.s4);
+  static const gapH6 = SizedBox(height: Sizes.s6);
   static const gapH8 = SizedBox(height: Sizes.s8);
+  static const gapH10 = SizedBox(height: Sizes.s10);
   static const gapH12 = SizedBox(height: Sizes.s12);
   static const gapH16 = SizedBox(height: Sizes.s16);
   static const gapH20 = SizedBox(height: Sizes.s20);
@@ -96,12 +107,22 @@ class AppSpacing {
   static const edgeInsetsAll8 = EdgeInsets.all(Sizes.s8);
   static const edgeInsetsAll12 = EdgeInsets.all(Sizes.s12);
   static const edgeInsetsAll16 = EdgeInsets.all(Sizes.s16);
+  static const edgeInsetsAll20 = EdgeInsets.all(Sizes.s20);
 
-  static const edgeInsetsV4H8 = EdgeInsets.symmetric(vertical: Sizes.s4, horizontal: Sizes.s8);
-  static const edgeInsetsV8H12 = EdgeInsets.symmetric(vertical: Sizes.s8, horizontal: Sizes.s12);
-  static const edgeInsetsV8H16 = EdgeInsets.symmetric(vertical: Sizes.s8, horizontal: Sizes.s16);
-  static const edgeInsetsV12H16 = EdgeInsets.symmetric(vertical: Sizes.s12, horizontal: Sizes.s16);
-  static const edgeInsetsV16H20 = EdgeInsets.symmetric(vertical: Sizes.s16, horizontal: Sizes.s20);
+  static const edgeInsetsV4H8 =
+      EdgeInsets.symmetric(vertical: Sizes.s4, horizontal: Sizes.s8);
+  static const edgeInsetsV8H12 =
+      EdgeInsets.symmetric(vertical: Sizes.s8, horizontal: Sizes.s12);
+  static const edgeInsetsV8H16 =
+      EdgeInsets.symmetric(vertical: Sizes.s8, horizontal: Sizes.s16);
+  static const edgeInsetsV16H8 =
+      EdgeInsets.symmetric(vertical: Sizes.s16, horizontal: Sizes.s8);
+  static const edgeInsetsV12H16 =
+      EdgeInsets.symmetric(vertical: Sizes.s12, horizontal: Sizes.s16);
+  static const edgeInsetsV16H20 =
+      EdgeInsets.symmetric(vertical: Sizes.s16, horizontal: Sizes.s20);
+  static const edgeInsetsV20H16 =
+      EdgeInsets.symmetric(vertical: Sizes.s20, horizontal: Sizes.s16);
 
   static const edgeInsetsOnlyTop4 = EdgeInsets.only(top: Sizes.s4);
   static const edgeInsetsOnlyTop8 = EdgeInsets.only(top: Sizes.s8);
@@ -120,16 +141,42 @@ class AppSpacing {
   static const edgeInsetsOnlyLeft12 = EdgeInsets.only(left: Sizes.s12);
   static const edgeInsetsOnlyLeft16 = EdgeInsets.only(left: Sizes.s16);
   static const edgeInsetsOnlyLeft20 = EdgeInsets.only(left: Sizes.s20);
+  static const edgeInsetsOnlyLeft24 = EdgeInsets.only(left: Sizes.s24);
 
   static const edgeInsetsOnlyRight4 = EdgeInsets.only(right: Sizes.s4);
   static const edgeInsetsOnlyRight8 = EdgeInsets.only(right: Sizes.s8);
   static const edgeInsetsOnlyRight12 = EdgeInsets.only(right: Sizes.s12);
   static const edgeInsetsOnlyRight16 = EdgeInsets.only(right: Sizes.s16);
   static const edgeInsetsOnlyRight20 = EdgeInsets.only(right: Sizes.s20);
+  static const edgeInsetsOnlyRight24 = EdgeInsets.only(right: Sizes.s24);
 
-// BorderRadius
-  static const borderRadius4 = BorderRadius.all(Radius.circular(Sizes.s4));
-  static const borderRadius8 = BorderRadius.all(Radius.circular(Sizes.s8));
-  static const borderRadius12 = BorderRadius.all(Radius.circular(Sizes.s12));
-  static const borderRadius16 = BorderRadius.all(Radius.circular(Sizes.s16));
+  static double bottomPaddingValue(
+    BuildContext context, {
+    double additional = Sizes.s24,
+  }) {
+    final paddingBottom = MediaQuery.maybeOf(context)?.padding.bottom ?? 0;
+
+    return paddingBottom != 0 ? paddingBottom : additional;
+  }
+
+  static SizedBox bottomPaddingSizedBox(
+    BuildContext context, {
+    double additional = Sizes.s24,
+  }) =>
+      SizedBox(height: bottomPaddingValue(context, additional: additional));
+}
+
+class AppRadius {
+  const AppRadius._();
+
+  static const radius4 = Radius.circular(Sizes.s4);
+  static const radius8 = Radius.circular(Sizes.s8);
+  static const radius12 = Radius.circular(Sizes.s12);
+  static const radius16 = Radius.circular(Sizes.s16);
+  static const radius20 = Radius.circular(Sizes.s20);
+
+  static const borderRadius4 = BorderRadius.all(radius4);
+  static const borderRadius8 = BorderRadius.all(radius8);
+  static const borderRadius12 = BorderRadius.all(radius12);
+  static const borderRadius16 = BorderRadius.all(radius16);
 }
