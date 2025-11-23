@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:styled_text/styled_text.dart';
 
-import '../../../../../core/constants/route_constants.dart';
 import '../../../../../core/extensions/all.dart';
 import '../../../../common_widgets/all.dart';
 import '../../../../resource/all.dart';
+import '../../../../routing/app_page.dart';
 import '../bloc/sign_up_bloc.dart';
 
 part 'button.dart';

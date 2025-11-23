@@ -4,7 +4,7 @@ class SignInAlternative extends StatelessWidget {
   const SignInAlternative({super.key});
 
   void _onSignInPressed(BuildContext context) {
-    context.replaceNamed(RouteConstants.signIn);
+    context.replaceNamed(AppPage.signIn.name);
   }
 
   @override

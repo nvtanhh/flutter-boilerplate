@@ -18,20 +18,25 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UserNameChanged {
   String get username => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $UserNameChangedCopyWith<UserNameChanged> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of UserNameChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UserNameChangedCopyWith<UserNameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserNameChangedCopyWith<$Res> {
-  factory $UserNameChangedCopyWith(UserNameChanged value, $Res Function(UserNameChanged) then) =
+  factory $UserNameChangedCopyWith(
+          UserNameChanged value, $Res Function(UserNameChanged) then) =
       _$UserNameChangedCopyWithImpl<$Res, UserNameChanged>;
   @useResult
   $Res call({String username});
 }
 
 /// @nodoc
-class _$UserNameChangedCopyWithImpl<$Res, $Val extends UserNameChanged> implements $UserNameChangedCopyWith<$Res> {
+class _$UserNameChangedCopyWithImpl<$Res, $Val extends UserNameChanged>
+    implements $UserNameChangedCopyWith<$Res> {
   _$UserNameChangedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -39,6 +44,8 @@ class _$UserNameChangedCopyWithImpl<$Res, $Val extends UserNameChanged> implemen
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserNameChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -54,8 +61,10 @@ class _$UserNameChangedCopyWithImpl<$Res, $Val extends UserNameChanged> implemen
 }
 
 /// @nodoc
-abstract class _$$UserNameChangedImplCopyWith<$Res> implements $UserNameChangedCopyWith<$Res> {
-  factory _$$UserNameChangedImplCopyWith(_$UserNameChangedImpl value, $Res Function(_$UserNameChangedImpl) then) =
+abstract class _$$UserNameChangedImplCopyWith<$Res>
+    implements $UserNameChangedCopyWith<$Res> {
+  factory _$$UserNameChangedImplCopyWith(_$UserNameChangedImpl value,
+          $Res Function(_$UserNameChangedImpl) then) =
       __$$UserNameChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -63,11 +72,15 @@ abstract class _$$UserNameChangedImplCopyWith<$Res> implements $UserNameChangedC
 }
 
 /// @nodoc
-class __$$UserNameChangedImplCopyWithImpl<$Res> extends _$UserNameChangedCopyWithImpl<$Res, _$UserNameChangedImpl>
+class __$$UserNameChangedImplCopyWithImpl<$Res>
+    extends _$UserNameChangedCopyWithImpl<$Res, _$UserNameChangedImpl>
     implements _$$UserNameChangedImplCopyWith<$Res> {
-  __$$UserNameChangedImplCopyWithImpl(_$UserNameChangedImpl _value, $Res Function(_$UserNameChangedImpl) _then)
+  __$$UserNameChangedImplCopyWithImpl(
+      _$UserNameChangedImpl _value, $Res Function(_$UserNameChangedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserNameChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -84,7 +97,9 @@ class __$$UserNameChangedImplCopyWithImpl<$Res> extends _$UserNameChangedCopyWit
 
 /// @nodoc
 
-class _$UserNameChangedImpl with DiagnosticableTreeMixin implements _UserNameChanged {
+class _$UserNameChangedImpl
+    with DiagnosticableTreeMixin
+    implements _UserNameChanged {
   const _$UserNameChangedImpl(this.username);
 
   @override
@@ -108,17 +123,21 @@ class _$UserNameChangedImpl with DiagnosticableTreeMixin implements _UserNameCha
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserNameChangedImpl &&
-            (identical(other.username, username) || other.username == username));
+            (identical(other.username, username) ||
+                other.username == username));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, username);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserNameChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserNameChangedImplCopyWith<_$UserNameChangedImpl> get copyWith =>
-      __$$UserNameChangedImplCopyWithImpl<_$UserNameChangedImpl>(this, _$identity);
+      __$$UserNameChangedImplCopyWithImpl<_$UserNameChangedImpl>(
+          this, _$identity);
 }
 
 abstract class _UserNameChanged implements UserNameChanged {
@@ -126,29 +145,38 @@ abstract class _UserNameChanged implements UserNameChanged {
 
   @override
   String get username;
+
+  /// Create a copy of UserNameChanged
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$UserNameChangedImplCopyWith<_$UserNameChangedImpl> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserNameChangedImplCopyWith<_$UserNameChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$EmailChanged {
   String get email => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $EmailChangedCopyWith<EmailChanged> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of EmailChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $EmailChangedCopyWith<EmailChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmailChangedCopyWith<$Res> {
-  factory $EmailChangedCopyWith(EmailChanged value, $Res Function(EmailChanged) then) =
+  factory $EmailChangedCopyWith(
+          EmailChanged value, $Res Function(EmailChanged) then) =
       _$EmailChangedCopyWithImpl<$Res, EmailChanged>;
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class _$EmailChangedCopyWithImpl<$Res, $Val extends EmailChanged> implements $EmailChangedCopyWith<$Res> {
+class _$EmailChangedCopyWithImpl<$Res, $Val extends EmailChanged>
+    implements $EmailChangedCopyWith<$Res> {
   _$EmailChangedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -156,6 +184,8 @@ class _$EmailChangedCopyWithImpl<$Res, $Val extends EmailChanged> implements $Em
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EmailChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -171,8 +201,10 @@ class _$EmailChangedCopyWithImpl<$Res, $Val extends EmailChanged> implements $Em
 }
 
 /// @nodoc
-abstract class _$$EmailChangedImplCopyWith<$Res> implements $EmailChangedCopyWith<$Res> {
-  factory _$$EmailChangedImplCopyWith(_$EmailChangedImpl value, $Res Function(_$EmailChangedImpl) then) =
+abstract class _$$EmailChangedImplCopyWith<$Res>
+    implements $EmailChangedCopyWith<$Res> {
+  factory _$$EmailChangedImplCopyWith(
+          _$EmailChangedImpl value, $Res Function(_$EmailChangedImpl) then) =
       __$$EmailChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -180,11 +212,15 @@ abstract class _$$EmailChangedImplCopyWith<$Res> implements $EmailChangedCopyWit
 }
 
 /// @nodoc
-class __$$EmailChangedImplCopyWithImpl<$Res> extends _$EmailChangedCopyWithImpl<$Res, _$EmailChangedImpl>
+class __$$EmailChangedImplCopyWithImpl<$Res>
+    extends _$EmailChangedCopyWithImpl<$Res, _$EmailChangedImpl>
     implements _$$EmailChangedImplCopyWith<$Res> {
-  __$$EmailChangedImplCopyWithImpl(_$EmailChangedImpl _value, $Res Function(_$EmailChangedImpl) _then)
+  __$$EmailChangedImplCopyWithImpl(
+      _$EmailChangedImpl _value, $Res Function(_$EmailChangedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EmailChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -231,7 +267,9 @@ class _$EmailChangedImpl with DiagnosticableTreeMixin implements _EmailChanged {
   @override
   int get hashCode => Object.hash(runtimeType, email);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmailChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
@@ -243,29 +281,38 @@ abstract class _EmailChanged implements EmailChanged {
 
   @override
   String get email;
+
+  /// Create a copy of EmailChanged
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$PasswordChanged {
   String get password => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of PasswordChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PasswordChangedCopyWith<$Res> {
-  factory $PasswordChangedCopyWith(PasswordChanged value, $Res Function(PasswordChanged) then) =
+  factory $PasswordChangedCopyWith(
+          PasswordChanged value, $Res Function(PasswordChanged) then) =
       _$PasswordChangedCopyWithImpl<$Res, PasswordChanged>;
   @useResult
   $Res call({String password});
 }
 
 /// @nodoc
-class _$PasswordChangedCopyWithImpl<$Res, $Val extends PasswordChanged> implements $PasswordChangedCopyWith<$Res> {
+class _$PasswordChangedCopyWithImpl<$Res, $Val extends PasswordChanged>
+    implements $PasswordChangedCopyWith<$Res> {
   _$PasswordChangedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -273,6 +320,8 @@ class _$PasswordChangedCopyWithImpl<$Res, $Val extends PasswordChanged> implemen
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PasswordChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -288,8 +337,10 @@ class _$PasswordChangedCopyWithImpl<$Res, $Val extends PasswordChanged> implemen
 }
 
 /// @nodoc
-abstract class _$$PasswordChangedImplCopyWith<$Res> implements $PasswordChangedCopyWith<$Res> {
-  factory _$$PasswordChangedImplCopyWith(_$PasswordChangedImpl value, $Res Function(_$PasswordChangedImpl) then) =
+abstract class _$$PasswordChangedImplCopyWith<$Res>
+    implements $PasswordChangedCopyWith<$Res> {
+  factory _$$PasswordChangedImplCopyWith(_$PasswordChangedImpl value,
+          $Res Function(_$PasswordChangedImpl) then) =
       __$$PasswordChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -297,11 +348,15 @@ abstract class _$$PasswordChangedImplCopyWith<$Res> implements $PasswordChangedC
 }
 
 /// @nodoc
-class __$$PasswordChangedImplCopyWithImpl<$Res> extends _$PasswordChangedCopyWithImpl<$Res, _$PasswordChangedImpl>
+class __$$PasswordChangedImplCopyWithImpl<$Res>
+    extends _$PasswordChangedCopyWithImpl<$Res, _$PasswordChangedImpl>
     implements _$$PasswordChangedImplCopyWith<$Res> {
-  __$$PasswordChangedImplCopyWithImpl(_$PasswordChangedImpl _value, $Res Function(_$PasswordChangedImpl) _then)
+  __$$PasswordChangedImplCopyWithImpl(
+      _$PasswordChangedImpl _value, $Res Function(_$PasswordChangedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PasswordChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -318,7 +373,9 @@ class __$$PasswordChangedImplCopyWithImpl<$Res> extends _$PasswordChangedCopyWit
 
 /// @nodoc
 
-class _$PasswordChangedImpl with DiagnosticableTreeMixin implements _PasswordChanged {
+class _$PasswordChangedImpl
+    with DiagnosticableTreeMixin
+    implements _PasswordChanged {
   const _$PasswordChangedImpl(this.password);
 
   @override
@@ -342,17 +399,21 @@ class _$PasswordChangedImpl with DiagnosticableTreeMixin implements _PasswordCha
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PasswordChangedImpl &&
-            (identical(other.password, password) || other.password == password));
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, password);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PasswordChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
-      __$$PasswordChangedImplCopyWithImpl<_$PasswordChangedImpl>(this, _$identity);
+      __$$PasswordChangedImplCopyWithImpl<_$PasswordChangedImpl>(
+          this, _$identity);
 }
 
 abstract class _PasswordChanged implements PasswordChanged {
@@ -360,29 +421,38 @@ abstract class _PasswordChanged implements PasswordChanged {
 
   @override
   String get password;
+
+  /// Create a copy of PasswordChanged
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$ConfirmPasswordChanged {
   String get confirmPassword => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $ConfirmPasswordChangedCopyWith<ConfirmPasswordChanged> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of ConfirmPasswordChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ConfirmPasswordChangedCopyWith<ConfirmPasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ConfirmPasswordChangedCopyWith<$Res> {
-  factory $ConfirmPasswordChangedCopyWith(ConfirmPasswordChanged value, $Res Function(ConfirmPasswordChanged) then) =
+  factory $ConfirmPasswordChangedCopyWith(ConfirmPasswordChanged value,
+          $Res Function(ConfirmPasswordChanged) then) =
       _$ConfirmPasswordChangedCopyWithImpl<$Res, ConfirmPasswordChanged>;
   @useResult
   $Res call({String confirmPassword});
 }
 
 /// @nodoc
-class _$ConfirmPasswordChangedCopyWithImpl<$Res, $Val extends ConfirmPasswordChanged>
+class _$ConfirmPasswordChangedCopyWithImpl<$Res,
+        $Val extends ConfirmPasswordChanged>
     implements $ConfirmPasswordChangedCopyWith<$Res> {
   _$ConfirmPasswordChangedCopyWithImpl(this._value, this._then);
 
@@ -391,6 +461,8 @@ class _$ConfirmPasswordChangedCopyWithImpl<$Res, $Val extends ConfirmPasswordCha
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ConfirmPasswordChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -406,9 +478,11 @@ class _$ConfirmPasswordChangedCopyWithImpl<$Res, $Val extends ConfirmPasswordCha
 }
 
 /// @nodoc
-abstract class _$$ConfirmPasswordChangedImplCopyWith<$Res> implements $ConfirmPasswordChangedCopyWith<$Res> {
+abstract class _$$ConfirmPasswordChangedImplCopyWith<$Res>
+    implements $ConfirmPasswordChangedCopyWith<$Res> {
   factory _$$ConfirmPasswordChangedImplCopyWith(
-          _$ConfirmPasswordChangedImpl value, $Res Function(_$ConfirmPasswordChangedImpl) then) =
+          _$ConfirmPasswordChangedImpl value,
+          $Res Function(_$ConfirmPasswordChangedImpl) then) =
       __$$ConfirmPasswordChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -417,12 +491,16 @@ abstract class _$$ConfirmPasswordChangedImplCopyWith<$Res> implements $ConfirmPa
 
 /// @nodoc
 class __$$ConfirmPasswordChangedImplCopyWithImpl<$Res>
-    extends _$ConfirmPasswordChangedCopyWithImpl<$Res, _$ConfirmPasswordChangedImpl>
+    extends _$ConfirmPasswordChangedCopyWithImpl<$Res,
+        _$ConfirmPasswordChangedImpl>
     implements _$$ConfirmPasswordChangedImplCopyWith<$Res> {
   __$$ConfirmPasswordChangedImplCopyWithImpl(
-      _$ConfirmPasswordChangedImpl _value, $Res Function(_$ConfirmPasswordChangedImpl) _then)
+      _$ConfirmPasswordChangedImpl _value,
+      $Res Function(_$ConfirmPasswordChangedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ConfirmPasswordChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -439,7 +517,9 @@ class __$$ConfirmPasswordChangedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ConfirmPasswordChangedImpl with DiagnosticableTreeMixin implements _ConfirmPasswordChanged {
+class _$ConfirmPasswordChangedImpl
+    with DiagnosticableTreeMixin
+    implements _ConfirmPasswordChanged {
   const _$ConfirmPasswordChangedImpl(this.confirmPassword);
 
   @override
@@ -463,49 +543,61 @@ class _$ConfirmPasswordChangedImpl with DiagnosticableTreeMixin implements _Conf
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConfirmPasswordChangedImpl &&
-            (identical(other.confirmPassword, confirmPassword) || other.confirmPassword == confirmPassword));
+            (identical(other.confirmPassword, confirmPassword) ||
+                other.confirmPassword == confirmPassword));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, confirmPassword);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ConfirmPasswordChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ConfirmPasswordChangedImplCopyWith<_$ConfirmPasswordChangedImpl> get copyWith =>
-      __$$ConfirmPasswordChangedImplCopyWithImpl<_$ConfirmPasswordChangedImpl>(this, _$identity);
+  _$$ConfirmPasswordChangedImplCopyWith<_$ConfirmPasswordChangedImpl>
+      get copyWith => __$$ConfirmPasswordChangedImplCopyWithImpl<
+          _$ConfirmPasswordChangedImpl>(this, _$identity);
 }
 
 abstract class _ConfirmPasswordChanged implements ConfirmPasswordChanged {
-  const factory _ConfirmPasswordChanged(final String confirmPassword) = _$ConfirmPasswordChangedImpl;
+  const factory _ConfirmPasswordChanged(final String confirmPassword) =
+      _$ConfirmPasswordChangedImpl;
 
   @override
   String get confirmPassword;
+
+  /// Create a copy of ConfirmPasswordChanged
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$ConfirmPasswordChangedImplCopyWith<_$ConfirmPasswordChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ConfirmPasswordChangedImplCopyWith<_$ConfirmPasswordChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$IsPasswordVisibleChanged {
   bool get isPasswordVisible => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $IsPasswordVisibleChangedCopyWith<IsPasswordVisibleChanged> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of IsPasswordVisibleChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $IsPasswordVisibleChangedCopyWith<IsPasswordVisibleChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $IsPasswordVisibleChangedCopyWith<$Res> {
-  factory $IsPasswordVisibleChangedCopyWith(
-          IsPasswordVisibleChanged value, $Res Function(IsPasswordVisibleChanged) then) =
+  factory $IsPasswordVisibleChangedCopyWith(IsPasswordVisibleChanged value,
+          $Res Function(IsPasswordVisibleChanged) then) =
       _$IsPasswordVisibleChangedCopyWithImpl<$Res, IsPasswordVisibleChanged>;
   @useResult
   $Res call({bool isPasswordVisible});
 }
 
 /// @nodoc
-class _$IsPasswordVisibleChangedCopyWithImpl<$Res, $Val extends IsPasswordVisibleChanged>
+class _$IsPasswordVisibleChangedCopyWithImpl<$Res,
+        $Val extends IsPasswordVisibleChanged>
     implements $IsPasswordVisibleChangedCopyWith<$Res> {
   _$IsPasswordVisibleChangedCopyWithImpl(this._value, this._then);
 
@@ -514,6 +606,8 @@ class _$IsPasswordVisibleChangedCopyWithImpl<$Res, $Val extends IsPasswordVisibl
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IsPasswordVisibleChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -529,9 +623,11 @@ class _$IsPasswordVisibleChangedCopyWithImpl<$Res, $Val extends IsPasswordVisibl
 }
 
 /// @nodoc
-abstract class _$$IsPasswordVisibleChangedImplCopyWith<$Res> implements $IsPasswordVisibleChangedCopyWith<$Res> {
+abstract class _$$IsPasswordVisibleChangedImplCopyWith<$Res>
+    implements $IsPasswordVisibleChangedCopyWith<$Res> {
   factory _$$IsPasswordVisibleChangedImplCopyWith(
-          _$IsPasswordVisibleChangedImpl value, $Res Function(_$IsPasswordVisibleChangedImpl) then) =
+          _$IsPasswordVisibleChangedImpl value,
+          $Res Function(_$IsPasswordVisibleChangedImpl) then) =
       __$$IsPasswordVisibleChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -540,12 +636,16 @@ abstract class _$$IsPasswordVisibleChangedImplCopyWith<$Res> implements $IsPassw
 
 /// @nodoc
 class __$$IsPasswordVisibleChangedImplCopyWithImpl<$Res>
-    extends _$IsPasswordVisibleChangedCopyWithImpl<$Res, _$IsPasswordVisibleChangedImpl>
+    extends _$IsPasswordVisibleChangedCopyWithImpl<$Res,
+        _$IsPasswordVisibleChangedImpl>
     implements _$$IsPasswordVisibleChangedImplCopyWith<$Res> {
   __$$IsPasswordVisibleChangedImplCopyWithImpl(
-      _$IsPasswordVisibleChangedImpl _value, $Res Function(_$IsPasswordVisibleChangedImpl) _then)
+      _$IsPasswordVisibleChangedImpl _value,
+      $Res Function(_$IsPasswordVisibleChangedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IsPasswordVisibleChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -562,7 +662,9 @@ class __$$IsPasswordVisibleChangedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$IsPasswordVisibleChangedImpl with DiagnosticableTreeMixin implements _IsPasswordVisibleChanged {
+class _$IsPasswordVisibleChangedImpl
+    with DiagnosticableTreeMixin
+    implements _IsPasswordVisibleChanged {
   const _$IsPasswordVisibleChangedImpl(this.isPasswordVisible);
 
   @override
@@ -586,50 +688,63 @@ class _$IsPasswordVisibleChangedImpl with DiagnosticableTreeMixin implements _Is
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$IsPasswordVisibleChangedImpl &&
-            (identical(other.isPasswordVisible, isPasswordVisible) || other.isPasswordVisible == isPasswordVisible));
+            (identical(other.isPasswordVisible, isPasswordVisible) ||
+                other.isPasswordVisible == isPasswordVisible));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, isPasswordVisible);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IsPasswordVisibleChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$IsPasswordVisibleChangedImplCopyWith<_$IsPasswordVisibleChangedImpl> get copyWith =>
-      __$$IsPasswordVisibleChangedImplCopyWithImpl<_$IsPasswordVisibleChangedImpl>(this, _$identity);
+  _$$IsPasswordVisibleChangedImplCopyWith<_$IsPasswordVisibleChangedImpl>
+      get copyWith => __$$IsPasswordVisibleChangedImplCopyWithImpl<
+          _$IsPasswordVisibleChangedImpl>(this, _$identity);
 }
 
 abstract class _IsPasswordVisibleChanged implements IsPasswordVisibleChanged {
-  const factory _IsPasswordVisibleChanged(final bool isPasswordVisible) = _$IsPasswordVisibleChangedImpl;
+  const factory _IsPasswordVisibleChanged(final bool isPasswordVisible) =
+      _$IsPasswordVisibleChangedImpl;
 
   @override
   bool get isPasswordVisible;
+
+  /// Create a copy of IsPasswordVisibleChanged
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$IsPasswordVisibleChangedImplCopyWith<_$IsPasswordVisibleChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$IsPasswordVisibleChangedImplCopyWith<_$IsPasswordVisibleChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$IsConfirmPasswordVisibleChanged {
   bool get isConfirmPasswordVisible => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $IsConfirmPasswordVisibleChangedCopyWith<IsConfirmPasswordVisibleChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  /// Create a copy of IsConfirmPasswordVisibleChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $IsConfirmPasswordVisibleChangedCopyWith<IsConfirmPasswordVisibleChanged>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $IsConfirmPasswordVisibleChangedCopyWith<$Res> {
   factory $IsConfirmPasswordVisibleChangedCopyWith(
-          IsConfirmPasswordVisibleChanged value, $Res Function(IsConfirmPasswordVisibleChanged) then) =
-      _$IsConfirmPasswordVisibleChangedCopyWithImpl<$Res, IsConfirmPasswordVisibleChanged>;
+          IsConfirmPasswordVisibleChanged value,
+          $Res Function(IsConfirmPasswordVisibleChanged) then) =
+      _$IsConfirmPasswordVisibleChangedCopyWithImpl<$Res,
+          IsConfirmPasswordVisibleChanged>;
   @useResult
   $Res call({bool isConfirmPasswordVisible});
 }
 
 /// @nodoc
-class _$IsConfirmPasswordVisibleChangedCopyWithImpl<$Res, $Val extends IsConfirmPasswordVisibleChanged>
+class _$IsConfirmPasswordVisibleChangedCopyWithImpl<$Res,
+        $Val extends IsConfirmPasswordVisibleChanged>
     implements $IsConfirmPasswordVisibleChangedCopyWith<$Res> {
   _$IsConfirmPasswordVisibleChangedCopyWithImpl(this._value, this._then);
 
@@ -638,6 +753,8 @@ class _$IsConfirmPasswordVisibleChangedCopyWithImpl<$Res, $Val extends IsConfirm
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IsConfirmPasswordVisibleChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -656,7 +773,8 @@ class _$IsConfirmPasswordVisibleChangedCopyWithImpl<$Res, $Val extends IsConfirm
 abstract class _$$IsConfirmPasswordVisibleChangedImplCopyWith<$Res>
     implements $IsConfirmPasswordVisibleChangedCopyWith<$Res> {
   factory _$$IsConfirmPasswordVisibleChangedImplCopyWith(
-          _$IsConfirmPasswordVisibleChangedImpl value, $Res Function(_$IsConfirmPasswordVisibleChangedImpl) then) =
+          _$IsConfirmPasswordVisibleChangedImpl value,
+          $Res Function(_$IsConfirmPasswordVisibleChangedImpl) then) =
       __$$IsConfirmPasswordVisibleChangedImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -665,12 +783,16 @@ abstract class _$$IsConfirmPasswordVisibleChangedImplCopyWith<$Res>
 
 /// @nodoc
 class __$$IsConfirmPasswordVisibleChangedImplCopyWithImpl<$Res>
-    extends _$IsConfirmPasswordVisibleChangedCopyWithImpl<$Res, _$IsConfirmPasswordVisibleChangedImpl>
+    extends _$IsConfirmPasswordVisibleChangedCopyWithImpl<$Res,
+        _$IsConfirmPasswordVisibleChangedImpl>
     implements _$$IsConfirmPasswordVisibleChangedImplCopyWith<$Res> {
   __$$IsConfirmPasswordVisibleChangedImplCopyWithImpl(
-      _$IsConfirmPasswordVisibleChangedImpl _value, $Res Function(_$IsConfirmPasswordVisibleChangedImpl) _then)
+      _$IsConfirmPasswordVisibleChangedImpl _value,
+      $Res Function(_$IsConfirmPasswordVisibleChangedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IsConfirmPasswordVisibleChanged
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -687,7 +809,9 @@ class __$$IsConfirmPasswordVisibleChangedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$IsConfirmPasswordVisibleChangedImpl with DiagnosticableTreeMixin implements _IsConfirmPasswordVisibleChanged {
+class _$IsConfirmPasswordVisibleChangedImpl
+    with DiagnosticableTreeMixin
+    implements _IsConfirmPasswordVisibleChanged {
   const _$IsConfirmPasswordVisibleChangedImpl(this.isConfirmPasswordVisible);
 
   @override
@@ -703,7 +827,8 @@ class _$IsConfirmPasswordVisibleChangedImpl with DiagnosticableTreeMixin impleme
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'IsConfirmPasswordVisibleChanged'))
-      ..add(DiagnosticsProperty('isConfirmPasswordVisible', isConfirmPasswordVisible));
+      ..add(DiagnosticsProperty(
+          'isConfirmPasswordVisible', isConfirmPasswordVisible));
   }
 
   @override
@@ -711,30 +836,41 @@ class _$IsConfirmPasswordVisibleChangedImpl with DiagnosticableTreeMixin impleme
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$IsConfirmPasswordVisibleChangedImpl &&
-            (identical(other.isConfirmPasswordVisible, isConfirmPasswordVisible) ||
+            (identical(
+                    other.isConfirmPasswordVisible, isConfirmPasswordVisible) ||
                 other.isConfirmPasswordVisible == isConfirmPasswordVisible));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, isConfirmPasswordVisible);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IsConfirmPasswordVisibleChanged
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$IsConfirmPasswordVisibleChangedImplCopyWith<_$IsConfirmPasswordVisibleChangedImpl> get copyWith =>
-      __$$IsConfirmPasswordVisibleChangedImplCopyWithImpl<_$IsConfirmPasswordVisibleChangedImpl>(this, _$identity);
+  _$$IsConfirmPasswordVisibleChangedImplCopyWith<
+          _$IsConfirmPasswordVisibleChangedImpl>
+      get copyWith => __$$IsConfirmPasswordVisibleChangedImplCopyWithImpl<
+          _$IsConfirmPasswordVisibleChangedImpl>(this, _$identity);
 }
 
-abstract class _IsConfirmPasswordVisibleChanged implements IsConfirmPasswordVisibleChanged {
-  const factory _IsConfirmPasswordVisibleChanged(final bool isConfirmPasswordVisible) =
+abstract class _IsConfirmPasswordVisibleChanged
+    implements IsConfirmPasswordVisibleChanged {
+  const factory _IsConfirmPasswordVisibleChanged(
+          final bool isConfirmPasswordVisible) =
       _$IsConfirmPasswordVisibleChangedImpl;
 
   @override
   bool get isConfirmPasswordVisible;
+
+  /// Create a copy of IsConfirmPasswordVisibleChanged
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$IsConfirmPasswordVisibleChangedImplCopyWith<_$IsConfirmPasswordVisibleChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$IsConfirmPasswordVisibleChangedImplCopyWith<
+          _$IsConfirmPasswordVisibleChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -742,36 +878,49 @@ mixin _$SignUpSubmitted {}
 
 /// @nodoc
 abstract class $SignUpSubmittedCopyWith<$Res> {
-  factory $SignUpSubmittedCopyWith(SignUpSubmitted value, $Res Function(SignUpSubmitted) then) =
+  factory $SignUpSubmittedCopyWith(
+          SignUpSubmitted value, $Res Function(SignUpSubmitted) then) =
       _$SignUpSubmittedCopyWithImpl<$Res, SignUpSubmitted>;
 }
 
 /// @nodoc
-class _$SignUpSubmittedCopyWithImpl<$Res, $Val extends SignUpSubmitted> implements $SignUpSubmittedCopyWith<$Res> {
+class _$SignUpSubmittedCopyWithImpl<$Res, $Val extends SignUpSubmitted>
+    implements $SignUpSubmittedCopyWith<$Res> {
   _$SignUpSubmittedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of SignUpSubmitted
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 abstract class _$$SignUpSubmittedImplCopyWith<$Res> {
-  factory _$$SignUpSubmittedImplCopyWith(_$SignUpSubmittedImpl value, $Res Function(_$SignUpSubmittedImpl) then) =
+  factory _$$SignUpSubmittedImplCopyWith(_$SignUpSubmittedImpl value,
+          $Res Function(_$SignUpSubmittedImpl) then) =
       __$$SignUpSubmittedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SignUpSubmittedImplCopyWithImpl<$Res> extends _$SignUpSubmittedCopyWithImpl<$Res, _$SignUpSubmittedImpl>
+class __$$SignUpSubmittedImplCopyWithImpl<$Res>
+    extends _$SignUpSubmittedCopyWithImpl<$Res, _$SignUpSubmittedImpl>
     implements _$$SignUpSubmittedImplCopyWith<$Res> {
-  __$$SignUpSubmittedImplCopyWithImpl(_$SignUpSubmittedImpl _value, $Res Function(_$SignUpSubmittedImpl) _then)
+  __$$SignUpSubmittedImplCopyWithImpl(
+      _$SignUpSubmittedImpl _value, $Res Function(_$SignUpSubmittedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SignUpSubmitted
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$SignUpSubmittedImpl with DiagnosticableTreeMixin implements _SignUpSubmitted {
+class _$SignUpSubmittedImpl
+    with DiagnosticableTreeMixin
+    implements _SignUpSubmitted {
   const _$SignUpSubmittedImpl();
 
   @override
@@ -782,12 +931,13 @@ class _$SignUpSubmittedImpl with DiagnosticableTreeMixin implements _SignUpSubmi
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'SignUpSubmitted'));
+    properties..add(DiagnosticsProperty('type', 'SignUpSubmitted'));
   }
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SignUpSubmittedImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SignUpSubmittedImpl);
   }
 
   @override
@@ -811,13 +961,17 @@ mixin _$SignUpState {
   bool get isSignUpSuccess => throw _privateConstructorUsedError;
   AuthExceptionKind? get failureReason => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $SignUpStateCopyWith<SignUpState> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SignUpStateCopyWith<SignUpState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SignUpStateCopyWith<$Res> {
-  factory $SignUpStateCopyWith(SignUpState value, $Res Function(SignUpState) then) =
+  factory $SignUpStateCopyWith(
+          SignUpState value, $Res Function(SignUpState) then) =
       _$SignUpStateCopyWithImpl<$Res, SignUpState>;
   @useResult
   $Res call(
@@ -834,7 +988,8 @@ abstract class $SignUpStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState> implements $SignUpStateCopyWith<$Res> {
+class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
+    implements $SignUpStateCopyWith<$Res> {
   _$SignUpStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -842,6 +997,8 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState> implements $Sign
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -902,8 +1059,10 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState> implements $Sign
 }
 
 /// @nodoc
-abstract class _$$SignUpStateImplCopyWith<$Res> implements $SignUpStateCopyWith<$Res> {
-  factory _$$SignUpStateImplCopyWith(_$SignUpStateImpl value, $Res Function(_$SignUpStateImpl) then) =
+abstract class _$$SignUpStateImplCopyWith<$Res>
+    implements $SignUpStateCopyWith<$Res> {
+  factory _$$SignUpStateImplCopyWith(
+          _$SignUpStateImpl value, $Res Function(_$SignUpStateImpl) then) =
       __$$SignUpStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -921,11 +1080,15 @@ abstract class _$$SignUpStateImplCopyWith<$Res> implements $SignUpStateCopyWith<
 }
 
 /// @nodoc
-class __$$SignUpStateImplCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res, _$SignUpStateImpl>
+class __$$SignUpStateImplCopyWithImpl<$Res>
+    extends _$SignUpStateCopyWithImpl<$Res, _$SignUpStateImpl>
     implements _$$SignUpStateImplCopyWith<$Res> {
-  __$$SignUpStateImplCopyWithImpl(_$SignUpStateImpl _value, $Res Function(_$SignUpStateImpl) _then)
+  __$$SignUpStateImplCopyWithImpl(
+      _$SignUpStateImpl _value, $Res Function(_$SignUpStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1046,7 +1209,8 @@ class _$SignUpStateImpl extends _SignUpState with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('password', password))
       ..add(DiagnosticsProperty('confirmPassword', confirmPassword))
       ..add(DiagnosticsProperty('isPasswordVisible', isPasswordVisible))
-      ..add(DiagnosticsProperty('isConfirmPasswordVisible', isConfirmPasswordVisible))
+      ..add(DiagnosticsProperty(
+          'isConfirmPasswordVisible', isConfirmPasswordVisible))
       ..add(DiagnosticsProperty('submitCount', submitCount))
       ..add(DiagnosticsProperty('isSubmitting', isSubmitting))
       ..add(DiagnosticsProperty('isSignUpSuccess', isSignUpSuccess))
@@ -1058,24 +1222,45 @@ class _$SignUpStateImpl extends _SignUpState with DiagnosticableTreeMixin {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignUpStateImpl &&
-            (identical(other.username, username) || other.username == username) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) || other.password == password) &&
-            (identical(other.confirmPassword, confirmPassword) || other.confirmPassword == confirmPassword) &&
-            (identical(other.isPasswordVisible, isPasswordVisible) || other.isPasswordVisible == isPasswordVisible) &&
-            (identical(other.isConfirmPasswordVisible, isConfirmPasswordVisible) ||
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.confirmPassword, confirmPassword) ||
+                other.confirmPassword == confirmPassword) &&
+            (identical(other.isPasswordVisible, isPasswordVisible) ||
+                other.isPasswordVisible == isPasswordVisible) &&
+            (identical(
+                    other.isConfirmPasswordVisible, isConfirmPasswordVisible) ||
                 other.isConfirmPasswordVisible == isConfirmPasswordVisible) &&
-            (identical(other.submitCount, submitCount) || other.submitCount == submitCount) &&
-            (identical(other.isSubmitting, isSubmitting) || other.isSubmitting == isSubmitting) &&
-            (identical(other.isSignUpSuccess, isSignUpSuccess) || other.isSignUpSuccess == isSignUpSuccess) &&
-            (identical(other.failureReason, failureReason) || other.failureReason == failureReason));
+            (identical(other.submitCount, submitCount) ||
+                other.submitCount == submitCount) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.isSignUpSuccess, isSignUpSuccess) ||
+                other.isSignUpSuccess == isSignUpSuccess) &&
+            (identical(other.failureReason, failureReason) ||
+                other.failureReason == failureReason));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, username, email, password, confirmPassword, isPasswordVisible,
-      isConfirmPasswordVisible, submitCount, isSubmitting, isSignUpSuccess, failureReason);
+  int get hashCode => Object.hash(
+      runtimeType,
+      username,
+      email,
+      password,
+      confirmPassword,
+      isPasswordVisible,
+      isConfirmPasswordVisible,
+      submitCount,
+      isSubmitting,
+      isSignUpSuccess,
+      failureReason);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SignUpStateImplCopyWith<_$SignUpStateImpl> get copyWith =>
@@ -1116,7 +1301,11 @@ abstract class _SignUpState extends SignUpState {
   bool get isSignUpSuccess;
   @override
   AuthExceptionKind? get failureReason;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$SignUpStateImplCopyWith<_$SignUpStateImpl> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SignUpStateImplCopyWith<_$SignUpStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

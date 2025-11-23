@@ -19,6 +19,12 @@ analyzer:
     # strict-raw-types: true
 
 dart_code_metrics:
+  extends:
+    - package:dart_code_metrics_presets/recommended.yaml
+    - package:dart_code_metrics_presets/bloc.yaml
+    - package:dart_code_metrics_presets/equatable.yaml
+    - package:dart_code_metrics_presets/get_it.yaml
+    - package:dart_code_metrics_presets/intl.yaml
   anti-patterns:
   #    - long-method
   #    - long-parameter-list

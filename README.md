@@ -27,7 +27,7 @@ A production-ready Flutter boilerplate project with Clean Architecture, featurin
 - 💾 **Local Storage** - Hive for preferences + Secure Storage for sensitive data
 - 🔌 **Connectivity Check** - Network status monitoring
 - 📊 **Logging** - Comprehensive logging system
-- 🎯 **Navigation** - GoRouter with authentication guards
+- 🎯 **Navigation** - Type-safe routing with enhanced enum + GoRouter
 - 🖼️ **Media Support** - Image caching, SVG, video player, WebView
 - 🎬 **Animations** - Flutter Animate for smooth transitions
 - 🧪 **Code Quality** - Linting with Flutter Lints + Dart Code Metrics
@@ -207,10 +207,13 @@ A production-ready Flutter boilerplate project with Clean Architecture, featurin
     │   ├── gen/                  # Generated assets (flutter_gen)
     │   └── styles/               # Theme and styles
     └── routing                   # Navigation
-        ├── observer/             # Navigation observer
-        ├── router/               # Route definitions
-        │   └── app_router.dart
-        └── routing.dart
+        ├── app_page.dart         # Page definitions (enhanced enum)
+        ├── app_router.dart       # Router configuration
+        ├── navigation_helper.dart # Navigation utilities
+        ├── navigator_observer.dart # Navigation logging
+        ├── router_notifier.dart  # Auth state listener
+        ├── _transitions.dart     # 11 page transitions
+        └── all.dart              # Exports
 ```
 
 ## 🚀 Getting Started
@@ -328,7 +331,48 @@ flutter pub run build_runner build --delete-conflicting-outputs
    - Create feature folder in `lib/presentation/features/`
    - Add BLoC (events, states, bloc)
    - Add page and widgets
-   - Add route in `lib/presentation/routing/router/app_router.dart`
+   - Add route (see [Adding New Routes](#adding-new-routes))
+
+### Adding New Routes
+
+This project uses **type-safe routing** with enhanced enum. Only 2 steps needed:
+
+1. **Add page to enum** in `lib/presentation/routing/app_page.dart`:
+   ```dart
+   enum AppPage {
+     // ... existing pages
+     
+     profile(
+       path: '/profile',
+       name: 'profile',
+       requiresAuth: true,  // or false for public pages
+       title: 'Profile',
+       description: 'User profile page',  // optional
+     );
+   }
+   ```
+
+2. **Add route** in `lib/presentation/routing/app_router.dart`:
+   ```dart
+   GoRoute(
+     path: AppPage.profile.path,
+     name: AppPage.profile.name,
+     pageBuilder: (context, state) => FadeTransitionPage(
+       name: state.name!,
+       child: const ProfilePage(),
+     ),
+   ),
+   ```
+
+**Navigate:**
+```dart
+// Direct navigation
+AppPage.profile.go(context);
+
+// Or use helper
+context.currentPage  // Get current page
+context.canPop      // Check if can go back
+```
 
 ## 🏗 Architecture
 
@@ -432,6 +476,15 @@ test/
 - ✅ App-level state (theme, locale, auth)
 - ✅ Feature-level BLoCs
 
+### Routing & Navigation
+- ✅ Type-safe routing with enhanced enum
+- ✅ Authentication guards
+- ✅ Auto redirect on login/logout
+- ✅ 11 page transitions (Fade, Slide, Scale, etc.)
+- ✅ Error pages (404, 401, 403, 500)
+- ✅ Navigation helpers
+- ✅ Deep linking ready
+
 ### UI Components
 - ✅ Custom buttons
 - ✅ Text fields with validation
@@ -442,6 +495,7 @@ test/
 - ✅ Video player
 - ✅ WebView
 - ✅ User avatar
+- ✅ Error pages
 
 ### Utilities
 - ✅ Form validation

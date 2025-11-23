@@ -23,16 +23,26 @@ mixin _$LoadMoreOutput<T> {
   bool get isRefreshSuccess => throw _privateConstructorUsedError;
   bool get hasNext => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $LoadMoreOutputCopyWith<T, LoadMoreOutput<T>> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of LoadMoreOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LoadMoreOutputCopyWith<T, LoadMoreOutput<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoadMoreOutputCopyWith<T, $Res> {
-  factory $LoadMoreOutputCopyWith(LoadMoreOutput<T> value, $Res Function(LoadMoreOutput<T>) then) =
+  factory $LoadMoreOutputCopyWith(
+          LoadMoreOutput<T> value, $Res Function(LoadMoreOutput<T>) then) =
       _$LoadMoreOutputCopyWithImpl<T, $Res, LoadMoreOutput<T>>;
   @useResult
-  $Res call({List<T> items, int total, int page, int pageSize, bool isRefreshSuccess, bool hasNext});
+  $Res call(
+      {List<T> items,
+      int total,
+      int page,
+      int pageSize,
+      bool isRefreshSuccess,
+      bool hasNext});
 }
 
 /// @nodoc
@@ -45,6 +55,8 @@ class _$LoadMoreOutputCopyWithImpl<T, $Res, $Val extends LoadMoreOutput<T>>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LoadMoreOutput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -85,20 +97,32 @@ class _$LoadMoreOutputCopyWithImpl<T, $Res, $Val extends LoadMoreOutput<T>>
 }
 
 /// @nodoc
-abstract class _$$LoadMoreOutputImplCopyWith<T, $Res> implements $LoadMoreOutputCopyWith<T, $Res> {
-  factory _$$LoadMoreOutputImplCopyWith(_$LoadMoreOutputImpl<T> value, $Res Function(_$LoadMoreOutputImpl<T>) then) =
+abstract class _$$LoadMoreOutputImplCopyWith<T, $Res>
+    implements $LoadMoreOutputCopyWith<T, $Res> {
+  factory _$$LoadMoreOutputImplCopyWith(_$LoadMoreOutputImpl<T> value,
+          $Res Function(_$LoadMoreOutputImpl<T>) then) =
       __$$LoadMoreOutputImplCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({List<T> items, int total, int page, int pageSize, bool isRefreshSuccess, bool hasNext});
+  $Res call(
+      {List<T> items,
+      int total,
+      int page,
+      int pageSize,
+      bool isRefreshSuccess,
+      bool hasNext});
 }
 
 /// @nodoc
-class __$$LoadMoreOutputImplCopyWithImpl<T, $Res> extends _$LoadMoreOutputCopyWithImpl<T, $Res, _$LoadMoreOutputImpl<T>>
+class __$$LoadMoreOutputImplCopyWithImpl<T, $Res>
+    extends _$LoadMoreOutputCopyWithImpl<T, $Res, _$LoadMoreOutputImpl<T>>
     implements _$$LoadMoreOutputImplCopyWith<T, $Res> {
-  __$$LoadMoreOutputImplCopyWithImpl(_$LoadMoreOutputImpl<T> _value, $Res Function(_$LoadMoreOutputImpl<T>) _then)
+  __$$LoadMoreOutputImplCopyWithImpl(_$LoadMoreOutputImpl<T> _value,
+      $Res Function(_$LoadMoreOutputImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoadMoreOutput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -188,20 +212,31 @@ class _$LoadMoreOutputImpl<T> extends _LoadMoreOutput<T> {
             const DeepCollectionEquality().equals(other._items, _items) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.page, page) || other.page == page) &&
-            (identical(other.pageSize, pageSize) || other.pageSize == pageSize) &&
-            (identical(other.isRefreshSuccess, isRefreshSuccess) || other.isRefreshSuccess == isRefreshSuccess) &&
+            (identical(other.pageSize, pageSize) ||
+                other.pageSize == pageSize) &&
+            (identical(other.isRefreshSuccess, isRefreshSuccess) ||
+                other.isRefreshSuccess == isRefreshSuccess) &&
             (identical(other.hasNext, hasNext) || other.hasNext == hasNext));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_items), total, page, pageSize, isRefreshSuccess, hasNext);
+      runtimeType,
+      const DeepCollectionEquality().hash(_items),
+      total,
+      page,
+      pageSize,
+      isRefreshSuccess,
+      hasNext);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoadMoreOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadMoreOutputImplCopyWith<T, _$LoadMoreOutputImpl<T>> get copyWith =>
-      __$$LoadMoreOutputImplCopyWithImpl<T, _$LoadMoreOutputImpl<T>>(this, _$identity);
+      __$$LoadMoreOutputImplCopyWithImpl<T, _$LoadMoreOutputImpl<T>>(
+          this, _$identity);
 }
 
 abstract class _LoadMoreOutput<T> extends LoadMoreOutput<T> {
@@ -226,7 +261,11 @@ abstract class _LoadMoreOutput<T> extends LoadMoreOutput<T> {
   bool get isRefreshSuccess;
   @override
   bool get hasNext;
+
+  /// Create a copy of LoadMoreOutput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$LoadMoreOutputImplCopyWith<T, _$LoadMoreOutputImpl<T>> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadMoreOutputImplCopyWith<T, _$LoadMoreOutputImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

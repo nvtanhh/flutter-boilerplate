@@ -18,13 +18,17 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ConnectivityState {
   ConnectionType get connectionType => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $ConnectivityStateCopyWith<ConnectivityState> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of ConnectivityState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ConnectivityStateCopyWith<ConnectivityState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ConnectivityStateCopyWith<$Res> {
-  factory $ConnectivityStateCopyWith(ConnectivityState value, $Res Function(ConnectivityState) then) =
+  factory $ConnectivityStateCopyWith(
+          ConnectivityState value, $Res Function(ConnectivityState) then) =
       _$ConnectivityStateCopyWithImpl<$Res, ConnectivityState>;
   @useResult
   $Res call({ConnectionType connectionType});
@@ -40,6 +44,8 @@ class _$ConnectivityStateCopyWithImpl<$Res, $Val extends ConnectivityState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ConnectivityState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -55,8 +61,10 @@ class _$ConnectivityStateCopyWithImpl<$Res, $Val extends ConnectivityState>
 }
 
 /// @nodoc
-abstract class _$$ConnectivityStateImplCopyWith<$Res> implements $ConnectivityStateCopyWith<$Res> {
-  factory _$$ConnectivityStateImplCopyWith(_$ConnectivityStateImpl value, $Res Function(_$ConnectivityStateImpl) then) =
+abstract class _$$ConnectivityStateImplCopyWith<$Res>
+    implements $ConnectivityStateCopyWith<$Res> {
+  factory _$$ConnectivityStateImplCopyWith(_$ConnectivityStateImpl value,
+          $Res Function(_$ConnectivityStateImpl) then) =
       __$$ConnectivityStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -64,11 +72,15 @@ abstract class _$$ConnectivityStateImplCopyWith<$Res> implements $ConnectivitySt
 }
 
 /// @nodoc
-class __$$ConnectivityStateImplCopyWithImpl<$Res> extends _$ConnectivityStateCopyWithImpl<$Res, _$ConnectivityStateImpl>
+class __$$ConnectivityStateImplCopyWithImpl<$Res>
+    extends _$ConnectivityStateCopyWithImpl<$Res, _$ConnectivityStateImpl>
     implements _$$ConnectivityStateImplCopyWith<$Res> {
-  __$$ConnectivityStateImplCopyWithImpl(_$ConnectivityStateImpl _value, $Res Function(_$ConnectivityStateImpl) _then)
+  __$$ConnectivityStateImplCopyWithImpl(_$ConnectivityStateImpl _value,
+      $Res Function(_$ConnectivityStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ConnectivityState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -102,25 +114,34 @@ class _$ConnectivityStateImpl implements _ConnectivityState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConnectivityStateImpl &&
-            (identical(other.connectionType, connectionType) || other.connectionType == connectionType));
+            (identical(other.connectionType, connectionType) ||
+                other.connectionType == connectionType));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, connectionType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ConnectivityState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConnectivityStateImplCopyWith<_$ConnectivityStateImpl> get copyWith =>
-      __$$ConnectivityStateImplCopyWithImpl<_$ConnectivityStateImpl>(this, _$identity);
+      __$$ConnectivityStateImplCopyWithImpl<_$ConnectivityStateImpl>(
+          this, _$identity);
 }
 
 abstract class _ConnectivityState implements ConnectivityState {
-  const factory _ConnectivityState({final ConnectionType connectionType}) = _$ConnectivityStateImpl;
+  const factory _ConnectivityState({final ConnectionType connectionType}) =
+      _$ConnectivityStateImpl;
 
   @override
   ConnectionType get connectionType;
+
+  /// Create a copy of ConnectivityState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$ConnectivityStateImplCopyWith<_$ConnectivityStateImpl> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ConnectivityStateImplCopyWith<_$ConnectivityStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

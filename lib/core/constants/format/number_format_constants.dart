@@ -1,4 +1,4 @@
-part of 'format_constants.index.dart';
+part of 'all.dart';
 
 class NumberFormatConstants {
   NumberFormatConstants._();

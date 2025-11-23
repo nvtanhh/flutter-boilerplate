@@ -69,7 +69,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get field__confirm_password_required => 'Confirm Password is required';
 
   @override
-  String get field__confirm_password_not_match => 'Confirm Password does not match';
+  String get field__confirm_password_not_match =>
+      'Confirm Password does not match';
 
   @override
   String get welcome__title => 'Be at the heart of what’s happening';
@@ -89,13 +90,15 @@ class AppLocalizationsEn extends AppLocalizations {
       'By signing up you agree to the <policy>Privacy Policy</policy> and <terms>Terms of use</terms>';
 
   @override
-  String get sign_up__already_have_account => 'Already have an account? <sign_in>Sign In</sign_in>';
+  String get sign_up__already_have_account =>
+      'Already have an account? <sign_in>Sign In</sign_in>';
 
   @override
   String get sign_up__success_title => 'Registration Successful';
 
   @override
-  String get sign_up__success_desc => 'Thanks for signing up!\n\nA profile activation email has been sent to you.';
+  String get sign_up__success_desc =>
+      'Thanks for signing up!\n\nA profile activation email has been sent to you.';
 
   @override
   String get sign_in__title => 'Sign In';
@@ -120,5 +123,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get forgot_password__success_title => 'Password Reset Successful';
 
   @override
-  String get forgot_password__success_desc => 'Recover link has been sent to your email';
+  String get forgot_password__success_desc =>
+      'Recover link has been sent to your email';
 }

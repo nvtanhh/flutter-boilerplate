@@ -18,14 +18,16 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CommonEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AppExceptionWrapper appExceptionWrapper) exceptionEmitted,
+    required TResult Function(AppExceptionWrapper appExceptionWrapper)
+        exceptionEmitted,
     required TResult Function(bool isLoading) loadingVisibilityEmitted,
     required TResult Function() forceLogoutButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AppExceptionWrapper appExceptionWrapper)? exceptionEmitted,
+    TResult? Function(AppExceptionWrapper appExceptionWrapper)?
+        exceptionEmitted,
     TResult? Function(bool isLoading)? loadingVisibilityEmitted,
     TResult? Function()? forceLogoutButtonPressed,
   }) =>
@@ -41,15 +43,19 @@ mixin _$CommonEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExceptionEmitted value) exceptionEmitted,
-    required TResult Function(_LoadingVisibilityEmitted value) loadingVisibilityEmitted,
-    required TResult Function(_ForceLogoutButtonPressed value) forceLogoutButtonPressed,
+    required TResult Function(_LoadingVisibilityEmitted value)
+        loadingVisibilityEmitted,
+    required TResult Function(_ForceLogoutButtonPressed value)
+        forceLogoutButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExceptionEmitted value)? exceptionEmitted,
-    TResult? Function(_LoadingVisibilityEmitted value)? loadingVisibilityEmitted,
-    TResult? Function(_ForceLogoutButtonPressed value)? forceLogoutButtonPressed,
+    TResult? Function(_LoadingVisibilityEmitted value)?
+        loadingVisibilityEmitted,
+    TResult? Function(_ForceLogoutButtonPressed value)?
+        forceLogoutButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,34 +70,44 @@ mixin _$CommonEvent {
 
 /// @nodoc
 abstract class $CommonEventCopyWith<$Res> {
-  factory $CommonEventCopyWith(CommonEvent value, $Res Function(CommonEvent) then) =
+  factory $CommonEventCopyWith(
+          CommonEvent value, $Res Function(CommonEvent) then) =
       _$CommonEventCopyWithImpl<$Res, CommonEvent>;
 }
 
 /// @nodoc
-class _$CommonEventCopyWithImpl<$Res, $Val extends CommonEvent> implements $CommonEventCopyWith<$Res> {
+class _$CommonEventCopyWithImpl<$Res, $Val extends CommonEvent>
+    implements $CommonEventCopyWith<$Res> {
   _$CommonEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of CommonEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 abstract class _$$ExceptionEmittedImplCopyWith<$Res> {
-  factory _$$ExceptionEmittedImplCopyWith(_$ExceptionEmittedImpl value, $Res Function(_$ExceptionEmittedImpl) then) =
+  factory _$$ExceptionEmittedImplCopyWith(_$ExceptionEmittedImpl value,
+          $Res Function(_$ExceptionEmittedImpl) then) =
       __$$ExceptionEmittedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AppExceptionWrapper appExceptionWrapper});
 }
 
 /// @nodoc
-class __$$ExceptionEmittedImplCopyWithImpl<$Res> extends _$CommonEventCopyWithImpl<$Res, _$ExceptionEmittedImpl>
+class __$$ExceptionEmittedImplCopyWithImpl<$Res>
+    extends _$CommonEventCopyWithImpl<$Res, _$ExceptionEmittedImpl>
     implements _$$ExceptionEmittedImplCopyWith<$Res> {
-  __$$ExceptionEmittedImplCopyWithImpl(_$ExceptionEmittedImpl _value, $Res Function(_$ExceptionEmittedImpl) _then)
+  __$$ExceptionEmittedImplCopyWithImpl(_$ExceptionEmittedImpl _value,
+      $Res Function(_$ExceptionEmittedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CommonEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,7 +124,9 @@ class __$$ExceptionEmittedImplCopyWithImpl<$Res> extends _$CommonEventCopyWithIm
 
 /// @nodoc
 
-class _$ExceptionEmittedImpl with DiagnosticableTreeMixin implements _ExceptionEmitted {
+class _$ExceptionEmittedImpl
+    with DiagnosticableTreeMixin
+    implements _ExceptionEmitted {
   const _$ExceptionEmittedImpl({required this.appExceptionWrapper});
 
   @override
@@ -139,16 +157,20 @@ class _$ExceptionEmittedImpl with DiagnosticableTreeMixin implements _ExceptionE
   @override
   int get hashCode => Object.hash(runtimeType, appExceptionWrapper);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CommonEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ExceptionEmittedImplCopyWith<_$ExceptionEmittedImpl> get copyWith =>
-      __$$ExceptionEmittedImplCopyWithImpl<_$ExceptionEmittedImpl>(this, _$identity);
+      __$$ExceptionEmittedImplCopyWithImpl<_$ExceptionEmittedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AppExceptionWrapper appExceptionWrapper) exceptionEmitted,
+    required TResult Function(AppExceptionWrapper appExceptionWrapper)
+        exceptionEmitted,
     required TResult Function(bool isLoading) loadingVisibilityEmitted,
     required TResult Function() forceLogoutButtonPressed,
   }) {
@@ -158,7 +180,8 @@ class _$ExceptionEmittedImpl with DiagnosticableTreeMixin implements _ExceptionE
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AppExceptionWrapper appExceptionWrapper)? exceptionEmitted,
+    TResult? Function(AppExceptionWrapper appExceptionWrapper)?
+        exceptionEmitted,
     TResult? Function(bool isLoading)? loadingVisibilityEmitted,
     TResult? Function()? forceLogoutButtonPressed,
   }) {
@@ -183,8 +206,10 @@ class _$ExceptionEmittedImpl with DiagnosticableTreeMixin implements _ExceptionE
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExceptionEmitted value) exceptionEmitted,
-    required TResult Function(_LoadingVisibilityEmitted value) loadingVisibilityEmitted,
-    required TResult Function(_ForceLogoutButtonPressed value) forceLogoutButtonPressed,
+    required TResult Function(_LoadingVisibilityEmitted value)
+        loadingVisibilityEmitted,
+    required TResult Function(_ForceLogoutButtonPressed value)
+        forceLogoutButtonPressed,
   }) {
     return exceptionEmitted(this);
   }
@@ -193,8 +218,10 @@ class _$ExceptionEmittedImpl with DiagnosticableTreeMixin implements _ExceptionE
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExceptionEmitted value)? exceptionEmitted,
-    TResult? Function(_LoadingVisibilityEmitted value)? loadingVisibilityEmitted,
-    TResult? Function(_ForceLogoutButtonPressed value)? forceLogoutButtonPressed,
+    TResult? Function(_LoadingVisibilityEmitted value)?
+        loadingVisibilityEmitted,
+    TResult? Function(_ForceLogoutButtonPressed value)?
+        forceLogoutButtonPressed,
   }) {
     return exceptionEmitted?.call(this);
   }
@@ -215,17 +242,24 @@ class _$ExceptionEmittedImpl with DiagnosticableTreeMixin implements _ExceptionE
 }
 
 abstract class _ExceptionEmitted implements CommonEvent {
-  const factory _ExceptionEmitted({required final AppExceptionWrapper appExceptionWrapper}) = _$ExceptionEmittedImpl;
+  const factory _ExceptionEmitted(
+          {required final AppExceptionWrapper appExceptionWrapper}) =
+      _$ExceptionEmittedImpl;
 
   AppExceptionWrapper get appExceptionWrapper;
-  @JsonKey(ignore: true)
-  _$$ExceptionEmittedImplCopyWith<_$ExceptionEmittedImpl> get copyWith => throw _privateConstructorUsedError;
+
+  /// Create a copy of CommonEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ExceptionEmittedImplCopyWith<_$ExceptionEmittedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LoadingVisibilityEmittedImplCopyWith<$Res> {
   factory _$$LoadingVisibilityEmittedImplCopyWith(
-          _$LoadingVisibilityEmittedImpl value, $Res Function(_$LoadingVisibilityEmittedImpl) then) =
+          _$LoadingVisibilityEmittedImpl value,
+          $Res Function(_$LoadingVisibilityEmittedImpl) then) =
       __$$LoadingVisibilityEmittedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isLoading});
@@ -236,9 +270,12 @@ class __$$LoadingVisibilityEmittedImplCopyWithImpl<$Res>
     extends _$CommonEventCopyWithImpl<$Res, _$LoadingVisibilityEmittedImpl>
     implements _$$LoadingVisibilityEmittedImplCopyWith<$Res> {
   __$$LoadingVisibilityEmittedImplCopyWithImpl(
-      _$LoadingVisibilityEmittedImpl _value, $Res Function(_$LoadingVisibilityEmittedImpl) _then)
+      _$LoadingVisibilityEmittedImpl _value,
+      $Res Function(_$LoadingVisibilityEmittedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CommonEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -255,7 +292,9 @@ class __$$LoadingVisibilityEmittedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingVisibilityEmittedImpl with DiagnosticableTreeMixin implements _LoadingVisibilityEmitted {
+class _$LoadingVisibilityEmittedImpl
+    with DiagnosticableTreeMixin
+    implements _LoadingVisibilityEmitted {
   const _$LoadingVisibilityEmittedImpl({required this.isLoading});
 
   @override
@@ -279,22 +318,27 @@ class _$LoadingVisibilityEmittedImpl with DiagnosticableTreeMixin implements _Lo
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadingVisibilityEmittedImpl &&
-            (identical(other.isLoading, isLoading) || other.isLoading == isLoading));
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, isLoading);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CommonEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingVisibilityEmittedImplCopyWith<_$LoadingVisibilityEmittedImpl> get copyWith =>
-      __$$LoadingVisibilityEmittedImplCopyWithImpl<_$LoadingVisibilityEmittedImpl>(this, _$identity);
+  _$$LoadingVisibilityEmittedImplCopyWith<_$LoadingVisibilityEmittedImpl>
+      get copyWith => __$$LoadingVisibilityEmittedImplCopyWithImpl<
+          _$LoadingVisibilityEmittedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AppExceptionWrapper appExceptionWrapper) exceptionEmitted,
+    required TResult Function(AppExceptionWrapper appExceptionWrapper)
+        exceptionEmitted,
     required TResult Function(bool isLoading) loadingVisibilityEmitted,
     required TResult Function() forceLogoutButtonPressed,
   }) {
@@ -304,7 +348,8 @@ class _$LoadingVisibilityEmittedImpl with DiagnosticableTreeMixin implements _Lo
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AppExceptionWrapper appExceptionWrapper)? exceptionEmitted,
+    TResult? Function(AppExceptionWrapper appExceptionWrapper)?
+        exceptionEmitted,
     TResult? Function(bool isLoading)? loadingVisibilityEmitted,
     TResult? Function()? forceLogoutButtonPressed,
   }) {
@@ -329,8 +374,10 @@ class _$LoadingVisibilityEmittedImpl with DiagnosticableTreeMixin implements _Lo
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExceptionEmitted value) exceptionEmitted,
-    required TResult Function(_LoadingVisibilityEmitted value) loadingVisibilityEmitted,
-    required TResult Function(_ForceLogoutButtonPressed value) forceLogoutButtonPressed,
+    required TResult Function(_LoadingVisibilityEmitted value)
+        loadingVisibilityEmitted,
+    required TResult Function(_ForceLogoutButtonPressed value)
+        forceLogoutButtonPressed,
   }) {
     return loadingVisibilityEmitted(this);
   }
@@ -339,8 +386,10 @@ class _$LoadingVisibilityEmittedImpl with DiagnosticableTreeMixin implements _Lo
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExceptionEmitted value)? exceptionEmitted,
-    TResult? Function(_LoadingVisibilityEmitted value)? loadingVisibilityEmitted,
-    TResult? Function(_ForceLogoutButtonPressed value)? forceLogoutButtonPressed,
+    TResult? Function(_LoadingVisibilityEmitted value)?
+        loadingVisibilityEmitted,
+    TResult? Function(_ForceLogoutButtonPressed value)?
+        forceLogoutButtonPressed,
   }) {
     return loadingVisibilityEmitted?.call(this);
   }
@@ -361,18 +410,23 @@ class _$LoadingVisibilityEmittedImpl with DiagnosticableTreeMixin implements _Lo
 }
 
 abstract class _LoadingVisibilityEmitted implements CommonEvent {
-  const factory _LoadingVisibilityEmitted({required final bool isLoading}) = _$LoadingVisibilityEmittedImpl;
+  const factory _LoadingVisibilityEmitted({required final bool isLoading}) =
+      _$LoadingVisibilityEmittedImpl;
 
   bool get isLoading;
-  @JsonKey(ignore: true)
-  _$$LoadingVisibilityEmittedImplCopyWith<_$LoadingVisibilityEmittedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+
+  /// Create a copy of CommonEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadingVisibilityEmittedImplCopyWith<_$LoadingVisibilityEmittedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ForceLogoutButtonPressedImplCopyWith<$Res> {
   factory _$$ForceLogoutButtonPressedImplCopyWith(
-          _$ForceLogoutButtonPressedImpl value, $Res Function(_$ForceLogoutButtonPressedImpl) then) =
+          _$ForceLogoutButtonPressedImpl value,
+          $Res Function(_$ForceLogoutButtonPressedImpl) then) =
       __$$ForceLogoutButtonPressedImplCopyWithImpl<$Res>;
 }
 
@@ -381,13 +435,19 @@ class __$$ForceLogoutButtonPressedImplCopyWithImpl<$Res>
     extends _$CommonEventCopyWithImpl<$Res, _$ForceLogoutButtonPressedImpl>
     implements _$$ForceLogoutButtonPressedImplCopyWith<$Res> {
   __$$ForceLogoutButtonPressedImplCopyWithImpl(
-      _$ForceLogoutButtonPressedImpl _value, $Res Function(_$ForceLogoutButtonPressedImpl) _then)
+      _$ForceLogoutButtonPressedImpl _value,
+      $Res Function(_$ForceLogoutButtonPressedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of CommonEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$ForceLogoutButtonPressedImpl with DiagnosticableTreeMixin implements _ForceLogoutButtonPressed {
+class _$ForceLogoutButtonPressedImpl
+    with DiagnosticableTreeMixin
+    implements _ForceLogoutButtonPressed {
   const _$ForceLogoutButtonPressedImpl();
 
   @override
@@ -398,12 +458,16 @@ class _$ForceLogoutButtonPressedImpl with DiagnosticableTreeMixin implements _Fo
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'CommonEvent.forceLogoutButtonPressed'));
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'CommonEvent.forceLogoutButtonPressed'));
   }
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ForceLogoutButtonPressedImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ForceLogoutButtonPressedImpl);
   }
 
   @override
@@ -412,7 +476,8 @@ class _$ForceLogoutButtonPressedImpl with DiagnosticableTreeMixin implements _Fo
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AppExceptionWrapper appExceptionWrapper) exceptionEmitted,
+    required TResult Function(AppExceptionWrapper appExceptionWrapper)
+        exceptionEmitted,
     required TResult Function(bool isLoading) loadingVisibilityEmitted,
     required TResult Function() forceLogoutButtonPressed,
   }) {
@@ -422,7 +487,8 @@ class _$ForceLogoutButtonPressedImpl with DiagnosticableTreeMixin implements _Fo
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AppExceptionWrapper appExceptionWrapper)? exceptionEmitted,
+    TResult? Function(AppExceptionWrapper appExceptionWrapper)?
+        exceptionEmitted,
     TResult? Function(bool isLoading)? loadingVisibilityEmitted,
     TResult? Function()? forceLogoutButtonPressed,
   }) {
@@ -447,8 +513,10 @@ class _$ForceLogoutButtonPressedImpl with DiagnosticableTreeMixin implements _Fo
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExceptionEmitted value) exceptionEmitted,
-    required TResult Function(_LoadingVisibilityEmitted value) loadingVisibilityEmitted,
-    required TResult Function(_ForceLogoutButtonPressed value) forceLogoutButtonPressed,
+    required TResult Function(_LoadingVisibilityEmitted value)
+        loadingVisibilityEmitted,
+    required TResult Function(_ForceLogoutButtonPressed value)
+        forceLogoutButtonPressed,
   }) {
     return forceLogoutButtonPressed(this);
   }
@@ -457,8 +525,10 @@ class _$ForceLogoutButtonPressedImpl with DiagnosticableTreeMixin implements _Fo
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExceptionEmitted value)? exceptionEmitted,
-    TResult? Function(_LoadingVisibilityEmitted value)? loadingVisibilityEmitted,
-    TResult? Function(_ForceLogoutButtonPressed value)? forceLogoutButtonPressed,
+    TResult? Function(_LoadingVisibilityEmitted value)?
+        loadingVisibilityEmitted,
+    TResult? Function(_ForceLogoutButtonPressed value)?
+        forceLogoutButtonPressed,
   }) {
     return forceLogoutButtonPressed?.call(this);
   }
@@ -486,22 +556,31 @@ abstract class _ForceLogoutButtonPressed implements CommonEvent {
 mixin _$CommonState {
   bool get isLoading => throw _privateConstructorUsedError;
   int get loadingCount => throw _privateConstructorUsedError;
-  AppExceptionWrapper? get appExceptionWrapper => throw _privateConstructorUsedError;
+  AppExceptionWrapper? get appExceptionWrapper =>
+      throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $CommonStateCopyWith<CommonState> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of CommonState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $CommonStateCopyWith<CommonState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommonStateCopyWith<$Res> {
-  factory $CommonStateCopyWith(CommonState value, $Res Function(CommonState) then) =
+  factory $CommonStateCopyWith(
+          CommonState value, $Res Function(CommonState) then) =
       _$CommonStateCopyWithImpl<$Res, CommonState>;
   @useResult
-  $Res call({bool isLoading, int loadingCount, AppExceptionWrapper? appExceptionWrapper});
+  $Res call(
+      {bool isLoading,
+      int loadingCount,
+      AppExceptionWrapper? appExceptionWrapper});
 }
 
 /// @nodoc
-class _$CommonStateCopyWithImpl<$Res, $Val extends CommonState> implements $CommonStateCopyWith<$Res> {
+class _$CommonStateCopyWithImpl<$Res, $Val extends CommonState>
+    implements $CommonStateCopyWith<$Res> {
   _$CommonStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -509,6 +588,8 @@ class _$CommonStateCopyWithImpl<$Res, $Val extends CommonState> implements $Comm
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CommonState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -534,20 +615,29 @@ class _$CommonStateCopyWithImpl<$Res, $Val extends CommonState> implements $Comm
 }
 
 /// @nodoc
-abstract class _$$CommonStateImplCopyWith<$Res> implements $CommonStateCopyWith<$Res> {
-  factory _$$CommonStateImplCopyWith(_$CommonStateImpl value, $Res Function(_$CommonStateImpl) then) =
+abstract class _$$CommonStateImplCopyWith<$Res>
+    implements $CommonStateCopyWith<$Res> {
+  factory _$$CommonStateImplCopyWith(
+          _$CommonStateImpl value, $Res Function(_$CommonStateImpl) then) =
       __$$CommonStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, int loadingCount, AppExceptionWrapper? appExceptionWrapper});
+  $Res call(
+      {bool isLoading,
+      int loadingCount,
+      AppExceptionWrapper? appExceptionWrapper});
 }
 
 /// @nodoc
-class __$$CommonStateImplCopyWithImpl<$Res> extends _$CommonStateCopyWithImpl<$Res, _$CommonStateImpl>
+class __$$CommonStateImplCopyWithImpl<$Res>
+    extends _$CommonStateCopyWithImpl<$Res, _$CommonStateImpl>
     implements _$$CommonStateImplCopyWith<$Res> {
-  __$$CommonStateImplCopyWithImpl(_$CommonStateImpl _value, $Res Function(_$CommonStateImpl) _then)
+  __$$CommonStateImplCopyWithImpl(
+      _$CommonStateImpl _value, $Res Function(_$CommonStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CommonState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -575,7 +665,10 @@ class __$$CommonStateImplCopyWithImpl<$Res> extends _$CommonStateCopyWithImpl<$R
 /// @nodoc
 
 class _$CommonStateImpl with DiagnosticableTreeMixin implements _CommonState {
-  const _$CommonStateImpl({this.isLoading = false, this.loadingCount = 0, this.appExceptionWrapper});
+  const _$CommonStateImpl(
+      {this.isLoading = false,
+      this.loadingCount = 0,
+      this.appExceptionWrapper});
 
   @override
   @JsonKey()
@@ -606,16 +699,21 @@ class _$CommonStateImpl with DiagnosticableTreeMixin implements _CommonState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CommonStateImpl &&
-            (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
-            (identical(other.loadingCount, loadingCount) || other.loadingCount == loadingCount) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.loadingCount, loadingCount) ||
+                other.loadingCount == loadingCount) &&
             (identical(other.appExceptionWrapper, appExceptionWrapper) ||
                 other.appExceptionWrapper == appExceptionWrapper));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, loadingCount, appExceptionWrapper);
+  int get hashCode =>
+      Object.hash(runtimeType, isLoading, loadingCount, appExceptionWrapper);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CommonState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CommonStateImplCopyWith<_$CommonStateImpl> get copyWith =>
@@ -634,7 +732,11 @@ abstract class _CommonState implements CommonState {
   int get loadingCount;
   @override
   AppExceptionWrapper? get appExceptionWrapper;
+
+  /// Create a copy of CommonState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$CommonStateImplCopyWith<_$CommonStateImpl> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CommonStateImplCopyWith<_$CommonStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

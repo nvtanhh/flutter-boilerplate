@@ -23,7 +23,7 @@ class SignUpSuccessWidget extends StatelessWidget {
           AppSpacing.gapH24,
           AppButton.primary(
             label: context.l10n.button__done.toUpperCase(),
-            onPressed: () => context.go(RouteConstants.welcome),
+            onPressed: () => context.go(AppPage.signIn.path),
             width: double.infinity,
             height: Sizes.s48,
           ),

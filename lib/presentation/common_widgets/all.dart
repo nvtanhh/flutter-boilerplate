@@ -2,6 +2,7 @@ export 'app_icon.dart';
 export 'button.dart';
 export 'common_app_bar.dart';
 export 'common_scaffold.dart';
+export 'error_page.dart';
 export 'loading.dart';
 export 'network_image.dart';
 export 'tab_bar.dart';

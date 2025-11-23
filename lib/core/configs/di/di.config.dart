@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -8,77 +9,141 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter_boilerplate/core/configs/di/di.dart' as _i43;
-import 'package:flutter_boilerplate/core/configs/di/raw_config.dart' as _i13;
-import 'package:flutter_boilerplate/core/configs/env_config.dart' as _i20;
-import 'package:flutter_boilerplate/data/datasources/app_preferences.dart' as _i5;
-import 'package:flutter_boilerplate/data/datasources/auth_datasource.dart' as _i29;
-import 'package:flutter_boilerplate/data/datasources/datasources.dart' as _i33;
-import 'package:flutter_boilerplate/data/datasources/providers/api/api.dart' as _i30;
-import 'package:flutter_boilerplate/data/datasources/providers/api/clients/authenticated_rest_api_client.dart' as _i27;
-import 'package:flutter_boilerplate/data/datasources/providers/api/clients/clients.dart' as _i23;
-import 'package:flutter_boilerplate/data/datasources/providers/api/clients/socket/signalr_client.dart' as _i15;
+import 'package:flutter_boilerplate/core/configs/di/di.dart' as _i676;
+import 'package:flutter_boilerplate/core/configs/di/raw_config.dart' as _i607;
+import 'package:flutter_boilerplate/core/configs/env_config.dart' as _i858;
+import 'package:flutter_boilerplate/data/datasources/all.dart' as _i701;
+import 'package:flutter_boilerplate/data/datasources/app_preferences.dart'
+    as _i162;
+import 'package:flutter_boilerplate/data/datasources/auth_datasource.dart'
+    as _i25;
+import 'package:flutter_boilerplate/data/datasources/providers/api/api.dart'
+    as _i629;
+import 'package:flutter_boilerplate/data/datasources/providers/api/clients/all.dart'
+    as _i33;
+import 'package:flutter_boilerplate/data/datasources/providers/api/clients/authenticated_rest_api_client.dart'
+    as _i185;
+import 'package:flutter_boilerplate/data/datasources/providers/api/clients/socket/signalr_client.dart'
+    as _i368;
 import 'package:flutter_boilerplate/data/datasources/providers/api/clients/un_authenticated_rest_api_client.dart'
-    as _i17;
-import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/access_token_interceptor.dart' as _i3;
-import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/connectivity_interceptor.dart' as _i9;
-import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/interceptor.dart' as _i28;
-import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/log_interceptor.dart' as _i10;
-import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/refresh_token_interceptor.dart' as _i25;
-import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/trim_interceptor.dart' as _i16;
-import 'package:flutter_boilerplate/data/datasources/providers/gateway.dart' as _i26;
-import 'package:flutter_boilerplate/data/datasources/refresh_token_datasource.dart' as _i22;
-import 'package:flutter_boilerplate/data/mappers/response_mapper/base/base_error_response_mapper.dart' as _i6;
+    as _i1060;
+import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/access_token_interceptor.dart'
+    as _i926;
+import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/all.dart'
+    as _i484;
+import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/connectivity_interceptor.dart'
+    as _i119;
+import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/log_interceptor.dart'
+    as _i878;
+import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/refresh_token_interceptor.dart'
+    as _i242;
+import 'package:flutter_boilerplate/data/datasources/providers/api/interceptor/trim_interceptor.dart'
+    as _i515;
+import 'package:flutter_boilerplate/data/datasources/providers/gateway.dart'
+    as _i392;
+import 'package:flutter_boilerplate/data/datasources/refresh_token_datasource.dart'
+    as _i193;
+import 'package:flutter_boilerplate/data/mappers/response_mapper/base/base_error_response_mapper.dart'
+    as _i398;
 import 'package:flutter_boilerplate/data/mappers/response_mapper/error_response/json_object_error_response_mapper.dart'
-    as _i7;
+    as _i480;
 import 'package:flutter_boilerplate/data/mappers/response_mapper/success_response/json_array_sucess_response_mapper.dart'
-    as _i11;
+    as _i284;
 import 'package:flutter_boilerplate/data/mappers/response_mapper/success_response/json_object_success_response_mapper.dart'
-    as _i12;
+    as _i866;
 import 'package:flutter_boilerplate/data/mappers/response_mapper/success_response/paged_json_array_success_response_mapper.dart'
-    as _i14;
-import 'package:flutter_boilerplate/data/repositories/auth_repo_impl.dart' as _i32;
-import 'package:flutter_boilerplate/data/repositories/refresh_token_repo.dart' as _i24;
-import 'package:flutter_boilerplate/data/repositories/user_repo_impl.dart' as _i19;
-import 'package:flutter_boilerplate/domain/repositories/auth_repo.dart' as _i31;
-import 'package:flutter_boilerplate/domain/repositories/user_repo.dart' as _i18;
-import 'package:flutter_boilerplate/domain/usecases/auth/auth_usecases.dart' as _i42;
-import 'package:flutter_boilerplate/domain/usecases/auth/forgot_password_usecase.dart' as _i34;
-import 'package:flutter_boilerplate/domain/usecases/auth/logout_usecase.dart' as _i35;
-import 'package:flutter_boilerplate/domain/usecases/auth/sign_in_usecase.dart' as _i36;
-import 'package:flutter_boilerplate/domain/usecases/auth/sign_up_usecase.dart' as _i37;
-import 'package:flutter_boilerplate/domain/usecases/user/get_current_user_usecase.dart' as _i21;
-import 'package:flutter_boilerplate/presentation/base/bloc/common/common_bloc.dart' as _i38;
-import 'package:flutter_boilerplate/presentation/common_blocs/connectivity/connectivity_cubit.dart' as _i8;
-import 'package:flutter_boilerplate/presentation/common_blocs/overlay/overlay_bloc.dart' as _i4;
-import 'package:flutter_boilerplate/presentation/features/auth/forgot_pass/bloc/forgot_pass_bloc.dart' as _i39;
-import 'package:flutter_boilerplate/presentation/features/auth/sign_in/bloc/sign_in_bloc.dart' as _i40;
-import 'package:flutter_boilerplate/presentation/features/auth/sign_up/bloc/sign_up_bloc.dart' as _i41;
-import 'package:get_it/get_it.dart' as _i1;
-import 'package:injectable/injectable.dart' as _i2;
+    as _i347;
+import 'package:flutter_boilerplate/data/repositories/auth_repo_impl.dart'
+    as _i595;
+import 'package:flutter_boilerplate/data/repositories/refresh_token_repo.dart'
+    as _i804;
+import 'package:flutter_boilerplate/data/repositories/user_repo_impl.dart'
+    as _i805;
+import 'package:flutter_boilerplate/domain/repositories/auth_repo.dart'
+    as _i245;
+import 'package:flutter_boilerplate/domain/repositories/user_repo.dart'
+    as _i710;
+import 'package:flutter_boilerplate/domain/usecases/auth/auth_usecases.dart'
+    as _i749;
+import 'package:flutter_boilerplate/domain/usecases/auth/forgot_password_usecase.dart'
+    as _i652;
+import 'package:flutter_boilerplate/domain/usecases/auth/logout_usecase.dart'
+    as _i209;
+import 'package:flutter_boilerplate/domain/usecases/auth/sign_in_usecase.dart'
+    as _i193;
+import 'package:flutter_boilerplate/domain/usecases/auth/sign_up_usecase.dart'
+    as _i1027;
+import 'package:flutter_boilerplate/domain/usecases/user/get_current_user_usecase.dart'
+    as _i1005;
+import 'package:flutter_boilerplate/presentation/base/bloc/common/common_bloc.dart'
+    as _i382;
+import 'package:flutter_boilerplate/presentation/base/exception_handler/exception_message_mappers/exception_message_mapper.dart'
+    as _i1066;
+import 'package:flutter_boilerplate/presentation/common_blocs/connectivity/connectivity_cubit.dart'
+    as _i399;
+import 'package:flutter_boilerplate/presentation/common_blocs/overlay/overlay_bloc.dart'
+    as _i114;
+import 'package:flutter_boilerplate/presentation/features/auth/forgot_pass/bloc/forgot_pass_bloc.dart'
+    as _i439;
+import 'package:flutter_boilerplate/presentation/features/auth/sign_in/bloc/sign_in_bloc.dart'
+    as _i487;
+import 'package:flutter_boilerplate/presentation/features/auth/sign_up/bloc/sign_up_bloc.dart'
+    as _i573;
+import 'package:get_it/get_it.dart' as _i174;
+import 'package:injectable/injectable.dart' as _i526;
 
-extension GetItInjectableX on _i1.GetIt {
+extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
-  Future<_i1.GetIt> init({
+  Future<_i174.GetIt> init({
     String? environment,
-    _i2.EnvironmentFilter? environmentFilter,
+    _i526.EnvironmentFilter? environmentFilter,
   }) async {
-    final gh = _i2.GetItHelper(
+    final gh = _i526.GetItHelper(
       this,
       environment,
       environmentFilter,
     );
     final registerModule = _$RegisterModule();
-    gh.factory<_i3.AccessTokenInterceptor>(() => _i3.AccessTokenInterceptor());
-    gh.lazySingleton<_i4.AppOverlayBloc>(() => _i4.AppOverlayBloc());
-    await gh.singletonAsync<_i5.AppPreferences>(
+    gh.factory<_i515.TrimInterceptor>(() => _i515.TrimInterceptor());
+    gh.factory<_i119.ConnectivityInterceptor>(
+        () => _i119.ConnectivityInterceptor());
+    gh.factory<_i926.AccessTokenInterceptor>(
+        () => _i926.AccessTokenInterceptor());
+    gh.factory<_i866.JsonObjectSuccessResponseMapper<dynamic>>(
+        () => _i866.JsonObjectSuccessResponseMapper<dynamic>());
+    gh.factory<_i347.RecordsJsonArraySuccessResponseMapper<dynamic>>(
+        () => _i347.RecordsJsonArraySuccessResponseMapper<dynamic>());
+    gh.factory<_i284.JsonArraySuccessResponseMapper<dynamic>>(
+        () => _i284.JsonArraySuccessResponseMapper<dynamic>());
+    await gh.singletonAsync<_i162.AppPreferences>(
       () => registerModule.appPreferences,
       preResolve: true,
     );
-    gh.factory<_i6.BaseErrorResponseMapper<Map<String, dynamic>>>(() => _i7.JsonObjectErrorResponseMapper());
-    gh.lazySingleton<_i8.ConnectivityCubit>(() => _i8.ConnectivityCubit());
-    gh.factory<_i9.ConnectivityInterceptor>(() => _i9.ConnectivityInterceptor());
-    gh.factory<_i10.CustomLogInterceptor>(() => _i10.CustomLogInterceptor(
+    await gh.singletonAsync<_i607.RawConfig>(
+      () => registerModule.config(),
+      preResolve: true,
+    );
+    gh.lazySingleton<_i1060.UnAuthenticatedRestApiClient>(
+        () => _i1060.UnAuthenticatedRestApiClient());
+    gh.lazySingleton<_i368.SignalRClient>(() => _i368.SignalRClient());
+    gh.lazySingleton<_i399.ConnectivityCubit>(() => _i399.ConnectivityCubit());
+    gh.lazySingleton<_i114.AppOverlayBloc>(() => _i114.AppOverlayBloc());
+    gh.lazySingleton<_i1066.ExceptionMessageMapper>(
+        () => _i1066.ExceptionMessageMapper());
+    gh.factory<_i398.BaseErrorResponseMapper<Map<String, dynamic>>>(
+        () => _i480.JsonObjectErrorResponseMapper());
+    gh.factory<_i710.UserRepository>(() => _i805.UserRepositoryImpl());
+    gh.factory<_i193.RefreshTokenDatasource>(() =>
+        _i193.RefreshTokDatasourceImp(gh<_i33.UnAuthenticatedRestApiClient>()));
+    gh.lazySingleton<_i804.RefreshTokenRepository>(
+        () => _i804.RefreshTokenRepository(
+              gh<_i193.RefreshTokenDatasource>(),
+              gh<_i162.AppPreferences>(),
+            ));
+    gh.singleton<_i858.EnvConfig>(() => _i858.EnvConfig(gh<_i607.RawConfig>()));
+    gh.factory<_i1005.GetCurrentUserUseCase>(
+        () => _i1005.GetCurrentUserUseCase(gh<_i710.UserRepository>()));
+    gh.factory<_i878.CustomLogInterceptor>(() => _i878.CustomLogInterceptor(
           enableLogRequestInfo: gh<bool>(),
           enableLogSuccessResponse: gh<bool>(),
           enableLogErrorResponse: gh<bool>(),
@@ -86,52 +151,42 @@ extension GetItInjectableX on _i1.GetIt {
           enableLogRequestBody: gh<bool>(),
           enableLogResponseData: gh<bool>(),
         ));
-    gh.factory<_i11.JsonArraySuccessResponseMapper<dynamic>>(() => _i11.JsonArraySuccessResponseMapper<dynamic>());
-    gh.factory<_i12.JsonObjectSuccessResponseMapper<dynamic>>(() => _i12.JsonObjectSuccessResponseMapper<dynamic>());
-    await gh.singletonAsync<_i13.RawConfig>(
-      () => registerModule.config(),
-      preResolve: true,
-    );
-    gh.factory<_i14.RecordsJsonArraySuccessResponseMapper<dynamic>>(
-        () => _i14.RecordsJsonArraySuccessResponseMapper<dynamic>());
-    gh.lazySingleton<_i15.SignalRClient>(() => _i15.SignalRClient());
-    gh.factory<_i16.TrimInterceptor>(() => _i16.TrimInterceptor());
-    gh.lazySingleton<_i17.UnAuthenticatedRestApiClient>(() => _i17.UnAuthenticatedRestApiClient());
-    gh.factory<_i18.UserRepository>(() => _i19.UserRepositoryImpl());
-    gh.singleton<_i20.EnvConfig>(() => _i20.EnvConfig(gh<_i13.RawConfig>()));
-    gh.factory<_i21.GetCurrentUserUseCase>(() => _i21.GetCurrentUserUseCase(gh<_i18.UserRepository>()));
-    gh.factory<_i22.RefreshTokenDatasource>(
-        () => _i22.RefreshTokDatasourceImp(gh<_i23.UnAuthenticatedRestApiClient>()));
-    gh.lazySingleton<_i24.RefreshTokenRepository>(() => _i24.RefreshTokenRepository(
-          gh<_i22.RefreshTokenDatasource>(),
-          gh<_i5.AppPreferences>(),
+    gh.factory<_i242.RefreshTokenInterceptor>(
+        () => _i242.RefreshTokenInterceptor(
+              gh<_i804.RefreshTokenRepository>(),
+              gh<_i392.UnAuthenticatedRestApiClient>(),
+            ));
+    gh.lazySingleton<_i185.AuthenticatedRestApiClient>(
+        () => _i185.AuthenticatedRestApiClient(
+              accessTokenInterceptor: gh<_i484.AccessTokenInterceptor>(),
+              refreshTokenInterceptor: gh<_i484.RefreshTokenInterceptor>(),
+            ));
+    gh.factory<_i25.AuthDataSource>(() => _i25.AuthDataSourceImpl(
+          gh<_i629.UnAuthenticatedRestApiClient>(),
+          gh<_i629.AuthenticatedRestApiClient>(),
         ));
-    gh.factory<_i25.RefreshTokenInterceptor>(() => _i25.RefreshTokenInterceptor(
-          gh<_i24.RefreshTokenRepository>(),
-          gh<_i26.UnAuthenticatedRestApiClient>(),
+    gh.factory<_i245.AuthRepository>(() => _i595.AuthRepositoryImpl(
+          gh<_i701.AppPreferences>(),
+          gh<_i701.AuthDataSource>(),
         ));
-    gh.lazySingleton<_i27.AuthenticatedRestApiClient>(() => _i27.AuthenticatedRestApiClient(
-          accessTokenInterceptor: gh<_i28.AccessTokenInterceptor>(),
-          refreshTokenInterceptor: gh<_i28.RefreshTokenInterceptor>(),
-        ));
-    gh.factory<_i29.AuthDataSource>(() => _i29.AuthDataSourceImpl(
-          gh<_i30.UnAuthenticatedRestApiClient>(),
-          gh<_i30.AuthenticatedRestApiClient>(),
-        ));
-    gh.factory<_i31.AuthRepository>(() => _i32.AuthRepositoryImpl(
-          gh<_i33.AppPreferences>(),
-          gh<_i33.AuthDataSource>(),
-        ));
-    gh.factory<_i34.ForgotPasswordUseCase>(() => _i34.ForgotPasswordUseCase(gh<_i31.AuthRepository>()));
-    gh.factory<_i35.LogoutUseCase>(() => _i35.LogoutUseCase(gh<_i31.AuthRepository>()));
-    gh.factory<_i36.SignInUseCase>(() => _i36.SignInUseCase(gh<_i31.AuthRepository>()));
-    gh.factory<_i37.SignUpUseCase>(() => _i37.SignUpUseCase(gh<_i31.AuthRepository>()));
-    gh.factory<_i38.CommonBloc>(() => _i38.CommonBloc(gh<_i35.LogoutUseCase>()));
-    gh.factory<_i39.ForgotPassBloc>(() => _i39.ForgotPassBloc(gh<_i34.ForgotPasswordUseCase>()));
-    gh.factory<_i40.SignInBloc>(() => _i40.SignInBloc(gh<_i36.SignInUseCase>()));
-    gh.factory<_i41.SignUpBloc>(() => _i41.SignUpBloc(gh<_i42.SignUpUseCase>()));
+    gh.factory<_i652.ForgotPasswordUseCase>(
+        () => _i652.ForgotPasswordUseCase(gh<_i245.AuthRepository>()));
+    gh.factory<_i193.SignInUseCase>(
+        () => _i193.SignInUseCase(gh<_i245.AuthRepository>()));
+    gh.factory<_i1027.SignUpUseCase>(
+        () => _i1027.SignUpUseCase(gh<_i245.AuthRepository>()));
+    gh.factory<_i573.SignUpBloc>(
+        () => _i573.SignUpBloc(gh<_i749.SignUpUseCase>()));
+    gh.factory<_i439.ForgotPassBloc>(
+        () => _i439.ForgotPassBloc(gh<_i652.ForgotPasswordUseCase>()));
+    gh.factory<_i209.LogoutUseCase>(
+        () => _i209.LogoutUseCase(gh<_i245.AuthRepository>()));
+    gh.factory<_i487.SignInBloc>(
+        () => _i487.SignInBloc(gh<_i193.SignInUseCase>()));
+    gh.factory<_i382.CommonBloc>(
+        () => _i382.CommonBloc(gh<_i209.LogoutUseCase>()));
     return this;
   }
 }
 
-class _$RegisterModule extends _i43.RegisterModule {}
+class _$RegisterModule extends _i676.RegisterModule {}

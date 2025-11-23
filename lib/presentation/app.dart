@@ -10,7 +10,7 @@ import '../l10n/app_localizations.dart';
 import 'common_blocs/app/app_bloc.dart';
 import 'overlay/overlay_wrapper.dart';
 import 'resource/styles/styles.dart';
-import 'routing/routing.dart';
+import 'routing/all.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             builder: (context, state) {
               return MaterialApp.router(
                 builder: (context, child) => _RootApp(child: child!),
-                routerConfig: state.isLoggedIn ? AppRouter.authenticatedRoute : AppRouter.unAuthRouter,
+                routerConfig: AppRouter.router,
                 themeMode: state.isDarkTheme ? ThemeMode.dark : ThemeMode.light,
                 theme: lightTheme,
                 darkTheme: darkTheme,
