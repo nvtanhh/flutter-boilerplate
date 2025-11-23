@@ -17,7 +17,7 @@ class UserAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: size / 2,
-      backgroundImage: AvnonCachedNetworkImageProvider(url),
+      backgroundImage: AppCachedNetworkImageProvider(url),
     );
   }
 }
