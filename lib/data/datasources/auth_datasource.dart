@@ -26,7 +26,9 @@ abstract class AuthDataSource {
 class AuthDataSourceImpl implements AuthDataSource {
   AuthDataSourceImpl(this._apiClient, this._authenticatedClient);
 
+  // ignore: unused_field
   final UnAuthenticatedRestApiClient _apiClient;
+  // ignore: unused_field
   final AuthenticatedRestApiClient _authenticatedClient;
 
   @override

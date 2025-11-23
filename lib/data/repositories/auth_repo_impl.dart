@@ -7,7 +7,9 @@ import '../datasources/all.dart';
 class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl(this._appPreferences, this._dataSource);
 
+  // ignore: unused_field
   final AppPreferences _appPreferences;
+  // ignore: unused_field
   final AuthDataSource _dataSource;
 
   @override

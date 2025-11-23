@@ -57,7 +57,6 @@ class DioApiExceptionMapper implements ApiExceptionMapper {
           rootException: exception,
         );
       case DioExceptionType.unknown:
-      default:
         return ApiException(
           kind: ApiExceptionKind.unknown,
           rootException: exception,

@@ -40,8 +40,7 @@ class AppOverlayWrapper extends StatelessWidget {
 
   Widget _buildToastOverlay() {
     return BlocBuilder<AppOverlayBloc, AppOverlayState>(
-      buildWhen: (previous, current) =>
-          previous.toastMessage != current.toastMessage,
+      buildWhen: (previous, current) => previous.toastMessage != current.toastMessage,
       builder: (context, state) {
         if (state.toastMessage == null) {
           return AppSpacing.emptyBox;
@@ -74,7 +73,7 @@ class AppOverlayWrapper extends StatelessWidget {
               borderRadius: AppRadius.borderRadius8,
               boxShadow: [
                 BoxShadow(
-                  color: context.appColors.secondaryTextColor.withOpacity(0.2),
+                  color: context.appColors.secondaryTextColor.withValues(alpha: 0.2),
                   offset: const Offset(0, 2),
                   blurRadius: 2,
                 ),
@@ -83,9 +82,7 @@ class AppOverlayWrapper extends StatelessWidget {
             child: AppToast(
               type: type,
               message: message,
-              onClosedByUser: () => getIt
-                  .get<AppOverlayBloc>()
-                  .add(const AppOverlayEvent.hideToast()),
+              onClosedByUser: () => getIt.get<AppOverlayBloc>().add(const AppOverlayEvent.hideToast()),
             ),
           ).animate().slide(
                 duration: const Duration(milliseconds: 150),

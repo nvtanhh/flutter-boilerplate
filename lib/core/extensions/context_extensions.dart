@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../presentation/resource/styles/styles.dart';
 
 extension ContextExtensions on BuildContext {
@@ -30,11 +30,10 @@ extension ContextExtensions on BuildContext {
   // navigator
   Future<T?> pushPage<T extends Object?>(Widget child) =>
       Navigator.of(this).push<T>(MaterialPageRoute(builder: (_) => child));
-  Future<void> pushReplacement(Widget child) => Navigator.of(this)
-      .pushReplacement(MaterialPageRoute(builder: (_) => child));
+  Future<void> pushReplacement(Widget child) =>
+      Navigator.of(this).pushReplacement(MaterialPageRoute(builder: (_) => child));
 
   void pop<T extends Object?>([T? result]) => Navigator.of(this).pop<T>(result);
-  void popUntil(String routeName) =>
-      Navigator.of(this).popUntil(ModalRoute.withName(routeName));
+  void popUntil(String routeName) => Navigator.of(this).popUntil(ModalRoute.withName(routeName));
   void popUntilFirst() => Navigator.of(this).popUntil((route) => route.isFirst);
 }

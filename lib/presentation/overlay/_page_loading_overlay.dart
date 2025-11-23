@@ -10,7 +10,7 @@ class PageLoadingOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: context.appColors.primaryTextColor.withOpacity(0.5),
+      color: context.appColors.primaryTextColor.withValues(alpha: 0.5),
       alignment: Alignment.center,
       child: IntrinsicWidth(
         child: IntrinsicHeight(
@@ -21,7 +21,7 @@ class PageLoadingOverlay extends StatelessWidget {
               borderRadius: AppRadius.borderRadius12,
               boxShadow: [
                 BoxShadow(
-                  color: context.appColors.secondaryTextColor.withOpacity(0.2),
+                  color: context.appColors.secondaryTextColor.withValues(alpha: 0.2),
                   blurRadius: 4.0,
                   offset: const Offset(0, 4.0),
                 ),
