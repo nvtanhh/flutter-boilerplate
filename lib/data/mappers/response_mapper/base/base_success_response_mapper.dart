@@ -12,14 +12,11 @@ abstract class BaseSuccessResponseMapper<I, O> {
   factory BaseSuccessResponseMapper.fromType(SuccessResponseMapperType type) {
     switch (type) {
       case SuccessResponseMapperType.jsonObject:
-        return JsonObjectSuccessResponseMapper<I>()
-            as BaseSuccessResponseMapper<I, O>;
+        return JsonObjectSuccessResponseMapper<I>() as BaseSuccessResponseMapper<I, O>;
       case SuccessResponseMapperType.jsonArray:
-        return JsonArraySuccessResponseMapper<I>()
-            as BaseSuccessResponseMapper<I, O>;
+        return JsonArraySuccessResponseMapper<I>() as BaseSuccessResponseMapper<I, O>;
       case SuccessResponseMapperType.pagedListJsonArray:
-        return RecordsJsonArraySuccessResponseMapper<I>()
-            as BaseSuccessResponseMapper<I, O>;
+        return RecordsJsonArraySuccessResponseMapper<I>() as BaseSuccessResponseMapper<I, O>;
     }
   }
 

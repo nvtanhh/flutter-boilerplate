@@ -11,8 +11,7 @@ typedef CustomExceptionMessageParser = String? Function(
 );
 
 @lazySingleton
-class ExceptionMessageMapper
-    implements BaseReadableExceptionMapper<AppException> {
+class ExceptionMessageMapper implements BaseReadableExceptionMapper<AppException> {
   ExceptionMessageMapper();
 
   @override
@@ -55,9 +54,7 @@ class ExceptionMessageMapper
         break;
     }
 
-    return message.isNotBlank
-        ? message!
-        : 'context.l10n.exception__common_message';
+    return message.isNotBlank ? message! : 'context.l10n.exception__common_message';
   }
 
   String mapMessage(

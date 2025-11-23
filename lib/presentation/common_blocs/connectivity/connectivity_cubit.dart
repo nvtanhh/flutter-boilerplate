@@ -18,8 +18,7 @@ class ConnectivityCubit extends Cubit<ConnectivityState> {
 
   void _monitorConnectivity() {
     checkConnectivity();
-    _internetConnectionStreamSubscription =
-        Connectivity().onConnectivityChanged.listen(_emitInternetConnection);
+    _internetConnectionStreamSubscription = Connectivity().onConnectivityChanged.listen(_emitInternetConnection);
   }
 
   Future<void> checkConnectivity() async {

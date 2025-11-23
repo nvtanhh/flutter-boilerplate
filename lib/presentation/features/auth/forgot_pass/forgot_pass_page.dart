@@ -14,8 +14,7 @@ class ForgotPassPage extends StatefulWidget {
   State<ForgotPassPage> createState() => _ForgotPassPageState();
 }
 
-class _ForgotPassPageState
-    extends BasePageState<ForgotPassPage, ForgotPassBloc> {
+class _ForgotPassPageState extends BasePageState<ForgotPassPage, ForgotPassBloc> {
   @override
   bool get useLoadingIndicator => true;
 
@@ -25,8 +24,7 @@ class _ForgotPassPageState
       hideKeyboardWhenTouchOutside: true,
       appBar: CommonAppBar(),
       body: BlocBuilder<ForgotPassBloc, ForgotPassState>(
-        buildWhen: (previous, current) =>
-            previous.requestSuccess != current.requestSuccess,
+        buildWhen: (previous, current) => previous.requestSuccess != current.requestSuccess,
         builder: (context, state) {
           if (state.requestSuccess) {
             return const _RequestSuccessWidget();
@@ -79,8 +77,7 @@ class _ForgotPassForm extends StatelessWidget {
   Widget _buildEmailField(BuildContext context) {
     return BlocBuilder<ForgotPassBloc, ForgotPassState>(
       buildWhen: (previous, current) =>
-          previous.email != current.email ||
-          previous.hadBeenSubmitted != current.hadBeenSubmitted,
+          previous.email != current.email || previous.hadBeenSubmitted != current.hadBeenSubmitted,
       builder: (context, state) {
         return AppTextField(
           hintText: context.l10n.field__email,
@@ -94,8 +91,7 @@ class _ForgotPassForm extends StatelessWidget {
                   : !state.isEmailValid
                       ? context.l10n.field__email_invalid
                       : null,
-          onChanged: (value) =>
-              context.read<ForgotPassBloc>().add(EmailChanged(value)),
+          onChanged: (value) => context.read<ForgotPassBloc>().add(EmailChanged(value)),
         );
       },
     );
@@ -112,15 +108,13 @@ class _RequestButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ForgotPassBloc, ForgotPassState>(
-      buildWhen: (previous, current) =>
-          previous.isEmailValid != current.isEmailValid,
+      buildWhen: (previous, current) => previous.isEmailValid != current.isEmailValid,
       builder: (context, state) {
         return AppButton.primary(
           height: Sizes.s48,
           width: double.infinity,
           label: context.l10n.button__send_request.toUpperCase(),
-          onPressed:
-              state.isEmailValid ? () => _onSentRequestPressed(context) : null,
+          onPressed: state.isEmailValid ? () => _onSentRequestPressed(context) : null,
         );
       },
     );

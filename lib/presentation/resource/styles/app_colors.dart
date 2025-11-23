@@ -79,15 +79,12 @@ class AppColors extends ThemeExtension<AppColors> {
     return AppColors(
       primaryColor: Color.lerp(primaryColor, other.primaryColor, t)!,
       secondaryColor: Color.lerp(secondaryColor, other.secondaryColor, t)!,
-      primaryTextColor:
-          Color.lerp(primaryTextColor, other.primaryTextColor, t)!,
-      secondaryTextColor:
-          Color.lerp(secondaryTextColor, other.secondaryTextColor, t)!,
+      primaryTextColor: Color.lerp(primaryTextColor, other.primaryTextColor, t)!,
+      secondaryTextColor: Color.lerp(secondaryTextColor, other.secondaryTextColor, t)!,
       success: Color.lerp(success, other.success, t)!,
       error: Color.lerp(error, other.error, t)!,
       warning: Color.lerp(warning, other.warning, t)!,
-      inverseTextColor:
-          Color.lerp(inverseTextColor, other.inverseTextColor, t)!,
+      inverseTextColor: Color.lerp(inverseTextColor, other.inverseTextColor, t)!,
     );
   }
 }

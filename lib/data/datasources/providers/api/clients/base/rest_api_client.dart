@@ -18,10 +18,8 @@ class RestApiClient {
     Duration? connectTimeout,
     Duration? receiveTimeoutInMs,
     Duration? sendTimeoutInMs,
-    this.defaultSuccessResponseMapperType =
-        ApiConstants.defaultSuccessResponseMapperType,
-    this.defaultErrorResponseMapperType =
-        ApiConstants.defaultErrorResponseMapperType,
+    this.defaultSuccessResponseMapperType = ApiConstants.defaultSuccessResponseMapperType,
+    this.defaultErrorResponseMapperType = ApiConstants.defaultErrorResponseMapperType,
   }) : _dio = DioBuilder.createDio(
           options: BaseOptions(
             baseUrl: baseUrl,
@@ -35,8 +33,8 @@ class RestApiClient {
       ...this.interceptors,
     ];
 
-    interceptors.sort((a, b) => (b is BaseInterceptor ? b.priority : -1)
-        .compareTo(a is BaseInterceptor ? a.priority : -1));
+    interceptors
+        .sort((a, b) => (b is BaseInterceptor ? b.priority : -1).compareTo(a is BaseInterceptor ? a.priority : -1));
 
     _dio.interceptors.addAll(interceptors);
   }
@@ -284,12 +282,10 @@ class RestApiClient {
       if (value is String || value is bool) {
         form[key] = value.toString();
       } else if (value is List) {
-        form[key] =
-            value.map((dynamic item) => item.toString()).toList().join(',');
+        form[key] = value.map((dynamic item) => item.toString()).toList().join(',');
       } else if (value is File) {
         final fileName = value.path.split('/').last;
-        form[key] =
-            await MultipartFile.fromFile(value.path, filename: fileName);
+        form[key] = await MultipartFile.fromFile(value.path, filename: fileName);
       } else {
         throw Exception('Unsupported multiform value type');
       }

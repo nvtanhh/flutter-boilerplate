@@ -4,8 +4,7 @@ import '../../../../core/exceptions/all.dart';
 import '../base/base_error_response_mapper.dart';
 
 @Injectable(as: BaseErrorResponseMapper)
-class JsonObjectErrorResponseMapper
-    extends BaseErrorResponseMapper<Map<String, dynamic>> {
+class JsonObjectErrorResponseMapper extends BaseErrorResponseMapper<Map<String, dynamic>> {
   @override
   ServerError mapToEntity(Map<String, dynamic>? data) {
     return ServerError(

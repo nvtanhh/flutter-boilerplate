@@ -3,8 +3,7 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import '../../../../core/exceptions/api/api_exception.dart';
 import '../base/base_error_response_mapper.dart';
 
-class ServerGraphQLErrorMapper
-    extends BaseErrorResponseMapper<OperationException> {
+class ServerGraphQLErrorMapper extends BaseErrorResponseMapper<OperationException> {
   const ServerGraphQLErrorMapper();
 
   @override

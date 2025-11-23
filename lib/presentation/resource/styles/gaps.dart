@@ -109,20 +109,13 @@ class AppSpacing {
   static const edgeInsetsAll16 = EdgeInsets.all(Sizes.s16);
   static const edgeInsetsAll20 = EdgeInsets.all(Sizes.s20);
 
-  static const edgeInsetsV4H8 =
-      EdgeInsets.symmetric(vertical: Sizes.s4, horizontal: Sizes.s8);
-  static const edgeInsetsV8H12 =
-      EdgeInsets.symmetric(vertical: Sizes.s8, horizontal: Sizes.s12);
-  static const edgeInsetsV8H16 =
-      EdgeInsets.symmetric(vertical: Sizes.s8, horizontal: Sizes.s16);
-  static const edgeInsetsV16H8 =
-      EdgeInsets.symmetric(vertical: Sizes.s16, horizontal: Sizes.s8);
-  static const edgeInsetsV12H16 =
-      EdgeInsets.symmetric(vertical: Sizes.s12, horizontal: Sizes.s16);
-  static const edgeInsetsV16H20 =
-      EdgeInsets.symmetric(vertical: Sizes.s16, horizontal: Sizes.s20);
-  static const edgeInsetsV20H16 =
-      EdgeInsets.symmetric(vertical: Sizes.s20, horizontal: Sizes.s16);
+  static const edgeInsetsV4H8 = EdgeInsets.symmetric(vertical: Sizes.s4, horizontal: Sizes.s8);
+  static const edgeInsetsV8H12 = EdgeInsets.symmetric(vertical: Sizes.s8, horizontal: Sizes.s12);
+  static const edgeInsetsV8H16 = EdgeInsets.symmetric(vertical: Sizes.s8, horizontal: Sizes.s16);
+  static const edgeInsetsV16H8 = EdgeInsets.symmetric(vertical: Sizes.s16, horizontal: Sizes.s8);
+  static const edgeInsetsV12H16 = EdgeInsets.symmetric(vertical: Sizes.s12, horizontal: Sizes.s16);
+  static const edgeInsetsV16H20 = EdgeInsets.symmetric(vertical: Sizes.s16, horizontal: Sizes.s20);
+  static const edgeInsetsV20H16 = EdgeInsets.symmetric(vertical: Sizes.s20, horizontal: Sizes.s16);
 
   static const edgeInsetsOnlyTop4 = EdgeInsets.only(top: Sizes.s4);
   static const edgeInsetsOnlyTop8 = EdgeInsets.only(top: Sizes.s8);

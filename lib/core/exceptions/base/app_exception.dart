@@ -11,8 +11,7 @@ abstract class AppException implements Exception {
   }
 
   bool get isServerDefinedException =>
-      type == AppExceptionType.api &&
-      (this as ApiException).kind == ApiExceptionKind.serverDefined;
+      type == AppExceptionType.api && (this as ApiException).kind == ApiExceptionKind.serverDefined;
 }
 
 enum AppExceptionType {

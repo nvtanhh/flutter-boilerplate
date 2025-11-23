@@ -10,8 +10,7 @@ class GraphqlApiExceptionMapper implements ApiExceptionMapper {
   const GraphqlApiExceptionMapper({required this.serverErrorMapper});
 
   final BaseErrorResponseMapper serverErrorMapper;
-  final ServerGraphQLErrorMapper _serverGraphQLErrorMapper =
-      const ServerGraphQLErrorMapper();
+  final ServerGraphQLErrorMapper _serverGraphQLErrorMapper = const ServerGraphQLErrorMapper();
 
   @override
   ApiException map(Object? exception) {
@@ -23,8 +22,7 @@ class GraphqlApiExceptionMapper implements ApiExceptionMapper {
     }
 
     if (exception.linkException?.originalException is DioException) {
-      final dioException =
-          exception.linkException!.originalException as DioException;
+      final dioException = exception.linkException!.originalException as DioException;
       if (dioException.type == DioExceptionType.badResponse) {
         /// server-defined error
         ServerError? serverError;

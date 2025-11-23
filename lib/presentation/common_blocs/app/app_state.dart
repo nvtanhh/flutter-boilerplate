@@ -11,6 +11,5 @@ class AppState extends BaseState with _$AppState {
     User? currentUser,
   }) = _AppState;
 
-  factory AppState.fromJson(Map<String, dynamic> json) =>
-      _$AppStateFromJson(json);
+  factory AppState.fromJson(Map<String, dynamic> json) => _$AppStateFromJson(json);
 }

@@ -20,8 +20,7 @@ class GraphQLApiClient {
     Duration? connectTimeoutInMs,
     Duration? sendTimeoutInMs,
     Duration? receiveTimeoutInMs,
-    this.defaultErrorResponseMapperType =
-        ApiConstants.defaultErrorResponseMapperType,
+    this.defaultErrorResponseMapperType = ApiConstants.defaultErrorResponseMapperType,
   }) : _graphQLClient = ValueNotifier<GraphQLClient>(
           GraphQLClient(
             cache: GraphQLCache(store: HiveStore()),
@@ -43,8 +42,8 @@ class GraphQLApiClient {
       ...this.interceptors,
     ];
 
-    interceptors.sort((a, b) => (b is BaseInterceptor ? b.priority : -1)
-        .compareTo(a is BaseInterceptor ? a.priority : -1));
+    interceptors
+        .sort((a, b) => (b is BaseInterceptor ? b.priority : -1).compareTo(a is BaseInterceptor ? a.priority : -1));
 
     _dio.interceptors.addAll(interceptors);
   }

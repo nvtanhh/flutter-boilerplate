@@ -26,8 +26,7 @@ class _SignInPageState extends BasePageState<SignInPage, SignInBloc> {
   @override
   Widget buildPage(BuildContext context) {
     return BlocListener<SignInBloc, SignInState>(
-      listenWhen: (previous, current) =>
-          previous.isSignInSuccess != current.isSignInSuccess,
+      listenWhen: (previous, current) => previous.isSignInSuccess != current.isSignInSuccess,
       listener: (context, state) {
         if (state.isSignInSuccess) {
           context.popUntilFirst();

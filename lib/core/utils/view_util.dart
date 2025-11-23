@@ -50,22 +50,19 @@ class ViewUtil {
   }
 
   static Offset? getWidgetPosition(GlobalKey globalKey) {
-    final renderBox =
-        globalKey.currentContext?.findRenderObject() as RenderBox?;
+    final renderBox = globalKey.currentContext?.findRenderObject() as RenderBox?;
 
     return renderBox?.localToGlobal(Offset.zero);
   }
 
   static double? getWidgetWidth(GlobalKey globalKey) {
-    final renderBox =
-        globalKey.currentContext?.findRenderObject() as RenderBox?;
+    final renderBox = globalKey.currentContext?.findRenderObject() as RenderBox?;
 
     return renderBox?.size.width;
   }
 
   static double? getWidgetHeight(GlobalKey globalKey) {
-    final renderBox =
-        globalKey.currentContext?.findRenderObject() as RenderBox?;
+    final renderBox = globalKey.currentContext?.findRenderObject() as RenderBox?;
 
     return renderBox?.size.height;
   }
@@ -93,8 +90,7 @@ class ViewUtil {
       elevation: elevation,
       shape: shape ??
           const RoundedRectangleBorder(
-            borderRadius:
-                BorderRadius.vertical(top: Radius.circular(Sizes.s20)),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(Sizes.s20)),
           ),
       clipBehavior: clipBehavior,
       barrierColor: barrierColor,

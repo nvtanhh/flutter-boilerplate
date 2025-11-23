@@ -8,16 +8,14 @@ import '../../entities/base/paged_list.dart';
 import 'base_outputs.dart';
 import 'base_params.dart';
 
-abstract class BaseUseCase<Params extends BaseUsecaseParams, Output>
-    with LogMixin {
+abstract class BaseUseCase<Params extends BaseUsecaseParams, Output> with LogMixin {
   const BaseUseCase();
 
   @protected
   Output buildUseCase(Params params);
 }
 
-abstract class BaseSyncUseCase<Params extends BaseUsecaseParams, Output>
-    extends BaseUseCase<Params, Output> {
+abstract class BaseSyncUseCase<Params extends BaseUsecaseParams, Output> extends BaseUseCase<Params, Output> {
   const BaseSyncUseCase();
 
   Output execute([Params? params]) {
@@ -40,8 +38,7 @@ abstract class BaseSyncUseCase<Params extends BaseUsecaseParams, Output>
   }
 }
 
-abstract class BaseFutureUseCase<Params extends BaseUsecaseParams, Output>
-    extends BaseUseCase<Params, Future<Output>> {
+abstract class BaseFutureUseCase<Params extends BaseUsecaseParams, Output> extends BaseUseCase<Params, Future<Output>> {
   const BaseFutureUseCase();
 
   Future<Output> execute([Params? params]) async {
@@ -115,9 +112,8 @@ abstract class BaseLoadMoreUseCase<Params extends BaseUsecaseParams, Output>
         page: isInitialLoad
             ? initialPage + (pagedList.items.isNotEmpty ? 1 : 0)
             : _oldOutput.page + (pagedList.items.isNotEmpty ? 1 : 0),
-        pageSize: isInitialLoad
-            ? (initialPageSize + pagedList.items.length)
-            : _oldOutput.pageSize + pagedList.items.length,
+        pageSize:
+            isInitialLoad ? (initialPageSize + pagedList.items.length) : _oldOutput.pageSize + pagedList.items.length,
         hasNext: pagedList.hasNext,
         isRefreshSuccess: isInitialLoad,
       );
@@ -142,8 +138,7 @@ abstract class BaseLoadMoreUseCase<Params extends BaseUsecaseParams, Output>
   }
 }
 
-abstract class BaseStreamUseCase<Input extends BaseUsecaseParams, Output>
-    extends BaseUseCase<Input, Stream<Output>> {
+abstract class BaseStreamUseCase<Input extends BaseUsecaseParams, Output> extends BaseUseCase<Input, Stream<Output>> {
   const BaseStreamUseCase();
 
   Stream<Output> execute(Input input) {

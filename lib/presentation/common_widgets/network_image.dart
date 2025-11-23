@@ -53,10 +53,8 @@ class AppNetworkImage extends StatelessWidget {
       fadeInDuration: Duration.zero,
       fadeOutCurve: fadeOutCurve,
       useOldImageOnUrlChange: useOldImageOnUrlChange,
-      memCacheWidth:
-          (memCacheSize?.width ?? width ?? _kDefaultImageCacheWidth).round(),
-      memCacheHeight:
-          (memCacheSize?.height ?? height ?? _kDefaultImageCacheHeight).round(),
+      memCacheWidth: (memCacheSize?.width ?? width ?? _kDefaultImageCacheWidth).round(),
+      memCacheHeight: (memCacheSize?.height ?? height ?? _kDefaultImageCacheHeight).round(),
     );
   }
 

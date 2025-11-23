@@ -3,17 +3,13 @@ extension StringExtensions on String {
     return this + other;
   }
 
-  bool equalsIgnoreCase(String secondString) =>
-      toLowerCase().contains(secondString.toLowerCase());
+  bool equalsIgnoreCase(String secondString) => toLowerCase().contains(secondString.toLowerCase());
 
-  bool containsIgnoreCase(String secondString) =>
-      toLowerCase().contains(secondString.toLowerCase());
+  bool containsIgnoreCase(String secondString) => toLowerCase().contains(secondString.toLowerCase());
 
-  bool startsWithIgnoreCase(String secondString) =>
-      toLowerCase().startsWith(secondString.toLowerCase());
+  bool startsWithIgnoreCase(String secondString) => toLowerCase().startsWith(secondString.toLowerCase());
 
-  bool endsWithIgnoreCase(String secondString) =>
-      toLowerCase().endsWith(secondString.toLowerCase());
+  bool endsWithIgnoreCase(String secondString) => toLowerCase().endsWith(secondString.toLowerCase());
 
   String capitalize() {
     if (length <= 1) {

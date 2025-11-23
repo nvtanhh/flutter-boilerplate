@@ -4,8 +4,7 @@ import '../../../models/base/paged_list_model.dart';
 import '../base/base_success_response_mapper.dart';
 
 @injectable
-class RecordsJsonArraySuccessResponseMapper<T>
-    implements BaseSuccessResponseMapper<T, PagedListModel<T>> {
+class RecordsJsonArraySuccessResponseMapper<T> implements BaseSuccessResponseMapper<T, PagedListModel<T>> {
   @override
   PagedListModel<T> map(dynamic response, Decoder<T>? decoder) {
     return decoder != null && response is Map<String, dynamic>

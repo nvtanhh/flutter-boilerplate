@@ -13,9 +13,7 @@ AppException? mapMessageToException({
   required Map<String, AppException> mapper,
   required String message,
 }) {
-  return mapper.entries
-      .firstWhereOrNull((entry) => message.contains(entry.key))
-      ?.value;
+  return mapper.entries.firstWhereOrNull((entry) => message.contains(entry.key))?.value;
 }
 
 class ServerError {
@@ -94,6 +92,5 @@ extension ApiExceptionExtensions on ApiException {
   bool get isUnauthorized => statusCode == HttpStatus.unauthorized;
   bool get isForbidden => statusCode == HttpStatus.forbidden;
   bool get isNotFound => statusCode == HttpStatus.notFound;
-  bool get isServerError =>
-      statusCode != null && statusCode! >= HttpStatus.internalServerError;
+  bool get isServerError => statusCode != null && statusCode! >= HttpStatus.internalServerError;
 }

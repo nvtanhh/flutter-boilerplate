@@ -40,8 +40,7 @@ class AppVideoPlayer extends StatefulWidget {
   State<AppVideoPlayer> createState() => AppVideoPlayerState();
 }
 
-class AppVideoPlayerState extends State<AppVideoPlayer>
-    with AutomaticKeepAliveClientMixin {
+class AppVideoPlayerState extends State<AppVideoPlayer> with AutomaticKeepAliveClientMixin {
   late VideoPlayerController _controller;
   final ValueNotifier<bool> _isPlayingNotifier = ValueNotifier(false);
 
@@ -97,8 +96,7 @@ class AppVideoPlayerState extends State<AppVideoPlayer>
   Widget build(BuildContext context) {
     super.build(context);
 
-    final child =
-        _controller.value.isInitialized ? _buildBody() : _buildLoading();
+    final child = _controller.value.isInitialized ? _buildBody() : _buildLoading();
 
     if (widget.isThumbnailMode) {
       return child;

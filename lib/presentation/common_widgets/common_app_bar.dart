@@ -88,16 +88,12 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       bottomOpacity: bottomOpacity,
       leadingWidth: leadingWidth,
       systemOverlayStyle: systemOverlayStyle,
-      leading: leadingIcon == LeadingIcon.none
-          ? null
-          : _buildLeadingIcon().clickable(onLeadingPressed ?? context.pop),
+      leading: leadingIcon == LeadingIcon.none ? null : _buildLeadingIcon().clickable(onLeadingPressed ?? context.pop),
       centerTitle: centerTitle,
       title: GestureDetector(
         onTap: onTitlePressed,
         behavior: HitTestBehavior.translucent,
-        child: titleType == AppBarTitle.text
-            ? Text(text ?? '', style: _getAppBarTextStyle())
-            : null,
+        child: titleType == AppBarTitle.text ? Text(text ?? '', style: _getAppBarTextStyle()) : null,
       ),
       actions: actions,
       elevation: elevation,

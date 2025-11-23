@@ -86,8 +86,7 @@ class AppRouter {
     return CustomTransitionPage<dynamic>(
       key: state.pageKey,
       child: child,
-      transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-          child,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) => child,
     );
   }
 }

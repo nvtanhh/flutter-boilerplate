@@ -15,8 +15,8 @@ import 'common/common_bloc.dart';
 part 'base_event.dart';
 part 'base_state.dart';
 
-abstract class BaseBloc<E extends BaseEvent, S extends BaseState>
-    extends Bloc<E, S> with LogMixin, BaseBlocDelegateMixin<S> {
+abstract class BaseBloc<E extends BaseEvent, S extends BaseState> extends Bloc<E, S>
+    with LogMixin, BaseBlocDelegateMixin<S> {
   BaseBloc(super.initialState);
 
   @override
@@ -35,8 +35,7 @@ abstract class BaseBloc<E extends BaseEvent, S extends BaseState>
   }
 }
 
-abstract class BaseCubit<S extends BaseState> extends Cubit<S>
-    with LogMixin, BaseBlocDelegateMixin<S> {
+abstract class BaseCubit<S extends BaseState> extends Cubit<S> with LogMixin, BaseBlocDelegateMixin<S> {
   BaseCubit(super.initialState);
 
   @override
@@ -66,8 +65,7 @@ mixin BaseBlocDelegateMixin<S extends BaseState> on BlocBase<S> {
   }
 
   // Call this getter only when the commonBloc is set
-  CommonBloc get commonBloc =>
-      this is CommonBloc ? this as CommonBloc : _commonBloc!;
+  CommonBloc get commonBloc => this is CommonBloc ? this as CommonBloc : _commonBloc!;
 
   // Only use this getter when you are sure that the current user is logged in
   User get currentUser => getIt.get<AppBloc>().state.currentUser!;

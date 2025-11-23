@@ -19,14 +19,12 @@ mixin _$ConnectivityState {
   ConnectionType get connectionType => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ConnectivityStateCopyWith<ConnectivityState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ConnectivityStateCopyWith<ConnectivityState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ConnectivityStateCopyWith<$Res> {
-  factory $ConnectivityStateCopyWith(
-          ConnectivityState value, $Res Function(ConnectivityState) then) =
+  factory $ConnectivityStateCopyWith(ConnectivityState value, $Res Function(ConnectivityState) then) =
       _$ConnectivityStateCopyWithImpl<$Res, ConnectivityState>;
   @useResult
   $Res call({ConnectionType connectionType});
@@ -57,10 +55,8 @@ class _$ConnectivityStateCopyWithImpl<$Res, $Val extends ConnectivityState>
 }
 
 /// @nodoc
-abstract class _$$ConnectivityStateImplCopyWith<$Res>
-    implements $ConnectivityStateCopyWith<$Res> {
-  factory _$$ConnectivityStateImplCopyWith(_$ConnectivityStateImpl value,
-          $Res Function(_$ConnectivityStateImpl) then) =
+abstract class _$$ConnectivityStateImplCopyWith<$Res> implements $ConnectivityStateCopyWith<$Res> {
+  factory _$$ConnectivityStateImplCopyWith(_$ConnectivityStateImpl value, $Res Function(_$ConnectivityStateImpl) then) =
       __$$ConnectivityStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -68,11 +64,9 @@ abstract class _$$ConnectivityStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ConnectivityStateImplCopyWithImpl<$Res>
-    extends _$ConnectivityStateCopyWithImpl<$Res, _$ConnectivityStateImpl>
+class __$$ConnectivityStateImplCopyWithImpl<$Res> extends _$ConnectivityStateCopyWithImpl<$Res, _$ConnectivityStateImpl>
     implements _$$ConnectivityStateImplCopyWith<$Res> {
-  __$$ConnectivityStateImplCopyWithImpl(_$ConnectivityStateImpl _value,
-      $Res Function(_$ConnectivityStateImpl) _then)
+  __$$ConnectivityStateImplCopyWithImpl(_$ConnectivityStateImpl _value, $Res Function(_$ConnectivityStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,8 +102,7 @@ class _$ConnectivityStateImpl implements _ConnectivityState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConnectivityStateImpl &&
-            (identical(other.connectionType, connectionType) ||
-                other.connectionType == connectionType));
+            (identical(other.connectionType, connectionType) || other.connectionType == connectionType));
   }
 
   @override
@@ -119,18 +112,15 @@ class _$ConnectivityStateImpl implements _ConnectivityState {
   @override
   @pragma('vm:prefer-inline')
   _$$ConnectivityStateImplCopyWith<_$ConnectivityStateImpl> get copyWith =>
-      __$$ConnectivityStateImplCopyWithImpl<_$ConnectivityStateImpl>(
-          this, _$identity);
+      __$$ConnectivityStateImplCopyWithImpl<_$ConnectivityStateImpl>(this, _$identity);
 }
 
 abstract class _ConnectivityState implements ConnectivityState {
-  const factory _ConnectivityState({final ConnectionType connectionType}) =
-      _$ConnectivityStateImpl;
+  const factory _ConnectivityState({final ConnectionType connectionType}) = _$ConnectivityStateImpl;
 
   @override
   ConnectionType get connectionType;
   @override
   @JsonKey(ignore: true)
-  _$$ConnectivityStateImplCopyWith<_$ConnectivityStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ConnectivityStateImplCopyWith<_$ConnectivityStateImpl> get copyWith => throw _privateConstructorUsedError;
 }

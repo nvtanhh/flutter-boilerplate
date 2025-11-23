@@ -8,82 +8,88 @@ environment:
   sdk: ">=3.1.2 <4.0.0"
 
 dependencies:
+  # Flutter SDK
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
 
+  # Core Utilities
   collection: ^1.17.0
   rxdart: ^0.27.7
   intl: ^0.20.2
+  equatable: ^2.0.5
   
-  # load env
+  # Environment & Configuration
   flutter_dotenv: ^6.0.0
-  # code generator
+
+  # Code Generation (Runtime)
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.0
-  # dart_mappable: ^3.1.1
 
-  # DI
+  # Dependency Injection
   get_it: ^9.1.0
   injectable: ^2.1.0
-  # rest api client
+
+  # State Management
+  flutter_bloc: ^9.1.1
+  hydrated_bloc: ^10.1.1
+
+  # Navigation
+  go_router: ^17.0.0
+
+  # Networking
   dio: ^5.0.1
-  # graphql client
   graphql_flutter: ^5.1.2
   gql_dio_link: ^2.0.0
-  # signal_r client
   signalr_core: ^1.1.1
-  # preferences
+
+  # Local Storage
   hive_flutter: ^1.1.0
   flutter_secure_storage: ^9.2.2
-  # device information
+
+  # Device Information
   device_info_plus: ^10.1.2
   android_id: ^0.5.1
-  # File management
+  connectivity_plus: ^5.0.2
+
+  # File Management
   flutter_cache_manager: ^3.3.0
   path_provider: ^2.0.13
   mime: ^2.0.0
-  # intent launcher
-  url_launcher: ^6.1.10
-  # Check connection
-  connectivity_plus: ^5.0.2
-  
 
-  ## ==== UI ==== ##
-  # state management
-  flutter_bloc: ^9.1.1
-  hydrated_bloc: ^10.1.1
-  equatable: ^2.0.5
-  # navigation
-  go_router: ^17.0.0
-  # UI
+  # UI Components & Responsive Design
   flutter_screenutil: ^5.7.0
   cached_network_image: ^3.2.3
-  flutter_inappwebview: ^6.0.0
   flutter_svg: ^2.0.5
   video_player: ^2.6.1
-  visibility_detector: ^0.4.0+2
+  flutter_inappwebview: ^6.0.0
   styled_text: ^8.1.0
-  # animation
+  visibility_detector: ^0.4.0+2
+
+  # Animations
   flutter_animate: ^4.5.0
 
+  # Utilities
+  url_launcher: ^6.1.10
+
 dev_dependencies:
+  # Testing
   flutter_test:
     sdk: flutter
 
-  # code generator
+  # Code Generation (Build Time)
   build_runner: ^2.4.5
-  injectable_generator: ^2.1.5
   freezed: ^2.3.2
   json_serializable: ^6.6.0
+  injectable_generator: ^2.1.5
   flutter_gen_runner: ^5.2.0
-  # dart_mappable_builder: ^3.1.1
 
-  # lint
+  # Linting & Code Quality
   flutter_lints: ^6.0.0
   dart_code_metrics: ^5.6.0
-  # launcher icon & splash screen
+
+  # Assets Generation
   flutter_launcher_icons: ^0.14.4
   flutter_native_splash: ^2.2.18
 

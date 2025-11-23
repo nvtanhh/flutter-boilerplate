@@ -60,8 +60,7 @@ class FileUtil {
           fileExtension = '.${oldFileName.removeLast()}';
         }
 
-        final newFileName =
-            '${oldFileName.join(".")}_${(DateTime.now().millisecondsSinceEpoch) / 1000}$fileExtension';
+        final newFileName = '${oldFileName.join(".")}_${(DateTime.now().millisecondsSinceEpoch) / 1000}$fileExtension';
 
         return await writeFile(
           newFileName,
@@ -87,8 +86,7 @@ class FileUtil {
   }
 
   static bool isFolder(String filePath) {
-    return FileSystemEntity.typeSync(filePath) ==
-        FileSystemEntityType.directory;
+    return FileSystemEntity.typeSync(filePath) == FileSystemEntityType.directory;
   }
 
   static Future<bool> removeFile(String filePath) async {
@@ -110,8 +108,7 @@ class FileUtil {
   static Future<Directory?> _getTemporaryDir() async {
     try {
       final directory = await getTemporaryDirectory();
-      final tempDirPath =
-          "${directory.path}${defaultDir != null ? '/$defaultDir' : ''}";
+      final tempDirPath = "${directory.path}${defaultDir != null ? '/$defaultDir' : ''}";
       final tempDir = Directory(tempDirPath);
       if (!(await tempDir.exists())) {
         return await tempDir.create(recursive: true);
@@ -132,8 +129,7 @@ class FileUtil {
   static Future<Directory?> _getDocumentDir() async {
     try {
       final directory = await getApplicationDocumentsDirectory();
-      final documentPath =
-          "${directory.path}${defaultDir != null ? '/$defaultDir' : ''}";
+      final documentPath = "${directory.path}${defaultDir != null ? '/$defaultDir' : ''}";
       final documentDir = Directory(documentPath);
       if (!(await documentDir.exists())) {
         return await documentDir.create(recursive: true);

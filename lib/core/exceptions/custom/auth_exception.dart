@@ -30,7 +30,5 @@ enum AuthExceptionKind {
 }
 
 extension AuthExceptionKindTypeX on AuthExceptionKind {
-  bool get isOtpException =>
-      this == AuthExceptionKind.otpExpired ||
-      this == AuthExceptionKind.otpInvalid;
+  bool get isOtpException => this == AuthExceptionKind.otpExpired || this == AuthExceptionKind.otpInvalid;
 }

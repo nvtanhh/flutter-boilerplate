@@ -17,8 +17,7 @@ class DateTimeUtil {
   }
 
   static DateTime toLocalFromTimestamp({required int utcTimestampMillis}) {
-    return DateTime.fromMillisecondsSinceEpoch(utcTimestampMillis, isUtc: true)
-        .toLocal();
+    return DateTime.fromMillisecondsSinceEpoch(utcTimestampMillis, isUtc: true).toLocal();
   }
 
   static DateTime toUtcFromTimestamp(int localTimestampMillis) {

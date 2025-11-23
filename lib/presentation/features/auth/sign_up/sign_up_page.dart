@@ -24,8 +24,7 @@ class _SignUpPageState extends BasePageState<SignUpPage, SignUpBloc> {
       hideKeyboardWhenTouchOutside: true,
       appBar: CommonAppBar(),
       body: BlocBuilder<SignUpBloc, SignUpState>(
-        buildWhen: (previous, current) =>
-            previous.isSignUpSuccess != current.isSignUpSuccess,
+        buildWhen: (previous, current) => previous.isSignUpSuccess != current.isSignUpSuccess,
         builder: (context, state) {
           if (state.isSignUpSuccess) {
             return const SignUpSuccessWidget();

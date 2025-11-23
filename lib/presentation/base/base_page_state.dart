@@ -12,21 +12,15 @@ import 'bloc/base_bloc.dart';
 import 'bloc/common/common_bloc.dart';
 import 'exception_handler/all.dart';
 
-abstract class BasePageState<P extends StatefulWidget,
-        B extends BaseBlocDelegateMixin> extends State<P>
-    with
-        LogMixin,
-        AppThemeMixin,
-        AppLocalizationsMixin,
-        AutomaticKeepAliveClientMixin {
+abstract class BasePageState<P extends StatefulWidget, B extends BaseBlocDelegateMixin> extends State<P>
+    with LogMixin, AppThemeMixin, AppLocalizationsMixin, AutomaticKeepAliveClientMixin {
   late final CommonBloc commonBloc;
   late final B bloc;
   // Incase you want to use cubit instead of bloc
   B get cubit => bloc;
 
   late final ExceptionHandler exceptionHandler;
-  late final ExceptionMessageMapper exceptionMessageMapper =
-      getIt.get<ExceptionMessageMapper>();
+  late final ExceptionMessageMapper exceptionMessageMapper = getIt.get<ExceptionMessageMapper>();
 
   late Future<dynamic> _initBLocsFeature;
 
@@ -131,8 +125,7 @@ abstract class BasePageState<P extends StatefulWidget,
                     children: [
                       buildPage(context),
                       BlocBuilder<CommonBloc, CommonState>(
-                        buildWhen: (previous, current) =>
-                            previous.isLoading != current.isLoading,
+                        buildWhen: (previous, current) => previous.isLoading != current.isLoading,
                         builder: (context, state) => Visibility(
                           visible: state.isLoading,
                           child: buildPageLoading(),

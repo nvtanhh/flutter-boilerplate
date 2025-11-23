@@ -29,36 +29,28 @@ class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   /// File path: assets/icons/arrow-left-regular.svg
-  SvgGenImage get arrowLeftRegular =>
-      const SvgGenImage('assets/icons/arrow-left-regular.svg');
+  SvgGenImage get arrowLeftRegular => const SvgGenImage('assets/icons/arrow-left-regular.svg');
 
   /// File path: assets/icons/bars-regular.svg
-  SvgGenImage get barsRegular =>
-      const SvgGenImage('assets/icons/bars-regular.svg');
+  SvgGenImage get barsRegular => const SvgGenImage('assets/icons/bars-regular.svg');
 
   /// File path: assets/icons/eye-regular.svg
-  SvgGenImage get eyeRegular =>
-      const SvgGenImage('assets/icons/eye-regular.svg');
+  SvgGenImage get eyeRegular => const SvgGenImage('assets/icons/eye-regular.svg');
 
   /// File path: assets/icons/eye-slash-regular.svg
-  SvgGenImage get eyeSlashRegular =>
-      const SvgGenImage('assets/icons/eye-slash-regular.svg');
+  SvgGenImage get eyeSlashRegular => const SvgGenImage('assets/icons/eye-slash-regular.svg');
 
   /// File path: assets/icons/face-smile-light.svg
-  SvgGenImage get faceSmileLight =>
-      const SvgGenImage('assets/icons/face-smile-light.svg');
+  SvgGenImage get faceSmileLight => const SvgGenImage('assets/icons/face-smile-light.svg');
 
   /// File path: assets/icons/house-regular.svg
-  SvgGenImage get houseRegular =>
-      const SvgGenImage('assets/icons/house-regular.svg');
+  SvgGenImage get houseRegular => const SvgGenImage('assets/icons/house-regular.svg');
 
   /// File path: assets/icons/message-dots-solid.svg
-  SvgGenImage get messageDotsSolid =>
-      const SvgGenImage('assets/icons/message-dots-solid.svg');
+  SvgGenImage get messageDotsSolid => const SvgGenImage('assets/icons/message-dots-solid.svg');
 
   /// File path: assets/icons/paper-plane-top-solid.svg
-  SvgGenImage get paperPlaneTopSolid =>
-      const SvgGenImage('assets/icons/paper-plane-top-solid.svg');
+  SvgGenImage get paperPlaneTopSolid => const SvgGenImage('assets/icons/paper-plane-top-solid.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
@@ -77,8 +69,7 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   /// File path: assets/images/app_icon_sample.jpg
-  AssetGenImage get appIconSample =>
-      const AssetGenImage('assets/images/app_icon_sample.jpg');
+  AssetGenImage get appIconSample => const AssetGenImage('assets/images/app_icon_sample.jpg');
 
   /// List of all assets
   List<AssetGenImage> get values => [appIconSample];
@@ -238,8 +229,7 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      colorFilter: colorFilter ??
-          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );

@@ -6,8 +6,7 @@ enum ErrorResponseMapperType {
   jsonObject,
 }
 
-abstract class BaseErrorResponseMapper<T>
-    extends BaseDataMapper<T, ServerError> {
+abstract class BaseErrorResponseMapper<T> extends BaseDataMapper<T, ServerError> {
   const BaseErrorResponseMapper();
 
   factory BaseErrorResponseMapper.fromType(ErrorResponseMapperType type) {

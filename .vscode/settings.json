@@ -2,5 +2,17 @@
     "cSpell.words": [
         "lenght"
     ],
-    "dart.flutterSdkPath": "/Users/tanhnv/development/src/flutter"
+    "dart.flutterSdkPath": "/Users/tanhnv/development/src/flutter",
+    // Disable line length formatting
+    "dart.lineLength": 120,
+    "[dart]": {
+        "editor.rulers": [120],
+        "editor.formatOnSave": true,
+        "editor.formatOnType": false,
+        "editor.wordWrap": "off"
+    },
+    // Don't auto-format to enforce line length
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    }
 }

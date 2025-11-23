@@ -29,8 +29,7 @@ class SignUpState extends BaseState with _$SignUpState {
 
   bool get hadBeenSubmitted => submitCount > 0;
 
-  bool get isEmailAlreadyInUse =>
-      failureReason == AuthExceptionKind.emailAlreadyInUse;
+  bool get isEmailAlreadyInUse => failureReason == AuthExceptionKind.emailAlreadyInUse;
 
   bool get isPasswordTooWeak => failureReason == AuthExceptionKind.weakPassword;
 }

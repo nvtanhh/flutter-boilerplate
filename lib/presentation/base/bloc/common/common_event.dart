@@ -8,6 +8,5 @@ class CommonEvent with _$CommonEvent {
   const factory CommonEvent.loadingVisibilityEmitted({
     required bool isLoading,
   }) = _LoadingVisibilityEmitted;
-  const factory CommonEvent.forceLogoutButtonPressed() =
-      _ForceLogoutButtonPressed;
+  const factory CommonEvent.forceLogoutButtonPressed() = _ForceLogoutButtonPressed;
 }

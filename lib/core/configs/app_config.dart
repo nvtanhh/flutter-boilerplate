@@ -15,6 +15,7 @@ Future<void> configApp() async {
 Future<void> _configBloc() async {
   Bloc.observer = AppBlocObserver();
   HydratedBloc.storage = await HydratedStorage.build(
-    storageDirectory: kIsWeb ? HydratedStorage.webStorageDirectory : await getTemporaryDirectory(),
+    storageDirectory:
+        kIsWeb ? HydratedStorageDirectory.web : HydratedStorageDirectory((await getTemporaryDirectory()).path),
   );
 }

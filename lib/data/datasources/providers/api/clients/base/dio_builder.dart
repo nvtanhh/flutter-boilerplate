@@ -13,10 +13,8 @@ class DioBuilder {
     return Dio(
       BaseOptions(
         baseUrl: options?.baseUrl ?? getIt.get<EnvConfig>().apiUrl,
-        connectTimeout:
-            options?.connectTimeout ?? ApiConstants.connectTimeoutInMs,
-        receiveTimeout:
-            options?.receiveTimeout ?? ApiConstants.receiveTimeoutInMs,
+        connectTimeout: options?.connectTimeout ?? ApiConstants.connectTimeoutInMs,
+        receiveTimeout: options?.receiveTimeout ?? ApiConstants.receiveTimeoutInMs,
         sendTimeout: options?.sendTimeout ?? ApiConstants.sendTimeoutInMs,
       ),
     );

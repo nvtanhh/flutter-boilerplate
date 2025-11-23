@@ -55,8 +55,6 @@ class RetryInterceptor extends BaseInterceptor {
   }
 
   bool shouldRetry(DioException error) {
-    return error.type != DioExceptionType.cancel &&
-        error.error != null &&
-        error.error is SocketException;
+    return error.type != DioExceptionType.cancel && error.error != null && error.error is SocketException;
   }
 }
