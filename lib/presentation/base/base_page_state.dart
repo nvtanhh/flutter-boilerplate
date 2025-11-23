@@ -5,7 +5,10 @@ import '../../core/configs/all.dart';
 import '../../core/exceptions/all.dart';
 import '../../core/helpers/stream/dispose_bag.dart';
 import '../../core/mixins/log_mixin.dart';
+import '../../domain/entities/user.dart';
+import '../common_blocs/app/app_bloc.dart';
 import '../common_widgets/loading.dart';
+import '../resource/styles/gaps.dart';
 import 'app_localizations_mixin.dart';
 import 'app_theme_mixin.dart';
 import 'bloc/base_bloc.dart';
@@ -13,7 +16,8 @@ import 'bloc/common/common_bloc.dart';
 import 'exception_handler/all.dart';
 
 abstract class BasePageState<P extends StatefulWidget, B extends BaseBlocDelegateMixin> extends State<P>
-    with LogMixin, AppThemeMixin, AppLocalizationsMixin, AutomaticKeepAliveClientMixin {
+    with LogMixin, AppThemeMixin, AppLocalizationsMixin, AutomaticKeepAliveClientMixin
+    implements ExceptionHandlerListener {
   late final CommonBloc commonBloc;
   late final B bloc;
   // Incase you want to use cubit instead of bloc
@@ -24,7 +28,12 @@ abstract class BasePageState<P extends StatefulWidget, B extends BaseBlocDelegat
 
   late Future<dynamic> _initBLocsFeature;
 
-  bool get useLoadingIndicator => false;
+  bool get allowLoadingIndicator => true;
+
+  // Only use this method when logged in
+  User get currentUser => getIt.get<AppBloc>().state.currentUser!;
+  User? get currentUserOrNull => getIt.get<AppBloc>().state.currentUser;
+  bool get isUserLoggedIn => currentUserOrNull != null;
 
   @override
   bool get wantKeepAlive => false;
@@ -35,14 +44,25 @@ abstract class BasePageState<P extends StatefulWidget, B extends BaseBlocDelegat
   @override
   void initState() {
     super.initState();
+    exceptionHandler = ExceptionHandler(
+      context: context,
+      listener: this,
+    );
     _initBLocsFeature = _initBlocs();
   }
 
   @override
   void dispose() {
-    bloc.close();
+    if (!bloc.isSingletonBloc) {
+      bloc.close();
+    }
     disposeBag.dispose();
     super.dispose();
+  }
+
+  @override
+  void onRefreshTokenFailed() {
+    commonBloc.add(const CommonEvent.forceLogoutButtonPressed());
   }
 
   @protected
@@ -53,14 +73,18 @@ abstract class BasePageState<P extends StatefulWidget, B extends BaseBlocDelegat
   void addFirstEvent() {}
 
   Future _initBlocs() async {
-    commonBloc = getIt.get<CommonBloc>();
-
     try {
       bloc = getIt.get<B>();
     } catch (e) {
       bloc = await getIt.getAsync<B>();
     }
-    bloc.commonBloc = commonBloc;
+
+    if (bloc.isSingletonBloc) {
+      commonBloc = bloc.commonBloc;
+    } else {
+      commonBloc = getIt.get<CommonBloc>();
+      bloc.commonBloc = commonBloc;
+    }
 
     addFirstEvent();
   }
@@ -118,23 +142,34 @@ abstract class BasePageState<P extends StatefulWidget, B extends BaseBlocDelegat
             BlocProvider.value(value: bloc),
             BlocProvider.value(value: commonBloc),
           ],
-          child: buildPageListeners(
-            child: useLoadingIndicator
-                ? buildPage(context)
-                : Stack(
-                    children: [
-                      buildPage(context),
-                      BlocBuilder<CommonBloc, CommonState>(
-                        buildWhen: (previous, current) => previous.isLoading != current.isLoading,
-                        builder: (context, state) => Visibility(
-                          visible: state.isLoading,
-                          child: buildPageLoading(),
-                        ),
-                      ),
-                    ],
-                  ),
+          child: BlocListener<CommonBloc, CommonState>(
+            listenWhen: (previous, current) =>
+                previous.appExceptionWrapper != current.appExceptionWrapper && current.appExceptionWrapper != null,
+            listener: (context, state) {
+              handleException(state.appExceptionWrapper!);
+            },
+            child: buildPageListeners(
+              child: Stack(
+                children: [
+                  buildPage(context),
+                  if (allowLoadingIndicator) _buildLoadingOverlay(),
+                ],
+              ),
+            ),
           ),
         );
+      },
+    );
+  }
+
+  Widget _buildLoadingOverlay() {
+    return BlocBuilder<CommonBloc, CommonState>(
+      buildWhen: (previous, current) => previous.isLoading != current.isLoading,
+      builder: (context, state) {
+        if (!state.isLoading) {
+          return AppSpacing.emptyBox;
+        }
+        return buildPageLoading();
       },
     );
   }

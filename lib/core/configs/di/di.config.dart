@@ -79,6 +79,8 @@ import 'package:flutter_boilerplate/presentation/base/bloc/common/common_bloc.da
     as _i382;
 import 'package:flutter_boilerplate/presentation/base/exception_handler/exception_message_mappers/exception_message_mapper.dart'
     as _i1066;
+import 'package:flutter_boilerplate/presentation/common_blocs/app/app_bloc.dart'
+    as _i38;
 import 'package:flutter_boilerplate/presentation/common_blocs/connectivity/connectivity_cubit.dart'
     as _i399;
 import 'package:flutter_boilerplate/presentation/common_blocs/overlay/overlay_bloc.dart'
@@ -126,6 +128,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i1060.UnAuthenticatedRestApiClient>(
         () => _i1060.UnAuthenticatedRestApiClient());
     gh.lazySingleton<_i368.SignalRClient>(() => _i368.SignalRClient());
+    gh.lazySingleton<_i38.AppBloc>(() => _i38.AppBloc());
     gh.lazySingleton<_i399.ConnectivityCubit>(() => _i399.ConnectivityCubit());
     gh.lazySingleton<_i114.AppOverlayBloc>(() => _i114.AppOverlayBloc());
     gh.lazySingleton<_i1066.ExceptionMessageMapper>(

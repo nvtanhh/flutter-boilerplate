@@ -30,7 +30,7 @@ class AppRouter {
     observers: [AppNavigatorObserver()],
     refreshListenable: _routerNotifier,
     debugLogDiagnostics: true,
-    initialLocation: AppPage.signIn.path,
+    initialLocation: AppPage.home.path,
     routes: [
       // ============ Auth Pages ============
       GoRoute(

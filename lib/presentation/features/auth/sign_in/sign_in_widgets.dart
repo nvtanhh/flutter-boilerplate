@@ -101,11 +101,11 @@ class _SignInButton extends StatelessWidget {
           AppButton.outline(
             width: double.infinity,
             height: Sizes.s48,
-            label: 'tanh@avnon.co/tanh1234',
+            label: 'example@gmail.com/Qwerty@123',
             onPressed: () {
               context.read<SignInBloc>()
-                ..add(const EmailChanged('tanh@avnon.co'))
-                ..add(const PasswordChanged('tanh1234'))
+                ..add(const EmailChanged('example@gmail.com'))
+                ..add(const PasswordChanged('Qwerty@123'))
                 ..add(const SignInSubmitted());
             },
           ),

@@ -29,7 +29,7 @@ class ForgotPassBloc extends BaseBloc<ForgotPassEvent, ForgotPassState> {
       return;
     }
 
-    await runBlocCatching(
+    await safeExecute(
       action: () async {
         emit(state.copyWith(isSubmitting: true));
         await _forgotPasswordUseCase.execute(ForgotPasswordParams(state.email));

@@ -16,7 +16,7 @@ class ForgotPassPage extends StatefulWidget {
 
 class _ForgotPassPageState extends BasePageState<ForgotPassPage, ForgotPassBloc> {
   @override
-  bool get useLoadingIndicator => true;
+  bool get allowLoadingIndicator => true;
 
   @override
   Widget buildPage(BuildContext context) {

@@ -69,6 +69,7 @@ mixin BaseBlocDelegateMixin<S extends BaseState> on BlocBase<S> {
 
   // Only use this getter when you are sure that the current user is logged in
   User get currentUser => getIt.get<AppBloc>().state.currentUser!;
+  User? get currentUserOrNull => getIt.get<AppBloc>().state.currentUser;
 
   bool get isUserLoggedIn => getIt.get<AppBloc>().state.currentUser != null;
 
@@ -83,17 +84,17 @@ mixin BaseBlocDelegateMixin<S extends BaseState> on BlocBase<S> {
     disposeBag.addDisposable(item);
   }
 
-  void showLoading() => _addVisibilityEvent(true);
-
-  void hideLoading() => _addVisibilityEvent(false);
-
-  void _addVisibilityEvent(bool isLoading) {
-    commonBloc.add(
-      CommonEvent.loadingVisibilityEmitted(isLoading: isLoading),
-    );
+  @protected
+  void showLoading() {
+    commonBloc.add(const CommonEvent.loadingVisibilityEmitted(isLoading: true));
   }
 
-  Future<void> runBlocCatching({
+  @protected
+  void hideLoading() {
+    commonBloc.add(const CommonEvent.loadingVisibilityEmitted(isLoading: false));
+  }
+
+  Future<void> safeExecute({
     required FutureOr<void> Function() action,
     FutureOr<void> Function(AppException)? doOnError,
     FutureOr<void> Function()? doOnSubscribe,

@@ -4,10 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../../core/configs/di/di.dart';
 import '../../../../../core/exceptions/all.dart';
 import '../../../../../core/utils/validation_util.dart';
 import '../../../../../domain/usecases/auth/sign_in_usecase.dart';
 import '../../../../base/bloc/base_bloc.dart';
+import '../../../../common_blocs/app/app_bloc.dart';
 
 part 'sign_in_bloc.freezed.dart';
 part 'sign_in_event.dart';
@@ -40,9 +42,10 @@ class SignInBloc extends BaseBloc<SignInEvent, SignInState> {
       return;
     }
 
-    await runBlocCatching(
+    await safeExecute(
       action: () async {
         await _signInUseCase.execute(SignInParams(state.email, state.password));
+        getIt<AppBloc>().add(const IsLoggedInStatusChanged(true));
       },
       doOnError: (exception) async {
         var failureReason = SignInFailureReason.unknown;

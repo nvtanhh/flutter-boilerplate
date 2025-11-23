@@ -16,7 +16,7 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends BasePageState<SignUpPage, SignUpBloc> {
   @override
-  bool get useLoadingIndicator => true;
+  bool get allowLoadingIndicator => true;
 
   @override
   Widget buildPage(BuildContext context) {

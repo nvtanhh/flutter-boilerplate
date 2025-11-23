@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../core/configs/all.dart';
 import '../../../domain/entities/user.dart';
@@ -12,14 +13,14 @@ part 'app_bloc.g.dart';
 part 'app_event.dart';
 part 'app_state.dart';
 
+@lazySingleton
 class AppBloc extends BaseBloc<AppEvent, AppState> with HydratedMixin {
   AppBloc() : super(const AppState()) {
+    hydrate();
+
     on<IsLoggedInStatusChanged>(_onIsLoggedInStatusChanged);
-
     on<AppThemeChanged>(_onAppThemeChanged);
-
     on<AppLanguageChanged>(_onAppLanguageChanged);
-
     on<AppInitiated>(_onAppInitiated);
   }
 

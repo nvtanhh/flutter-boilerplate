@@ -121,7 +121,7 @@ abstract class AppLocalizations {
   /// No description provided for @button__send_request.
   ///
   /// In en, this message translates to:
-  /// **'Sent Request'**
+  /// **'Send Request'**
   String get button__send_request;
 
   /// No description provided for @button__cancel.
@@ -241,7 +241,7 @@ abstract class AppLocalizations {
   /// No description provided for @sign_up__desc.
   ///
   /// In en, this message translates to:
-  /// **'Join the Avnon Incubator Portal platform today'**
+  /// **'Join our platform today'**
   String get sign_up__desc;
 
   /// No description provided for @sign_up__policy.
@@ -277,7 +277,7 @@ abstract class AppLocalizations {
   /// No description provided for @sign_in__desc.
   ///
   /// In en, this message translates to:
-  /// **'Sign in to the Avnon Incubator Portal platform'**
+  /// **'Sign in to our platform'**
   String get sign_in__desc;
 
   /// No description provided for @sign_in__policy.

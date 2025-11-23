@@ -23,7 +23,8 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<void> signIn(String email, String password) {
-    throw UnimplementedError();
+    // throw UnimplementedError();
+    return Future.value();
   }
 
   @override

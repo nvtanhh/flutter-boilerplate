@@ -21,7 +21,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get button__done => 'Done';
 
   @override
-  String get button__send_request => 'Sent Request';
+  String get button__send_request => 'Send Request';
 
   @override
   String get button__cancel => 'Cancel';
@@ -83,7 +83,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sign_up__title => 'Sign Up';
 
   @override
-  String get sign_up__desc => 'Join the Avnon Incubator Portal platform today';
+  String get sign_up__desc => 'Join our platform today';
 
   @override
   String get sign_up__policy =>
@@ -104,7 +104,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sign_in__title => 'Sign In';
 
   @override
-  String get sign_in__desc => 'Sign in to the Avnon Incubator Portal platform';
+  String get sign_in__desc => 'Sign in to our platform';
 
   @override
   String get sign_in__policy =>

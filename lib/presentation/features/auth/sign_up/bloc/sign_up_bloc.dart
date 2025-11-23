@@ -72,7 +72,7 @@ class SignUpBloc extends BaseBloc<SignUpEvent, SignUpState> {
       return;
     }
 
-    await runBlocCatching(
+    await safeExecute(
       action: () async {
         emit(state.copyWith(isSubmitting: true));
 

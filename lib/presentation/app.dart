@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
         DeviceConstants.designDeviceHeight,
       ),
       builder: (context, _) {
-        return BlocProvider(
-          create: (_) => AppBloc()..add(const AppInitiated()),
+        return BlocProvider.value(
+          value: getIt<AppBloc>()..add(const AppInitiated()),
           child: BlocBuilder<AppBloc, AppState>(
             builder: (context, state) {
               return MaterialApp.router(
